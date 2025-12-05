@@ -21,17 +21,21 @@ def process_text(text):
     Returns:
         List of sentences
     """
-    # Remove all existing newlines and replace with spaces
-    text = re.sub(r'\n+', ' ', text)
-    # Also remove carriage returns
-    text = re.sub(r'\r+', ' ', text)
-    # Remove extra whitespace but keep single spaces
-    text = re.sub(r'\s+', ' ', text)
-    text = text.strip()
-    
-    # Strategy: Replace "..." with a placeholder to protect it
+    # Strategy: Replace "..." with a placeholder FIRST to protect it from being split
     placeholder = "___ELLIPSIS___"
     text = text.replace("...", placeholder)
+    
+    # Remove all line breaks, form feeds, and carriage returns, replace with spaces
+    # This handles multiple consecutive newlines (\n\n\n) and form feeds (\f)
+    # Also handles carriage returns (\r) and other line break characters
+    text = re.sub(r'[\r\n\f]+', ' ', text)
+    
+    # Normalize all whitespace (spaces, tabs, etc.) to single spaces
+    # This handles cases where newlines were replaced with spaces, creating multiple spaces
+    text = re.sub(r'\s+', ' ', text)
+    
+    # Trim leading/trailing whitespace
+    text = text.strip()
     
     # Split on sentence-ending punctuation: . : ! ?
     # Pattern: look for punctuation followed by space or end of string
