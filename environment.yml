@@ -1,0 +1,15 @@
+name: nlp-midterm
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - ffmpeg
+  - pip
+  - pip:
+    - openai-whisper
+    - pydub
+    - librosa>=0.10.0
+    - soundfile>=0.12.0
+
+
