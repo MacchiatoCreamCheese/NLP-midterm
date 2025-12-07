@@ -7,17 +7,33 @@ Aligns Vietnamese audio with Vietnamese text files and cuts audio into sentence 
 import os
 import sys
 import re
-from pydub import AudioSegment
-import whisper
+import json
 from difflib import SequenceMatcher
 import unicodedata
-import numpy as np
+try:
+    import numpy as np
+    HAS_NUMPY = True
+except ImportError:
+    HAS_NUMPY = False
+
+try:
+    import whisper
+    HAS_WHISPER = True
+except ImportError:
+    HAS_WHISPER = False
 try:
     import librosa
     HAS_LIBROSA = True
 except ImportError:
     HAS_LIBROSA = False
     print("Warning: librosa not available, will try other methods")
+
+try:
+    from pydub import AudioSegment
+    HAS_PYDUB = True
+except ImportError:
+    HAS_PYDUB = False
+    print("Warning: pydub not available, will use librosa only")
 
 
 def remove_diacritics(text):
@@ -281,6 +297,117 @@ def split_segment_at_periods(segment, words_in_segment):
     return result_segments
 
 
+def save_whisper_results(whisper_result, output_dir):
+    """
+    Save Whisper transcription results to JSON files for later use.
+    This saves the heavy work (Whisper transcription) so it can be reused.
+    
+    Args:
+        whisper_result: Result dict from Whisper model.transcribe()
+        output_dir: Directory to save the results
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    
+    # Save segments
+    segments_file = os.path.join(output_dir, "whisper_segments.json")
+    segments_data = []
+    for segment in whisper_result.get("segments", []):
+        segments_data.append({
+            "id": segment.get("id"),
+            "start": segment.get("start"),
+            "end": segment.get("end"),
+            "text": segment.get("text", "").strip()
+        })
+    
+    with open(segments_file, 'w', encoding='utf-8') as f:
+        json.dump(segments_data, f, ensure_ascii=False, indent=2)
+    
+    # Save word timestamps
+    words_file = os.path.join(output_dir, "whisper_words.json")
+    words_data = []
+    for segment in whisper_result.get("segments", []):
+        for word_info in segment.get("words", []):
+            words_data.append({
+                "word": word_info.get("word", "").strip(),
+                "start": word_info.get("start"),
+                "end": word_info.get("end")
+            })
+    
+    with open(words_file, 'w', encoding='utf-8') as f:
+        json.dump(words_data, f, ensure_ascii=False, indent=2)
+    
+    # Save full transcription
+    transcription_file = os.path.join(output_dir, "whisper_transcription.txt")
+    with open(transcription_file, 'w', encoding='utf-8') as f:
+        f.write(whisper_result.get("text", ""))
+    
+    print(f"✓ Đã lưu kết quả Whisper vào: {output_dir}")
+    print(f"✓ Saved Whisper results to: {output_dir}")
+    print(f"  - Segments: {len(segments_data)}")
+    print(f"  - Words: {len(words_data)}")
+    print(f"  - Full transcription saved")
+
+
+def load_whisper_results(output_dir):
+    """
+    Load Whisper transcription results from saved JSON files.
+    
+    Args:
+        output_dir: Directory containing saved Whisper results
+    
+    Returns:
+        Tuple of (segments_list, words_list, full_transcription)
+        segments_list: List of (start, end, text) tuples
+        words_list: List of dicts with 'word', 'start', 'end'
+        full_transcription: Full transcription text string
+    """
+    segments_file = os.path.join(output_dir, "whisper_segments.json")
+    words_file = os.path.join(output_dir, "whisper_words.json")
+    transcription_file = os.path.join(output_dir, "whisper_transcription.txt")
+    
+    if not os.path.exists(segments_file):
+        raise FileNotFoundError(f"Whisper segments file not found: {segments_file}")
+    if not os.path.exists(words_file):
+        raise FileNotFoundError(f"Whisper words file not found: {words_file}")
+    if not os.path.exists(transcription_file):
+        raise FileNotFoundError(f"Whisper transcription file not found: {transcription_file}")
+    
+    # Load segments
+    with open(segments_file, 'r', encoding='utf-8') as f:
+        segments_data = json.load(f)
+    
+    segments_list = []
+    for seg in segments_data:
+        segments_list.append((
+            seg.get("start", 0),
+            seg.get("end", 0),
+            seg.get("text", "").strip()
+        ))
+    
+    # Load words
+    with open(words_file, 'r', encoding='utf-8') as f:
+        words_data = json.load(f)
+    
+    words_list = []
+    for word_info in words_data:
+        words_list.append({
+            "word": word_info.get("word", "").strip(),
+            "start": word_info.get("start", 0),
+            "end": word_info.get("end", 0)
+        })
+    
+    # Load full transcription
+    with open(transcription_file, 'r', encoding='utf-8') as f:
+        full_transcription = f.read()
+    
+    print(f"✓ Đã tải kết quả Whisper từ: {output_dir}")
+    print(f"✓ Loaded Whisper results from: {output_dir}")
+    print(f"  - Segments: {len(segments_list)}")
+    print(f"  - Words: {len(words_list)}")
+    
+    return segments_list, words_list, full_transcription
+
+
 def find_sentence_in_transcription(sentence, transcription_words, start_idx=0):
     """
     Find sentence in transcription using multiple strategies.
@@ -356,112 +483,36 @@ def find_sentence_in_transcription(sentence, transcription_words, start_idx=0):
     return None, None, 0
 
 
-def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name="base", use_detected_sentences=False, match_with_real_sentences=False):
+def run_whisper_transcription(audio_file, model_name="base", output_dir=None):
     """
-    Improved alignment for Vietnamese audio and text.
+    Run Whisper transcription and save results to files.
+    This is the heavy work that should be done once.
     
     Args:
         audio_file: Path to audio file
-        sentences_file: Path to file with Vietnamese sentences (one per line). Optional if use_detected_sentences=True.
         model_name: Whisper model to use
-        use_detected_sentences: If True, use sentences detected by Whisper instead of provided transcript
+        output_dir: Directory to save Whisper results (if None, uses same dir as audio)
     
     Returns:
-        Tuple of (sentence_timestamps, full_transcription)
+        Tuple of (segments_list, words_list, full_transcription)
     """
-    # Convert audio to WAV format using pydub (avoids ffmpeg issues with Whisper)
-    import tempfile
-    import subprocess
-    temp_wav = None
+    if output_dir is None:
+        # Use same directory as audio file
+        base_name = os.path.splitext(os.path.basename(audio_file))[0]
+        output_dir = os.path.join(os.path.dirname(audio_file), f"{base_name}_whisper_results")
+    
+    # Use librosa to load audio directly (bypasses ffmpeg)
+    audio_array = None
     audio_file_for_whisper = audio_file
     conversion_success = False
     
-    # Method 1: Try pydub
-    try:
-        print("Đang chuyển đổi audio sang định dạng WAV (phương pháp 1: pydub)...")
-        print("Converting audio to WAV format (method 1: pydub)...")
-        sys.stdout.flush()  # Force output
-        
-        # Try to load with explicit format
+    if HAS_LIBROSA:
         try:
-            if audio_file.lower().endswith('.mp3'):
-                audio = AudioSegment.from_mp3(audio_file)
-            else:
-                audio = AudioSegment.from_file(audio_file)
-        except Exception as load_error:
-            print(f"Load error: {load_error}, trying generic loader...")
-            audio = AudioSegment.from_file(audio_file)
-        
-        # Export to temporary WAV file
-        temp_wav = tempfile.NamedTemporaryFile(suffix='.wav', delete=False)
-        temp_wav.close()
-        audio.export(temp_wav.name, format="wav", parameters=["-ar", "16000", "-ac", "1"])
-        
-        # Verify file was created
-        if os.path.exists(temp_wav.name) and os.path.getsize(temp_wav.name) > 0:
-            audio_file_for_whisper = temp_wav.name
-            conversion_success = True
-            print(f"✓ Đã chuyển đổi thành công: {temp_wav.name}")
-            print(f"✓ Successfully converted: {temp_wav.name}")
-        else:
-            raise Exception("Converted file is empty or doesn't exist")
-            
-    except Exception as e:
-        print(f"⚠ Phương pháp 1 thất bại: {type(e).__name__}: {e}")
-        print(f"⚠ Method 1 failed: {type(e).__name__}: {e}")
-        sys.stdout.flush()
-        if temp_wav and os.path.exists(temp_wav.name):
-            try:
-                os.unlink(temp_wav.name)
-            except:
-                pass
-        temp_wav = None
-    
-    # Method 2: Try ffmpeg directly if pydub failed
-    if not conversion_success:
-        try:
-            print("Đang thử phương pháp 2: ffmpeg trực tiếp...")
-            print("Trying method 2: direct ffmpeg...")
-            sys.stdout.flush()
-            
-            temp_wav = tempfile.NamedTemporaryFile(suffix='.wav', delete=False)
-            temp_wav.close()
-            
-            # Use ffmpeg command directly
-            cmd = [
-                'ffmpeg', '-i', audio_file,
-                '-ar', '16000', '-ac', '1', '-f', 'wav',
-                '-y', temp_wav.name
-            ]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
-            if result.returncode == 0 and os.path.exists(temp_wav.name) and os.path.getsize(temp_wav.name) > 0:
-                audio_file_for_whisper = temp_wav.name
-                conversion_success = True
-                print(f"✓ Đã chuyển đổi thành công bằng ffmpeg: {temp_wav.name}")
-                print(f"✓ Successfully converted using ffmpeg: {temp_wav.name}")
-            else:
-                raise Exception(f"ffmpeg failed with return code {result.returncode}: {result.stderr[:200]}")
-        except Exception as e:
-            print(f"⚠ Phương pháp 2 thất bại: {type(e).__name__}: {e}")
-            print(f"⚠ Method 2 failed: {type(e).__name__}: {e}")
-            sys.stdout.flush()
-            if temp_wav and os.path.exists(temp_wav.name):
-                try:
-                    os.unlink(temp_wav.name)
-                except:
-                    pass
-            temp_wav = None
-    
-    # Method 3: Use librosa to load audio directly (bypasses ffmpeg)
-    audio_array = None
-    if not conversion_success and HAS_LIBROSA:
-        try:
-            print("Đang thử phương pháp 3: librosa (bỏ qua ffmpeg)...")
-            print("Trying method 3: librosa (bypass ffmpeg)...")
+            print("Đang tải audio bằng librosa (bỏ qua ffmpeg)...")
+            print("Loading audio with librosa (bypass ffmpeg)...")
             sys.stdout.flush()
             
             # Load audio with librosa (16kHz mono, as Whisper expects)
-            # dtype=np.float32 ensures compatibility with Whisper
             audio_array, sr = librosa.load(audio_file, sr=16000, mono=True, dtype=np.float32)
             
             # Verify the audio array format
@@ -472,16 +523,14 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
             print(f"✓ Đã tải audio bằng librosa: {len(audio_array)} samples @ {sr}Hz")
             print(f"✓ Successfully loaded audio with librosa: {len(audio_array)} samples @ {sr}Hz")
         except Exception as e:
-            print(f"⚠ Phương pháp 3 thất bại: {type(e).__name__}: {e}")
-            print(f"⚠ Method 3 failed: {type(e).__name__}: {e}")
+            print(f"⚠ Librosa thất bại: {type(e).__name__}: {e}")
+            print(f"⚠ Librosa failed: {type(e).__name__}: {e}")
             sys.stdout.flush()
     
-    # If all conversion methods failed, warn but continue
+    # If librosa failed, warn but continue with original file
     if not conversion_success:
-        print("⚠ Cảnh báo: Không thể chuyển đổi audio, thử dùng file gốc...")
-        print("⚠ Warning: Could not convert audio, trying original file...")
-        print("⚠ Lưu ý: Whisper có thể gặp lỗi nếu ffmpeg không hoạt động đúng")
-        print("⚠ Note: Whisper may fail if ffmpeg is not working properly")
+        print("⚠ Cảnh báo: Không thể tải audio bằng librosa, thử dùng file gốc...")
+        print("⚠ Warning: Could not load audio with librosa, trying original file...")
         sys.stdout.flush()
         audio_file_for_whisper = audio_file
     
@@ -514,54 +563,61 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
                 verbose=False
             )
     except Exception as e:
-        # Clean up temporary file before re-raising
-        if temp_wav and os.path.exists(temp_wav.name):
-            try:
-                os.unlink(temp_wav.name)
-            except:
-                pass
         print(f"\n❌ Lỗi khi chuyển đổi giọng nói: {type(e).__name__}: {e}")
         print(f"❌ Error during transcription: {type(e).__name__}: {e}")
         sys.stdout.flush()
-        raise RuntimeError(f"Whisper transcription failed. This is likely due to ffmpeg issues. "
-                          f"Please ensure ffmpeg is properly installed. Error: {e}") from e
+        raise RuntimeError(f"Whisper transcription failed. Error: {e}") from e
     
-    # Clean up temporary file
-    if temp_wav and os.path.exists(temp_wav.name):
-        try:
-            os.unlink(temp_wav.name)
-        except:
-            pass
+    # Save results
+    save_whisper_results(result, output_dir)
     
-    # Get full transcription
-    full_transcription = result["text"]
+    # Extract data in the format expected by alignment functions
+    segments_list = []
+    for segment in result.get("segments", []):
+        text = segment.get("text", "").strip()
+        if text:
+            segments_list.append((
+                segment.get("start", 0),
+                segment.get("end", 0),
+                text
+            ))
+    
+    words_list = []
+    for segment in result.get("segments", []):
+        for word_info in segment.get("words", []):
+            words_list.append({
+                "word": word_info.get("word", "").strip(),
+                "start": word_info.get("start", 0),
+                "end": word_info.get("end", 0)
+            })
+    
+    full_transcription = result.get("text", "")
+    
+    return segments_list, words_list, full_transcription, output_dir
+
+
+def align_from_whisper_results(whisper_dir, sentences_file=None, use_detected_sentences=False, match_with_real_sentences=False):
+    """
+    Perform alignment and splitting using saved Whisper results.
+    This is the lighter weight work that can be done multiple times with different parameters.
+    
+    Args:
+        whisper_dir: Directory containing saved Whisper results
+        sentences_file: Path to file with Vietnamese sentences (one per line). Optional if use_detected_sentences=True.
+        use_detected_sentences: If True, use sentences detected by Whisper instead of provided transcript
+        match_with_real_sentences: If True, match Whisper segments with real sentences from file
+    
+    Returns:
+        Tuple of (sentence_timestamps, full_transcription)
+    """
+    # Load Whisper results
+    segments_list, words_list, full_transcription = load_whisper_results(whisper_dir)
     
     # If using detected sentences, match with real sentences first, then cut audio
     if use_detected_sentences:
         print("Đang sử dụng các câu được phát hiện bởi Whisper...")
         print("Using sentences detected by Whisper...")
         sys.stdout.flush()
-        
-        # Extract all word timestamps
-        all_word_segments = []
-        for segment in result.get("segments", []):
-            for word_info in segment.get("words", []):
-                all_word_segments.append({
-                    "word": word_info.get("word", "").strip(),
-                    "start": word_info.get("start", 0),
-                    "end": word_info.get("end", 0)
-                })
-        
-        # Extract raw Whisper segments (without merging/splitting)
-        raw_whisper_segments = []
-        for segment in result.get("segments", []):
-            text = segment.get("text", "").strip()
-            if text:
-                raw_whisper_segments.append((
-                    segment.get("start", 0),
-                    segment.get("end", 0),
-                    text
-                ))
         
         # If match_with_real_sentences is True and sentences_file is provided, match with real sentences FIRST
         if match_with_real_sentences and sentences_file:
@@ -575,7 +631,7 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
             
             # Match each whole real sentence to Whisper segments (looser matching)
             sentence_timestamps = match_whisper_to_real_sentences(
-                raw_whisper_segments, real_sentences, all_word_segments
+                segments_list, real_sentences, words_list
             )
             
             print(f"\nĐã khớp {len(sentence_timestamps)}/{len(real_sentences)} câu với văn bản thật")
@@ -590,31 +646,30 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
             current_merged_end = None
             current_merged_words = []
             
-            for segment in result.get("segments", []):
-                text = segment.get("text", "").strip()
+            for seg_start, seg_end, text in segments_list:
                 if not text:
                     continue
                 
-                segment_start = segment.get("start", 0)
-                segment_end = segment.get("end", 0)
-                
-                # Get words for this segment directly
+                # Get words for this segment
                 segment_words = []
-                for word_info in segment.get("words", []):
-                    segment_words.append({
-                        "word": word_info.get("word", "").strip(),
-                        "start": word_info.get("start", 0),
-                        "end": word_info.get("end", 0)
-                    })
+                seg_start_time = seg_start
+                seg_end_time = seg_end
+                
+                # Find words that fall within this segment
+                for word_info in words_list:
+                    word_start = word_info.get("start", 0)
+                    word_end = word_info.get("end", 0)
+                    if word_start >= seg_start and word_end <= seg_end:
+                        segment_words.append(word_info)
                 
                 # Merge with current accumulated text
                 if current_merged_text:
                     current_merged_text += " " + text
                 else:
                     current_merged_text = text
-                    current_merged_start = segment_start
+                    current_merged_start = seg_start
                 
-                current_merged_end = segment_end
+                current_merged_end = seg_end
                 current_merged_words.extend(segment_words)
                 
                 # Check if this merged text ends with a period
@@ -651,18 +706,8 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
     with open(sentences_file, 'r', encoding='utf-8') as f:
         sentences = [line.strip() for line in f if line.strip()]
     
-    # Extract word timestamps
-    words = []
-    for segment in result["segments"]:
-        for word_info in segment.get("words", []):
-            words.append({
-                "word": word_info["word"].strip(),
-                "start": word_info["start"],
-                "end": word_info["end"]
-            })
-    
-    print(f"Đã nhận diện {len(words)} từ trong audio")
-    print(f"Recognized {len(words)} words in audio")
+    print(f"Đã nhận diện {len(words_list)} từ trong audio")
+    print(f"Recognized {len(words_list)} words in audio")
     print(f"Đang căn chỉnh {len(sentences)} câu với audio...")
     print(f"Aligning {len(sentences)} sentences with audio...")
     
@@ -672,7 +717,7 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
     failed_alignments = []
     
     for i, sentence in enumerate(sentences):
-        if word_idx >= len(words):
+        if word_idx >= len(words_list):
             # Estimate remaining sentences
             if sentence_timestamps:
                 last_end = sentence_timestamps[-1][1]
@@ -682,12 +727,12 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
         
         # Find sentence in transcription
         start_idx, end_idx, confidence = find_sentence_in_transcription(
-            sentence, words, word_idx
+            sentence, words_list, word_idx
         )
         
         if start_idx is not None and end_idx is not None:
-            start_time = words[start_idx]['start']
-            end_time = words[end_idx - 1]['end'] if end_idx > 0 else words[start_idx]['end']
+            start_time = words_list[start_idx]['start']
+            end_time = words_list[end_idx - 1]['end'] if end_idx > 0 else words_list[start_idx]['end']
             sentence_timestamps.append((start_time, end_time, sentence))
             word_idx = end_idx
             
@@ -703,7 +748,7 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
                 failed_alignments.append(i)
             else:
                 # First sentence - use first word timestamp
-                start_time = words[word_idx]['start'] if words else 0
+                start_time = words_list[word_idx]['start'] if words_list else 0
                 estimated_duration = len(sentence.split()) / 3.5
                 sentence_timestamps.append((start_time, start_time + estimated_duration, sentence))
                 failed_alignments.append(i)
@@ -715,6 +760,32 @@ def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name=
         print(f"Warning: {len(failed_alignments)} sentences could not be aligned (estimated)")
     
     return sentence_timestamps, full_transcription
+
+
+def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name="base", use_detected_sentences=False, match_with_real_sentences=False):
+    """
+    Improved alignment for Vietnamese audio and text.
+    This function runs Whisper and then performs alignment.
+    For better performance, use run_whisper_transcription() and align_from_whisper_results() separately.
+    
+    Args:
+        audio_file: Path to audio file
+        sentences_file: Path to file with Vietnamese sentences (one per line). Optional if use_detected_sentences=True.
+        model_name: Whisper model to use
+        use_detected_sentences: If True, use sentences detected by Whisper instead of provided transcript
+        match_with_real_sentences: If True, match Whisper segments with real sentences from file
+    
+    Returns:
+        Tuple of (sentence_timestamps, full_transcription)
+    """
+    # Run Whisper transcription and save results
+    base_name = os.path.splitext(os.path.basename(audio_file))[0]
+    whisper_output_dir = os.path.join(os.path.dirname(audio_file), f"{base_name}_whisper_results")
+    
+    _, _, _, _ = run_whisper_transcription(audio_file, model_name, whisper_output_dir)
+    
+    # Perform alignment from saved results
+    return align_from_whisper_results(whisper_output_dir, sentences_file, use_detected_sentences, match_with_real_sentences)
 
 
 def cut_audio_segments(audio_file, sentence_timestamps, output_dir, add_padding=0.3):
@@ -742,27 +813,34 @@ def cut_audio_segments(audio_file, sentence_timestamps, output_dir, add_padding=
             print(f"✓ Đã tải audio bằng librosa: {len(audio_array)} samples @ {sample_rate}Hz")
             print(f"✓ Successfully loaded audio with librosa: {len(audio_array)} samples @ {sample_rate}Hz")
         except Exception as e:
-            print(f"⚠ Librosa failed: {e}, trying pydub...")
-            print(f"⚠ Librosa failed: {e}, trying pydub...")
+            if HAS_PYDUB:
+                print(f"⚠ Librosa failed: {e}, trying pydub...")
+                print(f"⚠ Librosa failed: {e}, trying pydub...")
+            else:
+                print(f"⚠ Librosa failed: {e}")
+                print(f"⚠ Librosa failed: {e}")
             audio_array = None
     
     # Fallback to pydub if librosa failed
     if audio_array is None:
-        try:
-            audio_seg = AudioSegment.from_file(audio_file)
-            # Convert pydub AudioSegment to numpy array for consistent processing
-            audio_array = np.array(audio_seg.get_array_of_samples(), dtype=np.float32)
-            if audio_seg.channels == 2:
-                # Convert stereo to mono
-                audio_array = audio_array.reshape((-1, 2)).mean(axis=1)
-            sample_rate = audio_seg.frame_rate
-            # Normalize to [-1, 1] range
-            if audio_array.max() > 1.0:
-                audio_array = audio_array / (2 ** (audio_seg.sample_width * 8 - 1))
-        except Exception as e:
-            print(f"❌ Không thể tải audio: {e}")
-            print(f"❌ Cannot load audio: {e}")
-            raise RuntimeError(f"Failed to load audio file. Both librosa and pydub failed. Error: {e}")
+        if HAS_PYDUB:
+            try:
+                audio_seg = AudioSegment.from_file(audio_file)
+                # Convert pydub AudioSegment to numpy array for consistent processing
+                audio_array = np.array(audio_seg.get_array_of_samples(), dtype=np.float32)
+                if audio_seg.channels == 2:
+                    # Convert stereo to mono
+                    audio_array = audio_array.reshape((-1, 2)).mean(axis=1)
+                sample_rate = audio_seg.frame_rate
+                # Normalize to [-1, 1] range
+                if audio_array.max() > 1.0:
+                    audio_array = audio_array / (2 ** (audio_seg.sample_width * 8 - 1))
+            except Exception as e:
+                print(f"❌ Không thể tải audio: {e}")
+                print(f"❌ Cannot load audio: {e}")
+                raise RuntimeError(f"Failed to load audio file. Both librosa and pydub failed. Error: {e}")
+        else:
+            raise RuntimeError(f"Failed to load audio file. librosa failed and pydub is not available.")
     
     os.makedirs(output_dir, exist_ok=True)
     
@@ -801,13 +879,19 @@ def cut_audio_segments(audio_file, sentence_timestamps, output_dir, add_padding=
                     wavfile.write(output_file, int(sample_rate), segment_int16)
                 except ImportError:
                     # Last resort: try pydub (may fail if ffmpeg broken)
-                    temp_seg = AudioSegment(
-                        segment.tobytes(),
-                        frame_rate=int(sample_rate),
-                        channels=1,
-                        sample_width=2
-                    )
-                    temp_seg.export(output_file, format="wav")
+                    if HAS_PYDUB:
+                        try:
+                            temp_seg = AudioSegment(
+                                segment.tobytes(),
+                                frame_rate=int(sample_rate),
+                                channels=1,
+                                sample_width=2
+                            )
+                            temp_seg.export(output_file, format="wav")
+                        except Exception as e2:
+                            raise RuntimeError(f"Cannot save audio segment: soundfile, scipy, and pydub all failed. Error: {e2}")
+                    else:
+                        raise RuntimeError(f"Cannot save audio segment: soundfile and scipy not available, and pydub is not installed.")
         except Exception as e:
             print(f"⚠ Lỗi khi lưu segment {i+1}: {e}")
             print(f"⚠ Error saving segment {i+1}: {e}")
@@ -825,6 +909,239 @@ def cut_audio_segments(audio_file, sentence_timestamps, output_dir, add_padding=
     
     print(f"\nHoàn thành! Đã cắt {len(sentence_timestamps)} đoạn audio.")
     print(f"Complete! Cut {len(sentence_timestamps)} audio segments.")
+
+
+# ============================================================================
+# METHOD 2: Replace wrong whisper transcriptions with correct text
+# ============================================================================
+
+def normalize_text_for_matching_method2(text):
+    """Normalize text for fuzzy matching by removing diacritics and punctuation."""
+    # Remove punctuation and extra spaces
+    # In character class, put brackets at start/end to avoid escaping
+    text = re.sub(r'[[\].,!?:;"\'(){}]', '', text)
+    text = re.sub(r'\s+', ' ', text)
+    return text.strip().lower()
+
+
+def similarity_score_method2(text1, text2):
+    """Calculate similarity score between two texts."""
+    norm1 = normalize_text_for_matching_method2(text1)
+    norm2 = normalize_text_for_matching_method2(text2)
+    return SequenceMatcher(None, norm1, norm2).ratio()
+
+
+def load_text_file_method2(file_path):
+    """Load text file and return list of sentences/lines."""
+    with open(file_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Split by newlines first, then by sentence-ending punctuation if needed
+    lines = [line.strip() for line in content.split('\n') if line.strip()]
+    
+    # Further split long lines by sentence punctuation
+    sentences = []
+    for line in lines:
+        # Split on sentence-ending punctuation but keep it
+        parts = re.split(r'([.!?]+)', line)
+        current = ""
+        for i, part in enumerate(parts):
+            current += part
+            if part and part[0] in '.!?':
+                if current.strip():
+                    sentences.append(current.strip())
+                current = ""
+        if current.strip():
+            sentences.append(current.strip())
+    
+    return sentences
+
+
+def align_segments_to_text_method2(whisper_segments, reference_sentences):
+    """
+    Align whisper segments to reference text and replace incorrect transcriptions.
+    Combines multiple segments that match one sentence and fixes timestamps.
+    
+    Args:
+        whisper_segments: List of whisper segment dicts with 'id', 'start', 'end', 'text'
+        reference_sentences: List of correct sentences from text file
+    
+    Returns:
+        List of corrected segments (may have fewer segments than input if combined)
+    """
+    corrected_segments = []
+    ref_idx = 0
+    whisper_idx = 0
+    
+    # Build normalized reference for matching
+    normalized_ref = [normalize_text_for_matching_method2(sent) for sent in reference_sentences]
+    
+    # Maximum look-ahead window (search up to 20 segments ahead)
+    max_window = 20
+    
+    while whisper_idx < len(whisper_segments) and ref_idx < len(reference_sentences):
+        # Get current reference sentence
+        ref_sentence = reference_sentences[ref_idx]
+        normalized_ref_sent = normalized_ref[ref_idx]
+        
+        # Search for best match in a window of segments
+        best_match_start = whisper_idx
+        best_match_end = whisper_idx
+        best_score = 0
+        best_accumulated_text = ""
+        
+        # Try matching with 1 to max_window consecutive segments
+        for start_idx in range(whisper_idx, min(whisper_idx + max_window, len(whisper_segments))):
+            accumulated_text = ""
+            accumulated_segments_list = []
+            
+            # Try different numbers of segments starting from start_idx
+            for num_segments in range(1, min(max_window + 1, len(whisper_segments) - start_idx + 1)):
+                if start_idx + num_segments - 1 >= len(whisper_segments):
+                    break
+                
+                # Accumulate text from consecutive segments
+                segs = []
+                for i in range(num_segments):
+                    seg_idx = start_idx + i
+                    if seg_idx < len(whisper_segments):
+                        seg = whisper_segments[seg_idx]
+                        segs.append(seg)
+                        if accumulated_text:
+                            accumulated_text += " " + seg['text']
+                        else:
+                            accumulated_text = seg['text']
+                
+                # Calculate similarity score
+                score = similarity_score_method2(accumulated_text, normalized_ref_sent)
+                
+                # Also check if we're getting closer to the end of the sentence
+                # by comparing lengths
+                ref_length = len(normalized_ref_sent)
+                acc_length = len(normalize_text_for_matching_method2(accumulated_text))
+                length_ratio = min(ref_length, acc_length) / max(ref_length, acc_length, 1)
+                
+                # Boost score if lengths are similar (we might have found the complete sentence)
+                adjusted_score = score * (0.7 + 0.3 * length_ratio)
+                
+                # Prefer matches that are closer to the expected length
+                if acc_length >= ref_length * 0.8 and acc_length <= ref_length * 1.5:
+                    adjusted_score *= 1.2  # Boost if length is reasonable
+                
+                # Update best match if this is better
+                if adjusted_score > best_score:
+                    best_score = adjusted_score
+                    best_match_start = start_idx
+                    best_match_end = start_idx + num_segments - 1
+                    best_accumulated_text = accumulated_text
+                    accumulated_segments_list = segs
+        
+        # If we found a good match (threshold: 0.25 for fuzzy matching)
+        if best_score > 0.25:
+            # Combine segments into one
+            first_seg = whisper_segments[best_match_start]
+            last_seg = whisper_segments[best_match_end]
+            
+            # Create new combined segment
+            combined_seg = {
+                'id': first_seg['id'],  # Keep first segment's ID
+                'start': first_seg['start'],  # Start time from first segment
+                'end': last_seg['end'],  # End time from last segment
+                'text': ref_sentence  # Use correct reference text
+            }
+            
+            corrected_segments.append(combined_seg)
+            
+            # Move past all matched segments
+            whisper_idx = best_match_end + 1
+            ref_idx += 1
+            
+            if ref_idx % 50 == 0:
+                print(f"  Matched {ref_idx}/{len(reference_sentences)} sentences (similarity: {best_score:.2%})")
+        else:
+            # No good match found - try to advance
+            # If we've accumulated too many segments without a match, skip this reference sentence
+            if whisper_idx < len(whisper_segments):
+                # Keep the original segment and move forward
+                seg = whisper_segments[whisper_idx].copy()
+                corrected_segments.append(seg)
+                whisper_idx += 1
+                
+                # If we've skipped too many segments, also advance reference
+                if whisper_idx - best_match_start > 10:
+                    ref_idx += 1
+    
+    # Handle remaining whisper segments
+    while whisper_idx < len(whisper_segments):
+        seg = whisper_segments[whisper_idx].copy()
+        corrected_segments.append(seg)
+        whisper_idx += 1
+    
+    return corrected_segments
+
+
+def fix_punctuation_method2(text):
+    """Fix common punctuation issues in Vietnamese text."""
+    # Fix spacing around punctuation
+    text = re.sub(r'\s+([.,!?:;])', r'\1', text)  # Remove space before punctuation
+    text = re.sub(r'([.,!?:;])([^\s])', r'\1 \2', text)  # Add space after punctuation if missing
+    
+    # Fix quotes
+    text = re.sub(r'"\s*([^"]+)\s*"', r'"\1"', text)  # Remove spaces inside quotes
+    # Vietnamese quotes - using different approach to avoid quote issues
+    text = re.sub(r'["\u201C\u201D]\s*([^"\u201C\u201D]+)\s*["\u201C\u201D]', r'"\1"', text)
+    
+    # Fix multiple spaces
+    text = re.sub(r'\s+', ' ', text)
+    
+    return text.strip()
+
+
+def replace_whisper_transcriptions_method2(whisper_json_path, reference_text_path, output_json_path):
+    """
+    METHOD 2: Replace wrong whisper transcriptions with correct text from reference file.
+    
+    Args:
+        whisper_json_path: Path to whisper_segments.json
+        reference_text_path: Path to reference text file
+        output_json_path: Path to output corrected JSON file
+    """
+    # Load whisper segments
+    print(f"Loading whisper segments from {whisper_json_path}...")
+    with open(whisper_json_path, 'r', encoding='utf-8') as f:
+        whisper_segments = json.load(f)
+    
+    print(f"Loaded {len(whisper_segments)} whisper segments")
+    
+    # Load reference text
+    print(f"Loading reference text from {reference_text_path}...")
+    reference_sentences = load_text_file_method2(reference_text_path)
+    print(f"Loaded {len(reference_sentences)} reference sentences")
+    
+    # Align and replace
+    print("Aligning segments to reference text...")
+    corrected_segments = align_segments_to_text_method2(whisper_segments, reference_sentences)
+    
+    # Fix punctuation in all segments
+    print("Fixing punctuation...")
+    for seg in corrected_segments:
+        if seg['text']:
+            seg['text'] = fix_punctuation_method2(seg['text'])
+    
+    # Remove empty segments
+    corrected_segments = [seg for seg in corrected_segments if seg.get('text', '').strip()]
+    
+    # Renumber IDs sequentially
+    for i, seg in enumerate(corrected_segments):
+        seg['id'] = i
+    
+    # Save corrected segments
+    print(f"Saving corrected segments to {output_json_path}...")
+    with open(output_json_path, 'w', encoding='utf-8') as f:
+        json.dump(corrected_segments, f, ensure_ascii=False, indent=2)
+    
+    print(f"Done! Corrected {len(corrected_segments)} segments (from {len(whisper_segments)} original) saved to {output_json_path}")
+    print(f"Combined {len(whisper_segments) - len(corrected_segments)} segments into matching sentences")
 
 
 def save_results(sentence_timestamps, transcription, output_dir):
@@ -857,25 +1174,148 @@ def main():
     if len(sys.argv) < 2:
         print("Cách sử dụng / Usage:")
         print("  python align_vietnamese_audio.py <audio_file> [sentences_file] [output_dir] [model] [--use-detected] [--match-real]")
+        print("  python align_vietnamese_audio.py <audio_file> [output_dir] [model] --transcribe-only")
+        print("  python align_vietnamese_audio.py <whisper_dir> [sentences_file] [output_dir] --from-saved [--use-detected] [--match-real]")
+        print("  python align_vietnamese_audio.py <whisper_json> <reference_text> <output_json> --method-2")
         print("\nVí dụ / Example:")
+        print("  # Chỉ chạy Whisper và lưu kết quả / Only run Whisper and save results:")
+        print("  python align_vietnamese_audio.py audio.wav whisper_output base --transcribe-only")
+        print("  # Sử dụng kết quả đã lưu để align / Use saved results to align:")
+        print("  python align_vietnamese_audio.py whisper_output sentences.txt output --from-saved")
         print("  # Sử dụng transcript có sẵn / Use provided transcript:")
         print("  python align_vietnamese_audio.py audio.wav sentences.txt output base")
         print("  # Sử dụng câu được Whisper phát hiện / Use sentences detected by Whisper:")
         print("  python align_vietnamese_audio.py audio.wav --use-detected output base")
         print("  # Khớp với câu thật từ file văn bản / Match with real sentences from text file:")
         print("  python align_vietnamese_audio.py audio.wav sentences.txt output base --use-detected --match-real")
+        print("  # METHOD 2: Sửa transcript Whisper sai bằng văn bản đúng / Fix wrong Whisper transcriptions:")
+        print("  python align_vietnamese_audio.py whisper_segments.json reference.txt corrected_segments.json --method-2")
         print("\nMô hình / Models: tiny, base, small, medium, large")
         print("Khuyến nghị / Recommended: base hoặc small")
         sys.exit(1)
     
-    audio_file = sys.argv[1]
-    
-    # Check for flags
+    # Check for special flags
+    transcribe_only = "--transcribe-only" in sys.argv
+    from_saved = "--from-saved" in sys.argv
     use_detected = "--use-detected" in sys.argv
     match_real = "--match-real" in sys.argv
+    method_2 = "--method-2" in sys.argv
     
     # Parse arguments - remove flags first
-    args = [arg for arg in sys.argv[1:] if arg not in ["--use-detected", "--match-real"]]
+    args = [arg for arg in sys.argv[1:] if arg not in ["--use-detected", "--match-real", "--transcribe-only", "--from-saved", "--method-2"]]
+    
+    # Handle --method-2: Replace wrong whisper transcriptions with correct text
+    if method_2:
+        if len(args) < 3:
+            print("Lỗi: Cần 3 tham số cho --method-2: <whisper_json> <reference_text> <output_json>")
+            print("Error: Need 3 arguments for --method-2: <whisper_json> <reference_text> <output_json>")
+            sys.exit(1)
+        
+        whisper_json_path = args[0]
+        reference_text_path = args[1]
+        output_json_path = args[2]
+        
+        if not os.path.exists(whisper_json_path):
+            print(f"Lỗi: Không tìm thấy file JSON Whisper: {whisper_json_path}")
+            print(f"Error: Whisper JSON file not found: {whisper_json_path}")
+            sys.exit(1)
+        
+        if not os.path.exists(reference_text_path):
+            print(f"Lỗi: Không tìm thấy file văn bản tham chiếu: {reference_text_path}")
+            print(f"Error: Reference text file not found: {reference_text_path}")
+            sys.exit(1)
+        
+        print("Chế độ: METHOD 2 - Sửa transcript Whisper sai bằng văn bản đúng")
+        print("Mode: METHOD 2 - Fix wrong Whisper transcriptions with correct text")
+        replace_whisper_transcriptions_method2(whisper_json_path, reference_text_path, output_json_path)
+        return
+    
+    # Handle --transcribe-only: just run Whisper and save
+    if transcribe_only:
+        audio_file = args[0]
+        whisper_output_dir = args[1] if len(args) > 1 else None
+        model_name = args[2] if len(args) > 2 else "base"
+        
+        if not os.path.exists(audio_file):
+            print(f"Lỗi: Không tìm thấy file audio: {audio_file}")
+            print(f"Error: Audio file not found: {audio_file}")
+            sys.exit(1)
+        
+        print("Chế độ: Chỉ chạy Whisper và lưu kết quả")
+        print("Mode: Only run Whisper and save results")
+        run_whisper_transcription(audio_file, model_name, whisper_output_dir)
+        print("\n✓ Hoàn thành! Kết quả Whisper đã được lưu.")
+        print("✓ Complete! Whisper results have been saved.")
+        print("Bạn có thể sử dụng --from-saved để align sau.")
+        print("You can use --from-saved to align later.")
+        return
+    
+    # Handle --from-saved: load from saved Whisper results
+    if from_saved:
+        whisper_dir = args[0]
+        
+        if use_detected:
+            if match_real:
+                # Format: whisper_dir sentences_file [output_dir] --from-saved --use-detected --match-real
+                sentences_file = args[1] if len(args) > 1 else None
+                output_dir = args[2] if len(args) > 2 else "audio_segments"
+            else:
+                # Format: whisper_dir [output_dir] --from-saved --use-detected
+                sentences_file = None
+                output_dir = args[1] if len(args) > 1 else "audio_segments"
+        else:
+            # Format: whisper_dir sentences_file [output_dir] --from-saved
+            sentences_file = args[1] if len(args) > 1 else None
+            output_dir = args[2] if len(args) > 2 else "audio_segments"
+        
+        if not os.path.exists(whisper_dir):
+            print(f"Lỗi: Không tìm thấy thư mục Whisper: {whisper_dir}")
+            print(f"Error: Whisper directory not found: {whisper_dir}")
+            sys.exit(1)
+        
+        if match_real and not sentences_file:
+            print(f"Lỗi: Cần file văn bản khi sử dụng --match-real")
+            print(f"Error: Sentences file required when using --match-real")
+            sys.exit(1)
+        
+        if not use_detected and sentences_file and not os.path.exists(sentences_file):
+            print(f"Lỗi: Không tìm thấy file văn bản: {sentences_file}")
+            print(f"Error: Sentences file not found: {sentences_file}")
+            sys.exit(1)
+        
+        print("Chế độ: Sử dụng kết quả Whisper đã lưu")
+        print("Mode: Using saved Whisper results")
+        
+        # Align from saved results
+        sentence_timestamps, transcription = align_from_whisper_results(
+            whisper_dir, sentences_file, use_detected, match_real
+        )
+        
+        # Save results
+        save_results(sentence_timestamps, transcription, output_dir)
+        
+        # For cutting audio, we need the original audio file
+        # Try to find it from whisper_dir name or ask user
+        base_name = os.path.basename(whisper_dir).replace("_whisper_results", "")
+        possible_audio = os.path.join(os.path.dirname(whisper_dir), base_name)
+        # Try common extensions
+        audio_file = None
+        for ext in ['.mp3', '.wav', '.m4a', '.flac', '.ogg']:
+            test_path = possible_audio + ext
+            if os.path.exists(test_path):
+                audio_file = test_path
+                break
+        
+        if audio_file:
+            cut_audio_segments(audio_file, sentence_timestamps, output_dir)
+        else:
+            print("⚠ Không tìm thấy file audio gốc để cắt. Vui lòng cắt thủ công.")
+            print("⚠ Original audio file not found for cutting. Please cut manually.")
+        
+        return
+    
+    # Original workflow: run Whisper and align in one go
+    audio_file = args[0]
     
     if use_detected:
         if match_real:
