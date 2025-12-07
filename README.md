@@ -45,15 +45,17 @@ python -c "from main import count_sentences_in_data_files; count_sentences_in_da
 
 ### Audio Alignment
 
-Align Vietnamese audio with text and cut into sentence segments:
+#### Option 1: WhisperX (Recommended for Better Accuracy)
+
+WhisperX provides more accurate word-level timestamps than basic Whisper:
 
 ```bash
-python src/align_vietnamese_audio.py <audio_file> <sentences_file> [output_dir] [model]
+python src/align_vietnamese_audio_whisperx.py <audio_file> <sentences_file> [output_dir] [model] [device]
 ```
 
 Example:
 ```bash
-python src/align_vietnamese_audio.py audio.wav "data/Thiên thần nhỏ của tôi - Nguyễn Nhật Ánh.processed.txt" output_audio base
+python src/align_vietnamese_audio_whisperx.py audio.wav "data/Text-ThienThanNhoCuaToi/Track 1.txt" output_audio base cpu
 ```
 
 **Parameters:**
@@ -61,12 +63,29 @@ python src/align_vietnamese_audio.py audio.wav "data/Thiên thần nhỏ của t
 - `sentences_file`: Path to processed text file (one sentence per line)
 - `output_dir`: Output directory for audio segments (default: `audio_segments`)
 - `model`: Whisper model size - `tiny`, `base`, `small`, `medium`, `large` (default: `base`)
+- `device`: `cpu` or `cuda` (default: `cpu`)
 
-**Output:**
+#### Option 2: Basic Whisper (Faster but Less Accurate)
+
+```bash
+python src/align_vietnamese_audio.py <audio_file> <sentences_file> [output_dir] [model]
+```
+
+**Output (both methods):**
 - `sentence_00001.wav`, `sentence_00002.wav`, ... - Audio segments
 - `sentence_00001.txt`, `sentence_00002.txt`, ... - Corresponding text files
 - `timestamps.txt` - Timestamps for each sentence
-- `transcription.txt` - Full Whisper transcription
+- `transcription.txt` - Full transcription
+
+#### Option 3: Montreal Forced Aligner (MFA) - Most Accurate
+
+For the highest accuracy, consider using MFA (Montreal Forced Aligner):
+
+1. Install MFA: `conda install -c conda-forge montreal-forced-alignment`
+2. Download Vietnamese acoustic model: `mfa model download acoustic vietnamese_mfa`
+3. Use MFA command-line tool for alignment
+
+MFA provides the most accurate forced alignment but requires more setup.
 
 ## Project Structure
 
@@ -76,14 +95,18 @@ NLP-midterm/
 │   ├── *.txt                      # Original text files
 │   └── *.processed.txt            # Processed (one sentence per line)
 ├── src/
-│   ├── sentence_splitter.py       # Sentence splitting script
-│   ├── main.py                    # Main processing and counting
-│   └── align_vietnamese_audio.py  # Audio alignment script
+│   ├── sentence_splitter.py              # Sentence splitting script
+│   ├── main.py                           # Main processing and counting
+│   ├── align_vietnamese_audio.py         # Basic Whisper alignment (faster)
+│   └── align_vietnamese_audio_whisperx.py # WhisperX alignment (more accurate)
 └── requirements.txt               # Python dependencies
 ```
 
 ## Notes
 
 - All text files use UTF-8 encoding to support Vietnamese diacritics
-- The audio alignment uses Whisper with Vietnamese language support
-- For best results, use `base` or `small` Whisper models for Vietnamese
+- **For best accuracy**: Use WhisperX (`align_vietnamese_audio_whisperx.py`) - provides better word-level timestamps
+- **For fastest processing**: Use basic Whisper (`align_vietnamese_audio.py`)
+- **For highest accuracy**: Consider MFA (Montreal Forced Aligner) - requires separate installation
+- Recommended Whisper models: `base` or `small` for Vietnamese
+- Audio loading uses librosa (no ffmpeg required for MP3 files)
