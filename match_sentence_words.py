@@ -212,14 +212,65 @@ def match_sentences_using_words(
             print(f"    Similarity: {match_result['similarity']:.2%}, "
                   f"Words: {match_result['num_sentence_words']}→{match_result['num_matched_words']}")
         else:
-            results.append({
-                'line_number': idx + 1,
-                'sentence': sentence,
-                'sentence_words': sentence_words,
-                'matched_words': None,
-                'error': 'No match found'
-            })
-            print(f"  ✗ No match found")
+            # Initial match failed - try with relaxed parameters to avoid cascade
+            print(f"  ✗ No match found, trying relaxed search...")
+            
+            # Try with wider search window and lower threshold
+            # But keep it reasonably close since audio is sequential
+            relaxed_match = find_word_sequence(
+                sentence_words=sentence_words,
+                all_words=all_words,
+                start_word_idx=max(0, current_word_idx - 50),  # Look back less (sequential audio)
+                max_search_window=min(500, len(all_words) - max(0, current_word_idx - 50)),  # Smaller window
+                min_similarity=max(0.45, min_similarity - 0.15),  # Lower threshold but not too low
+                max_word_gap=max(8, max_word_gap + 3)  # More tolerance but not excessive
+            )
+            
+            if relaxed_match:
+                # Found with relaxed search
+                results.append({
+                    'line_number': idx + 1,
+                    'sentence': sentence,
+                    'sentence_words': sentence_words,
+                    **relaxed_match,
+                    'matched_text': ' '.join([w['word'] for w in relaxed_match['matched_words']]),
+                    'relaxed_search': True  # Flag that this used relaxed parameters
+                })
+                
+                # Check if we found it before current position (cascade detected)
+                if relaxed_match['start_word_idx'] < current_word_idx:
+                    print(f"  ⚠️  Found with relaxed search at words {relaxed_match['start_word_idx']}-{relaxed_match['end_word_idx']}")
+                    print(f"    ⚠️  WARNING: Found BEFORE current position! (cascade detected)")
+                    print(f"       Current: {current_word_idx}, Found at: {relaxed_match['start_word_idx']}")
+                    print(f"       This means previous search passed the actual location!")
+                
+                current_word_idx = relaxed_match['end_word_idx'] + 1
+                
+                duration = relaxed_match['end_time'] - relaxed_match['start_time']
+                print(f"  ✓ Found with relaxed search: Words [{relaxed_match['start_word_idx']}-{relaxed_match['end_word_idx']}]")
+                print(f"    Time: {relaxed_match['start_time']:.2f}s-{relaxed_match['end_time']:.2f}s ({duration:.2f}s)")
+                print(f"    Similarity: {relaxed_match['similarity']:.2%}")
+            else:
+                # Still no match - record as unmatched
+                # Since audiobooks read sequentially, we should NOT skip much
+                # Just advance by 1 word so next sentence can try from current position + 1
+                results.append({
+                    'line_number': idx + 1,
+                    'sentence': sentence,
+                    'sentence_words': sentence_words,
+                    'matched_words': None,
+                    'error': 'No match found'
+                })
+                print(f"  ✗ No match found even with relaxed search")
+                
+                # Very conservative skip: just 1 word forward
+                # This ensures we don't miss sequential sentences
+                # The next sentence will try from this position + 1
+                if current_word_idx < len(all_words) - 1:
+                    current_word_idx += 1
+                    print(f"    → Advancing by 1 word to {current_word_idx} (conservative skip for sequential audio)")
+                else:
+                    print(f"    → At end of words, cannot advance")
     
     return results
 
