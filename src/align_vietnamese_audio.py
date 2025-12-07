@@ -933,11 +933,24 @@ def similarity_score_method2(text1, text2):
 
 def load_text_file_method2(file_path):
     """Load text file and return list of sentences/lines."""
-    with open(file_path, 'r', encoding='utf-8') as f:
-        content = f.read()
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Reference text file not found: {file_path}")
+    except Exception as e:
+        raise RuntimeError(f"Error reading reference text file: {e}")
+    
+    if not content.strip():
+        print("Warning: Reference text file is empty")
+        return []
     
     # Split by newlines first, then by sentence-ending punctuation if needed
     lines = [line.strip() for line in content.split('\n') if line.strip()]
+    
+    if not lines:
+        print("Warning: No lines found in reference text file")
+        return []
     
     # Further split long lines by sentence punctuation
     sentences = []
@@ -946,13 +959,19 @@ def load_text_file_method2(file_path):
         parts = re.split(r'([.!?]+)', line)
         current = ""
         for i, part in enumerate(parts):
-            current += part
-            if part and part[0] in '.!?':
-                if current.strip():
-                    sentences.append(current.strip())
-                current = ""
+            if part:
+                current += part
+                if part[0] in '.!?':
+                    if current.strip():
+                        sentences.append(current.strip())
+                    current = ""
         if current.strip():
             sentences.append(current.strip())
+    
+    if not sentences:
+        print("Warning: No sentences found after processing reference text file")
+        # Fallback: return lines as-is
+        return lines
     
     return sentences
 
@@ -969,9 +988,18 @@ def align_segments_to_text_method2(whisper_segments, reference_sentences):
     Returns:
         List of corrected segments (may have fewer segments than input if combined)
     """
+    if not whisper_segments:
+        print("Warning: No whisper segments provided")
+        return []
+    
+    if not reference_sentences:
+        print("Warning: No reference sentences provided")
+        return []
+    
     corrected_segments = []
     ref_idx = 0
     whisper_idx = 0
+    segments_skipped_since_last_match = 0
     
     # Build normalized reference for matching
     normalized_ref = [normalize_text_for_matching_method2(sent) for sent in reference_sentences]
@@ -1008,9 +1036,12 @@ def align_segments_to_text_method2(whisper_segments, reference_sentences):
                         seg = whisper_segments[seg_idx]
                         segs.append(seg)
                         if accumulated_text:
-                            accumulated_text += " " + seg['text']
+                            accumulated_text += " " + seg.get('text', '').strip()
                         else:
-                            accumulated_text = seg['text']
+                            accumulated_text = seg.get('text', '').strip()
+                
+                if not accumulated_text:
+                    continue
                 
                 # Calculate similarity score
                 score = similarity_score_method2(accumulated_text, normalized_ref_sent)
@@ -1037,16 +1068,16 @@ def align_segments_to_text_method2(whisper_segments, reference_sentences):
                     accumulated_segments_list = segs
         
         # If we found a good match (threshold: 0.25 for fuzzy matching)
-        if best_score > 0.25:
+        if best_score > 0.25 and best_match_start < len(whisper_segments) and best_match_end < len(whisper_segments):
             # Combine segments into one
             first_seg = whisper_segments[best_match_start]
             last_seg = whisper_segments[best_match_end]
             
             # Create new combined segment
             combined_seg = {
-                'id': first_seg['id'],  # Keep first segment's ID
-                'start': first_seg['start'],  # Start time from first segment
-                'end': last_seg['end'],  # End time from last segment
+                'id': first_seg.get('id', best_match_start),  # Keep first segment's ID
+                'start': first_seg.get('start', 0),  # Start time from first segment
+                'end': last_seg.get('end', 0),  # End time from last segment
                 'text': ref_sentence  # Use correct reference text
             }
             
@@ -1055,6 +1086,7 @@ def align_segments_to_text_method2(whisper_segments, reference_sentences):
             # Move past all matched segments
             whisper_idx = best_match_end + 1
             ref_idx += 1
+            segments_skipped_since_last_match = 0
             
             if ref_idx % 50 == 0:
                 print(f"  Matched {ref_idx}/{len(reference_sentences)} sentences (similarity: {best_score:.2%})")
@@ -1066,16 +1098,26 @@ def align_segments_to_text_method2(whisper_segments, reference_sentences):
                 seg = whisper_segments[whisper_idx].copy()
                 corrected_segments.append(seg)
                 whisper_idx += 1
+                segments_skipped_since_last_match += 1
                 
-                # If we've skipped too many segments, also advance reference
-                if whisper_idx - best_match_start > 10:
+                # If we've skipped too many segments (10), also advance reference to avoid getting stuck
+                if segments_skipped_since_last_match > 10:
+                    print(f"  Warning: Skipping reference sentence {ref_idx + 1} (no match found after {segments_skipped_since_last_match} segments)")
                     ref_idx += 1
+                    segments_skipped_since_last_match = 0
+            else:
+                # No more whisper segments, advance reference
+                ref_idx += 1
     
     # Handle remaining whisper segments
     while whisper_idx < len(whisper_segments):
         seg = whisper_segments[whisper_idx].copy()
         corrected_segments.append(seg)
         whisper_idx += 1
+    
+    # Handle remaining reference sentences (if any)
+    if ref_idx < len(reference_sentences):
+        print(f"  Warning: {len(reference_sentences) - ref_idx} reference sentences were not matched")
     
     return corrected_segments
 
@@ -1108,28 +1150,58 @@ def replace_whisper_transcriptions_method2(whisper_json_path, reference_text_pat
     """
     # Load whisper segments
     print(f"Loading whisper segments from {whisper_json_path}...")
-    with open(whisper_json_path, 'r', encoding='utf-8') as f:
-        whisper_segments = json.load(f)
+    try:
+        with open(whisper_json_path, 'r', encoding='utf-8') as f:
+            whisper_segments = json.load(f)
+    except FileNotFoundError:
+        raise FileNotFoundError(f"Whisper JSON file not found: {whisper_json_path}")
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Invalid JSON in whisper segments file: {e}")
+    except Exception as e:
+        raise RuntimeError(f"Error loading whisper segments: {e}")
+    
+    if not isinstance(whisper_segments, list):
+        raise ValueError(f"Whisper segments must be a list, got {type(whisper_segments)}")
     
     print(f"Loaded {len(whisper_segments)} whisper segments")
+    
+    if len(whisper_segments) == 0:
+        raise ValueError("Whisper segments file is empty")
+    
+    # Validate segment structure
+    for i, seg in enumerate(whisper_segments[:5]):  # Check first 5
+        if not isinstance(seg, dict):
+            raise ValueError(f"Segment {i} is not a dictionary: {type(seg)}")
+        if 'text' not in seg:
+            raise ValueError(f"Segment {i} missing 'text' field")
     
     # Load reference text
     print(f"Loading reference text from {reference_text_path}...")
     reference_sentences = load_text_file_method2(reference_text_path)
     print(f"Loaded {len(reference_sentences)} reference sentences")
     
+    if len(reference_sentences) == 0:
+        raise ValueError("Reference text file contains no sentences")
+    
     # Align and replace
     print("Aligning segments to reference text...")
+    sys.stdout.flush()
     corrected_segments = align_segments_to_text_method2(whisper_segments, reference_sentences)
+    
+    if not corrected_segments:
+        raise RuntimeError("No corrected segments produced. Check input files and matching logic.")
     
     # Fix punctuation in all segments
     print("Fixing punctuation...")
     for seg in corrected_segments:
-        if seg['text']:
+        if seg.get('text'):
             seg['text'] = fix_punctuation_method2(seg['text'])
     
     # Remove empty segments
     corrected_segments = [seg for seg in corrected_segments if seg.get('text', '').strip()]
+    
+    if not corrected_segments:
+        raise RuntimeError("All segments were empty after processing")
     
     # Renumber IDs sequentially
     for i, seg in enumerate(corrected_segments):
@@ -1137,11 +1209,16 @@ def replace_whisper_transcriptions_method2(whisper_json_path, reference_text_pat
     
     # Save corrected segments
     print(f"Saving corrected segments to {output_json_path}...")
-    with open(output_json_path, 'w', encoding='utf-8') as f:
-        json.dump(corrected_segments, f, ensure_ascii=False, indent=2)
+    try:
+        os.makedirs(os.path.dirname(output_json_path) if os.path.dirname(output_json_path) else '.', exist_ok=True)
+        with open(output_json_path, 'w', encoding='utf-8') as f:
+            json.dump(corrected_segments, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        raise RuntimeError(f"Error saving corrected segments: {e}")
     
     print(f"Done! Corrected {len(corrected_segments)} segments (from {len(whisper_segments)} original) saved to {output_json_path}")
-    print(f"Combined {len(whisper_segments) - len(corrected_segments)} segments into matching sentences")
+    if len(whisper_segments) > len(corrected_segments):
+        print(f"Combined {len(whisper_segments) - len(corrected_segments)} segments into matching sentences")
 
 
 def save_results(sentence_timestamps, transcription, output_dir):
