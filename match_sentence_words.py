@@ -230,12 +230,25 @@ def match_sentences_using_words(
     results = []
     current_word_idx = 0
     previous_end_time = None
+    previous_matched = True  # Track if previous sentence matched; only allow big jumps after a miss
     
     for idx, sentence in enumerate(sentences):
         print(f"Matching sentence {idx + 1}/{len(sentences)}: {sentence[:60]}...")
         
         # Extract words from sentence
         sentence_words = extract_words_from_sentence(sentence)
+        
+        # Per-sentence tuning: short sentences need looser similarity but tighter jumps
+        is_short_sentence = len(sentence_words) <= 2
+        sentence_min_similarity = max(0.45, min_similarity - 0.1) if is_short_sentence else min_similarity
+        sentence_max_word_gap = max_word_gap + (1 if is_short_sentence else 0)
+        sentence_max_search_window = min(max_search_window, 200) if is_short_sentence else max_search_window
+        # Allow large jumps only after a miss; otherwise tighten for short sentences
+        allowed_word_jump = max_word_jump
+        allowed_time_jump = max_time_jump
+        if is_short_sentence and previous_matched:
+            allowed_word_jump = min(max_word_jump, 30)
+            allowed_time_jump = min(max_time_jump, 10.0)
         
         if not sentence_words:
             results.append({
@@ -252,11 +265,11 @@ def match_sentences_using_words(
             sentence_words=sentence_words,
             all_words=all_words,
             start_word_idx=current_word_idx,
-            max_search_window=max_search_window,
-            min_similarity=min_similarity,
-            max_word_gap=max_word_gap,
-            max_word_jump=max_word_jump if strict_sequential else None,
-            max_time_jump=max_time_jump if strict_sequential else None,
+            max_search_window=sentence_max_search_window,
+            min_similarity=sentence_min_similarity,
+            max_word_gap=sentence_max_word_gap,
+            max_word_jump=allowed_word_jump if strict_sequential else None,
+            max_time_jump=allowed_time_jump if strict_sequential else None,
             previous_end_time=previous_end_time
         )
         
@@ -284,6 +297,7 @@ def match_sentences_using_words(
             # Update search position
             current_word_idx = match_result['end_word_idx'] + 1
             previous_end_time = match_result['end_time']
+            previous_matched = True
             
             duration = match_result['end_time'] - match_result['start_time']
             print(f"  ✓ Words [{match_result['start_word_idx']}-{match_result['end_word_idx']}] "
@@ -299,17 +313,22 @@ def match_sentences_using_words(
             
             # Try with wider search window and lower threshold
             # But STILL enforce sequential constraints to prevent cascade
+            # Forward-only search to avoid grabbing the tail of the previous sentence
             relaxed_match = find_word_sequence(
                 sentence_words=sentence_words,
                 all_words=all_words,
-                start_word_idx=max(0, current_word_idx - 50),  # Look back a bit (sequential audio)
-                max_search_window=min(300, len(all_words) - max(0, current_word_idx - 50)),  # Smaller window
-                min_similarity=max(0.45, min_similarity - 0.15),  # Lower threshold but not too low
-                max_word_gap=max(8, max_word_gap + 3),  # More tolerance but not excessive
-                max_word_jump=max_word_jump if strict_sequential else None,  # STILL enforce word jump limit
-                max_time_jump=max_time_jump if strict_sequential else None,  # STILL enforce time jump limit
+                start_word_idx=current_word_idx,
+                max_search_window=min(300 if not is_short_sentence else 150, len(all_words) - current_word_idx),  # Smaller window
+                min_similarity=max(0.4, sentence_min_similarity - 0.1),  # Lower threshold for short sentences
+                max_word_gap=max(8, sentence_max_word_gap + 3),  # More tolerance but not excessive
+                max_word_jump=allowed_word_jump if strict_sequential else None,  # STILL enforce word jump limit
+                max_time_jump=allowed_time_jump if strict_sequential else None,  # STILL enforce time jump limit
                 previous_end_time=previous_end_time
             )
+
+            # Reject relaxed matches that start before our current cursor (prevents cascade)
+            if relaxed_match and relaxed_match['start_word_idx'] < current_word_idx:
+                relaxed_match = None
             
             if relaxed_match:
                 # Validate relaxed match is still sequential
@@ -343,6 +362,7 @@ def match_sentences_using_words(
                 
                 current_word_idx = relaxed_match['end_word_idx'] + 1
                 previous_end_time = relaxed_match['end_time']
+                previous_matched = True
                 
                 duration = relaxed_match['end_time'] - relaxed_match['start_time']
                 print(f"  ✓ Found with relaxed search: Words [{relaxed_match['start_word_idx']}-{relaxed_match['end_word_idx']}]")
@@ -370,6 +390,8 @@ def match_sentences_using_words(
                     print(f"    → Advancing by 1 word to {current_word_idx} (conservative skip for sequential audio)")
                 else:
                     print(f"    → At end of words, cannot advance")
+                
+                previous_matched = False
     
     return results
 

@@ -1,13 +1,6 @@
 # NLP-midterm
 
-Vietnamese audio alignment with Whisper: transcribe, align to text, and cut sentence-level audio.
-
-## Features
-
-- Sentence splitting helper to prepare one-sentence-per-line text files
-- Whisper transcription with saved segments/words
-- Alignment of sentences to word-level timestamps
-- Audio cutting to per-sentence WAVs and text
+Vietnamese audiobook alignment: Whisper transcription, word-level matching, and per-sentence audio cutting.
 
 ## Installation
 
@@ -15,54 +8,65 @@ Vietnamese audio alignment with Whisper: transcribe, align to text, and cut sent
 pip install -r requirements.txt
 ```
 
-## Usage
+## Workflow (word-level)
 
-### Sentence splitting (optional)
+1) Transcribe audio with Whisper and save word timestamps  
+2) Match sentences to words  
+3) Cut audio segments
+
+One-shot pipeline:
+```bash
+python run_word_pipeline.py <audio_file> <text_file> \
+  --whisper-root whisper_output_xaxoi \
+  --output-root output_xaxoi \
+  --model base \
+  --padding 0.3
+```
+
+Outputs:
+- `whisper_output_xaxoi/<book>/whisper_words.json` (and segments/transcription)
+- `output_xaxoi/<book>_word_level_matches.json`
+- `output_xaxoi/audio_segments_method_w/<book>/sentence_00001.wav` (+ .txt)
+
+### Running steps manually (optional)
+
+Transcribe only:
+```bash
+python src/align_vietnamese_audio.py transcribe <audio_file> --model base --output-dir whisper_output_xaxoi/<book>
+```
+
+Word matching:
+```bash
+python match_sentence_words.py <text_file> whisper_output_xaxoi/<book>/whisper_words.json output_xaxoi/<book>_word_level_matches.json
+```
+
+Cut from word matches:
+```bash
+python cut_audio_from_word_matches.py output_xaxoi/<book>_word_level_matches.json <audio_file> output_xaxoi/audio_segments_method_w/<book> 0.3
+```
+
+### Sentence splitting helper (optional)
 
 ```bash
 python src/sentence_splitter.py <input_file> [-o output_file]
 ```
 
-### Core workflows (`src/align_vietnamese_audio.py`)
-
-Transcribe only (saves Whisper outputs for reuse):
-```bash
-python src/align_vietnamese_audio.py transcribe <audio_file> --model base --output-dir whisper_output
-```
-
-Align from saved Whisper results:
-```bash
-python src/align_vietnamese_audio.py align whisper_output --sentences-file sentences.txt --output-dir audio_segments
-# or use detected Whisper segments instead of a text file
-python src/align_vietnamese_audio.py align whisper_output --use-detected --output-dir audio_segments
-```
-
-Full run: transcribe, align, and cut in one step:
-```bash
-python src/align_vietnamese_audio.py full <audio_file> sentences.txt --model base --output-dir audio_segments
-# use detected sentences (no text file)
-python src/align_vietnamese_audio.py full <audio_file> --use-detected --output-dir audio_segments
-```
-
-Outputs:
-- `sentence_00001.wav` / `sentence_00001.txt` etc.
-- `timestamps.txt` and `transcription.txt`
-- Saved Whisper results in `<audio>_whisper_results/`
-
 ## Project Structure
 
 ```
 NLP-midterm/
-├── data/                    # Text and audio samples
+├── data/                          # Text and audio samples
 ├── src/
-│   ├── sentence_splitter.py # Split text into sentences
-│   └── align_vietnamese_audio.py # Whisper transcription + alignment + cutting
+│   ├── sentence_splitter.py       # Split text into sentences
+│   └── align_vietnamese_audio.py  # Whisper transcribe + cut helpers
+├── match_sentence_words.py
+├── cut_audio_from_word_matches.py
+├── run_word_pipeline.py
 ├── README.md
-└── requirements.txt         # Python dependencies
+└── requirements.txt
 ```
 
 ## Notes
 
-- UTF-8 text files recommended for Vietnamese diacritics
-- Whisper models `base` or `small` are good starting points
-- Audio loading uses librosa and does not require ffmpeg for common formats
+- Recommended Whisper models: `base` or `small`
+- Audio loading uses librosa (no ffmpeg required for common formats)
