@@ -2690,7 +2690,979 @@
   {
     "id": 448,
     "start": 1177.88,
-    "end": 1179.5,
-    "text": "và niềm tin cho công nghiệp."
+    "end": 1180.96,
+    "text": "và nìm tin cho công nghiệp lắp đây khoảng trống tấm linh"
+  },
+  {
+    "id": 449,
+    "start": 1180.96,
+    "end": 1182.22,
+    "text": "cho đánh dân sở tại."
+  },
+  {
+    "id": 450,
+    "start": 1182.94,
+    "end": 1183.86,
+    "text": "Đầu ông đức phăng,"
+  },
+  {
+    "id": 451,
+    "start": 1184.24,
+    "end": 1184.84,
+    "text": "lăng lòng lóc,"
+  },
+  {
+    "id": 452,
+    "start": 1185.22,
+    "end": 1186.96,
+    "text": "vết chếm bằng giao sắc lẽm,"
+  },
+  {
+    "id": 453,
+    "start": 1187.3,
+    "end": 1187.74,
+    "text": "đức gọn,"
+  },
+  {
+    "id": 454,
+    "start": 1188.28,
+    "end": 1189.22,
+    "text": "mắc ông trở ngược,"
+  },
+  {
+    "id": 455,
+    "start": 1189.54,
+    "end": 1190.48,
+    "text": "ngước lên trời sân,"
+  },
+  {
+    "id": 456,
+    "start": 1190.9,
+    "end": 1192.78,
+    "text": "đầy nỗi ngay ngờ và hoang mang."
+  },
+  {
+    "id": 457,
+    "start": 1194.18,
+    "end": 1196.62,
+    "text": "Hải chúa chính là rô đa thân cận,"
+  },
+  {
+    "id": 458,
+    "start": 1197.0,
+    "end": 1198.16,
+    "text": "không nói ai cũng biết,"
+  },
+  {
+    "id": 459,
+    "start": 1198.62,
+    "end": 1200.6,
+    "text": "kể sắc hải cố vinh là sùng sử,"
+  },
+  {
+    "id": 460,
+    "start": 1201.04,
+    "end": 1202.42,
+    "text": "hùng khí là con giao wám,"
+  },
+  {
+    "id": 461,
+    "start": 1202.82,
+    "end": 1204.98,
+    "text": "con giao wám ngày nào mới nhìn thấy nó,"
+  },
+  {
+    "id": 462,
+    "start": 1204.98,
+    "end": 1207.5,
+    "text": "cố đã thấy rơn rưởng nơi gia cố,"
+  },
+  {
+    "id": 463,
+    "start": 1207.94,
+    "end": 1210.44,
+    "text": "con giao wám đó chếm đức đôi chồng bạc đáng,"
+  },
+  {
+    "id": 464,
+    "start": 1210.8,
+    "end": 1211.54,
+    "text": "đã chếm sã,"
+  },
+  {
+    "id": 465,
+    "start": 1211.78,
+    "end": 1213.54,
+    "text": "vài con gấu ngựa cỡ đại,"
+  },
+  {
+    "id": 466,
+    "start": 1213.92,
+    "end": 1215.54,
+    "text": "và cũng là công cố đê do à,"
+  },
+  {
+    "id": 467,
+    "start": 1215.84,
+    "end": 1218.02,
+    "text": "để chiếm đoạt thân sát thiếu nữ mong nỏ,"
+  },
+  {
+    "id": 468,
+    "start": 1218.54,
+    "end": 1220.16,
+    "text": "tên về sĩ nổi cơn gian,"
+  },
+  {
+    "id": 469,
+    "start": 1220.52,
+    "end": 1222.58,
+    "text": "theo bản năng bất tử cố hữu của y."
+  },
+  {
+    "id": 470,
+    "start": 1223.36,
+    "end": 1224.5,
+    "text": "Giết cố vinh sông,"
+  },
+  {
+    "id": 471,
+    "start": 1224.94,
+    "end": 1227.82,
+    "text": "sùng sử phức bỏ bộ quần áo đang mặt đảm máu"
+  },
+  {
+    "id": 472,
+    "start": 1227.82,
+    "end": 1229.02,
+    "text": "cố vinh xuống xuối,"
+  },
+  {
+    "id": 473,
+    "start": 1229.4,
+    "end": 1231.6,
+    "text": "phóng lên nối rèo gần đến phang xí băng,"
+  },
+  {
+    "id": 474,
+    "start": 1232.04,
+    "end": 1232.54,
+    "text": "lận trốn,"
+  },
+  {
+    "id": 475,
+    "start": 1233.04,
+    "end": 1234.46,
+    "text": "y bắt cả thiếu nữ nỏ,"
+  },
+  {
+    "id": 476,
+    "start": 1234.46,
+    "end": 1236.26,
+    "text": "cùng lên đó ăn ở vĩ y."
+  },
+  {
+    "id": 477,
+    "start": 1239.1200000000001,
+    "end": 1241.96,
+    "text": "Đồng bên phang ký ra lần truy nã hôn thủ,"
+  },
+  {
+    "id": 478,
+    "start": 1242.46,
+    "end": 1243.16,
+    "text": "một tháng qua,"
+  },
+  {
+    "id": 479,
+    "start": 1243.52,
+    "end": 1244.38,
+    "text": "sáu tháng qua,"
+  },
+  {
+    "id": 480,
+    "start": 1244.8,
+    "end": 1245.54,
+    "text": "một năm qua,"
+  },
+  {
+    "id": 481,
+    "start": 1245.92,
+    "end": 1246.88,
+    "text": "án nhạc dần,"
+  },
+  {
+    "id": 482,
+    "start": 1247.5,
+    "end": 1250.02,
+    "text": "sùng sử cùng con giao wám đi các bếp lửa,"
+  },
+  {
+    "id": 483,
+    "start": 1250.46,
+    "end": 1250.98,
+    "text": "y kể,"
+  },
+  {
+    "id": 484,
+    "start": 1251.54,
+    "end": 1252.16,
+    "text": "buồn cười,"
+  },
+  {
+    "id": 485,
+    "start": 1252.56,
+    "end": 1253.7,
+    "text": "có lần tuy hỏi ông,"
+  },
+  {
+    "id": 486,
+    "start": 1254.22,
+    "end": 1255.38,
+    "text": "có thích ăn nắm không,"
+  },
+  {
+    "id": 487,
+    "start": 1255.82,
+    "end": 1257.1,
+    "text": "ông ngẫn ra không hiểu,"
+  },
+  {
+    "id": 488,
+    "start": 1257.5,
+    "end": 1258.3,
+    "text": "tôi giải thích,"
+  },
+  {
+    "id": 489,
+    "start": 1258.72,
+    "end": 1260.26,
+    "text": "ông cười hiện trong bối râu,"
+  },
+  {
+    "id": 490,
+    "start": 1260.62,
+    "end": 1261.7,
+    "text": "ta biết yêu chứ,"
+  },
+  {
+    "id": 491,
+    "start": 1262.08,
+    "end": 1262.7,
+    "text": "nhưng cứ gì,"
+  },
+  {
+    "id": 492,
+    "start": 1262.96,
+    "end": 1264.44,
+    "text": "cứ phải yêu đàn bà mới lạc,"
+  },
+  {
+    "id": 493,
+    "start": 1264.44,
+    "end": 1264.68,
+    "text": "bà yêu,"
+  },
+  {
+    "id": 494,
+    "start": 1265.32,
+    "end": 1266.62,
+    "text": "lúc đó tôi nghĩ nhằm,"
+  },
+  {
+    "id": 495,
+    "start": 1266.98,
+    "end": 1268.14,
+    "text": "ông không phải giống được."
+  },
+  {
+    "id": 496,
+    "start": 1268.9,
+    "end": 1270.08,
+    "text": "Bật cửa ha ha xong,"
+  },
+  {
+    "id": 497,
+    "start": 1270.56,
+    "end": 1271.18,
+    "text": "sùng sửa tiếp."
+  },
+  {
+    "id": 498,
+    "start": 1271.88,
+    "end": 1273.08,
+    "text": "Này thì rõ rồi,"
+  },
+  {
+    "id": 499,
+    "start": 1273.5,
+    "end": 1274.92,
+    "text": "đại nhân và đại át thì"
+  },
+  {
+    "id": 500,
+    "start": 1274.92,
+    "end": 1276.4,
+    "text": "bè ngoài từa tửa nhau,"
+  },
+  {
+    "id": 501,
+    "start": 1276.84,
+    "end": 1277.88,
+    "text": "ông cũng là đàn ông,"
+  },
+  {
+    "id": 502,
+    "start": 1278.28,
+    "end": 1279.54,
+    "text": "mà còn đàn ông hơn tôi,"
+  },
+  {
+    "id": 503,
+    "start": 1279.94,
+    "end": 1280.38,
+    "text": "hơn ăn,"
+  },
+  {
+    "id": 504,
+    "start": 1280.9,
+    "end": 1283.54,
+    "text": "ông còn đi xem đàn bà con gái tắm trùn,"
+  },
+  {
+    "id": 505,
+    "start": 1283.9,
+    "end": 1285.22,
+    "text": "ông thèm họ hơn tôi"
+  },
+  {
+    "id": 506,
+    "start": 1285.22,
+    "end": 1287.02,
+    "text": "vì chưa được hưởng bao giờ,"
+  },
+  {
+    "id": 507,
+    "start": 1287.58,
+    "end": 1288.9,
+    "text": "ông làm Adam và Eva"
+  },
+  {
+    "id": 508,
+    "start": 1288.9,
+    "end": 1290.74,
+    "text": "với cô gái nội nhiều lần rồi."
+  },
+  {
+    "id": 509,
+    "start": 1293.9,
+    "end": 1294.74,
+    "text": "Ngừng lại,"
+  },
+  {
+    "id": 510,
+    "start": 1295.12,
+    "end": 1297.46,
+    "text": "tên về sĩ quê về sau nhỏ bọc,"
+  },
+  {
+    "id": 511,
+    "start": 1297.84,
+    "end": 1298.84,
+    "text": "ông ấy từng bảo."
+  },
+  {
+    "id": 512,
+    "start": 1299.5,
+    "end": 1301.12,
+    "text": "Nếu mắt bên hữu phản tội"
+  },
+  {
+    "id": 513,
+    "start": 1301.12,
+    "end": 1303.4,
+    "text": "thì hãy mốc ngay chi thể đó vức đi,"
+  },
+  {
+    "id": 514,
+    "start": 1303.94,
+    "end": 1304.42,
+    "text": "thế đấy,"
+  },
+  {
+    "id": 515,
+    "start": 1304.96,
+    "end": 1306.94,
+    "text": "mọi người hát hốc ngộm kinh sợ,"
+  },
+  {
+    "id": 516,
+    "start": 1307.44,
+    "end": 1307.94,
+    "text": "mây thay,"
+  },
+  {
+    "id": 517,
+    "start": 1308.36,
+    "end": 1310.88,
+    "text": "bò người dung tục đã lái câu chuyện vào quan hệ"
+  },
+  {
+    "id": 518,
+    "start": 1310.88,
+    "end": 1311.9,
+    "text": "đàn ông đàn bà,"
+  },
+  {
+    "id": 519,
+    "start": 1312.34,
+    "end": 1312.82,
+    "text": "họ bảo,"
+  },
+  {
+    "id": 520,
+    "start": 1313.26,
+    "end": 1314.6,
+    "text": "trời đã xinh ra cái vật gì,"
+  },
+  {
+    "id": 521,
+    "start": 1314.84,
+    "end": 1316.38,
+    "text": "thì phải sử dụng cái vật đó,"
+  },
+  {
+    "id": 522,
+    "start": 1316.78,
+    "end": 1318.14,
+    "text": "không dùng lập phí phạm"
+  },
+  {
+    "id": 523,
+    "start": 1318.14,
+    "end": 1319.78,
+    "text": "là có tội với tạo hoá,"
+  },
+  {
+    "id": 524,
+    "start": 1319.78,
+    "end": 1322.72,
+    "text": "mỗi người một câu như cuối góc vào bếp lửa,"
+  },
+  {
+    "id": 525,
+    "start": 1323.08,
+    "end": 1324.96,
+    "text": "chuyện này kéo dài xuất đêm thâu,"
+  },
+  {
+    "id": 526,
+    "start": 1325.44,
+    "end": 1326.88,
+    "text": "đầu câu chuyện là chuyện đạo,"
+  },
+  {
+    "id": 527,
+    "start": 1327.24,
+    "end": 1329.08,
+    "text": "cuối câu chuyện nhàng sang chuyện đời,"
+  },
+  {
+    "id": 528,
+    "start": 1329.46,
+    "end": 1331.72,
+    "text": "chuyện đàn bà sụp xôi mùi sắc dục."
+  },
+  {
+    "id": 529,
+    "start": 1332.18,
+    "end": 1333.14,
+    "text": "Cố vinh chết,"
+  },
+  {
+    "id": 530,
+    "start": 1333.54,
+    "end": 1334.8,
+    "text": "sự nghiệp mở mang nước chúa"
+  },
+  {
+    "id": 531,
+    "start": 1334.8,
+    "end": 1336.02,
+    "text": "ở vùng nuối nong này,"
+  },
+  {
+    "id": 532,
+    "start": 1336.42,
+    "end": 1337.4,
+    "text": "còn quá mới mẽ,"
+  },
+  {
+    "id": 533,
+    "start": 1337.66,
+    "end": 1338.6,
+    "text": "hoá ra danh dở."
+  },
+  {
+    "id": 534,
+    "start": 1339.08,
+    "end": 1341.28,
+    "text": "Ông cố mới được cử đến thay thế của vinh,"
+  },
+  {
+    "id": 535,
+    "start": 1341.66,
+    "end": 1343.22,
+    "text": "không có được cái đám mê của kẻ"
+  },
+  {
+    "id": 536,
+    "start": 1343.22,
+    "end": 1344.92,
+    "text": "tạo viễn nghiệp ở bức khởi đầu,"
+  },
+  {
+    "id": 537,
+    "start": 1345.36,
+    "end": 1345.9,
+    "text": "lại đã già,"
+  },
+  {
+    "id": 538,
+    "start": 1346.36,
+    "end": 1348.64,
+    "text": "và chưa dức khỏi ám ảnh của vụ sắc nhân,"
+  },
+  {
+    "id": 539,
+    "start": 1348.64,
+    "end": 1352.12,
+    "text": "nên sự đạo có như tục mất thời cơ hồi phục."
+  },
+  {
+    "id": 540,
+    "start": 1352.6,
+    "end": 1355.02,
+    "text": "Kinh bổng chỉ ít ngày lơ là quên,"
+  },
+  {
+    "id": 541,
+    "start": 1355.56,
+    "end": 1356.72,
+    "text": "nắm mục trên máy khổ,"
+  },
+  {
+    "id": 542,
+    "start": 1357.16,
+    "end": 1359.54,
+    "text": "một bày ông rừng không hiểu viện viên cho gì,"
+  },
+  {
+    "id": 543,
+    "start": 1360.04,
+    "end": 1360.94,
+    "text": "buồn lại làm tổ,"
+  },
+  {
+    "id": 544,
+    "start": 1361.06,
+    "end": 1362.64,
+    "text": "cái thánh giá trên gác trung,"
+  },
+  {
+    "id": 545,
+    "start": 1363.1,
+    "end": 1364.36,
+    "text": "người kế trung vì vậy,"
+  },
+  {
+    "id": 546,
+    "start": 1364.7,
+    "end": 1366.72,
+    "text": "đâm ra ngại lắm mỗi lần phải dật dây,"
+  },
+  {
+    "id": 547,
+    "start": 1367.08,
+    "end": 1368.46,
+    "text": "trung lên hồi trung báo."
+  },
+  {
+    "id": 548,
+    "start": 1370.76,
+    "end": 1371.8,
+    "text": "Cố vinh chết,"
+  },
+  {
+    "id": 549,
+    "start": 1372.12,
+    "end": 1373.7,
+    "text": "áo giác mới có đá tăng,"
+  },
+  {
+    "id": 550,
+    "start": 1374.08,
+    "end": 1375.7,
+    "text": "quản trong tâm linh dân chúng đây"
+  },
+  {
+    "id": 551,
+    "start": 1375.7,
+    "end": 1377.06,
+    "text": "chưa kịp lắp đây,"
+  },
+  {
+    "id": 552,
+    "start": 1377.56,
+    "end": 1379.66,
+    "text": "cả chết của cố có vẻ là ngẫu sử,"
+  },
+  {
+    "id": 553,
+    "start": 1380.0,
+    "end": 1381.92,
+    "text": "và không tương sướng với tầm cỡ ngại,"
+  },
+  {
+    "id": 554,
+    "start": 1382.36,
+    "end": 1385.18,
+    "text": "nhưng đó cũng là sự thật về số phần hảm hiêu"
+  },
+  {
+    "id": 555,
+    "start": 1385.18,
+    "end": 1387.94,
+    "text": "bì đá của các hệ thống tính ngưỡng xa lạ,"
+  },
+  {
+    "id": 556,
+    "start": 1388.32,
+    "end": 1389.74,
+    "text": "các hệ thống tính ngưỡng này,"
+  },
+  {
+    "id": 557,
+    "start": 1390.18,
+    "end": 1391.88,
+    "text": "đồ sổ thì có đồ sổ thật,"
+  },
+  {
+    "id": 558,
+    "start": 1392.22,
+    "end": 1394.32,
+    "text": "nhưng nhiều khi quá mê mải lý tuyết,"
+  },
+  {
+    "id": 559,
+    "start": 1394.62,
+    "end": 1397.02,
+    "text": "mải chúng quên mất kê lệ tự nhiên của con người."
+  },
+  {
+    "id": 560,
+    "start": 1397.54,
+    "end": 1398.38,
+    "text": "Cố vinh chết,"
+  },
+  {
+    "id": 561,
+    "start": 1398.76,
+    "end": 1400.2,
+    "text": "đời sống tâm linh bộ tọc mong"
+  },
+  {
+    "id": 562,
+    "start": 1400.2,
+    "end": 1400.82,
+    "text": "ở sứ này,"
+  },
+  {
+    "id": 563,
+    "start": 1401.22,
+    "end": 1403.28,
+    "text": "coi như lại trở về điểm xuất phát,"
+  },
+  {
+    "id": 564,
+    "start": 1403.28,
+    "end": 1405.88,
+    "text": "khác vọng có được một thủ lĩnh hùng mạnh,"
+  },
+  {
+    "id": 565,
+    "start": 1406.26,
+    "end": 1409.86,
+    "text": "một đớn minh quân trị vì bộ tọc mình vẫn còn huyên vẹn,"
+  },
+  {
+    "id": 566,
+    "start": 1410.26,
+    "end": 1412.84,
+    "text": "và đây là một chủ đề trong bán giáo hưởng cắt mạng,"
+  },
+  {
+    "id": 567,
+    "start": 1413.22,
+    "end": 1414.5,
+    "text": "mà vào lúc ông Cố chết,"
+  },
+  {
+    "id": 568,
+    "start": 1414.9,
+    "end": 1416.1,
+    "text": "tức năm 1944,"
+  },
+  {
+    "id": 569,
+    "start": 1417.08,
+    "end": 1419.58,
+    "text": "bộ tọc mong cùng với bộ tọc khác trong vùng"
+  },
+  {
+    "id": 570,
+    "start": 1419.58,
+    "end": 1421.24,
+    "text": "đang sửa sòạn diễn tấu."
+  },
+  {
+    "id": 571,
+    "start": 1423.66,
+    "end": 1424.68,
+    "text": "Cố vinh chết,"
+  },
+  {
+    "id": 572,
+    "start": 1424.98,
+    "end": 1426.62,
+    "text": "ông chết vì thành thật với mình,"
+  },
+  {
+    "id": 573,
+    "start": 1427.02,
+    "end": 1429.7,
+    "text": "chuyện phóng tình của ông mời nhạt dần theo thời gian,"
+  },
+  {
+    "id": 574,
+    "start": 1429.7,
+    "end": 1432.06,
+    "text": "tính này có lẽ chỉ còn tôi biết."
+  },
+  {
+    "id": 575,
+    "start": 1432.56,
+    "end": 1433.0,
+    "text": "Sùng sử,"
+  },
+  {
+    "id": 576,
+    "start": 1433.38,
+    "end": 1435.74,
+    "text": "người kể cho tôi nghe chuyện này cũng đảm mất."
+  },
+  {
+    "id": 577,
+    "start": 1436.2,
+    "end": 1438.14,
+    "text": "Tên Cố vinh còn ít người nhớ."
+  },
+  {
+    "id": 578,
+    "start": 1438.62,
+    "end": 1439.24,
+    "text": "Trong văn bản,"
+  },
+  {
+    "id": 579,
+    "start": 1439.6,
+    "end": 1441.2,
+    "text": "ông là nhà sã hội học trên,"
+  },
+  {
+    "id": 580,
+    "start": 1441.46,
+    "end": 1441.92,
+    "text": "Travina,"
+  },
+  {
+    "id": 581,
+    "start": 1442.48,
+    "end": 1443.26,
+    "text": "nhà sã hội học,"
+  },
+  {
+    "id": 582,
+    "start": 1443.6,
+    "end": 1444.84,
+    "text": "nhà bắt học Travina."
+  },
+  {
+    "id": 583,
+    "start": 1445.38,
+    "end": 1447.2,
+    "text": "Ông để lại nhiều công trình nghiên cứu"
+  },
+  {
+    "id": 584,
+    "start": 1447.2,
+    "end": 1448.94,
+    "text": "rất có giá trị về bộ tọc mong."
+  },
+  {
+    "id": 585,
+    "start": 1449.34,
+    "end": 1449.78,
+    "text": "Trong đó,"
+  },
+  {
+    "id": 586,
+    "start": 1450.2,
+    "end": 1452.16,
+    "text": "đặc biệt là bộ sách để lý nhân văn"
+  },
+  {
+    "id": 587,
+    "start": 1452.16,
+    "end": 1454.02,
+    "text": "và sã hội học dân tọc mong"
+  },
+  {
+    "id": 588,
+    "start": 1454.02,
+    "end": 1455.1,
+    "text": "dày hơn 100,"
+  },
+  {
+    "id": 589,
+    "start": 1455.86,
+    "end": 1458.18,
+    "text": "ông là tắt giả của các bản kinh tiến mong"
+  },
+  {
+    "id": 590,
+    "start": 1458.18,
+    "end": 1459.36,
+    "text": "dịch tử tiến Latin."
+  },
+  {
+    "id": 591,
+    "start": 1460.26,
+    "end": 1461.5,
+    "text": "Dễ người biết lái lịch ông,"
+  },
+  {
+    "id": 592,
+    "start": 1461.92,
+    "end": 1463.46,
+    "text": "đặc biệt là các củ bô láo,"
+  },
+  {
+    "id": 593,
+    "start": 1463.84,
+    "end": 1464.48,
+    "text": "nhân dịch này,"
+  },
+  {
+    "id": 594,
+    "start": 1464.92,
+    "end": 1466.12,
+    "text": "hẹn gặp nhau bàn luận"
+  },
+  {
+    "id": 595,
+    "start": 1466.12,
+    "end": 1468.14,
+    "text": "và đang dự định đúc tượng ông,"
+  },
+  {
+    "id": 596,
+    "start": 1468.54,
+    "end": 1469.76,
+    "text": "côi ông là bật dân nhân"
+  },
+  {
+    "id": 597,
+    "start": 1469.76,
+    "end": 1471.96,
+    "text": "vì đã có công đầu trong việc sáng tạo"
+  },
+  {
+    "id": 598,
+    "start": 1471.96,
+    "end": 1472.88,
+    "text": "ra thứ triển mong,"
+  },
+  {
+    "id": 599,
+    "start": 1473.32,
+    "end": 1475.04,
+    "text": "dự trên hệ thống mẫu tự Latin."
+  },
+  {
+    "id": 600,
+    "start": 1476.28,
+    "end": 1476.64,
+    "text": "Này,"
+  },
+  {
+    "id": 601,
+    "start": 1476.78,
+    "end": 1479.18,
+    "text": "thuy trữ này đang được phẫu biến trọng ngoài đời."
+  },
+  {
+    "id": 602,
+    "start": 1479.86,
+    "end": 1481.78,
+    "text": "Công hát hết rồi lại chưa hết."
+  },
+  {
+    "id": 603,
+    "start": 1482.54,
+    "end": 1483.74,
+    "text": "Hôm ngãi tàng rồi,"
+  },
+  {
+    "id": 604,
+    "start": 1484.02,
+    "end": 1485.06,
+    "text": "hôm ngãi lại sân."
+  },
+  {
+    "id": 605,
+    "start": 1485.06,
+    "end": 1487.6,
+    "text": "Đó là một trong các ngàn câu cá,"
+  },
+  {
+    "id": 606,
+    "start": 1488.0,
+    "end": 1490.82,
+    "text": "ông đã ghi lại được từ chính tay ông nghe ở thử ấy."
+  },
+  {
+    "id": 607,
+    "start": 1491.4,
+    "end": 1494.2,
+    "text": "Này người ta đỉnh chỗ khác ở bức tượng đại hình ông,"
+  },
+  {
+    "id": 608,
+    "start": 1494.6,
+    "end": 1497.46,
+    "text": "nay mai sẽ được tạo dừng ở phố huyện sắp á,"
+  },
+  {
+    "id": 609,
+    "start": 1497.86,
+    "end": 1499.96,
+    "text": "theo quyết định của hội đồng nhân dân huyện này."
+  },
+  {
+    "id": 610,
+    "start": 1500.64,
+    "end": 1504.2,
+    "text": "Năm 1996 đến năm 2011."
   }
 ]
