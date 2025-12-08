@@ -138,38 +138,209 @@ def align_sentences_to_words(sentences: List[str], words: List[dict]) -> List[Tu
             timestamps.append((start_t, end_t, sentence))
             word_idx = end_i
         else:
-            # fallback estimate
-            start_t = words[word_idx]["start"] if word_idx < len(words) else (timestamps[-1][1] if timestamps else 0.0)
-            dur = max(0.5, len(sentence.split()) / 3.5)
-            timestamps.append((start_t, start_t + dur, sentence))
-            word_idx = min(len(words), word_idx + len(sentence.split()))
-    return timestamps
-
-
-def align_from_whisper_results(whisper_dir: str, sentences_file: Optional[str], use_detected: bool) -> Tuple[List[Tuple[float, float, str]], str]:
-    segments, words, transcription = load_whisper_results(whisper_dir)
-
-    if use_detected or not sentences_file:
-        # Use Whisper segments as-is
-        return [(s, e, txt) for s, e, txt in segments if txt.strip()], transcription
-
-    with open(sentences_file, "r", encoding="utf-8") as f:
+            # No matching - use original flow (merge until periods, then split)
+            sentence_timestamps = []
+            current_merged_text = ""
+            current_merged_start = None
+            current_merged_end = None
+            current_merged_words = []
+            
+            for seg_start, seg_end, text in segments_list:
+                if not text:
+                    continue
+                
+                # Get words for this segment
+                segment_words = []
+                seg_start_time = seg_start
+                seg_end_time = seg_end
+                
+                # Find words that fall within this segment
+                for word_info in words_list:
+                    word_start = word_info.get("start", 0)
+                    word_end = word_info.get("end", 0)
+                    if word_start >= seg_start and word_end <= seg_end:
+                        segment_words.append(word_info)
+                
+                # Merge with current accumulated text
+                if current_merged_text:
+                    current_merged_text += " " + text
+                else:
+                    current_merged_text = text
+                    current_merged_start = seg_start
+                
+                current_merged_end = seg_end
+                current_merged_words.extend(segment_words)
+                
+                # Check if this merged text ends with a period
+                if current_merged_text.rstrip().endswith('.'):
+                    # Split at periods and add all sentences
+                    merged_segment = {
+                        "text": current_merged_text,
+                        "start": current_merged_start,
+                        "end": current_merged_end
+                    }
+                    split_sentences = split_segment_at_periods(merged_segment, current_merged_words)
+                    sentence_timestamps.extend(split_sentences)
+                    
+                    # Reset for next merge
+                    current_merged_text = ""
+                    current_merged_start = None
+                    current_merged_end = None
+                    current_merged_words = []
+            
+            # If there's remaining text without a period at the end, add it as one sentence
+            if current_merged_text:
+                sentence_timestamps.append((current_merged_start, current_merged_end, current_merged_text))
+            
+            print(f"Đã phát hiện {len(sentence_timestamps)} câu trong audio (chỉ cắt tại dấu chấm)")
+            print(f"Detected {len(sentence_timestamps)} sentences in audio (only cut at periods)")
+        
+        return sentence_timestamps, full_transcription
+    
+    # Otherwise, use provided transcript and align
+    if sentences_file is None:
+        raise ValueError("sentences_file must be provided when use_detected_sentences=False")
+    
+    # Read sentences
+    with open(sentences_file, 'r', encoding='utf-8') as f:
         sentences = [line.strip() for line in f if line.strip()]
+    
+    print(f"Đã nhận diện {len(words_list)} từ trong audio")
+    print(f"Recognized {len(words_list)} words in audio")
+    print(f"Đang căn chỉnh {len(sentences)} câu với audio...")
+    print(f"Aligning {len(sentences)} sentences with audio...")
+    
+    # Align sentences
+    sentence_timestamps = []
+    word_idx = 0
+    failed_alignments = []
+    
+    for i, sentence in enumerate(sentences):
+        if word_idx >= len(words_list):
+            # Estimate remaining sentences
+            if sentence_timestamps:
+                last_end = sentence_timestamps[-1][1]
+                estimated_duration = len(sentence.split()) / 3.5  # ~3.5 words/sec
+                sentence_timestamps.append((last_end, last_end + estimated_duration, sentence))
+            continue
+        
+        # Find sentence in transcription
+        start_idx, end_idx, confidence = find_sentence_in_transcription(
+            sentence, words_list, word_idx
+        )
+        
+        if start_idx is not None and end_idx is not None:
+            start_time = words_list[start_idx]['start']
+            end_time = words_list[end_idx - 1]['end'] if end_idx > 0 else words_list[start_idx]['end']
+            sentence_timestamps.append((start_time, end_time, sentence))
+            word_idx = end_idx
+            
+            if (i + 1) % 100 == 0:
+                print(f"  Đã căn chỉnh {i+1}/{len(sentences)} câu (độ tin cậy: {confidence:.2%})")
+                print(f"  Aligned {i+1}/{len(sentences)} sentences (confidence: {confidence:.2%})")
+        else:
+            # Fallback: estimate based on previous alignment
+            if sentence_timestamps:
+                last_end = sentence_timestamps[-1][1]
+                estimated_duration = len(sentence.split()) / 3.5
+                sentence_timestamps.append((last_end, last_end + estimated_duration, sentence))
+                failed_alignments.append(i)
+            else:
+                # First sentence - use first word timestamp
+                start_time = words_list[word_idx]['start'] if words_list else 0
+                estimated_duration = len(sentence.split()) / 3.5
+                sentence_timestamps.append((start_time, start_time + estimated_duration, sentence))
+                failed_alignments.append(i)
+            
+            word_idx += len(sentence.split())  # Skip some words
+    
+    if failed_alignments:
+        print(f"\nCảnh báo: {len(failed_alignments)} câu không thể căn chỉnh chính xác (đã ước tính)")
+        print(f"Warning: {len(failed_alignments)} sentences could not be aligned (estimated)")
+    
+    return sentence_timestamps, full_transcription
 
-    timestamps = align_sentences_to_words(sentences, words)
-    return timestamps, transcription
+
+def align_vietnamese_audio_improved(audio_file, sentences_file=None, model_name="base", use_detected_sentences=False, match_with_real_sentences=False):
+    """
+    Improved alignment for Vietnamese audio and text.
+    This function runs Whisper and then performs alignment.
+    For better performance, use run_whisper_transcription() and align_from_whisper_results() separately.
+    
+    Args:
+        audio_file: Path to audio file
+        sentences_file: Path to file with Vietnamese sentences (one per line). Optional if use_detected_sentences=True.
+        model_name: Whisper model to use
+        use_detected_sentences: If True, use sentences detected by Whisper instead of provided transcript
+        match_with_real_sentences: If True, match Whisper segments with real sentences from file
+    
+    Returns:
+        Tuple of (sentence_timestamps, full_transcription)
+    """
+    # Run Whisper transcription and save results
+    base_name = os.path.splitext(os.path.basename(audio_file))[0]
+    whisper_output_dir = os.path.join(os.path.dirname(audio_file), f"{base_name}_whisper_results")
+    
+    _, _, _, _ = run_whisper_transcription(audio_file, model_name, whisper_output_dir)
+    
+    # Perform alignment from saved results
+    return align_from_whisper_results(whisper_output_dir, sentences_file, use_detected_sentences, match_with_real_sentences)
 
 
-def cut_audio_segments(
-    audio_file: str,
-    sentence_timestamps: List[Tuple[float, float, str]],
-    output_dir: str,
-    padding: float = 0.3,
-    add_padding: Optional[float] = None,  # backward compatibility for older callers
-) -> None:
-    # accept legacy keyword add_padding if provided
-    if add_padding is not None:
-        padding = add_padding
+def cut_audio_segments(audio_file, sentence_timestamps, output_dir, add_padding=0.3):
+    """
+    Cut audio into segments with padding.
+    Uses librosa to avoid ffmpeg issues.
+    
+    Args:
+        audio_file: Path to input audio file
+        sentence_timestamps: List of (start, end, sentence) tuples
+        output_dir: Directory to save segments
+        add_padding: Seconds to add before/after each segment
+    """
+    print(f"Đang tải audio: {audio_file}...")
+    print(f"Loading audio: {audio_file}...")
+    sys.stdout.flush()
+    
+    # Try librosa first (works without ffmpeg)
+    audio_array = None
+    sample_rate = None
+    
+    if HAS_LIBROSA:
+        try:
+            audio_array, sample_rate = librosa.load(audio_file, sr=None, mono=True)
+            print(f"✓ Đã tải audio bằng librosa: {len(audio_array)} samples @ {sample_rate}Hz")
+            print(f"✓ Successfully loaded audio with librosa: {len(audio_array)} samples @ {sample_rate}Hz")
+        except Exception as e:
+            if HAS_PYDUB:
+                print(f"⚠ Librosa failed: {e}, trying pydub...")
+                print(f"⚠ Librosa failed: {e}, trying pydub...")
+            else:
+                print(f"⚠ Librosa failed: {e}")
+                print(f"⚠ Librosa failed: {e}")
+            audio_array = None
+    
+    # Fallback to pydub if librosa failed
+    if audio_array is None:
+        if HAS_PYDUB:
+            try:
+                audio_seg = AudioSegment.from_file(audio_file)
+                # Convert pydub AudioSegment to numpy array for consistent processing
+                audio_array = np.array(audio_seg.get_array_of_samples(), dtype=np.float32)
+                if audio_seg.channels == 2:
+                    # Convert stereo to mono
+                    audio_array = audio_array.reshape((-1, 2)).mean(axis=1)
+                sample_rate = audio_seg.frame_rate
+                # Normalize to [-1, 1] range
+                if audio_array.max() > 1.0:
+                    audio_array = audio_array / (2 ** (audio_seg.sample_width * 8 - 1))
+            except Exception as e:
+                print(f"❌ Không thể tải audio: {e}")
+                print(f"❌ Cannot load audio: {e}")
+                raise RuntimeError(f"Failed to load audio file. Both librosa and pydub failed. Error: {e}")
+        else:
+            raise RuntimeError(f"Failed to load audio file. librosa failed and pydub is not available.")
+    
     os.makedirs(output_dir, exist_ok=True)
     audio, sr = librosa.load(audio_file, sr=None, mono=True)
 
