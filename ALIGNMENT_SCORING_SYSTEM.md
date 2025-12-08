@@ -84,8 +84,7 @@ match_sentences_using_words(
 ## Updated Files
 
 - `match_sentence_words.py` - Core scoring logic
-- `process_all_xaxoi_files.py` - Main processing pipeline
-- `test_method_w.py` - Test script
+- `process_all_xaxoi_files.py` and `process_all_xaxoi_batch.py` - Processing pipeline using scoring-based matching
 
 
 
