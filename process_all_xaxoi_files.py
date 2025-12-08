@@ -149,7 +149,10 @@ def run_method_w_matching(text_file, whisper_words_file, output_json):
             words_file_path=str(whisper_words_file),
             min_similarity=0.6,
             max_word_gap=5,
-            max_search_window=500
+            max_search_window=500,
+            strict_sequential=True,  # Enforce strict sequential matching to prevent cascade errors
+            max_word_jump=50,  # Maximum 50 word jump
+            max_time_jump=5.0  # Maximum 5 second jump
         )
         
         # Save results
