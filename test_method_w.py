@@ -52,9 +52,9 @@ results = match_sentences_using_words(
     min_similarity=0.6,
     max_word_gap=5,
     max_search_window=500,
-    strict_sequential=True,  # Enforce strict sequential matching to prevent cascade errors
-    max_word_jump=50,  # Maximum 50 word jump
-    max_time_jump=5.0  # Maximum 5 second jump
+    strict_sequential=True,  # Use scoring-based sequential matching
+    max_word_jump=100,  # Hard limit to reject truly wrong matches
+    max_time_jump=30.0  # Hard limit to reject truly wrong matches
 )
 
 # Print summary

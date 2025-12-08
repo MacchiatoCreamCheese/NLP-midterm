@@ -108,31 +108,63 @@ def find_word_sequence(
             # Calculate similarity
             similarity = calculate_word_sequence_similarity(sentence_words, audio_words)
             
-            if similarity >= min_similarity and similarity > best_similarity:
+            if similarity >= min_similarity:
                 matched_words = all_words[start_idx:end_idx]
                 match_start_time = matched_words[0]['start']
+                word_jump = start_idx - start_word_idx
+                word_diff = abs(num_sentence_words - length)
                 
-                # STRICT SEQUENTIAL: Reject matches with large time jumps
+                # Calculate composite score that prefers:
+                # 1. High similarity (0-1)
+                # 2. Exact word count match (word_diff = 0)
+                # 3. Close proximity (small word_jump)
+                # 4. Close time jump (if available)
+                
+                # Base score: similarity (0-1)
+                score = similarity
+                
+                # Bonus for exact word count match (up to +0.3)
+                word_count_bonus = max(0, 0.3 - (word_diff * 0.05))
+                score += word_count_bonus
+                
+                # Penalty for word position jump (more than 10 words away)
+                if word_jump > 10:
+                    jump_penalty = min(0.5, (word_jump - 10) * 0.01)  # 0.01 per word over 10
+                    score -= jump_penalty
+                
+                # Penalty for time jump (if we have previous time)
+                if previous_end_time is not None:
+                    time_jump = match_start_time - previous_end_time
+                    # Allow reasonable gaps (pauses, music, etc) but penalize large jumps
+                    if time_jump > 3.0:  # More than 3 seconds
+                        time_penalty = min(0.3, (time_jump - 3.0) * 0.02)  # 0.02 per second over 3s
+                        score -= time_penalty
+                
+                # HARD LIMIT: Reject matches with extreme jumps (likely wrong)
+                if max_word_jump is not None and word_jump > max_word_jump:
+                    continue
                 if max_time_jump is not None and previous_end_time is not None:
                     time_jump = match_start_time - previous_end_time
                     if time_jump > max_time_jump:
-                        # This match jumps too far ahead in time, skip it
                         continue
                 
-                best_similarity = similarity
-                
-                best_match = {
-                    'matched_words': matched_words,
-                    'word_indices': list(range(start_idx, end_idx)),
-                    'start_word_idx': start_idx,
-                    'end_word_idx': end_idx - 1,
-                    'start_time': match_start_time,
-                    'end_time': matched_words[-1]['end'],
-                    'similarity': similarity,
-                    'num_sentence_words': num_sentence_words,
-                    'num_matched_words': length,
-                    'word_diff': abs(num_sentence_words - length)
-                }
+                # Update best match if this score is better
+                if score > best_similarity:
+                    best_similarity = score
+                    
+                    best_match = {
+                        'matched_words': matched_words,
+                        'word_indices': list(range(start_idx, end_idx)),
+                        'start_word_idx': start_idx,
+                        'end_word_idx': end_idx - 1,
+                        'start_time': match_start_time,
+                        'end_time': matched_words[-1]['end'],
+                        'similarity': similarity,
+                        'score': score,
+                        'num_sentence_words': num_sentence_words,
+                        'num_matched_words': length,
+                        'word_diff': word_diff
+                    }
         
         # Early exit if we found a very good match close to start
         if best_similarity > 0.95 and best_match:
@@ -151,21 +183,21 @@ def match_sentences_using_words(
     max_word_gap: int = 5,
     max_search_window: int = 500,
     strict_sequential: bool = True,
-    max_word_jump: int = 50,
-    max_time_jump: float = 5.0
+    max_word_jump: int = 100,
+    max_time_jump: float = 30.0
 ) -> List[Dict]:
     """
     Match sentences from text file using word-level timestamps.
     
-    Args:
+        Args:
         text_file_path: Path to text file with sentences
         words_file_path: Path to whisper_words.json
         min_similarity: Minimum similarity threshold (0.6 = 60%)
         max_word_gap: Allow this many extra/missing words
         max_search_window: Search this many words ahead
         strict_sequential: Enforce strict sequential matching (prevent large jumps)
-        max_word_jump: Maximum word index jump allowed (default: 50 words)
-        max_time_jump: Maximum time jump allowed in seconds (default: 5.0s)
+        max_word_jump: Maximum word index jump allowed (default: 100 words, hard limit)
+        max_time_jump: Maximum time jump allowed in seconds (default: 30.0s, hard limit)
     
     Returns:
         List of match results for each sentence
@@ -236,7 +268,7 @@ def match_sentences_using_words(
                 time_jump = match_result['start_time'] - previous_end_time
             
             # Warn if jump is large (even if within limits)
-            if word_jump > 50:
+            if word_jump > 30:
                 print(f"  ⚠️  Large word jump: {word_jump} words (from {current_word_idx} to {match_result['start_word_idx']})")
             if time_jump is not None and time_jump > 10.0:
                 print(f"  ⚠️  Large time jump: {time_jump:.2f}s (from {previous_end_time:.2f}s to {match_result['start_time']:.2f}s)")
@@ -257,8 +289,10 @@ def match_sentences_using_words(
             print(f"  ✓ Words [{match_result['start_word_idx']}-{match_result['end_word_idx']}] "
                   f"Time: {match_result['start_time']:.2f}s-{match_result['end_time']:.2f}s "
                   f"({duration:.2f}s)")
+            score_info = f"Score: {match_result.get('score', match_result['similarity']):.3f}" if 'score' in match_result else ""
             print(f"    Similarity: {match_result['similarity']:.2%}, "
-                  f"Words: {match_result['num_sentence_words']}→{match_result['num_matched_words']}")
+                  f"Words: {match_result['num_sentence_words']}→{match_result['num_matched_words']} "
+                  f"({score_info})")
         else:
             # Initial match failed - try with relaxed parameters but still enforce sequential constraints
             print(f"  ✗ No match found, trying relaxed search (still sequential)...")
@@ -285,7 +319,7 @@ def match_sentences_using_words(
                     time_jump = relaxed_match['start_time'] - previous_end_time
                 
                 # Warn if jump is large
-                if word_jump > 50:
+                if word_jump > 30:
                     print(f"  ⚠️  Large word jump in relaxed search: {word_jump} words")
                 if time_jump is not None and time_jump > 10.0:
                     print(f"  ⚠️  Large time jump in relaxed search: {time_jump:.2f}s")
@@ -313,7 +347,8 @@ def match_sentences_using_words(
                 duration = relaxed_match['end_time'] - relaxed_match['start_time']
                 print(f"  ✓ Found with relaxed search: Words [{relaxed_match['start_word_idx']}-{relaxed_match['end_word_idx']}]")
                 print(f"    Time: {relaxed_match['start_time']:.2f}s-{relaxed_match['end_time']:.2f}s ({duration:.2f}s)")
-                print(f"    Similarity: {relaxed_match['similarity']:.2%}")
+                score_info = f", Score: {relaxed_match.get('score', relaxed_match['similarity']):.3f}" if 'score' in relaxed_match else ""
+                print(f"    Similarity: {relaxed_match['similarity']:.2%}{score_info}")
             else:
                 # Still no match - record as unmatched
                 # Since audiobooks read sequentially, we should NOT skip much
@@ -409,16 +444,16 @@ if __name__ == "__main__":
     print("-" * 80)
     print()
     
-    # Perform matching with strict sequential constraints
+    # Perform matching with scoring-based sequential matching
     results = match_sentences_using_words(
         text_file_path=text_file,
         words_file_path=words_file,
         min_similarity=0.6,
         max_word_gap=5,
         max_search_window=500,
-        strict_sequential=True,  # Enforce strict sequential matching
-        max_word_jump=50,  # Maximum 50 word jump
-        max_time_jump=5.0  # Maximum 5 second jump
+        strict_sequential=True,  # Enforce sequential matching with scoring
+        max_word_jump=100,  # Hard limit to reject truly wrong matches
+        max_time_jump=30.0  # Hard limit to reject truly wrong matches
     )
     
     # Save results
