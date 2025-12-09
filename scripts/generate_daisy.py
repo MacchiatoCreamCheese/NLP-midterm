@@ -13,8 +13,8 @@ default:
 
 If sentence-level WAV segments already exist at
 `output_xaxoi/audio_segments_method_w/<chapter>/sentence_00001.wav`, the
-generator will prefer those (unless `--no-sentence-audio` is passed), so SMIL
-plays the pre-cut clips instead of slicing the chapter MP3s by timecodes.
+generator can use them when `--use-sentence-audio` is passed, so SMIL plays the
+pre-cut clips instead of slicing the chapter MP3s by timecodes.
 
 Usage (default metadata prefilled from user-provided values):
   python scripts/generate_daisy.py
@@ -122,6 +122,15 @@ def humanize_chapter_title(stem: str) -> str:
 def format_npt(value: float) -> str:
     """Format a float as SMIL npt time with millisecond precision."""
     return f"npt={value:.3f}s"
+
+
+def format_elapsed(seconds: float) -> str:
+    """Format seconds as HH:MM:SS (rounded to nearest second)."""
+    total = int(round(seconds))
+    h = total // 3600
+    m = (total % 3600) // 60
+    s = total % 60
+    return f"{h:02d}:{m:02d}:{s:02d}"
 
 
 def audio_media_type(path: Path) -> str:
@@ -294,10 +303,18 @@ def build_smil(chapter: Chapter, main_href: str, out_path: Path) -> None:
 
     head = ET.SubElement(root, f"{{{SMIL_NS}}}head")
     ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "dc:format", "content": "Daisy 3"})
-    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "ncc:totalElapsedTime", "content": ""})
+
+    # Approximate duration from the last clip end.
+    chapter_duration = max((s.end or 0.0) for s in chapter.sentences)
+    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "ncc:totalElapsedTime", "content": format_elapsed(chapter_duration)})
 
     body = ET.SubElement(root, f"{{{SMIL_NS}}}body")
-    seq = ET.SubElement(body, f"{{{SMIL_NS}}}seq", {"id": f"seq_{chapter.cid}"})
+    seq_attrs = {
+        "id": f"seq_{chapter.cid}",
+        # Help readers map this SMIL to the DTBook anchor for the chapter.
+        "textref": f"{Path('..') / main_href}#{chapter.cid}",
+    }
+    seq = ET.SubElement(body, f"{{{SMIL_NS}}}seq", seq_attrs)
 
     # SMIL files live in smil/, so hop one level up to reach main.xml and media/.
     main_ref = (Path("..") / main_href).as_posix()
@@ -418,6 +435,10 @@ def build_ncx(
     root = ET.Element(f"{{{NCX_NS}}}ncx", {"version": "2005-1"})
     head = ET.SubElement(root, f"{{{NCX_NS}}}head")
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:uid", "content": meta.identifier})
+    # Required DAISY 3 metadata for audio playback.
+    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:multimediaType", "content": "audioFullText"})
+    total_elapsed = sum(max((s.end or 0.0) for s in chapter.sentences) for chapter in chapters)
+    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:totalElapsedTime", "content": format_elapsed(total_elapsed)})
     # Always reflect sentence-level depth when requested so readers don't collapse the tree.
     ET.SubElement(
         head,
@@ -438,9 +459,8 @@ def build_ncx(
         nav_label = ET.SubElement(nav_point, f"{{{NCX_NS}}}navLabel")
         ET.SubElement(nav_label, f"{{{NCX_NS}}}text").text = chapter.title
 
-        # Link nav directly to DTBook anchors so reading systems (e.g., Thorium) render text
-        # instead of opening SMIL fragments that can appear blank.
-        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{chapter.cid}"})
+        # Point nav to SMIL so playback starts with audio while text links live in SMIL <text> refs.
+        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": f"smil/{chapter.smil_name}#seq_{chapter.cid}"})
 
         if include_sentence_nav:
             for sentence in chapter.sentences:
@@ -448,7 +468,7 @@ def build_ncx(
                 play_order += 1
                 child_label = ET.SubElement(child_np, f"{{{NCX_NS}}}navLabel")
                 ET.SubElement(child_label, f"{{{NCX_NS}}}text").text = sentence.text
-                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{sentence.sid}"})
+                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"smil/{chapter.smil_name}#par_{sentence.sid}"})
 
     tree = ET.ElementTree(root)
     indent(tree)
@@ -543,7 +563,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--cover", default=Path("data/xa-xoi-thon-ngua-gia-rs.jpg"), type=Path, help="Cover image (JPEG).")
     parser.add_argument("--out-dir", default=Path("build/daisy"), type=Path, help="Output directory for DAISY package.")
     parser.add_argument("--no-copy-media", action="store_true", help="Do not copy audio/cover into the output; reference existing paths.")
-    parser.add_argument("--no-sentence-audio", action="store_true", help="Ignore per-sentence WAV segments and use chapter-level audio timings.")
+    parser.add_argument("--use-sentence-audio", action="store_true", help="Use per-sentence WAV segments; otherwise use chapter-level audio timings.")
     parser.add_argument("--include-sentence-nav", action="store_true", help="Add navPoints for every sentence in navigation.ncx.")
 
     parser.add_argument("--title", default="Xa Xôi Thôn Ngựa Già")
@@ -577,11 +597,11 @@ def main(argv: Optional[List[str]] = None) -> int:
         ensure_dir(media_dir)
 
     use_sentence_audio = (
-        not args.no_sentence_audio
+        args.use_sentence_audio
         and args.sentence_audio_dir is not None
         and args.sentence_audio_dir.exists()
     )
-    if args.sentence_audio_dir and not args.sentence_audio_dir.exists() and not args.no_sentence_audio:
+    if args.use_sentence_audio and args.sentence_audio_dir and not args.sentence_audio_dir.exists():
         print(f"Sentence audio dir not found: {args.sentence_audio_dir} (falling back to chapter audio)", file=sys.stderr)
 
     meta = Metadata(
