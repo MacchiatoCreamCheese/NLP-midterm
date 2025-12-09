@@ -241,12 +241,15 @@ def build_dtbook(meta: Metadata, chapters: List[Chapter], out_path: Path) -> Non
     ):
         ET.SubElement(head, f"{{{DTBOOK_NS}}}meta", {"name": name, "content": value})
 
-    doctitle = ET.SubElement(head, f"{{{DTBOOK_NS}}}doctitle")
-    ET.SubElement(doctitle, f"{{{DTBOOK_NS}}}text").text = meta.title
-    docauthor = ET.SubElement(head, f"{{{DTBOOK_NS}}}docauthor")
-    ET.SubElement(docauthor, f"{{{DTBOOK_NS}}}text").text = meta.creator
-
     book = ET.SubElement(root, f"{{{DTBOOK_NS}}}book")
+
+    # Per DTBook 2005-3, doctitle/docauthor live in frontmatter, not head.
+    frontmatter = ET.SubElement(book, f"{{{DTBOOK_NS}}}frontmatter")
+    doctitle = ET.SubElement(frontmatter, f"{{{DTBOOK_NS}}}doctitle")
+    doctitle.text = meta.title
+    docauthor = ET.SubElement(frontmatter, f"{{{DTBOOK_NS}}}docauthor")
+    docauthor.text = meta.creator
+
     bodymatter = ET.SubElement(book, f"{{{DTBOOK_NS}}}bodymatter")
 
     for chapter in chapters:
@@ -348,7 +351,10 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
         ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "cover", "href": cover_href, "media-type": "image/jpeg"})
 
     spine = ET.SubElement(package, f"{{{OPF_NS}}}spine", {"toc": "ncx"})
-    ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": "dtbook"})
+    for chapter in chapters:
+        ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": f"smil_{chapter.cid}"})
+    # Keep the DTBook as a non-linear resource for text-only fallbacks.
+    ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": "dtbook", "linear": "no"})
 
     tree = ET.ElementTree(package)
     indent(tree)
@@ -374,8 +380,11 @@ def build_ncx(meta: Metadata, chapters: List[Chapter], main_href: str, out_path:
         play_order += 1
         nav_label = ET.SubElement(nav_point, f"{{{NCX_NS}}}navLabel")
         ET.SubElement(nav_label, f"{{{NCX_NS}}}text").text = chapter.title
-        # Link to the chapter heading (the level1 element).
-        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{chapter.cid}"})
+        smil_href = f"smil/{chapter.smil_name}"
+        first_par = f"par_{chapter.sentences[0].sid}" if chapter.sentences else None
+        content_target = smil_href if not first_par else f"{smil_href}#{first_par}"
+        # Link nav to the SMIL so players can start audio + text highlighting.
+        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": content_target})
 
         if include_sentence_nav:
             for sentence in chapter.sentences:
@@ -383,7 +392,7 @@ def build_ncx(meta: Metadata, chapters: List[Chapter], main_href: str, out_path:
                 play_order += 1
                 child_label = ET.SubElement(child_np, f"{{{NCX_NS}}}navLabel")
                 ET.SubElement(child_label, f"{{{NCX_NS}}}text").text = sentence.text
-                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{sentence.sid}"})
+                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"{smil_href}#par_{sentence.sid}"})
 
     tree = ET.ElementTree(root)
     indent(tree)
