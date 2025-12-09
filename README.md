@@ -70,3 +70,16 @@ NLP-midterm/
 
 - Recommended Whisper models: `base` or `small`
 - Audio loading uses librosa (no ffmpeg required for common formats)
+
+## DAISY 3 package generation
+
+Generate `main.xml`, SMIL, OPF, and NCX from the word-level JSON files:
+
+```bash
+python scripts/generate_daisy.py \
+  --json-dir output_xaxoi \
+  --audio-dir data/Audio-XaXoiThonNguaGia \
+  --out-dir build/daisy
+```
+
+Defaults are already set for the provided Xa Xôi Thôn Ngựa Già metadata. Audio is copied into `build/daisy/media` unless `--no-copy-media` is used. Add `--include-sentence-nav` to expose per-sentence navPoints in `navigation.ncx`.
