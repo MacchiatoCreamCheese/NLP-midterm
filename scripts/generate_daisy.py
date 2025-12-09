@@ -11,6 +11,11 @@ default:
   - smil/<chapter>.smil (one per chapter)
   - media/*             (audio + cover, when copying is enabled)
 
+If sentence-level WAV segments already exist at
+`output_xaxoi/audio_segments_method_w/<chapter>/sentence_00001.wav`, the
+generator will prefer those (unless `--no-sentence-audio` is passed), so SMIL
+plays the pre-cut clips instead of slicing the chapter MP3s by timecodes.
+
 Usage (default metadata prefilled from user-provided values):
   python scripts/generate_daisy.py
 
@@ -60,9 +65,10 @@ class Metadata:
 class Sentence:
     line_number: int
     text: str
-    start: float
-    end: float
+    start: Optional[float]
+    end: Optional[float]
     sid: str  # unique sentence ID shared with SMIL
+    audio_path: Optional[Path] = None
 
 
 @dataclass
@@ -116,6 +122,16 @@ def humanize_chapter_title(stem: str) -> str:
 def format_npt(value: float) -> str:
     """Format a float as SMIL npt time with millisecond precision."""
     return f"npt={value:.3f}s"
+
+
+def audio_media_type(path: Path) -> str:
+    """Return the appropriate media-type string for a given audio file."""
+    ext = path.suffix.lower()
+    if ext == ".wav":
+        return "audio/wav"
+    if ext == ".m4a":
+        return "audio/mp4"
+    return "audio/mpeg"
 
 
 def load_sentences(json_path: Path, chap_idx: int) -> List[Sentence]:
@@ -193,9 +209,10 @@ def load_sentences(json_path: Path, chap_idx: int) -> List[Sentence]:
     # Warn on non-monotonic sequences but keep going.
     last_end = 0.0
     for s in sentences:
-        if s.start < last_end:
+        if s.start is not None and s.start < last_end:
             print(f"Warning: non-monotonic timing near line {s.line_number} in {json_path}", file=sys.stderr)
-        last_end = s.end
+        if s.end is not None:
+            last_end = s.end
     return sentences
 
 
@@ -284,20 +301,21 @@ def build_smil(chapter: Chapter, main_href: str, out_path: Path) -> None:
 
     # SMIL files live in smil/, so hop one level up to reach main.xml and media/.
     main_ref = (Path("..") / main_href).as_posix()
-    audio_href = (Path("..") / chapter.audio_path).as_posix()
 
     for sentence in chapter.sentences:
+        audio_src = sentence.audio_path or chapter.audio_path
+        if audio_src is None:
+            raise ValueError(f"No audio source found for sentence {sentence.sid}")
+        audio_href = (Path("..") / audio_src).as_posix()
+
         par = ET.SubElement(seq, f"{{{SMIL_NS}}}par", {"id": f"par_{sentence.sid}"})
         ET.SubElement(par, f"{{{SMIL_NS}}}text", {"src": f"{main_ref}#{sentence.sid}"})
-        ET.SubElement(
-            par,
-            f"{{{SMIL_NS}}}audio",
-            {
-                "src": audio_href,
-                "clipBegin": format_npt(sentence.start),
-                "clipEnd": format_npt(sentence.end),
-            },
-        )
+        audio_attrs = {"src": audio_href}
+        if sentence.start is not None:
+            audio_attrs["clipBegin"] = format_npt(sentence.start)
+        if sentence.end is not None:
+            audio_attrs["clipEnd"] = format_npt(sentence.end)
+        ET.SubElement(par, f"{{{SMIL_NS}}}audio", audio_attrs)
 
     tree = ET.ElementTree(root)
     indent(tree)
@@ -338,7 +356,8 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
     if meta.collector:
         ET.SubElement(metadata, f"{{{DC_NS}}}contributor").text = meta.collector
     if cover_href:
-        ET.SubElement(metadata, f"{{{OPF_NS}}}meta", {"name": "cover", "content": Path(cover_href).name})
+        # OPF cover meta should reference the manifest ID, not the filename.
+        ET.SubElement(metadata, f"{{{OPF_NS}}}meta", {"name": "cover", "content": "cover"})
 
     manifest = ET.SubElement(package, f"{{{OPF_NS}}}manifest")
     ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "dtbook", "href": main_href, "media-type": "application/x-dtbook+xml"})
@@ -346,27 +365,65 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
 
     for chapter in chapters:
         ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": f"smil_{chapter.cid}", "href": f"smil/{chapter.smil_name}", "media-type": "application/smil+xml"})
-        ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": f"audio_{chapter.cid}", "href": chapter.audio_path.as_posix(), "media-type": "audio/mpeg"})
+
+        sentence_audio_used = any(sentence.audio_path for sentence in chapter.sentences)
+        audio_seen: set[str] = set()
+        audio_counter = 1
+        if sentence_audio_used:
+            audio_sources = [
+                sentence.audio_path or chapter.audio_path
+                for sentence in chapter.sentences
+            ]
+        else:
+            audio_sources = [chapter.audio_path]
+
+        for audio_path in audio_sources:
+            if audio_path is None:
+                continue
+            href = audio_path.as_posix()
+            if href in audio_seen:
+                continue
+            audio_seen.add(href)
+
+            audio_id = f"audio_{chapter.cid}_{audio_counter}" if sentence_audio_used else f"audio_{chapter.cid}"
+            audio_counter += 1
+            ET.SubElement(
+                manifest,
+                f"{{{OPF_NS}}}item",
+                {"id": audio_id, "href": href, "media-type": audio_media_type(audio_path)},
+            )
     if cover_href:
         ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "cover", "href": cover_href, "media-type": "image/jpeg"})
 
     spine = ET.SubElement(package, f"{{{OPF_NS}}}spine", {"toc": "ncx"})
+    # Put the DTBook first so readers that render text prefer it,
+    # while the SMIL files still drive synchronized playback.
+    ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": "dtbook"})
     for chapter in chapters:
         ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": f"smil_{chapter.cid}"})
-    # Keep the DTBook as a non-linear resource for text-only fallbacks.
-    ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": "dtbook", "linear": "no"})
 
     tree = ET.ElementTree(package)
     indent(tree)
     tree.write(out_path, encoding="utf-8", xml_declaration=True)
 
 
-def build_ncx(meta: Metadata, chapters: List[Chapter], main_href: str, out_path: Path, include_sentence_nav: bool) -> None:
+def build_ncx(
+    meta: Metadata,
+    chapters: List[Chapter],
+    main_href: str,
+    out_path: Path,
+    include_sentence_nav: bool,
+) -> None:
     ET.register_namespace("", NCX_NS)
     root = ET.Element(f"{{{NCX_NS}}}ncx", {"version": "2005-1"})
     head = ET.SubElement(root, f"{{{NCX_NS}}}head")
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:uid", "content": meta.identifier})
-    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:depth", "content": "2" if include_sentence_nav else "1"})
+    # Always reflect sentence-level depth when requested so readers don't collapse the tree.
+    ET.SubElement(
+        head,
+        f"{{{NCX_NS}}}meta",
+        {"name": "dtb:depth", "content": "2" if include_sentence_nav else "1"},
+    )
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:totalPageCount", "content": "0"})
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:maxPageNumber", "content": "0"})
 
@@ -380,11 +437,10 @@ def build_ncx(meta: Metadata, chapters: List[Chapter], main_href: str, out_path:
         play_order += 1
         nav_label = ET.SubElement(nav_point, f"{{{NCX_NS}}}navLabel")
         ET.SubElement(nav_label, f"{{{NCX_NS}}}text").text = chapter.title
-        smil_href = f"smil/{chapter.smil_name}"
-        first_par = f"par_{chapter.sentences[0].sid}" if chapter.sentences else None
-        content_target = smil_href if not first_par else f"{smil_href}#{first_par}"
-        # Link nav to the SMIL so players can start audio + text highlighting.
-        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": content_target})
+
+        # Link nav directly to DTBook anchors so reading systems (e.g., Thorium) render text
+        # instead of opening SMIL fragments that can appear blank.
+        ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{chapter.cid}"})
 
         if include_sentence_nav:
             for sentence in chapter.sentences:
@@ -392,17 +448,29 @@ def build_ncx(meta: Metadata, chapters: List[Chapter], main_href: str, out_path:
                 play_order += 1
                 child_label = ET.SubElement(child_np, f"{{{NCX_NS}}}navLabel")
                 ET.SubElement(child_label, f"{{{NCX_NS}}}text").text = sentence.text
-                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"{smil_href}#par_{sentence.sid}"})
+                ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"{main_href}#{sentence.sid}"})
 
     tree = ET.ElementTree(root)
     indent(tree)
     tree.write(out_path, encoding="utf-8", xml_declaration=True)
 
 
+def chapter_sort_key(path: Path) -> tuple[str, int, str]:
+    """Sort chapters by base name then numeric part (e.g., stem, stem_P2)."""
+    stem = path.name.replace("_word_level_matches.json", "")
+    base = stem
+    part = 1
+    m = re.match(r"^(.*?)(?:_P?(\d+))$", stem, flags=re.IGNORECASE)
+    if m and m.group(2):
+        base = m.group(1)
+        part = int(m.group(2))
+    return (base.lower(), part, stem.lower())
+
+
 def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
     audio_map = discover_audio_map(audio_dir)
 
-    json_files = sorted(json_dir.glob("*_word_level_matches.json"))
+    json_files = sorted(json_dir.glob("*_word_level_matches.json"), key=chapter_sort_key)
     if not json_files:
         raise FileNotFoundError(f"No JSON files found in {json_dir}")
 
@@ -418,6 +486,46 @@ def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
     return chapters
 
 
+def attach_sentence_audio(
+    chapters: List[Chapter],
+    sentence_audio_dir: Path,
+    out_dir: Path,
+    media_dir: Path,
+    copy_media: bool,
+) -> bool:
+    """
+    When sentence-level WAVs exist (audio_segments_method_w/<stem>/sentence_00001.wav),
+    attach them to Sentence objects so SMIL can reference trimmed audio directly.
+    Returns True if at least one segment was wired up.
+    """
+    found_any = False
+    for chapter in chapters:
+        stem = chapter.smil_name.replace(".smil", "")
+        seg_dir = sentence_audio_dir / stem
+        if not seg_dir.exists():
+            continue
+
+        for sentence in chapter.sentences:
+            seg_name = f"sentence_{sentence.line_number:05d}.wav"
+            seg_src = seg_dir / seg_name
+            if not seg_src.exists():
+                print(
+                    f"Missing segment for {stem} line {sentence.line_number}: {seg_src}",
+                    file=sys.stderr,
+                )
+                continue
+
+            dest = media_dir / "segments" / stem / seg_name
+            packaged_path = maybe_copy(seg_src, dest, copy_media)
+            sentence.audio_path = Path(os.path.relpath(packaged_path, out_dir))
+            # When using pre-cut audio, let SMIL play the whole file (no clip attrs).
+            sentence.start = None
+            sentence.end = None
+            found_any = True
+
+    return found_any
+
+
 def maybe_copy(src: Path, dest: Path, enabled: bool) -> Path:
     """Copy file if enabled; otherwise return original path."""
     if not enabled:
@@ -431,9 +539,11 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Generate DAISY 3 package files from JSON + MP3 inputs.")
     parser.add_argument("--json-dir", default="output_xaxoi", type=Path, help="Directory containing *_word_level_matches.json files.")
     parser.add_argument("--audio-dir", default=Path("data/Audio-XaXoiThonNguaGia"), type=Path, help="Directory containing MP3s.")
+    parser.add_argument("--sentence-audio-dir", default=Path("output_xaxoi/audio_segments_method_w"), type=Path, help="Directory containing per-sentence WAV segments (subfolders per chapter).")
     parser.add_argument("--cover", default=Path("data/xa-xoi-thon-ngua-gia-rs.jpg"), type=Path, help="Cover image (JPEG).")
     parser.add_argument("--out-dir", default=Path("build/daisy"), type=Path, help="Output directory for DAISY package.")
     parser.add_argument("--no-copy-media", action="store_true", help="Do not copy audio/cover into the output; reference existing paths.")
+    parser.add_argument("--no-sentence-audio", action="store_true", help="Ignore per-sentence WAV segments and use chapter-level audio timings.")
     parser.add_argument("--include-sentence-nav", action="store_true", help="Add navPoints for every sentence in navigation.ncx.")
 
     parser.add_argument("--title", default="Xa Xôi Thôn Ngựa Già")
@@ -466,6 +576,14 @@ def main(argv: Optional[List[str]] = None) -> int:
     if copy_media:
         ensure_dir(media_dir)
 
+    use_sentence_audio = (
+        not args.no_sentence_audio
+        and args.sentence_audio_dir is not None
+        and args.sentence_audio_dir.exists()
+    )
+    if args.sentence_audio_dir and not args.sentence_audio_dir.exists() and not args.no_sentence_audio:
+        print(f"Sentence audio dir not found: {args.sentence_audio_dir} (falling back to chapter audio)", file=sys.stderr)
+
     meta = Metadata(
         title=args.title,
         creator=args.creator,
@@ -491,6 +609,22 @@ def main(argv: Optional[List[str]] = None) -> int:
         # Store href relative to out_dir for manifest/SMIL references.
         chapter.audio_path = Path(os.path.relpath(packaged_path, out_dir))
 
+    sentence_audio_used = False
+    if use_sentence_audio:
+        sentence_audio_used = attach_sentence_audio(
+            chapters,
+            args.sentence_audio_dir,
+            out_dir,
+            media_dir,
+            copy_media,
+        )
+        if sentence_audio_used:
+            print(f"Using sentence-level audio from {args.sentence_audio_dir}")
+        else:
+            print(f"No sentence-level WAVs found under {args.sentence_audio_dir}; using chapter audio timings.")
+    else:
+        print("Sentence-level audio disabled or unavailable; using chapter audio with clip timings.")
+
     cover_href = None
     if args.cover and args.cover.exists():
         cover_dest = media_dir / args.cover.name
@@ -506,6 +640,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         build_smil(chapter, "main.xml", smil_path)
 
     ncx_path = out_dir / "navigation.ncx"
+    print(f"Building NCX -> {ncx_path} (include_sentence_nav={args.include_sentence_nav})")
     build_ncx(meta, chapters, "main.xml", ncx_path, include_sentence_nav=args.include_sentence_nav)
 
     opf_path = out_dir / "main.opf"
