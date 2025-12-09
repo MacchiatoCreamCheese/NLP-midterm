@@ -38,7 +38,7 @@ import xml.etree.ElementTree as ET
 
 
 DTBOOK_NS = "http://www.daisy.org/z3986/2005/dtbook/"
-SMIL_NS = "http://www.w3.org/2001/SMIL20/Language"
+SMIL_NS = "http://www.w3.org/2001/SMIL20/"
 NCX_NS = "http://www.daisy.org/z3986/2005/ncx/"
 OPF_NS = "http://openebook.org/namespaces/oeb-package/1.0/"
 DC_NS = "http://purl.org/dc/elements/1.1/"
@@ -122,6 +122,16 @@ def humanize_chapter_title(stem: str) -> str:
 def format_npt(value: float) -> str:
     """Format a float as SMIL npt time with millisecond precision."""
     return f"npt={value:.3f}s"
+
+
+def format_smil_time(seconds: float) -> str:
+    """Format seconds as H:MM:SS.mmm for SMIL clipBegin/clipEnd attributes (H not zero-padded)."""
+    total_ms = int(round(seconds * 1000))
+    h = total_ms // 3600000
+    m = (total_ms % 3600000) // 60000
+    s = (total_ms % 60000) // 1000
+    ms = total_ms % 1000
+    return f"{h}:{m:02d}:{s:02d}.{ms:03d}"
 
 
 def format_elapsed(seconds: float) -> str:
@@ -253,7 +263,7 @@ def indent(tree: ET.ElementTree) -> None:
 
 def build_dtbook(meta: Metadata, chapters: List[Chapter], out_path: Path) -> None:
     ET.register_namespace("", DTBOOK_NS)
-    root = ET.Element(f"{{{DTBOOK_NS}}}dtbook", {"version": "2005-3"})
+    root = ET.Element(f"{{{DTBOOK_NS}}}dtbook", {"version": "2005-3", "xml:lang": meta.language})
 
     head = ET.SubElement(root, f"{{{DTBOOK_NS}}}head")
     for name, value in (
@@ -267,7 +277,7 @@ def build_dtbook(meta: Metadata, chapters: List[Chapter], out_path: Path) -> Non
     ):
         ET.SubElement(head, f"{{{DTBOOK_NS}}}meta", {"name": name, "content": value})
 
-    book = ET.SubElement(root, f"{{{DTBOOK_NS}}}book")
+    book = ET.SubElement(root, f"{{{DTBOOK_NS}}}book", {"showin": "blp"})
 
     # Per DTBook 2005-3, doctitle/docauthor live in frontmatter, not head.
     frontmatter = ET.SubElement(book, f"{{{DTBOOK_NS}}}frontmatter")
@@ -280,10 +290,11 @@ def build_dtbook(meta: Metadata, chapters: List[Chapter], out_path: Path) -> Non
 
     for chapter in chapters:
         level = ET.SubElement(bodymatter, f"{{{DTBOOK_NS}}}level1", {"id": chapter.cid})
-        h1 = ET.SubElement(level, f"{{{DTBOOK_NS}}}h1")
+        h1 = ET.SubElement(level, f"{{{DTBOOK_NS}}}h1", {"smilref": f"smil/{chapter.smil_name}#seq_{chapter.cid}"})
         h1.text = chapter.title
         for sentence in chapter.sentences:
-            ET.SubElement(level, f"{{{DTBOOK_NS}}}p", {"id": sentence.sid}).text = sentence.text
+            p_attrs = {"id": sentence.sid, "smilref": f"smil/{chapter.smil_name}#par_{sentence.sid}"}
+            ET.SubElement(level, f"{{{DTBOOK_NS}}}p", p_attrs).text = sentence.text
 
     tree = ET.ElementTree(root)
     indent(tree)
@@ -297,27 +308,35 @@ def build_dtbook(meta: Metadata, chapters: List[Chapter], out_path: Path) -> Non
         tree.write(f, encoding="utf-8", xml_declaration=False)
 
 
-def build_smil(chapter: Chapter, main_href: str, out_path: Path) -> None:
+def build_smil(chapter: Chapter, main_href: str, out_path: Path, meta: Metadata) -> None:
     ET.register_namespace("", SMIL_NS)
     root = ET.Element(f"{{{SMIL_NS}}}smil")
 
     head = ET.SubElement(root, f"{{{SMIL_NS}}}head")
-    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "dc:format", "content": "Daisy 3"})
-
+    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "dtb:uid", "content": meta.identifier})
+    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "dtb:generator", "content": "DAISY Generator"})
+    
     # Approximate duration from the last clip end.
     chapter_duration = max((s.end or 0.0) for s in chapter.sentences)
-    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "ncc:totalElapsedTime", "content": format_elapsed(chapter_duration)})
+    ET.SubElement(head, f"{{{SMIL_NS}}}meta", {"name": "dtb:totalElapsedTime", "content": format_smil_time(chapter_duration)})
 
     body = ET.SubElement(root, f"{{{SMIL_NS}}}body")
-    seq_attrs = {
-        "id": f"seq_{chapter.cid}",
-        # Help readers map this SMIL to the DTBook anchor for the chapter.
-        "textref": f"{Path('..') / main_href}#{chapter.cid}",
-    }
-    seq = ET.SubElement(body, f"{{{SMIL_NS}}}seq", seq_attrs)
-
+    
+    # Calculate total duration for seq
+    total_duration = max((s.end or 0.0) for s in chapter.sentences) if chapter.sentences else 0.0
+    
     # SMIL files live in smil/, so hop one level up to reach main.xml and media/.
     main_ref = (Path("..") / main_href).as_posix()
+    textref = f"{main_ref}#{chapter.cid}"
+    
+    seq_attrs = {
+        "id": f"seq_{chapter.cid}",
+        "dur": format_smil_time(total_duration),
+        "fill": "remove",
+        # Help readers map this SMIL to the DTBook anchor for the chapter.
+        "textref": textref,
+    }
+    seq = ET.SubElement(body, f"{{{SMIL_NS}}}seq", seq_attrs)
 
     for sentence in chapter.sentences:
         audio_src = sentence.audio_path or chapter.audio_path
@@ -326,17 +345,24 @@ def build_smil(chapter: Chapter, main_href: str, out_path: Path) -> None:
         audio_href = (Path("..") / audio_src).as_posix()
 
         par = ET.SubElement(seq, f"{{{SMIL_NS}}}par", {"id": f"par_{sentence.sid}"})
-        ET.SubElement(par, f"{{{SMIL_NS}}}text", {"src": f"{main_ref}#{sentence.sid}"})
+        ET.SubElement(par, f"{{{SMIL_NS}}}text", {"id": f"text_{sentence.sid}", "src": f"{main_ref}#{sentence.sid}"})
         audio_attrs = {"src": audio_href}
         if sentence.start is not None:
-            audio_attrs["clipBegin"] = format_npt(sentence.start)
+            audio_attrs["clipBegin"] = format_smil_time(sentence.start)
         if sentence.end is not None:
-            audio_attrs["clipEnd"] = format_npt(sentence.end)
+            audio_attrs["clipEnd"] = format_smil_time(sentence.end)
         ET.SubElement(par, f"{{{SMIL_NS}}}audio", audio_attrs)
 
     tree = ET.ElementTree(root)
     indent(tree)
-    tree.write(out_path, encoding="utf-8", xml_declaration=True)
+    doctype = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<!DOCTYPE smil\n'
+        '  PUBLIC "-//NISO//DTD dtbsmil 2005-2//EN" "http://www.daisy.org/z3986/2005/dtbsmil-2005-2.dtd">\n'
+    )
+    with out_path.open("wb") as f:
+        f.write(doctype.encode("utf-8"))
+        tree.write(f, encoding="utf-8", xml_declaration=False)
 
 
 def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href: str, out_path: Path, cover_href: Optional[str]) -> None:
@@ -344,44 +370,45 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
     ET.register_namespace("dc", DC_NS)
     package = ET.Element(
         f"{{{OPF_NS}}}package",
-        {"unique-identifier": "BookId", "version": "2005-1"},
+        {"unique-identifier": "uid", "version": "2005-1"},
     )
 
     metadata = ET.SubElement(package, f"{{{OPF_NS}}}metadata")
-    for tag, value in (
-        ("title", meta.title),
-        ("creator", meta.creator),
-        ("subject", meta.subject),
-        ("publisher", meta.publisher),
-        ("language", meta.language),
-        ("identifier", meta.identifier),
-        ("date", meta.date),
-        ("description", meta.description),
-    ):
-        el = ET.SubElement(metadata, f"{{{DC_NS}}}{tag}")
-        el.text = value
-        if tag == "identifier":
-            el.set("id", "BookId")
-    if meta.source_isbn:
-        ET.SubElement(metadata, f"{{{DC_NS}}}identifier", {"id": "SourceISBN"}).text = meta.source_isbn
-    if meta.source_url:
-        ET.SubElement(metadata, f"{{{DC_NS}}}source").text = meta.source_url
-    if meta.note:
-        ET.SubElement(metadata, f"{{{OPF_NS}}}meta", {"name": "note", "content": meta.note})
-    if meta.reader:
-        ET.SubElement(metadata, f"{{{DC_NS}}}contributor").text = meta.reader
-    if meta.collector:
-        ET.SubElement(metadata, f"{{{DC_NS}}}contributor").text = meta.collector
-    if cover_href:
-        # OPF cover meta should reference the manifest ID, not the filename.
-        ET.SubElement(metadata, f"{{{OPF_NS}}}meta", {"name": "cover", "content": "cover"})
+    
+    # Create nested dc-metadata structure
+    dc_metadata = ET.SubElement(metadata, "dc-metadata", {
+        "xmlns:dc": DC_NS,
+        "xmlns:oebpackage": OPF_NS
+    })
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Format").text = "ANSI/NISO Z39.86-2005"
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Language").text = meta.language
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Date").text = meta.date
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Creator").text = meta.creator
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Publisher").text = meta.publisher
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Title").text = meta.title
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Subject").text = meta.subject
+    ET.SubElement(dc_metadata, f"{{{DC_NS}}}Identifier").text = meta.identifier
+    uid_elem = ET.SubElement(dc_metadata, f"{{{DC_NS}}}Identifier", {"id": "uid"})
+    uid_elem.text = meta.identifier
+    
+    # Create x-metadata structure
+    x_metadata = ET.SubElement(metadata, "x-metadata")
+    ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaType", "content": "audioFullText"})
+    
+    # Calculate total time from all chapters
+    total_time = 0.0
+    for chapter in chapters:
+        if chapter.sentences:
+            total_time += max((s.end or 0.0) for s in chapter.sentences)
+    ET.SubElement(x_metadata, "meta", {"name": "dtb:totalTime", "content": format_smil_time(total_time)})
+    ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaContent", "content": "audio,text"})
 
     manifest = ET.SubElement(package, f"{{{OPF_NS}}}manifest")
     ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "dtbook", "href": main_href, "media-type": "application/x-dtbook+xml"})
     ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "ncx", "href": ncx_href, "media-type": "application/x-dtbncx+xml"})
 
     for chapter in chapters:
-        ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": f"smil_{chapter.cid}", "href": f"smil/{chapter.smil_name}", "media-type": "application/smil+xml"})
+        ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": f"smil-{chapter.cid[1:]}", "href": f"smil/{chapter.smil_name}", "media-type": "application/smil"})
 
         sentence_audio_used = any(sentence.audio_path for sentence in chapter.sentences)
         audio_seen: set[str] = set()
@@ -413,15 +440,20 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
         ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "cover", "href": cover_href, "media-type": "image/jpeg"})
 
     spine = ET.SubElement(package, f"{{{OPF_NS}}}spine", {"toc": "ncx"})
-    # Put the DTBook first so readers that render text prefer it,
-    # while the SMIL files still drive synchronized playback.
-    ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": "dtbook"})
+    # Spine should only contain SMIL files for proper audio playback
     for chapter in chapters:
-        ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": f"smil_{chapter.cid}"})
+        ET.SubElement(spine, f"{{{OPF_NS}}}itemref", {"idref": f"smil-{chapter.cid[1:]}"})
 
     tree = ET.ElementTree(package)
     indent(tree)
-    tree.write(out_path, encoding="utf-8", xml_declaration=True)
+    doctype = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<!DOCTYPE package\n'
+        '  PUBLIC "+//ISBN 0-9673008-1-9//DTD OEB 1.2 Package//EN" "http://openebook.org/dtds/oeb-1.2/oebpkg12.dtd">\n'
+    )
+    with out_path.open("wb") as f:
+        f.write(doctype.encode("utf-8"))
+        tree.write(f, encoding="utf-8", xml_declaration=False)
 
 
 def build_ncx(
@@ -432,13 +464,14 @@ def build_ncx(
     include_sentence_nav: bool,
 ) -> None:
     ET.register_namespace("", NCX_NS)
-    root = ET.Element(f"{{{NCX_NS}}}ncx", {"version": "2005-1"})
+    root = ET.Element(f"{{{NCX_NS}}}ncx", {"version": "2005-1", "xml:lang": meta.language})
     head = ET.SubElement(root, f"{{{NCX_NS}}}head")
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:uid", "content": meta.identifier})
+    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:generator", "content": "DAISY Generator"})
     # Required DAISY 3 metadata for audio playback.
     ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:multimediaType", "content": "audioFullText"})
     total_elapsed = sum(max((s.end or 0.0) for s in chapter.sentences) for chapter in chapters)
-    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:totalElapsedTime", "content": format_elapsed(total_elapsed)})
+    ET.SubElement(head, f"{{{NCX_NS}}}meta", {"name": "dtb:totalElapsedTime", "content": format_smil_time(total_elapsed)})
     # Always reflect sentence-level depth when requested so readers don't collapse the tree.
     ET.SubElement(
         head,
@@ -472,7 +505,14 @@ def build_ncx(
 
     tree = ET.ElementTree(root)
     indent(tree)
-    tree.write(out_path, encoding="utf-8", xml_declaration=True)
+    doctype = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<!DOCTYPE ncx\n'
+        '  PUBLIC "-//NISO//DTD ncx 2005-1//EN" "http://www.daisy.org/z3986/2005/ncx-2005-1.dtd">\n'
+    )
+    with out_path.open("wb") as f:
+        f.write(doctype.encode("utf-8"))
+        tree.write(f, encoding="utf-8", xml_declaration=False)
 
 
 def chapter_sort_key(path: Path) -> tuple[str, int, str]:
@@ -657,7 +697,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     # Build SMIL files.
     for chapter in chapters:
         smil_path = smil_dir / chapter.smil_name
-        build_smil(chapter, "main.xml", smil_path)
+        build_smil(chapter, "main.xml", smil_path, meta)
 
     ncx_path = out_dir / "navigation.ncx"
     print(f"Building NCX -> {ncx_path} (include_sentence_nav={args.include_sentence_nav})")
