@@ -7,17 +7,97 @@ which is more precise and reliable than segment-based matching.
 
 import json
 import re
+import unicodedata
 from difflib import SequenceMatcher
 from typing import List, Dict, Optional, Tuple
+
+
+def strip_accents(text: str) -> str:
+    """Remove Vietnamese accents for number-word detection."""
+    return "".join(
+        ch for ch in unicodedata.normalize("NFD", text) if unicodedata.category(ch) != "Mn"
+    )
+
+
+NUMBER_WORDS = {
+    # Without accents
+    "khong",
+    "mot",
+    "hai",
+    "ba",
+    "bon",
+    "nam",
+    "sau",
+    "bay",
+    "tam",
+    "chin",
+    "muoi",
+    "linh",
+    "le",
+    "tram",
+    "ngan",
+    "nghin",
+    "trieu",
+    "ty",
+    # With common accents
+    "không",
+    "một",
+    "hai",
+    "ba",
+    "bốn",
+    "năm",
+    "sáu",
+    "bảy",
+    "tám",
+    "chín",
+    "mười",
+    "mươi",
+    "linh",
+    "lẻ",
+    "trăm",
+    "ngàn",
+    "nghìn",
+    "triệu",
+    "tỷ",
+    "lăm",
+}
+
+
+def is_numeric_token(token: str) -> bool:
+    """Check if token is numeric (integer or decimal, optional sign)."""
+    return bool(re.fullmatch(r"-?\d+(?:[.,]\d+)?", token))
+
+
+def is_number_word(token: str) -> bool:
+    """Check if token is a spelled-out number (rough Vietnamese coverage)."""
+    if token in NUMBER_WORDS:
+        return True
+    plain = strip_accents(token)
+    return plain in NUMBER_WORDS
 
 
 def normalize_word(word: str) -> str:
     """
     Normalize a word for matching (remove punctuation, lowercase).
+    Numbers (digit or spelled) are mapped to a placeholder to allow either form to match.
     """
     # Remove punctuation and convert to lowercase
-    word = re.sub(r'[^\w]', '', word.lower())
-    return word
+    cleaned = re.sub(r"[^\w]", "", word.lower())
+    if not cleaned:
+        return ""
+    if is_numeric_token(cleaned) or is_number_word(cleaned):
+        return "numtok"
+    return cleaned
+
+
+def collapse_num_tokens(tokens: List[str]) -> List[str]:
+    """Collapse consecutive numeric placeholders to align digit vs multi-word numbers."""
+    collapsed: List[str] = []
+    for tok in tokens:
+        if tok == "numtok" and collapsed and collapsed[-1] == "numtok":
+            continue
+        collapsed.append(tok)
+    return collapsed
 
 
 def extract_words_from_sentence(sentence: str) -> List[str]:
@@ -26,7 +106,12 @@ def extract_words_from_sentence(sentence: str) -> List[str]:
     """
     # Split into words and normalize
     words = sentence.split()
-    normalized = [normalize_word(w) for w in words if normalize_word(w)]
+    normalized = []
+    for w in words:
+        nw = normalize_word(w)
+        if nw:
+            normalized.append(nw)
+    normalized = collapse_num_tokens(normalized)
     return normalized
 
 
@@ -104,6 +189,8 @@ def find_word_sequence(
                 normalize_word(all_words[i]['word'])
                 for i in range(start_idx, end_idx)
             ]
+            audio_words = [w for w in audio_words if w]
+            audio_words = collapse_num_tokens(audio_words)
             
             # Calculate similarity
             similarity = calculate_word_sequence_similarity(sentence_words, audio_words)
@@ -248,7 +335,8 @@ def match_sentences_using_words(
         recovery_search_window = min(max_search_window, 1500) if is_recovery_mode else max_search_window
         
         # Per-sentence tuning
-        is_short_sentence = len(sentence_words) <= 2
+        # Treat short lines more broadly to tighten jumps (helps with terse dialog)
+        is_short_sentence = len(sentence_words) <= 5
         is_long_sentence = len(sentence_words) >= 30
         sentence_min_similarity = max(0.45, min_similarity - 0.1) if is_short_sentence else min_similarity
         sentence_max_word_gap = max_word_gap + (1 if is_short_sentence else 0)
@@ -277,6 +365,10 @@ def match_sentences_using_words(
                 # Short line after a reasonably good match: keep the search tight
                 allowed_word_jump = min(allowed_word_jump, 20)
                 allowed_time_jump = min(allowed_time_jump, 12.0)
+        # Even after lower-similarity matches, keep short lines reasonably tight
+        if previous_matched and not is_recovery_mode and len(sentence_words) <= 6:
+            allowed_word_jump = min(allowed_word_jump, 35)
+            allowed_time_jump = min(allowed_time_jump, 15.0)
         
         if not sentence_words:
             results.append({
