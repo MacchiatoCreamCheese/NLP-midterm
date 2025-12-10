@@ -429,6 +429,10 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
     uid_elem = ET.SubElement(dc_metadata, f"{{{DC_NS}}}Identifier", {"id": "uid"})
     uid_elem.text = meta.identifier
     
+    # Some readers expect a top-level cover meta (in addition to x-metadata below).
+    if cover_href:
+        ET.SubElement(metadata, "meta", {"name": "cover", "content": "cover"})
+    
     # Create x-metadata structure
     x_metadata = ET.SubElement(metadata, "x-metadata")
     ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaType", "content": "audioFullText"})
@@ -439,7 +443,8 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
         if chapter.sentences:
             total_time += max((s.end or 0.0) for s in chapter.sentences)
     ET.SubElement(x_metadata, "meta", {"name": "dtb:totalTime", "content": format_smil_time(total_time)})
-    ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaContent", "content": "audio,text"})
+    multimedia_content = "audio,text,image" if cover_href else "audio,text"
+    ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaContent", "content": multimedia_content})
     
     # Add cover reference in x-metadata if cover exists
     if cover_href:
@@ -797,8 +802,12 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     cover_href = None
     if args.cover and args.cover.exists():
-        cover_dest = media_dir / args.cover.name
-        cover_path = maybe_copy(args.cover, cover_dest, copy_media)
+        if copy_media:
+            cover_dest = media_dir / args.cover.name
+            cover_path = maybe_copy(args.cover, cover_dest, copy_media)
+        else:
+            # When not copying media, reference the existing cover file directly.
+            cover_path = args.cover
         cover_href = Path(os.path.relpath(cover_path, out_dir)).as_posix()
 
     main_xml = out_dir / "main.xml"
