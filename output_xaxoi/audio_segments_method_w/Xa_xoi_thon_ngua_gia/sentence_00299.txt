@@ -1,1 +1,0 @@
-Tính ra từ lúc bắt đẩu đau mới có bốn giờ đồng hồ.

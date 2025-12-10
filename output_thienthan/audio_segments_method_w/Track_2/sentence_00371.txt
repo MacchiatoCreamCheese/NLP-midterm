@@ -1,0 +1,1 @@
+Nó chỉ lo nhảy tới nhảy lui trong lồng.
