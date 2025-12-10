@@ -30,7 +30,7 @@ import json
 import re
 import shutil
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import os
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -85,6 +85,18 @@ class Chapter:
     cid: str  # chapter ID
     sentences: List[Sentence]
     smil_name: str  # filename (not full path) of SMIL
+    stem: str  # original stem used to locate this chapter
+
+
+# Fixed navigation order for the six stories in Xa Xôi Thôn Ngựa Già.
+STORY_CONFIG = [
+    {"title": "Seo Ly, Kẻ Khuấy Động Tình Trường", "stems": ["Seo_Ly_Ke_Khuay_Dong_Tinh_Truong"]},
+    {"title": "Thắp Một Tuần Hương", "stems": ["Thap_Mot_Tuan_Huong"]},
+    {"title": "Cố Vinh, Người Xứ Lạ", "stems": ["Co_Vinh_Nguoi_Xu_La", "Co_Vinh_Nguoi_Xu_La_P2"]},
+    {"title": "Cánh Bướm Tím", "stems": ["Canh_Buom_Tim"]},
+    {"title": "Người Khổ Nhất Trần Gian", "stems": ["Nguoi_Kho_Nhat_Tran_Gian"]},
+    {"title": "Xa Xôi Thôn Ngựa Già", "stems": ["Xa_Xoi_Thon_Ngua_Gia", "Xa_Xoi_Thon_Ngua_Gia_P2", "Xa_Xoi_Thon_Ngua_Gia_P3"]},
+]
 
 
 def normalize_name(value: str) -> str:
@@ -550,7 +562,7 @@ def build_ncx(
 
 def chapter_sort_key(path: Path) -> tuple[str, int, str]:
     """Sort chapters by base name then numeric part (e.g., stem, stem_P2)."""
-    stem = path.name.replace("_word_level_matches.json", "")
+    stem = chapter_stem(path)
     base = stem
     part = 1
     m = re.match(r"^(.*?)(?:_P?(\d+))$", stem, flags=re.IGNORECASE)
@@ -558,6 +570,11 @@ def chapter_sort_key(path: Path) -> tuple[str, int, str]:
         base = m.group(1)
         part = int(m.group(2))
     return (base.lower(), part, stem.lower())
+
+
+def chapter_stem(path: Path) -> str:
+    """Return the stem name without the word-level suffix."""
+    return path.name.replace("_word_level_matches.json", "")
 
 
 def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
@@ -569,14 +586,71 @@ def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
 
     chapters: List[Chapter] = []
     for idx, json_path in enumerate(json_files, start=1):
-        stem = json_path.name.replace("_word_level_matches.json", "")
+        stem = chapter_stem(json_path)
         audio_path = stem_to_audio(stem, audio_map)
         sentences = load_sentences(json_path, idx, audio_path)
         title = humanize_chapter_title(stem)
         cid = f"c{idx:02d}"
         smil_name = f"{stem}.smil"
-        chapters.append(Chapter(json_path, audio_path, title, cid, sentences, smil_name))
+        chapters.append(Chapter(json_path, audio_path, title, cid, sentences, smil_name, stem))
     return chapters
+
+
+def build_story_chapters(chapters: List[Chapter]) -> List[Chapter]:
+    """
+    Reorder and merge raw chapters into the fixed story order defined in STORY_CONFIG.
+    Multi-part stems are concatenated in config order, and sentences are renumbered per story.
+    """
+    chapter_map = {chapter.stem: chapter for chapter in chapters}
+    expected_stems = [stem for story in STORY_CONFIG for stem in story["stems"]]
+
+    missing = [stem for stem in expected_stems if stem not in chapter_map]
+    if missing:
+        raise ValueError(f"Missing expected chapters: {missing}")
+
+    extras = sorted(set(chapter_map.keys()) - set(expected_stems))
+    if extras:
+        print(f"Warning: Unused chapters present (not in navigation config): {extras}", file=sys.stderr)
+
+    story_chapters: List[Chapter] = []
+    for story_idx, story in enumerate(STORY_CONFIG, start=1):
+        merged_sentences: List[Sentence] = []
+        source_json_path: Optional[Path] = None
+
+        for stem in story["stems"]:
+            chapter = chapter_map[stem]
+            source_json_path = source_json_path or chapter.json_path
+
+            for sentence in chapter.sentences:
+                # Ensure every sentence carries its audio source explicitly for SMIL/OPF.
+                audio_src = sentence.audio_path or chapter.audio_path
+                merged_sentences.append(replace(sentence, audio_path=audio_src))
+
+        if not merged_sentences or source_json_path is None:
+            raise ValueError(f"No sentences collected for story '{story['title']}'")
+
+        renumbered: List[Sentence] = []
+        for sent_idx, sentence in enumerate(merged_sentences, start=1):
+            new_sid = f"s{story_idx:02d}_{sent_idx:05d}"
+            renumbered.append(replace(sentence, line_number=sent_idx, sid=new_sid))
+
+        fallback_audio = next((s.audio_path for s in renumbered if s.audio_path is not None), None)
+        if fallback_audio is None:
+            raise ValueError(f"Story '{story['title']}' has no audio sources.")
+
+        story_chapters.append(
+            Chapter(
+                json_path=source_json_path,
+                audio_path=fallback_audio,
+                title=story["title"],
+                cid=f"c{story_idx:02d}",
+                sentences=renumbered,
+                smil_name=f"story_{story_idx:02d}.smil",
+                stem=story["stems"][0],
+            )
+        )
+
+    return story_chapters
 
 
 def attach_sentence_audio(
@@ -717,6 +791,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"No sentence-level WAVs found under {args.sentence_audio_dir}; using chapter audio timings.")
     else:
         print("Sentence-level audio disabled or unavailable; using chapter audio with clip timings.")
+
+    # Reorder and merge into the fixed six-story navigation.
+    chapters = build_story_chapters(chapters)
 
     cover_href = None
     if args.cover and args.cover.exists():
