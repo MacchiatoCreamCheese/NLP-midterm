@@ -290,6 +290,27 @@ def find_word_sequence(
                 word_jump = start_idx - start_word_idx
                 word_diff = abs(num_sentence_words - actual_audio_length)
                 
+                # REJECT matches that are too short (prevent cascade from partial matches)
+                # For long sentences, be strict about accepting partial matches
+                if actual_audio_length < num_sentence_words:
+                    missing_words = num_sentence_words - actual_audio_length
+                    missing_ratio = missing_words / num_sentence_words
+                    
+                    # For sentences 20+ words: reject if missing >15% unless similarity is very high
+                    if num_sentence_words >= 20:
+                        if missing_ratio > 0.15 and similarity < 0.85:
+                            continue  # Reject: too short and similarity not high enough
+                        # For very long sentences (30+), be even stricter
+                        if num_sentence_words >= 30 and missing_ratio > 0.10 and similarity < 0.90:
+                            continue
+                    # For medium sentences (10-19 words): reject if missing >20% unless similarity is high
+                    elif num_sentence_words >= 10:
+                        if missing_ratio > 0.20 and similarity < 0.80:
+                            continue
+                    # For short sentences: allow more flexibility but still check
+                    elif missing_ratio > 0.30 and similarity < 0.75:
+                        continue
+                
                 # Calculate composite score that prefers:
                 # 1. High similarity (0-1)
                 # 2. Exact word count match (word_diff = 0)
@@ -507,41 +528,66 @@ def match_sentences_using_words(
                 print(f"  ✗ Match found but similarity too low ({match_result['similarity']:.2%}), rejecting...")
                 match_result = None
             else:
-                # Validate match is sequential (check for large jumps)
-                word_jump = match_result['start_word_idx'] - current_word_idx
-                time_jump = None
-                if previous_end_time is not None:
-                    time_jump = match_result['start_time'] - previous_end_time
+                # Validate match length - reject matches that are too short (prevent cascade)
+                num_sentence_words = len(sentence_words)
+                num_matched_words = match_result.get('num_matched_words', 0)
                 
-                # Warn if jump is large (even if within limits)
-                if word_jump > 10:
-                    print(f"  ⚠️  Large word jump: {word_jump} words (from {current_word_idx} to {match_result['start_word_idx']})")
-                if time_jump is not None and time_jump > 8.0:
-                    print(f"  ⚠️  Large time jump: {time_jump:.2f}s (from {previous_end_time:.2f}s to {match_result['start_time']:.2f}s)")
+                if num_matched_words < num_sentence_words:
+                    missing_words = num_sentence_words - num_matched_words
+                    missing_ratio = missing_words / num_sentence_words
+                    
+                    # For long sentences, be strict about partial matches
+                    if num_sentence_words >= 20:
+                        if missing_ratio > 0.15 and match_result['similarity'] < 0.85:
+                            print(f"  ✗ Match found but too short ({num_matched_words}/{num_sentence_words} words, "
+                                  f"missing {missing_ratio:.1%}, similarity {match_result['similarity']:.2%}), rejecting to prevent cascade...")
+                            match_result = None
+                        elif num_sentence_words >= 30 and missing_ratio > 0.10 and match_result['similarity'] < 0.90:
+                            print(f"  ✗ Match found but too short ({num_matched_words}/{num_sentence_words} words, "
+                                  f"missing {missing_ratio:.1%}, similarity {match_result['similarity']:.2%}), rejecting to prevent cascade...")
+                            match_result = None
+                    elif num_sentence_words >= 10:
+                        if missing_ratio > 0.20 and match_result['similarity'] < 0.80:
+                            print(f"  ✗ Match found but too short ({num_matched_words}/{num_sentence_words} words, "
+                                  f"missing {missing_ratio:.1%}, similarity {match_result['similarity']:.2%}), rejecting to prevent cascade...")
+                            match_result = None
                 
-                results.append({
-                    'line_number': idx + 1,
-                    'sentence': sentence,
-                    'sentence_words': sentence_words,
-                    **match_result,
-                    'matched_text': ' '.join([w['word'] for w in match_result['matched_words']])
-                })
-                
-                # Update search position
-                current_word_idx = match_result['end_word_idx'] + 1
-                previous_end_time = match_result['end_time']
-                previous_matched = True
-                previous_similarity = match_result['similarity']
-                consecutive_failures = 0  # Reset failure counter on success
-                
-                duration = match_result['end_time'] - match_result['start_time']
-                print(f"  ✓ Words [{match_result['start_word_idx']}-{match_result['end_word_idx']}] "
-                      f"Time: {match_result['start_time']:.2f}s-{match_result['end_time']:.2f}s "
-                      f"({duration:.2f}s)")
-                score_info = f"Score: {match_result.get('score', match_result['similarity']):.3f}" if 'score' in match_result else ""
-                print(f"    Similarity: {match_result['similarity']:.2%}, "
-                      f"Words: {match_result['num_sentence_words']}→{match_result['num_matched_words']} "
-                      f"({score_info})")
+                if match_result:  # Only continue if match wasn't rejected
+                    # Validate match is sequential (check for large jumps)
+                    word_jump = match_result['start_word_idx'] - current_word_idx
+                    time_jump = None
+                    if previous_end_time is not None:
+                        time_jump = match_result['start_time'] - previous_end_time
+                    
+                    # Warn if jump is large (even if within limits)
+                    if word_jump > 10:
+                        print(f"  ⚠️  Large word jump: {word_jump} words (from {current_word_idx} to {match_result['start_word_idx']})")
+                    if time_jump is not None and time_jump > 8.0:
+                        print(f"  ⚠️  Large time jump: {time_jump:.2f}s (from {previous_end_time:.2f}s to {match_result['start_time']:.2f}s)")
+                    
+                    results.append({
+                        'line_number': idx + 1,
+                        'sentence': sentence,
+                        'sentence_words': sentence_words,
+                        **match_result,
+                        'matched_text': ' '.join([w['word'] for w in match_result['matched_words']])
+                    })
+                    
+                    # Update search position
+                    current_word_idx = match_result['end_word_idx'] + 1
+                    previous_end_time = match_result['end_time']
+                    previous_matched = True
+                    previous_similarity = match_result['similarity']
+                    consecutive_failures = 0  # Reset failure counter on success
+                    
+                    duration = match_result['end_time'] - match_result['start_time']
+                    print(f"  ✓ Words [{match_result['start_word_idx']}-{match_result['end_word_idx']}] "
+                          f"Time: {match_result['start_time']:.2f}s-{match_result['end_time']:.2f}s "
+                          f"({duration:.2f}s)")
+                    score_info = f"Score: {match_result.get('score', match_result['similarity']):.3f}" if 'score' in match_result else ""
+                    print(f"    Similarity: {match_result['similarity']:.2%}, "
+                          f"Words: {match_result['num_sentence_words']}→{match_result['num_matched_words']} "
+                          f"({score_info})")
         else:
             # Initial match failed - try with relaxed parameters but still enforce sequential constraints
             print(f"  ✗ No match found, trying relaxed search (still sequential)...")
@@ -553,7 +599,7 @@ def match_sentences_using_words(
                 sentence_words=sentence_words,
                 all_words=all_words,
                 start_word_idx=current_word_idx,
-                max_search_window=min(recovery_search_window if is_recovery_mode else (300 if not is_short_sentence else 150), len(all_words) - current_word_idx),  # Larger window in recovery
+                max_search_window=min(sentence_max_search_window if is_recovery_mode else (300 if not is_short_sentence else 150), len(all_words) - current_word_idx),  # Larger window in recovery
                 min_similarity=max(0.35 if is_recovery_mode else 0.4, sentence_min_similarity - 0.1),  # Lower threshold in recovery
                 max_word_gap=max(8, sentence_max_word_gap + 3),  # More tolerance but not excessive
                 max_word_jump=allowed_word_jump if strict_sequential else None,  # STILL enforce word jump limit
@@ -612,6 +658,120 @@ def match_sentences_using_words(
                 score_info = f", Score: {relaxed_match.get('score', relaxed_match['similarity']):.3f}" if 'score' in relaxed_match else ""
                 print(f"    Similarity: {relaxed_match['similarity']:.2%}{score_info}")
             else:
+                # Still no match - try backward search as last resort
+                print(f"  ✗ No match found even with relaxed search")
+                
+                # LAST RESORT: Try searching backward 3-4 words (audio might have started early)
+                # This handles cases where the audio "ate" a word or two from previous sentence
+                print(f"    → Trying backward search (3-4 words earlier)...")
+                backward_search_range = 4  # Search up to 4 words backward
+                backward_start = max(0, current_word_idx - backward_search_range)
+                
+                # Don't search before previous match if we have one
+                if previous_matched and idx > 0:
+                    # Find the end of the previous successful match
+                    prev_match_end = None
+                    for prev_idx in range(idx - 1, -1, -1):
+                        if prev_idx < len(results) and results[prev_idx].get('matched_words'):
+                            prev_match_end = results[prev_idx].get('end_word_idx')
+                            break
+                    if prev_match_end is not None:
+                        # Don't search before previous match, but allow slight overlap for trimming
+                        backward_start = max(backward_start, prev_match_end - 2)  # Allow 2 words overlap for trimming
+                
+                backward_match = None
+                best_backward_similarity = 0.0
+                
+                # Try each backward position
+                for backward_idx in range(backward_start, current_word_idx):
+                    if backward_idx < 0:
+                        continue
+                    
+                    # Try matching from this backward position
+                    candidate_match = find_word_sequence(
+                        sentence_words=sentence_words,
+                        all_words=all_words,
+                        start_word_idx=backward_idx,
+                        max_search_window=min(200, len(all_words) - backward_idx),  # Moderate window
+                        min_similarity=0.4,  # Lower threshold for backward search
+                        max_word_gap=sentence_max_word_gap + 2,  # More tolerance
+                        max_word_jump=10,  # Small jump from backward position
+                        max_time_jump=15.0,  # Reasonable time jump
+                        previous_end_time=previous_end_time
+                    )
+                    
+                    if candidate_match and candidate_match['similarity'] > best_backward_similarity:
+                        # Validate: the match should start at or after backward_idx
+                        if candidate_match['start_word_idx'] >= backward_idx:
+                            best_backward_similarity = candidate_match['similarity']
+                            backward_match = candidate_match
+                
+                if backward_match and best_backward_similarity >= 0.4:
+                    backward_jump = current_word_idx - backward_match['start_word_idx']
+                    print(f"    ✓ Found match in backward search: Words [{backward_match['start_word_idx']}-{backward_match['end_word_idx']}] "
+                          f"(started {backward_jump} words earlier, similarity: {best_backward_similarity:.2%})")
+                    
+                    # IMPORTANT: Trim the previous sentence if backward match overlaps
+                    if results and backward_match.get('start_time') is not None:
+                        backward_start_time = backward_match['start_time']
+                        backward_start_word_idx = backward_match['start_word_idx']
+                        
+                        # Find and trim the previous successful match
+                        for prev_idx in range(len(results) - 1, -1, -1):
+                            prev_result = results[prev_idx]
+                            if prev_result.get('matched_words') and prev_result.get('end_time') is not None:
+                                prev_end_time = prev_result['end_time']
+                                prev_end_word_idx = prev_result.get('end_word_idx')
+                                
+                                # If backward match starts before previous sentence ends, trim previous
+                                if backward_start_time < prev_end_time:
+                                    old_end_time = prev_end_time
+                                    old_end_word_idx = prev_end_word_idx
+                                    
+                                    # Trim previous sentence's end_time to backward match's start_time
+                                    prev_result['end_time'] = backward_start_time
+                                    
+                                    # Trim previous sentence's end_word_idx to avoid overlap
+                                    if prev_end_word_idx is not None and backward_start_word_idx is not None:
+                                        # Set end_word_idx to just before backward match starts
+                                        prev_result['end_word_idx'] = max(
+                                            prev_result.get('start_word_idx', backward_start_word_idx - 1),
+                                            backward_start_word_idx - 1
+                                        )
+                                        
+                                        # Also update matched_words to trim the overlapping words
+                                        if 'word_indices' in prev_result and backward_start_word_idx is not None:
+                                            prev_start_idx = prev_result.get('start_word_idx', 0)
+                                            new_end_idx = backward_start_word_idx - 1
+                                            if new_end_idx >= prev_start_idx:
+                                                prev_result['word_indices'] = list(range(prev_start_idx, new_end_idx + 1))
+                                                prev_result['matched_words'] = all_words[prev_start_idx:new_end_idx + 1]
+                                    
+                                    time_cut = old_end_time - backward_start_time
+                                    word_cut = (old_end_word_idx - prev_result['end_word_idx']) if old_end_word_idx is not None and prev_result.get('end_word_idx') is not None else 0
+                                    print(f"    → Trimmed previous sentence (line {prev_result.get('line_number', '?')}) "
+                                          f"end_time: {old_end_time:.2f}s → {backward_start_time:.2f}s "
+                                          f"(cut {time_cut:.2f}s, {word_cut} words overlap)")
+                                    break
+                    
+                    results.append({
+                        'line_number': idx + 1,
+                        'sentence': sentence,
+                        'sentence_words': sentence_words,
+                        **backward_match,
+                        'matched_text': ' '.join([w['word'] for w in backward_match['matched_words']]),
+                        'backward_search': True  # Flag that this used backward search
+                    })
+                    
+                    current_word_idx = backward_match['end_word_idx'] + 1
+                    previous_end_time = backward_match['end_time']
+                    previous_matched = True
+                    previous_similarity = backward_match['similarity']
+                    consecutive_failures = 0
+                    continue
+                else:
+                    print(f"    ✗ No match found in backward search")
+                
                 # Still no match - record as unmatched
                 # Since audiobooks read sequentially, we should NOT skip much
                 # Just advance by 1 word so next sentence can try from current position + 1
@@ -622,7 +782,6 @@ def match_sentences_using_words(
                     'matched_words': None,
                     'error': 'No match found'
                 })
-                print(f"  ✗ No match found even with relaxed search")
                 
                 consecutive_failures += 1
                 previous_matched = False
