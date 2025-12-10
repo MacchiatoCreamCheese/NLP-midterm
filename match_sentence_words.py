@@ -100,6 +100,79 @@ def collapse_num_tokens(tokens: List[str]) -> List[str]:
     return collapsed
 
 
+def try_split_merged_word(word: str, min_part_len: int = 2) -> List[Tuple[str, str]]:
+    """
+    Try to split a merged Vietnamese word into two monosyllabic words.
+    Returns list of (first_part, second_part) candidates.
+    
+    Vietnamese words are typically 1-4 characters. If a word is 5+ chars,
+    it might be two merged words.
+    """
+    if len(word) < 4:  # Too short to be merged
+        return []
+    
+    candidates = []
+    # Try splits where each part is at least min_part_len and at most 4 chars
+    # Vietnamese monosyllabic words are typically 1-4 characters
+    for split_pos in range(min_part_len, min(len(word) - min_part_len + 1, 5)):
+        first = word[:split_pos]
+        second = word[split_pos:]
+        # Both parts should be reasonable length (1-4 chars for Vietnamese)
+        if 1 <= len(first) <= 4 and 1 <= len(second) <= 4:
+            candidates.append((first, second))
+    
+    return candidates
+
+
+def expand_audio_words_with_splits(audio_words: List[str], sentence_words: List[str]) -> List[List[str]]:
+    """
+    Generate candidate audio word sequences by trying to split merged words.
+    Returns list of candidate sequences to try matching.
+    
+    Vietnamese is mostly monosyllabic (1-4 chars per word). If Whisper merged
+    two words (e.g., "anh" + "kha" -> "ancha"), try splitting them.
+    """
+    if not audio_words or not sentence_words:
+        return [audio_words]
+    
+    candidates = [audio_words]  # Always include original
+    
+    # Priority: split if audio sequence is shorter than sentence (likely merged words)
+    if len(audio_words) < len(sentence_words):
+        # Try splitting the longest words first
+        word_lengths = [(len(w), i) for i, w in enumerate(audio_words)]
+        word_lengths.sort(reverse=True)  # Longest first
+        
+        for word_len, i in word_lengths:
+            if word_len >= 4:  # 4+ chars might be merged
+                splits = try_split_merged_word(audio_words[i])
+                for first, second in splits:
+                    new_sequence = audio_words[:i] + [first, second] + audio_words[i+1:]
+                    # Avoid duplicates
+                    if new_sequence not in candidates:
+                        candidates.append(new_sequence)
+                        # Limit to avoid too many candidates
+                        if len(candidates) >= 10:
+                            break
+                if len(candidates) >= 10:
+                    break
+    
+    # Also try splitting any very long words (5+ chars) even if counts match
+    for i, audio_word in enumerate(audio_words):
+        if len(audio_word) >= 5:  # Very suspicious for Vietnamese
+            splits = try_split_merged_word(audio_word)
+            for first, second in splits:
+                new_sequence = audio_words[:i] + [first, second] + audio_words[i+1:]
+                if new_sequence not in candidates:
+                    candidates.append(new_sequence)
+                    if len(candidates) >= 15:  # Allow more for very long words
+                        break
+            if len(candidates) >= 15:
+                break
+    
+    return candidates
+
+
 def extract_words_from_sentence(sentence: str) -> List[str]:
     """
     Extract and normalize words from a sentence.
@@ -185,21 +258,37 @@ def find_word_sequence(
                 break
             
             # Extract audio words
-            audio_words = [
+            audio_words_raw = [
                 normalize_word(all_words[i]['word'])
                 for i in range(start_idx, end_idx)
             ]
-            audio_words = [w for w in audio_words if w]
-            audio_words = collapse_num_tokens(audio_words)
+            audio_words_raw = [w for w in audio_words_raw if w]
+            audio_words_raw = collapse_num_tokens(audio_words_raw)
             
-            # Calculate similarity
-            similarity = calculate_word_sequence_similarity(sentence_words, audio_words)
+            # Try original and split candidates
+            audio_candidates = expand_audio_words_with_splits(audio_words_raw, sentence_words)
+            
+            # Try each candidate and pick the best similarity
+            best_candidate_similarity = 0.0
+            best_candidate_words = audio_words_raw
+            
+            for candidate in audio_candidates:
+                candidate = collapse_num_tokens(candidate)
+                sim = calculate_word_sequence_similarity(sentence_words, candidate)
+                if sim > best_candidate_similarity:
+                    best_candidate_similarity = sim
+                    best_candidate_words = candidate
+            
+            similarity = best_candidate_similarity
+            audio_words = best_candidate_words
+            # Use the length of the best candidate (may be longer if words were split)
+            actual_audio_length = len(best_candidate_words)
             
             if similarity >= min_similarity:
                 matched_words = all_words[start_idx:end_idx]
                 match_start_time = matched_words[0]['start']
                 word_jump = start_idx - start_word_idx
-                word_diff = abs(num_sentence_words - length)
+                word_diff = abs(num_sentence_words - actual_audio_length)
                 
                 # Calculate composite score that prefers:
                 # 1. High similarity (0-1)
@@ -328,14 +417,36 @@ def match_sentences_using_words(
         sentence_words = extract_words_from_sentence(sentence)
         
         # Adjust parameters based on consecutive failures
-        # After 2+ failures, allow larger jumps to catch up
+        # After 2+ failures, allow slightly larger jumps but still conservative
         is_recovery_mode = consecutive_failures >= 2
-        recovery_word_jump = min(max_word_jump, 300) if is_recovery_mode else max_word_jump
-        recovery_time_jump = min(max_time_jump, 90.0) if is_recovery_mode else max_time_jump
-        recovery_search_window = min(max_search_window, 1500) if is_recovery_mode else max_search_window
+        
+        # MINIMIZE WORD JUMPS: Very conservative by default
+        if previous_matched:
+            # After a successful match, keep jumps very small (5-10 words max)
+            if previous_similarity is not None and previous_similarity >= 0.8:
+                # High confidence match: very tight (5 words)
+                base_word_jump = 5
+                base_time_jump = 8.0
+            elif previous_similarity is not None and previous_similarity >= 0.6:
+                # Medium confidence: still tight (8 words)
+                base_word_jump = 8
+                base_time_jump = 10.0
+            else:
+                # Lower confidence but still matched: moderate (10 words)
+                base_word_jump = 10
+                base_time_jump = 12.0
+        else:
+            # After unmatched sentence: allow small jump (15-20 words max)
+            if is_recovery_mode:
+                # Multiple failures: slightly more lenient but still small
+                base_word_jump = 20
+                base_time_jump = 15.0
+            else:
+                # Single failure: small jump
+                base_word_jump = 15
+                base_time_jump = 12.0
         
         # Per-sentence tuning
-        # Treat short lines more broadly to tighten jumps (helps with terse dialog)
         is_short_sentence = len(sentence_words) <= 5
         is_long_sentence = len(sentence_words) >= 30
         sentence_min_similarity = max(0.45, min_similarity - 0.1) if is_short_sentence else min_similarity
@@ -344,31 +455,27 @@ def match_sentences_using_words(
             # Allow partial matches on long lines (missing tail) by relaxing thresholds and gaps
             sentence_min_similarity = max(0.4, min_similarity - 0.2)
             sentence_max_word_gap = max(sentence_max_word_gap, int(len(sentence_words) * 0.4))
-        sentence_max_search_window = min(recovery_search_window, 200) if is_short_sentence and not is_recovery_mode else recovery_search_window
-        # Allow large jumps only after a miss OR in recovery mode; otherwise tighten for short sentences
-        allowed_word_jump = recovery_word_jump
-        allowed_time_jump = recovery_time_jump
-        if is_short_sentence and previous_matched and not is_recovery_mode:
-            allowed_word_jump = min(recovery_word_jump, 30)
-            allowed_time_jump = min(recovery_time_jump, 10.0)
-
-        # If the previous sentence matched strongly, disallow large jumps to stay sequential.
-        # Also tighten jumps for very short follow-up lines after a decent match.
-        if previous_matched and not is_recovery_mode and previous_similarity is not None:
-            if previous_similarity >= 0.9:
-                allowed_word_jump = min(allowed_word_jump, 20)
-                allowed_time_jump = min(allowed_time_jump, 12.0)
-            elif previous_similarity >= 0.75:
-                allowed_word_jump = min(allowed_word_jump, 25)
-                allowed_time_jump = min(allowed_time_jump, 15.0)
-            elif previous_similarity >= 0.6 and len(sentence_words) <= 5:
-                # Short line after a reasonably good match: keep the search tight
-                allowed_word_jump = min(allowed_word_jump, 20)
-                allowed_time_jump = min(allowed_time_jump, 12.0)
-        # Even after lower-similarity matches, keep short lines reasonably tight
-        if previous_matched and not is_recovery_mode and len(sentence_words) <= 6:
-            allowed_word_jump = min(allowed_word_jump, 35)
-            allowed_time_jump = min(allowed_time_jump, 15.0)
+        
+        # Apply sentence-specific adjustments
+        allowed_word_jump = base_word_jump
+        allowed_time_jump = base_time_jump
+        
+        # Short sentences: even tighter
+        if is_short_sentence and previous_matched:
+            allowed_word_jump = min(allowed_word_jump, 6)
+            allowed_time_jump = min(allowed_time_jump, 8.0)
+        
+        # Ensure we never exceed the hard limit
+        allowed_word_jump = min(allowed_word_jump, max_word_jump)
+        allowed_time_jump = min(allowed_time_jump, max_time_jump)
+        
+        # Search window: keep reasonable but not excessive
+        if is_recovery_mode:
+            sentence_max_search_window = min(max_search_window, 400)  # Reduced from 1500
+        elif is_short_sentence:
+            sentence_max_search_window = min(max_search_window, 150)
+        else:
+            sentence_max_search_window = max_search_window
         
         if not sentence_words:
             results.append({
@@ -407,9 +514,9 @@ def match_sentences_using_words(
                     time_jump = match_result['start_time'] - previous_end_time
                 
                 # Warn if jump is large (even if within limits)
-                if word_jump > 30:
+                if word_jump > 10:
                     print(f"  ⚠️  Large word jump: {word_jump} words (from {current_word_idx} to {match_result['start_word_idx']})")
-                if time_jump is not None and time_jump > 10.0:
+                if time_jump is not None and time_jump > 8.0:
                     print(f"  ⚠️  Large time jump: {time_jump:.2f}s (from {previous_end_time:.2f}s to {match_result['start_time']:.2f}s)")
                 
                 results.append({
@@ -471,9 +578,9 @@ def match_sentences_using_words(
                     time_jump = relaxed_match['start_time'] - previous_end_time
                 
                 # Warn if jump is large
-                if word_jump > 30:
+                if word_jump > 10:
                     print(f"  ⚠️  Large word jump in relaxed search: {word_jump} words")
-                if time_jump is not None and time_jump > 10.0:
+                if time_jump is not None and time_jump > 8.0:
                     print(f"  ⚠️  Large time jump in relaxed search: {time_jump:.2f}s")
                 
                 # Found with relaxed search
@@ -520,45 +627,48 @@ def match_sentences_using_words(
                 consecutive_failures += 1
                 previous_matched = False
                 
-                # In recovery mode (3+ failures), try to jump ahead more aggressively
+                # In recovery mode (2+ failures), try a slightly more lenient search but still small jumps
                 if is_recovery_mode:
-                    # Try to find ANY match for this sentence by searching much further ahead
-                    print(f"    → Recovery mode: searching ahead more aggressively...")
+                    # Try to find match with slightly relaxed parameters but STILL small jumps
+                    print(f"    → Recovery mode: searching with relaxed similarity but small jumps...")
                     aggressive_match = find_word_sequence(
                         sentence_words=sentence_words,
                         all_words=all_words,
                         start_word_idx=current_word_idx,
-                        max_search_window=min(2500, len(all_words) - current_word_idx),  # Very large window
-                        min_similarity=0.3,  # Lower threshold
-                        max_word_gap=18,  # More tolerance
-                        max_word_jump=600,  # Allow very large jumps
-                        max_time_jump=150.0,  # Allow 2.5 minutes
-                        previous_end_time=None  # Don't check time continuity
+                        max_search_window=min(400, len(all_words) - current_word_idx),  # Moderate window
+                        min_similarity=0.35,  # Lower threshold
+                        max_word_gap=10,  # More tolerance
+                        max_word_jump=25,  # Still small jump (increased from 20 for recovery)
+                        max_time_jump=20.0,  # Still reasonable time jump
+                        previous_end_time=previous_end_time  # Still check time continuity
                     )
                     
                     if aggressive_match and aggressive_match['similarity'] >= 0.35:
-                        print(f"    ✓ Found match in recovery mode at word {aggressive_match['start_word_idx']}")
-                        results[-1] = {
-                            'line_number': idx + 1,
-                            'sentence': sentence,
-                            'sentence_words': sentence_words,
-                            **aggressive_match,
-                            'matched_text': ' '.join([w['word'] for w in aggressive_match['matched_words']]),
-                            'recovery_mode': True
-                        }
-                        current_word_idx = aggressive_match['end_word_idx'] + 1
-                        previous_end_time = aggressive_match['end_time']
-                        previous_matched = True
-                        previous_similarity = aggressive_match['similarity']
-                        consecutive_failures = 0
-                        continue
+                        word_jump = aggressive_match['start_word_idx'] - current_word_idx
+                        if word_jump <= 25:  # Only accept if jump is still small
+                            print(f"    ✓ Found match in recovery mode at word {aggressive_match['start_word_idx']} (jump: {word_jump})")
+                            results[-1] = {
+                                'line_number': idx + 1,
+                                'sentence': sentence,
+                                'sentence_words': sentence_words,
+                                **aggressive_match,
+                                'matched_text': ' '.join([w['word'] for w in aggressive_match['matched_words']]),
+                                'recovery_mode': True
+                            }
+                            current_word_idx = aggressive_match['end_word_idx'] + 1
+                            previous_end_time = aggressive_match['end_time']
+                            previous_matched = True
+                            previous_similarity = aggressive_match['similarity']
+                            consecutive_failures = 0
+                            continue
+                        else:
+                            print(f"    ✗ Recovery match found but jump too large ({word_jump} > 25), rejecting")
                 
-                # Very conservative skip: just 1 word forward (unless in recovery mode)
+                # Very conservative skip: minimal advancement
                 # This ensures we don't miss sequential sentences
-                # The next sentence will try from this position + 1
                 if current_word_idx < len(all_words) - 1:
-                    # In recovery mode, skip ahead more (10 words) to catch up faster
-                    skip_amount = 10 if is_recovery_mode else 1
+                    # Even in recovery mode, skip very little (max 3 words)
+                    skip_amount = min(3, len(sentence_words)) if is_recovery_mode else 1
                     current_word_idx = min(current_word_idx + skip_amount, len(all_words) - 1)
                     print(f"    → Advancing by {skip_amount} word(s) to {current_word_idx} ({'recovery mode' if is_recovery_mode else 'conservative skip'})")
                 else:
