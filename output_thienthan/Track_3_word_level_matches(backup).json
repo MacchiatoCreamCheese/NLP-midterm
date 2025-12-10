@@ -3615,11 +3615,8 @@
   },
   {
     "line_number": 29,
-    "sentence": "- Chào anh Kha! Chào anh Kha!",
+    "sentence": "- Chào anh Kha!",
     "sentence_words": [
-      "chào",
-      "anh",
-      "kha",
       "chào",
       "anh",
       "kha"
@@ -3634,43 +3631,67 @@
         "word": "ancha.",
         "start": 161.68,
         "end": 162.38
-      },
-      {
-        "word": "Thế",
-        "start": 163.38,
-        "end": 163.94
-      },
-      {
-        "word": "nó",
-        "start": 163.94,
-        "end": 164.16
-      },
-      {
-        "word": "gọi",
-        "start": 164.16,
-        "end": 164.54
       }
     ],
     "word_indices": [
       443,
-      444,
-      445,
-      446,
-      447
+      444
     ],
     "start_word_idx": 443,
-    "end_word_idx": 447,
+    "end_word_idx": 444,
     "start_time": 161.14,
-    "end_time": 164.54,
-    "similarity": 0.6382978723404256,
-    "score": 0.9382978723404256,
-    "num_sentence_words": 6,
-    "num_matched_words": 5,
+    "end_time": 162.38,
+    "similarity": 0.8695652173913043,
+    "score": 1.1695652173913043,
+    "num_sentence_words": 3,
+    "num_matched_words": 2,
     "word_diff": 0,
-    "matched_text": "chào ancha. Thế nó gọi"
+    "matched_text": "chào ancha."
   },
   {
     "line_number": 30,
+    "sentence": "Chào anh Kha!",
+    "sentence_words": [
+      "chào",
+      "anh",
+      "kha"
+    ],
+    "matched_words": [
+      {
+        "word": "mình,",
+        "start": 165.0,
+        "end": 165.18
+      },
+      {
+        "word": "tuổi",
+        "start": 165.64,
+        "end": 165.82
+      },
+      {
+        "word": "khóa",
+        "start": 165.82,
+        "end": 166.08
+      }
+    ],
+    "word_indices": [
+      450,
+      451,
+      452
+    ],
+    "start_word_idx": 450,
+    "end_word_idx": 452,
+    "start_time": 165.0,
+    "end_time": 166.08,
+    "similarity": 0.46153846153846156,
+    "score": 0.7615384615384615,
+    "num_sentence_words": 3,
+    "num_matched_words": 3,
+    "word_diff": 0,
+    "matched_text": "mình, tuổi khóa",
+    "relaxed_search": true
+  },
+  {
+    "line_number": 31,
     "sentence": "Thấy nó gọi đúng tên mình, tôi khoái chí, quên béng giận hờn.",
     "sentence_words": [
       "thấy",
@@ -3687,37 +3708,42 @@
       "giận",
       "hờn"
     ],
+    "matched_words": null,
+    "error": "No match found"
+  },
+  {
+    "line_number": 32,
+    "sentence": "Và cũng nhờ nó bất thần chào tôi như vậy, tôi mới sực nhớ ra hôm qua tôi đã quên dạy cho nó chào người bạn mới.",
+    "sentence_words": [
+      "và",
+      "cũng",
+      "nhờ",
+      "nó",
+      "bất",
+      "thần",
+      "chào",
+      "tôi",
+      "như",
+      "vậy",
+      "tôi",
+      "mới",
+      "sực",
+      "nhớ",
+      "ra",
+      "hôm",
+      "qua",
+      "tôi",
+      "đã",
+      "quên",
+      "dạy",
+      "cho",
+      "nó",
+      "chào",
+      "người",
+      "bạn",
+      "mới"
+    ],
     "matched_words": [
-      {
-        "word": "đúng",
-        "start": 164.54,
-        "end": 164.82
-      },
-      {
-        "word": "tin",
-        "start": 164.82,
-        "end": 165.0
-      },
-      {
-        "word": "mình,",
-        "start": 165.0,
-        "end": 165.18
-      },
-      {
-        "word": "tuổi",
-        "start": 165.64,
-        "end": 165.82
-      },
-      {
-        "word": "khóa",
-        "start": 165.82,
-        "end": 166.08
-      },
-      {
-        "word": "chí,",
-        "start": 166.08,
-        "end": 166.52
-      },
       {
         "word": "quên",
         "start": 166.84,
@@ -3752,67 +3778,7 @@
         "word": "nhờ",
         "start": 168.98,
         "end": 169.24
-      }
-    ],
-    "word_indices": [
-      448,
-      449,
-      450,
-      451,
-      452,
-      453,
-      454,
-      455,
-      456,
-      457,
-      458,
-      459,
-      460
-    ],
-    "start_word_idx": 448,
-    "end_word_idx": 460,
-    "start_time": 164.54,
-    "end_time": 169.24,
-    "similarity": 0.6140350877192983,
-    "score": 0.9140350877192982,
-    "num_sentence_words": 13,
-    "num_matched_words": 13,
-    "word_diff": 0,
-    "matched_text": "đúng tin mình, tuổi khóa chí, quên bán dần hợp, và cũng nhờ"
-  },
-  {
-    "line_number": 31,
-    "sentence": "Và cũng nhờ nó bất thần chào tôi như vậy, tôi mới sực nhớ ra hôm qua tôi đã quên dạy cho nó chào người bạn mới.",
-    "sentence_words": [
-      "và",
-      "cũng",
-      "nhờ",
-      "nó",
-      "bất",
-      "thần",
-      "chào",
-      "tôi",
-      "như",
-      "vậy",
-      "tôi",
-      "mới",
-      "sực",
-      "nhớ",
-      "ra",
-      "hôm",
-      "qua",
-      "tôi",
-      "đã",
-      "quên",
-      "dạy",
-      "cho",
-      "nó",
-      "chào",
-      "người",
-      "bạn",
-      "mới"
-    ],
-    "matched_words": [
+      },
       {
         "word": "nó",
         "start": 169.24,
@@ -3912,44 +3878,16 @@
         "word": "nó",
         "start": 174.8,
         "end": 175.12
-      },
-      {
-        "word": "lại",
-        "start": 175.12,
-        "end": 175.48
-      },
-      {
-        "word": "chào",
-        "start": 175.48,
-        "end": 175.9
-      },
-      {
-        "word": "người",
-        "start": 175.9,
-        "end": 176.24
-      },
-      {
-        "word": "bản",
-        "start": 176.24,
-        "end": 176.78
-      },
-      {
-        "word": "mới.",
-        "start": 176.78,
-        "end": 177.02
-      },
-      {
-        "word": "Tôi",
-        "start": 178.18,
-        "end": 178.44
-      },
-      {
-        "word": "liền",
-        "start": 178.44,
-        "end": 178.72
       }
     ],
     "word_indices": [
+      454,
+      455,
+      456,
+      457,
+      458,
+      459,
+      460,
       461,
       462,
       463,
@@ -3969,28 +3907,21 @@
       477,
       478,
       479,
-      480,
-      481,
-      482,
-      483,
-      484,
-      485,
-      486,
-      487
+      480
     ],
-    "start_word_idx": 461,
-    "end_word_idx": 487,
-    "start_time": 169.24,
-    "end_time": 178.72,
-    "similarity": 0.8387096774193549,
-    "score": 1.1387096774193548,
+    "start_word_idx": 454,
+    "end_word_idx": 480,
+    "start_time": 166.84,
+    "end_time": 175.12,
+    "similarity": 0.794392523364486,
+    "score": 1.094392523364486,
     "num_sentence_words": 27,
     "num_matched_words": 27,
     "word_diff": 0,
-    "matched_text": "nó bất hình chào tôi như vậy, tôi mới sự nhớ ra hôm qua, tôi đã quên dễ cho nó lại chào người bản mới. Tôi liền"
+    "matched_text": "quên bán dần hợp, và cũng nhờ nó bất hình chào tôi như vậy, tôi mới sự nhớ ra hôm qua, tôi đã quên dễ cho nó"
   },
   {
-    "line_number": 32,
+    "line_number": 33,
     "sentence": "Tôi liền bước lại gần nó, nói:",
     "sentence_words": [
       "tôi",
@@ -4002,6 +3933,26 @@
       "nói"
     ],
     "matched_words": [
+      {
+        "word": "bản",
+        "start": 176.24,
+        "end": 176.78
+      },
+      {
+        "word": "mới.",
+        "start": 176.78,
+        "end": 177.02
+      },
+      {
+        "word": "Tôi",
+        "start": 178.18,
+        "end": 178.44
+      },
+      {
+        "word": "liền",
+        "start": 178.44,
+        "end": 178.72
+      },
       {
         "word": "bước",
         "start": 178.72,
@@ -4029,25 +3980,29 @@
       }
     ],
     "word_indices": [
+      484,
+      485,
+      486,
+      487,
       488,
       489,
       490,
       491,
       492
     ],
-    "start_word_idx": 488,
+    "start_word_idx": 484,
     "end_word_idx": 492,
-    "start_time": 178.72,
+    "start_time": 176.24,
     "end_time": 180.12,
-    "similarity": 0.8085106382978723,
-    "score": 1.0085106382978724,
+    "similarity": 0.875,
+    "score": 1.075,
     "num_sentence_words": 7,
-    "num_matched_words": 5,
+    "num_matched_words": 9,
     "word_diff": 2,
-    "matched_text": "bước lại gần nó, nói."
+    "matched_text": "bản mới. Tôi liền bước lại gần nó, nói."
   },
   {
-    "line_number": 33,
+    "line_number": 34,
     "sentence": "- Bây giờ tao dạy cho mày một câu mới nghen!",
     "sentence_words": [
       "numtok",
@@ -4137,7 +4092,7 @@
     "matched_text": "Bây giờ, tôi giải cho mày một câu mới nghe."
   },
   {
-    "line_number": 34,
+    "line_number": 35,
     "sentence": "Rồi không đợi nó đồng ý hay không, tôi tiếp luôn:",
     "sentence_words": [
       "rồi",
@@ -4234,7 +4189,7 @@
     "matched_text": "Trời không đợi nó đồng ý, hay không, tôi tiếp lục."
   },
   {
-    "line_number": 35,
+    "line_number": 36,
     "sentence": "- Chào Hồng Hoa!",
     "sentence_words": [
       "chào",
@@ -4275,7 +4230,7 @@
     "matched_text": "Chào hồng qua,"
   },
   {
-    "line_number": 36,
+    "line_number": 37,
     "sentence": "Nói đi!",
     "sentence_words": [
       "nói",
@@ -4309,7 +4264,7 @@
     "matched_text": "nói đi,"
   },
   {
-    "line_number": 37,
+    "line_number": 38,
     "sentence": "Chào Hồng Hoa!",
     "sentence_words": [
       "chào",
@@ -4350,7 +4305,7 @@
     "matched_text": "chào hồng qua."
   },
   {
-    "line_number": 38,
+    "line_number": 39,
     "sentence": "Con sáo tỏ ra bướng bỉnh tợn.",
     "sentence_words": [
       "con",
@@ -4419,7 +4374,7 @@
     "matched_text": "Cùng xáo tổ ra bướng bệnh tận,"
   },
   {
-    "line_number": 39,
+    "line_number": 40,
     "sentence": "Nó đứng im re, lại còn trố mắt nhìn tôi như thể muốn xem tôi định nổi giận đến mức nào.",
     "sentence_words": [
       "nó",
@@ -4586,7 +4541,7 @@
     "matched_text": "nó đứng im ra để còn chúa mất dình tôi như thể muốn xem tôi đình nổi dẫn bức nạ. Biết"
   },
   {
-    "line_number": 40,
+    "line_number": 41,
     "sentence": "Biết không thể làm gì được nó, tôi đành nhẫn nại nhắc đi nhắc lại cho nó chú ý:",
     "sentence_words": [
       "biết",
@@ -4739,22 +4694,14 @@
     "matched_text": "không thể làm gì được nó, tôi đần dẫn này nhất đi nhất lại cho nó chú ý. Chào"
   },
   {
-    "line_number": 41,
-    "sentence": "- Chào Hồng Hoa! Chào Hồng Hoa!",
+    "line_number": 42,
+    "sentence": "- Chào Hồng Hoa!",
     "sentence_words": [
-      "chào",
-      "hồng",
-      "hoa",
       "chào",
       "hồng",
       "hoa"
     ],
     "matched_words": [
-      {
-        "word": "hồng",
-        "start": 209.8,
-        "end": 210.16
-      },
       {
         "word": "qua,",
         "start": 210.16,
@@ -4769,33 +4716,67 @@
         "word": "hồng",
         "start": 211.2,
         "end": 211.54
-      },
-      {
-        "word": "qua,",
-        "start": 211.54,
-        "end": 211.86
       }
     ],
     "word_indices": [
-      569,
       570,
       571,
-      572,
-      573
+      572
     ],
-    "start_word_idx": 569,
-    "end_word_idx": 573,
-    "start_time": 209.8,
-    "end_time": 211.86,
-    "similarity": 0.7346938775510204,
-    "score": 0.9846938775510204,
-    "num_sentence_words": 6,
-    "num_matched_words": 5,
-    "word_diff": 1,
-    "matched_text": "hồng qua, chào hồng qua,"
+    "start_word_idx": 570,
+    "end_word_idx": 572,
+    "start_time": 210.16,
+    "end_time": 211.54,
+    "similarity": 0.6923076923076923,
+    "score": 0.9923076923076923,
+    "num_sentence_words": 3,
+    "num_matched_words": 3,
+    "word_diff": 0,
+    "matched_text": "qua, chào hồng"
   },
   {
-    "line_number": 42,
+    "line_number": 43,
+    "sentence": "Chào Hồng Hoa!",
+    "sentence_words": [
+      "chào",
+      "hồng",
+      "hoa"
+    ],
+    "matched_words": [
+      {
+        "word": "đi,",
+        "start": 212.68,
+        "end": 212.84
+      },
+      {
+        "word": "chào",
+        "start": 213.08,
+        "end": 213.38
+      },
+      {
+        "word": "hồng",
+        "start": 213.38,
+        "end": 213.68
+      }
+    ],
+    "word_indices": [
+      576,
+      577,
+      578
+    ],
+    "start_word_idx": 576,
+    "end_word_idx": 578,
+    "start_time": 212.68,
+    "end_time": 213.68,
+    "similarity": 0.72,
+    "score": 1.02,
+    "num_sentence_words": 3,
+    "num_matched_words": 3,
+    "word_diff": 0,
+    "matched_text": "đi, chào hồng"
+  },
+  {
+    "line_number": 44,
     "sentence": "Con sáo của tôi tính nết hệt trẻ con.",
     "sentence_words": [
       "con",
@@ -4809,11 +4790,6 @@
       "con"
     ],
     "matched_words": [
-      {
-        "word": "hồng",
-        "start": 213.38,
-        "end": 213.68
-      },
       {
         "word": "qua.",
         "start": 213.68,
@@ -4861,7 +4837,6 @@
       }
     ],
     "word_indices": [
-      578,
       579,
       580,
       581,
@@ -4872,19 +4847,19 @@
       586,
       587
     ],
-    "start_word_idx": 578,
+    "start_word_idx": 579,
     "end_word_idx": 587,
-    "start_time": 213.38,
+    "start_time": 213.68,
     "end_time": 217.4,
-    "similarity": 0.7088607594936709,
-    "score": 0.9588607594936709,
+    "similarity": 0.7567567567567568,
+    "score": 1.0567567567567568,
     "num_sentence_words": 9,
-    "num_matched_words": 10,
-    "word_diff": 1,
-    "matched_text": "hồng qua. Cùng xáo của tôi tính nhất hật trẻ"
+    "num_matched_words": 9,
+    "word_diff": 0,
+    "matched_text": "qua. Cùng xáo của tôi tính nhất hật trẻ"
   },
   {
-    "line_number": 43,
+    "line_number": 45,
     "sentence": "Nếu có thứ gì ngon ngon trọng vào mồm nó thì dụ nó học được ngay.",
     "sentence_words": [
       "nếu",
@@ -5016,7 +4991,7 @@
     "matched_text": "còn. Nếu có thứ diện hôm con tổng dòng buồn nó, thì dụ nó học được"
   },
   {
-    "line_number": 44,
+    "line_number": 46,
     "sentence": "Kẹt một nỗi, lúc này tôi không có gì trong tay để làm đồ dùng dạy học.",
     "sentence_words": [
       "kẹt",
@@ -5161,7 +5136,7 @@
     "matched_text": "ngay. Kẹt một nổi, chút này tôi lệ không có gì trong tay để làm đồ dùng dễ"
   },
   {
-    "line_number": 45,
+    "line_number": 47,
     "sentence": "Thế là gần một tiếng đồng hồ, tôi cứ phải mỏi miệng lặp đi lặp lại câu chào mới cả trăm lần để bắt nó nhớ.",
     "sentence_words": [
       "thế",
@@ -5363,7 +5338,7 @@
     "matched_text": "học. Thế là gần bột tiếng đồng hồ, tôi cứ phải mỏi miền lập đi lập lại cô chào mới cả trăm lần để bắt nó"
   },
   {
-    "line_number": 46,
+    "line_number": 48,
     "sentence": "Có lẽ thấy tôi mồ hôi mồ kê nhễ nhại và sắp sửa đứt hơi đến nơi, con sáo của tôi động lòng trắc ẩn nên cuối cùng nó đồng ý hạ mình nhắc lại cái câu chào đáng chán kia.",
     "sentence_words": [
       "có",
@@ -5670,7 +5645,7 @@
     "matched_text": "nhớ. Cô lệ thế tôi đổ một hôi, một hôi một kề nhễ nhàng, gia sắp xử đức hơi đến nơi. Cùng xáo của tôi đồng lòng tác Ấn, nên cuối cùng nó đồng ý hạm bình nhất lại cây cô"
   },
   {
-    "line_number": 47,
+    "line_number": 49,
     "sentence": "Cứ vậy, một thầy một trò, kẻ nghểnh cổ trông lên, kẻ cúi đầu nhìn xuống, hai bên nói qua nói lại chỉ mỗi một câu cho đến tận tối mịt.",
     "sentence_words": [
       "cứ",
@@ -5907,7 +5882,7 @@
     "matched_text": "chào đáng chán kìa. Cứ vậy, một ngày một trò, cẻ ngãnh cổ trong nên, cẻ cuối đậu nhìn xuống, hai bên, nói qua nấy lại chỉ mỗi một câu cho"
   },
   {
-    "line_number": 48,
+    "line_number": 50,
     "sentence": "Tối đó, tôi đi ngủ với một tâm trạng hân hoan khó tả.",
     "sentence_words": [
       "tối",
@@ -6017,7 +5992,7 @@
     "matched_text": "tuyết mịch. Tôi đó, tôi đi ngủ dễ một tâm trạng hương hoàng"
   },
   {
-    "line_number": 49,
+    "line_number": 51,
     "sentence": "Nằm trằn trọc trên giường, tôi cứ hình dung ra cảnh gặp gỡ ngày mai với Hồng Hoa.",
     "sentence_words": [
       "numtok",
@@ -6163,7 +6138,7 @@
     "matched_text": "khó tả, năm trần tộc trên dựng, tôi cứ khỉnh dung ra cạnh gặp gỡ nghe mai dưới"
   },
   {
-    "line_number": 50,
+    "line_number": 52,
     "sentence": "Tôi sẽ ra lệnh cho con sáo chào Hồng Hoa trước sự ngạc nhiên của nó.",
     "sentence_words": [
       "tôi",
@@ -6295,7 +6270,7 @@
     "matched_text": "hộng hoa. Tôi sẽ ra lệnh cho con sáo chào hộng hoa trước sự ngạc nhiên"
   },
   {
-    "line_number": 51,
+    "line_number": 53,
     "sentence": "Chắc nó sẽ thích thú lắm.",
     "sentence_words": [
       "chắc",
@@ -6369,7 +6344,7 @@
     "matched_text": "nó, chắc là nó sẽ thích thư lắm"
   },
   {
-    "line_number": 52,
+    "line_number": 54,
     "sentence": "Và đằng nào nó cũng sẽ lại xuýt xoa:",
     "sentence_words": [
       "và",
@@ -6446,7 +6421,7 @@
     "matched_text": "đi. Giả đang nào nó cũng sẽ lệ"
   },
   {
-    "line_number": 53,
+    "line_number": 55,
     "sentence": "\"Con sáo thông minh ghê!\" cho mà xem.",
     "sentence_words": [
       "con",
@@ -6534,7 +6509,7 @@
     "matched_text": "con sáo của anh thông tin ghê! Trò mà xem,"
   },
   {
-    "line_number": 54,
+    "line_number": 56,
     "sentence": "Tôi nói đâu có sai.",
     "sentence_words": [
       "tôi",
@@ -6589,7 +6564,7 @@
     "matched_text": "tôi nói đối của xài."
   },
   {
-    "line_number": 55,
+    "line_number": 57,
     "sentence": "Chiều hôm sau, tôi có mặt ngoài vườn từ sớm.",
     "sentence_words": [
       "chiều",
@@ -6679,7 +6654,7 @@
     "matched_text": "Chìa hôm sau, tôi có mặc ngoài dường tự sớm,"
   },
   {
-    "line_number": 56,
+    "line_number": 58,
     "sentence": "Tôi đem theo cuốn sách để đọc nhưng rốt cuộc tôi chẳng đọc được chữ nào.",
     "sentence_words": [
       "tôi",
@@ -6811,7 +6786,7 @@
     "matched_text": "tôi đem theo cũng sắc đầy động, nhưng rút cực, tôi chẳng đọc đều chữ nào."
   },
   {
-    "line_number": 57,
+    "line_number": 59,
     "sentence": "Chốc chốc, tôi lại liếc mắt về phía hàng rào, bụng thấp tha thấp thỏm.",
     "sentence_words": [
       "chốc",
@@ -6936,7 +6911,7 @@
     "matched_text": "Trúc chúc, tôi lại liết mắt dẹp phía hàng rào, bùng thấp hà thấp thống."
   },
   {
-    "line_number": 58,
+    "line_number": 60,
     "sentence": "Tôi cứ liếc chừng như vậy đến lần thứ một trăm thì Hồng Hoa xuất hiện.",
     "sentence_words": [
       "tôi",
@@ -7067,7 +7042,7 @@
     "matched_text": "Tôi cứ liết chuyện như vậy đến lần tư một trăm thì hộng hoa xuất hiện."
   },
   {
-    "line_number": 59,
+    "line_number": 61,
     "sentence": "Thấy cái đầu nó thập thò chỗ lỗ hổng, tôi mừng rơn, vội chạy lại giúp nó chui qua.",
     "sentence_words": [
       "thấy",
@@ -7220,7 +7195,7 @@
     "matched_text": "Thì, cái đọng nó thập thò chỗ lỗ hổng, tôi mừng rương, dùa chạy lại, giúp đó truy qua."
   },
   {
-    "line_number": 60,
+    "line_number": 62,
     "sentence": "Tôi vừa gỡ sợi dây leo vướng trên tóc nó vừa hỏi:",
     "sentence_words": [
       "tôi",
@@ -7324,7 +7299,7 @@
     "matched_text": "Tôi dự ở sợ dây leo vướng trên tốc nó, dự hỏi."
   },
   {
-    "line_number": 61,
+    "line_number": 63,
     "sentence": "- Chiều hôm qua mày có đến không?",
     "sentence_words": [
       "chiều",
@@ -7393,7 +7368,7 @@
     "matched_text": "Chìa hôm qua, bày có đến không?"
   },
   {
-    "line_number": 62,
+    "line_number": 64,
     "sentence": "- Có.",
     "sentence_words": [
       "có"
@@ -7420,7 +7395,7 @@
     "matched_text": "Có,"
   },
   {
-    "line_number": 63,
+    "line_number": 65,
     "sentence": "Nhưng em đứng ngoài hàng rào.",
     "sentence_words": [
       "nhưng",
@@ -7488,7 +7463,7 @@
     "matched_text": "dừng gềm đứng ngon ngoài hàng rào,"
   },
   {
-    "line_number": 64,
+    "line_number": 66,
     "sentence": "- Sao mày không chui vô?",
     "sentence_words": [
       "sao",
@@ -7549,7 +7524,7 @@
     "matched_text": "sao bày không có chú dốt?"
   },
   {
-    "line_number": 65,
+    "line_number": 67,
     "sentence": "Hồng Hoa chớp mắt:",
     "sentence_words": [
       "hồng",
@@ -7597,7 +7572,7 @@
     "matched_text": "Hồng hoa trước mất."
   },
   {
-    "line_number": 66,
+    "line_number": 68,
     "sentence": "- Em đứng ngoài em dòm vô một hồi.",
     "sentence_words": [
       "em",
@@ -7673,7 +7648,7 @@
     "matched_text": "Em bướng ngoài, em dầm giúp một hồi,"
   },
   {
-    "line_number": 67,
+    "line_number": 69,
     "sentence": "Không thấy anh, thế là em về.",
     "sentence_words": [
       "numtok",
@@ -7742,7 +7717,7 @@
     "matched_text": "không thích anh, thích là em đi"
   },
   {
-    "line_number": 68,
+    "line_number": 70,
     "sentence": "- Ừ, tao quên dặn mày.",
     "sentence_words": [
       "ừ",
@@ -7797,7 +7772,7 @@
     "matched_text": "Ừ, tôi quân dạng mày."
   },
   {
-    "line_number": 69,
+    "line_number": 71,
     "sentence": "Chiều thứ hai, thứ tư và thứ sáu, tao phải đi học thêm, năm giờ mới về!",
     "sentence_words": [
       "chiều",
@@ -7936,7 +7911,7 @@
     "matched_text": "Chỉ đứa hai thứ tư giả thứ sáu hàng tường, tôi phải đi học thêm 5 giờ"
   },
   {
-    "line_number": 70,
+    "line_number": 72,
     "sentence": "- Tôi nói, giọng áy náy.",
     "sentence_words": [
       "tôi",
@@ -7991,7 +7966,7 @@
     "matched_text": "về. Tôi nói dọng anh"
   },
   {
-    "line_number": 71,
+    "line_number": 73,
     "sentence": "- Vậy mà anh không chịu nói trước, làm hôm qua em đứng đợi mỏi chân thấy mồ!",
     "sentence_words": [
       "vậy",
@@ -8130,7 +8105,7 @@
     "matched_text": "ấy. Dậy mà anh không chịu nói trước, làm hôm qua em bướng đầy mỏi chân thêm"
   },
   {
-    "line_number": 72,
+    "line_number": 74,
     "sentence": "Tôi chép miệng:",
     "sentence_words": [
       "tôi",
@@ -8171,7 +8146,7 @@
     "matched_text": "Tôi chết mừng,"
   },
   {
-    "line_number": 73,
+    "line_number": 75,
     "sentence": "- Thì tao đã nói rồi.",
     "sentence_words": [
       "thì",
@@ -8220,7 +8195,7 @@
     "matched_text": "thì tôi tới rồi,"
   },
   {
-    "line_number": 74,
+    "line_number": 76,
     "sentence": "Tao quên.",
     "sentence_words": [
       "tao",
@@ -8254,7 +8229,7 @@
     "matched_text": "tôi quên"
   },
   {
-    "line_number": 75,
+    "line_number": 77,
     "sentence": "Rồi tôi quay sang Hồng Hoa, nói tiếp:",
     "sentence_words": [
       "rồi",
@@ -8336,7 +8311,7 @@
     "matched_text": "mà. Rồi tức quay sang hồng hoa nói tiếp."
   },
   {
-    "line_number": 76,
+    "line_number": 78,
     "sentence": "- Nhưng hôm nào tao đi học thì mày cứ vào chơi một mình, đâu có sao!",
     "sentence_words": [
       "nhưng",
@@ -8468,7 +8443,7 @@
     "matched_text": "Nhưng hôm nào tôi đi học, thì mày cứ dọt chơi một mình, đâu có sao?"
   },
   {
-    "line_number": 77,
+    "line_number": 79,
     "sentence": "Hồng Hoa rụt cổ:",
     "sentence_words": [
       "hồng",
@@ -8510,7 +8485,7 @@
     "matched_text": "Hồng hoa đục"
   },
   {
-    "line_number": 78,
+    "line_number": 80,
     "sentence": "- Xí, ai lại chơi một mình!",
     "sentence_words": [
       "xí",
@@ -8578,7 +8553,7 @@
     "matched_text": "cộng. Sứ, ai là cái một mình?"
   },
   {
-    "line_number": 79,
+    "line_number": 81,
     "sentence": "Tôi bĩu môi:",
     "sentence_words": [
       "tôi",
@@ -8619,7 +8594,7 @@
     "matched_text": "Tôi biểu môi,"
   },
   {
-    "line_number": 80,
+    "line_number": 82,
     "sentence": "- Mày đừng có làm bộ!",
     "sentence_words": [
       "mày",
@@ -8674,7 +8649,7 @@
     "matched_text": "mày đừng có làm bộ."
   },
   {
-    "line_number": 81,
+    "line_number": 83,
     "sentence": "Hôm trước mày chẳng chui vào đây chơi tha thẩn một mình là gì!",
     "sentence_words": [
       "hôm",
@@ -8792,7 +8767,7 @@
     "matched_text": "Hồng trước mày cảnh chua ở đây chơi thả thả thả một bình lãnh"
   },
   {
-    "line_number": 82,
+    "line_number": 84,
     "sentence": "Hồng Hoa hứ một tiếng:",
     "sentence_words": [
       "hồng",
@@ -8853,7 +8828,7 @@
     "matched_text": "gì? Hồng hoa hứa một tiếng."
   },
   {
-    "line_number": 83,
+    "line_number": 85,
     "sentence": "- Hôm trước khác!",
     "sentence_words": [
       "hôm",
@@ -8900,7 +8875,7 @@
     "matched_text": "Hứa, hồng trước khác,"
   },
   {
-    "line_number": 84,
+    "line_number": 86,
     "sentence": "Tại hôm trước em chưa quen anh!",
     "sentence_words": [
       "tại",
@@ -8969,7 +8944,7 @@
     "matched_text": "tại hồng trước, em chưa quen anh"
   },
   {
-    "line_number": 85,
+    "line_number": 87,
     "sentence": "Tâm trạng của nó giống hệt như tâm trạng của tôi.",
     "sentence_words": [
       "numtok",
@@ -9066,7 +9041,7 @@
     "matched_text": "mà. Tâm tràn của nó giống hạt với tâm tràn của"
   },
   {
-    "line_number": 86,
+    "line_number": 88,
     "sentence": "Vì vậy nghe nó nói, tôi cảm động vô cùng.",
     "sentence_words": [
       "vì",
@@ -9156,7 +9131,7 @@
     "matched_text": "tôi, vì vậy nghe nói nói tôi cảm động với"
   },
   {
-    "line_number": 87,
+    "line_number": 89,
     "sentence": "Tôi khịt mũi:",
     "sentence_words": [
       "tôi",
@@ -9191,7 +9166,7 @@
     "matched_text": "tôi kịch"
   },
   {
-    "line_number": 88,
+    "line_number": 90,
     "sentence": "- Vậy thì đợi năm giờ, tao đi học về, mày đến chơi với tao.",
     "sentence_words": [
       "vậy",
@@ -9309,7 +9284,7 @@
     "matched_text": "muối. Dậy thì mày đại 5 giờ đi, tao đi học dạ, mày đến"
   },
   {
-    "line_number": 89,
+    "line_number": 91,
     "sentence": "- Không được!",
     "sentence_words": [
       "numtok",
@@ -9349,7 +9324,7 @@
     "matched_text": "tao. Không được"
   },
   {
-    "line_number": 90,
+    "line_number": 92,
     "sentence": "- Hồng Hoa lắc đầu - Giờ đó em phải ở nhà nấu cơm.",
     "sentence_words": [
       "hồng",
@@ -9453,7 +9428,7 @@
     "matched_text": "đâu, hồng hoa lắc động, cho đó em phải ở nhà nước"
   },
   {
-    "line_number": 91,
+    "line_number": 93,
     "sentence": "- Xạo đi mày!",
     "sentence_words": [
       "xạo",
@@ -9494,7 +9469,7 @@
     "matched_text": "Sảo đi mày,"
   },
   {
-    "line_number": 92,
+    "line_number": 94,
     "sentence": "Hôm trước mày nghe tao kể chuyện công chúa Hồng Hoa đến tối mịt mới về kia mà!",
     "sentence_words": [
       "hôm",
@@ -9640,7 +9615,7 @@
     "matched_text": "hồng trước mày nghe tao kết chuyện công chúa hồng hoa, đến tối bất bây giờ mà. Hồng"
   },
   {
-    "line_number": 93,
+    "line_number": 95,
     "sentence": "Hồng Hoa cười, giải thích:",
     "sentence_words": [
       "hồng",
@@ -9689,7 +9664,7 @@
     "matched_text": "hoa cửa giải thích,"
   },
   {
-    "line_number": 94,
+    "line_number": 96,
     "sentence": "- Tại vì hôm đó ba mẹ em đi công chuyện về trễ, em không phải nấu cơm sớm như mọi ngày.",
     "sentence_words": [
       "tại",
@@ -9856,7 +9831,7 @@
     "matched_text": "tại vì hồng đó, bà mày em đi công chuyện về trễ, em không phải nước cơm sớm như bởi ngày."
   },
   {
-    "line_number": 95,
+    "line_number": 97,
     "sentence": "Thấy nó không thể sắp xếp công việc để đến chơi mỗi ngày với tôi được, tôi chán quá bèn hỏi sang chuyện khác:",
     "sentence_words": [
       "thấy",
@@ -10044,7 +10019,7 @@
     "matched_text": "Thế nó không thể sắp sếp công dịch để đến trời mỗi ngày với tôi được, tôi chán quá, bèn hỏi sang chuyện khác."
   },
   {
-    "line_number": 96,
+    "line_number": 98,
     "sentence": "- Ba mày làm nghề gì vậy?",
     "sentence_words": [
       "numtok",
@@ -10106,7 +10081,7 @@
     "matched_text": "Bà mày làm gà gì vậy?"
   },
   {
-    "line_number": 97,
+    "line_number": 99,
     "sentence": "- Ba em làm giáo viên.",
     "sentence_words": [
       "numtok",
@@ -10161,7 +10136,7 @@
     "matched_text": "Bà em làm giáo viên."
   },
   {
-    "line_number": 98,
+    "line_number": 100,
     "sentence": "- Giáo viên hả?",
     "sentence_words": [
       "giáo",
@@ -10202,7 +10177,7 @@
     "matched_text": "Giáo viên hả?"
   },
   {
-    "line_number": 99,
+    "line_number": 101,
     "sentence": "Hay quá hén!",
     "sentence_words": [
       "hay",
@@ -10243,7 +10218,7 @@
     "matched_text": "Hày quá hả?"
   },
   {
-    "line_number": 100,
+    "line_number": 102,
     "sentence": "Ba mày dạy ở trường nào?",
     "sentence_words": [
       "numtok",
@@ -10299,7 +10274,7 @@
     "matched_text": "Bà mày giải trường nào?"
   },
   {
-    "line_number": 101,
+    "line_number": 103,
     "sentence": "- Chợt tôi bỗng sáng mắt, reo lên - Có khi ba mày dạo ở trường tao không chừng!",
     "sentence_words": [
       "chợt",
@@ -10438,7 +10413,7 @@
     "matched_text": "Trật tuyệt bộng sáng mất rồi luôn, có kì bà mày dậy ở trường tao không trường"
   },
   {
-    "line_number": 102,
+    "line_number": 104,
     "sentence": "Hồng Hoa đưa tay ngắt một cọng cỏ, giọng buồn buồn:",
     "sentence_words": [
       "hồng",
@@ -10541,7 +10516,7 @@
     "matched_text": "hả? Hồng hoa đưa tình nát một tổng tỏ, đồng buồn buồn."
   },
   {
-    "line_number": 103,
+    "line_number": 105,
     "sentence": "-Ba em nghỉ dạy ba, bốn năm nay rồi.",
     "sentence_words": [
       "numtok",
@@ -10634,7 +10609,7 @@
     "matched_text": "Bà em nghĩ vậy, 3, 4, 5, 5, 8. Tuy hát"
   },
   {
-    "line_number": 104,
+    "line_number": 106,
     "sentence": "Tôi há hốc mồm:",
     "sentence_words": [
       "tôi",
@@ -10671,7 +10646,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 105,
+    "line_number": 107,
     "sentence": "- Sao lại vậy?",
     "sentence_words": [
       "sao",
@@ -10682,7 +10657,7 @@
     "error": "No match found"
   },
   {
-    "line_number": 106,
+    "line_number": 108,
     "sentence": "Bộ ba mày về hưu rồi hả?",
     "sentence_words": [
       "bộ",
@@ -10757,7 +10732,7 @@
     "matched_text": "dễ, bộ bà mày dây hô rời hả?"
   },
   {
-    "line_number": 107,
+    "line_number": 109,
     "sentence": "Hồng Hoa cắn môi:",
     "sentence_words": [
       "hồng",
@@ -10799,7 +10774,7 @@
     "matched_text": "Hồng hoa cắn"
   },
   {
-    "line_number": 108,
+    "line_number": 110,
     "sentence": "- Ba em đâu đã đến tuổi về hưu Tại ba em không có hộ khẩu nên người ta không cho đi dạy.",
     "sentence_words": [
       "numtok",
@@ -10973,7 +10948,7 @@
     "matched_text": "buồn. Đầu có, bà em đồ để đến tuổi về hô đâu. Tại bà em không có hồ khẩu, nên người ta"
   },
   {
-    "line_number": 109,
+    "line_number": 111,
     "sentence": "Tôi gật gù ra vẻ hiểu biết:",
     "sentence_words": [
       "tôi",
@@ -11037,7 +11012,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 110,
+    "line_number": 112,
     "sentence": "- Hóa ra là chuyện hộ khẩu!",
     "sentence_words": [
       "hóa",
@@ -11105,7 +11080,7 @@
     "matched_text": "chuyện. Hóa ra là chuyện hồ khẩu"
   },
   {
-    "line_number": 111,
+    "line_number": 113,
     "sentence": "Chuyện này gay đấy!",
     "sentence_words": [
       "chuyện",
@@ -11159,7 +11134,7 @@
     "matched_text": "hả? Chuyện này gây đấy."
   },
   {
-    "line_number": 112,
+    "line_number": 114,
     "sentence": "Thế còn mẹ mày?",
     "sentence_words": [
       "thế",
@@ -11201,7 +11176,7 @@
     "matched_text": "Tuyệt mẹ mày"
   },
   {
-    "line_number": 113,
+    "line_number": 115,
     "sentence": "- Mẹ em sao?",
     "sentence_words": [
       "mẹ",
@@ -11248,7 +11223,7 @@
     "matched_text": "Hả? Mẹ em sao?"
   },
   {
-    "line_number": 114,
+    "line_number": 116,
     "sentence": "- Mẹ mày làm nghề gì?",
     "sentence_words": [
       "mẹ",
@@ -11315,7 +11290,7 @@
     "matched_text": "Tà hỏi mẹ mày làm nghe gì?"
   },
   {
-    "line_number": 115,
+    "line_number": 117,
     "sentence": "Hồng Hoa lộ vẻ lúng túng:",
     "sentence_words": [
       "hồng",
@@ -11377,7 +11352,7 @@
     "matched_text": "Hồng hoa lỗi dễ lúc túng."
   },
   {
-    "line_number": 116,
+    "line_number": 118,
     "sentence": "- Mẹ em hả?",
     "sentence_words": [
       "mẹ",
@@ -11418,7 +11393,7 @@
     "matched_text": "Mẹ em hả?"
   },
   {
-    "line_number": 117,
+    "line_number": 119,
     "sentence": "Người ta bảo mẹ em làm nghề... tự do.",
     "sentence_words": [
       "người",
@@ -11501,7 +11476,7 @@
     "matched_text": "nghe người ta nói, mẹ em làm, làm nghe"
   },
   {
-    "line_number": 118,
+    "line_number": 120,
     "sentence": "Tôi chẳng biết nghề tự do là cái nghề quái quỉ gì nhưng cũng gật đầu đại:",
     "sentence_words": [
       "tôi",
@@ -11634,7 +11609,7 @@
     "matched_text": "do. Tuyệt gật giò là cái kể quái quý vị nữa, dừng cũng gật đầu đại."
   },
   {
-    "line_number": 119,
+    "line_number": 121,
     "sentence": "- Hay quá hén!",
     "sentence_words": [
       "hay",
@@ -11675,7 +11650,7 @@
     "matched_text": "Hày quá hẹn."
   },
   {
-    "line_number": 120,
+    "line_number": 122,
     "sentence": "Té ra mẹ mày làm nghề tự do!",
     "sentence_words": [
       "té",
@@ -11751,7 +11726,7 @@
     "matched_text": "Tới ta mẹ mày làm nghe tử do."
   },
   {
-    "line_number": 121,
+    "line_number": 123,
     "sentence": "Tôi khen hay mà chẳng hiểu sao nét mặt Hồng Hoa cứ dàu dàu.",
     "sentence_words": [
       "tôi",
@@ -11869,7 +11844,7 @@
     "matched_text": "hình hày mà chẳng hiểu sao nếu mà không hoa cư, rầu rầu. Chắc"
   },
   {
-    "line_number": 122,
+    "line_number": 124,
     "sentence": "Chắc ba mẹ nó có chuyện buồn nên nó không muốn ai nhắc đến!",
     "sentence_words": [
       "chắc",
@@ -11987,7 +11962,7 @@
     "matched_text": "bà mẹ nó có chuyện buồn, đình nó không muốn ảnh nhất đến. Tuyệt"
   },
   {
-    "line_number": 123,
+    "line_number": 125,
     "sentence": "Tôi nhủ bụng như vậy và hỏi lảng sang chuyện khác để giúp nó nguôi ngoai:",
     "sentence_words": [
       "tôi",
@@ -12119,7 +12094,7 @@
     "matched_text": "gửa buồn như vậy, dạ hỏi lãng sang chuyện khác để giúp đo ngùi ngoài. Bố"
   },
   {
-    "line_number": 124,
+    "line_number": 126,
     "sentence": "- Buổi chiều mày hay đi chơi, như vậy là mày học buổi sáng hén?",
     "sentence_words": [
       "buổi",
@@ -12237,7 +12212,7 @@
     "matched_text": "chiều mày hay đi chơi, như vậy là mày học buổi sáng hả? Nào"
   },
   {
-    "line_number": 125,
+    "line_number": 127,
     "sentence": "Nào ngờ Hồng Hoa lắc đầu:",
     "sentence_words": [
       "nào",
@@ -12293,7 +12268,7 @@
     "matched_text": "ngờ hồng hoa lất đồng."
   },
   {
-    "line_number": 126,
+    "line_number": 128,
     "sentence": "- Em nghỉ học lâu rồi.",
     "sentence_words": [
       "em",
@@ -12354,7 +12329,7 @@
     "matched_text": "có, em nghĩ học lưu rồi."
   },
   {
-    "line_number": 127,
+    "line_number": 129,
     "sentence": "Nó trả lời bằng một giọng buồn thỉu buồn thiu.",
     "sentence_words": [
       "nó",
@@ -12438,7 +12413,7 @@
     "matched_text": "Nói tới lời bằng một giống buồn thiếu à,"
   },
   {
-    "line_number": 128,
+    "line_number": 130,
     "sentence": "Dòm mặt nó, tự nhiên tôi cảm thấy nao nao trong lòng.",
     "sentence_words": [
       "dòm",
@@ -12542,7 +12517,7 @@
     "matched_text": "giống mặc nó, tưởng dân tôi cảm thấy nào nào trong lòng"
   },
   {
-    "line_number": 129,
+    "line_number": 131,
     "sentence": "Tôi hỏi chuyện học, tính làm cho nó vui, không dè lại làm nó buồn thêm.",
     "sentence_words": [
       "tôi",
@@ -12674,7 +12649,7 @@
     "matched_text": "làm sao đó. Tuyệt hỏi chuyện học, tính làm cho nó dui, không dẹ, đại làm"
   },
   {
-    "line_number": 130,
+    "line_number": 132,
     "sentence": "- Sao mày phải nghỉ học vậy?",
     "sentence_words": [
       "sao",
@@ -12742,7 +12717,7 @@
     "matched_text": "thêm. Sau mày phải nghĩ học vậy,"
   },
   {
-    "line_number": 131,
+    "line_number": 133,
     "sentence": "- Tôi hỏi, giọng bùi ngùi.",
     "sentence_words": [
       "tôi",
@@ -12797,7 +12772,7 @@
     "matched_text": "tuyệt hỏi giống buồn người,"
   },
   {
-    "line_number": 132,
+    "line_number": 134,
     "sentence": "Hồng Hoa không đáp.",
     "sentence_words": [
       "hồng",
@@ -12845,7 +12820,7 @@
     "matched_text": "hồng hoa không đáp,"
   },
   {
-    "line_number": 133,
+    "line_number": 135,
     "sentence": "Nó chớp mắt và quay mặt đi chỗ khác.",
     "sentence_words": [
       "nó",
@@ -12928,7 +12903,7 @@
     "matched_text": "đó chấp mắc dạ, quay mặc đi chủ khác."
   },
   {
-    "line_number": 134,
+    "line_number": 136,
     "sentence": "Tôi đoán mò:",
     "sentence_words": [
       "tôi",
@@ -12969,7 +12944,7 @@
     "matched_text": "Tuyệt đoán mọng,"
   },
   {
-    "line_number": 135,
+    "line_number": 137,
     "sentence": "- Lại chuyện hộ khẩu nữa chứ gì?",
     "sentence_words": [
       "lại",
@@ -13038,7 +13013,7 @@
     "matched_text": "lại là trường hộ khẩu nữa chứ?"
   },
   {
-    "line_number": 136,
+    "line_number": 138,
     "sentence": "Hồng Hoa vẫn không quay mặt lại nhưng tôi thấy nó khẽ gật đầu.",
     "sentence_words": [
       "hồng",
@@ -13156,7 +13131,7 @@
     "matched_text": "Hồng hoa dẫn không quay mặc lại, dừng tùy thế thấy nó khẻ gật"
   },
   {
-    "line_number": 137,
+    "line_number": 139,
     "sentence": "Tôi định tìm lời an ủi nó nhưng nghĩ mãi chẳng biết nói gì.",
     "sentence_words": [
       "tôi",
@@ -13274,7 +13249,7 @@
     "matched_text": "đầu, tôi đình tìm lời ăn uổi nó, nhưng nghĩ mải chẳng biết nói"
   },
   {
-    "line_number": 138,
+    "line_number": 140,
     "sentence": "Loay hoay một hồi, tôi đành chép miệng:",
     "sentence_words": [
       "loay",
@@ -13350,7 +13325,7 @@
     "matched_text": "lây quay mụ hồi tôi đánh chấp miền."
   },
   {
-    "line_number": 139,
+    "line_number": 141,
     "sentence": "- Ai ở dưới quê lên cũng vậy thôi!",
     "sentence_words": [
       "ai",
@@ -13426,7 +13401,7 @@
     "matched_text": "Ai ở với quay lên cũng dễ thôi,"
   },
   {
-    "line_number": 140,
+    "line_number": 142,
     "sentence": "Tao nghe người ta bảo nhập hộ khẩu khó lắm!",
     "sentence_words": [
       "tao",
@@ -13516,7 +13491,7 @@
     "matched_text": "tòng ngày người ta bảo nhập hộ khẩu khó lắm."
   },
   {
-    "line_number": 141,
+    "line_number": 143,
     "sentence": "Vừa nói tôi vừa nhìn Hồng Hoa và thấy đôi vai mảnh khảnh của nó hình như đang rung lên.",
     "sentence_words": [
       "vừa",
@@ -13676,7 +13651,7 @@
     "matched_text": "Dự nói, tôi dừa nhìn hồng hoa, giặt thế tôi về mạnh cạnh của nó, kỉnh dư, đàn, dùng lên."
   },
   {
-    "line_number": 142,
+    "line_number": 144,
     "sentence": "Chắc là nó khóc!",
     "sentence_words": [
       "chắc",
@@ -13724,7 +13699,7 @@
     "matched_text": "Chắc là nó khóc,"
   },
   {
-    "line_number": 143,
+    "line_number": 145,
     "sentence": "Tôi nghĩ thầm và cảm thấy lòng xốn xang vô kể.",
     "sentence_words": [
       "tôi",
@@ -13821,7 +13796,7 @@
     "matched_text": "tôi nghĩ thầm, giặt cảm thấy lòng súng sang dô kẹ."
   },
   {
-    "line_number": 144,
+    "line_number": 146,
     "sentence": "Nhưng tôi không dám bước tới.",
     "sentence_words": [
       "nhưng",
@@ -13883,7 +13858,7 @@
     "matched_text": "Nhưng tôi không dám bước tới,"
   },
   {
-    "line_number": 145,
+    "line_number": 147,
     "sentence": "Tôi chỉ đứng im buồn rầu nhìn nó và nghĩ xem có cách gì giúp nó hay không.",
     "sentence_words": [
       "tôi",
@@ -14029,7 +14004,7 @@
     "matched_text": "tôi chỉ đứng ếm buồn rầu nhìn nó, dàng nghĩ xem, có cách gì giúp nó hay không."
   },
   {
-    "line_number": 146,
+    "line_number": 148,
     "sentence": "Chợt tôi reo lên:",
     "sentence_words": [
       "chợt",
@@ -14077,7 +14052,7 @@
     "matched_text": "Chật tôi ra lên."
   },
   {
-    "line_number": 147,
+    "line_number": 149,
     "sentence": "- A, phải rồi!",
     "sentence_words": [
       "a",
@@ -14118,7 +14093,7 @@
     "matched_text": "Ah phải rồi,"
   },
   {
-    "line_number": 148,
+    "line_number": 150,
     "sentence": "Để tao nhờ ba tao nhập hộ khẩu giùm cho gia đình mày!",
     "sentence_words": [
       "để",
@@ -14229,7 +14204,7 @@
     "matched_text": "để tao giờ ba tao nhập hộ khẩu dùng cho gia đình mây"
   },
   {
-    "line_number": 149,
+    "line_number": 151,
     "sentence": "Ba tao làm lớn lắm, lại quen toàn các ông to, chắc là nhập được!",
     "sentence_words": [
       "numtok",
@@ -14354,7 +14329,7 @@
     "matched_text": "nha, ba tao đậm lưỡng lắm, lại con tồn cách ông to không hoa, chắc"
   },
   {
-    "line_number": 150,
+    "line_number": 152,
     "sentence": "Tôi vừa nói dứt câu, Hồng Hoa quay mặt lại.",
     "sentence_words": [
       "tôi",
@@ -14444,7 +14419,7 @@
     "matched_text": "nhập được. Tôi dừa nói dứt cơ, Hồng hoa quay"
   },
   {
-    "line_number": 151,
+    "line_number": 153,
     "sentence": "Tôi càng hí hửng:",
     "sentence_words": [
       "tôi",
@@ -14492,7 +14467,7 @@
     "matched_text": "tôi cần khí hữu,"
   },
   {
-    "line_number": 152,
+    "line_number": 154,
     "sentence": "- Vậy hén!",
     "sentence_words": [
       "vậy",
@@ -14502,7 +14477,7 @@
     "error": "No match found"
   },
   {
-    "line_number": 153,
+    "line_number": 155,
     "sentence": "Để tối nay tao nói với ba tao!",
     "sentence_words": [
       "để",
@@ -14584,7 +14559,7 @@
     "matched_text": "nha để tôi đây, tao nói với ba tao"
   },
   {
-    "line_number": 154,
+    "line_number": 156,
     "sentence": "Nào ngờ Hồng Hoa không chịu.",
     "sentence_words": [
       "nào",
@@ -14646,7 +14621,7 @@
     "matched_text": "Đồng ngờ, Hồng hoa công chiều,"
   },
   {
-    "line_number": 155,
+    "line_number": 157,
     "sentence": "Nó đưa tay quẹt nước mắt, đáp:",
     "sentence_words": [
       "nó",
@@ -14715,7 +14690,7 @@
     "matched_text": "nói được tìa quạt đứt mắc đáp."
   },
   {
-    "line_number": 156,
+    "line_number": 158,
     "sentence": "- Thôi, khỏi!",
     "sentence_words": [
       "thôi",
@@ -14749,7 +14724,7 @@
     "matched_text": "Thôi, khỏi"
   },
   {
-    "line_number": 157,
+    "line_number": 159,
     "sentence": "Ba em nộp giấy tờ lâu rồi, chắc trước sau gì người ta cũng cho nhập.",
     "sentence_words": [
       "numtok",
@@ -14881,7 +14856,7 @@
     "matched_text": "đi anh, ba em à nập giết ta lâu rồi, chắc trước sau dị người ta"
   },
   {
-    "line_number": 158,
+    "line_number": 160,
     "sentence": "Tôi nhíu mày:",
     "sentence_words": [
       "tôi",
@@ -14922,7 +14897,7 @@
     "matched_text": "Tuy nhiêu mày,"
   },
   {
-    "line_number": 159,
+    "line_number": 161,
     "sentence": "- Nhưng đợi tới lúc đó, mày lớn rồi, làm sao đi học được nữa?",
     "sentence_words": [
       "nhưng",
@@ -15040,7 +15015,7 @@
     "matched_text": "dừng đại tới lúc đó, mày lớn tối rồi làm sao đi học được"
   },
   {
-    "line_number": 160,
+    "line_number": 162,
     "sentence": "Hồng Hoa lộ vẻ băn khoăn:",
     "sentence_words": [
       "hồng",
@@ -15102,7 +15077,7 @@
     "matched_text": "Hồng hoa lồ dễ ban quanh,"
   },
   {
-    "line_number": 161,
+    "line_number": 163,
     "sentence": "- Em cũng chẳng biết!",
     "sentence_words": [
       "em",
@@ -15150,7 +15125,7 @@
     "matched_text": "em cũng trảnh biết,"
   },
   {
-    "line_number": 162,
+    "line_number": 164,
     "sentence": "- Rồi nó cắn môi, quả quyết - Thì em cứ... đi học đại!",
     "sentence_words": [
       "rồi",
@@ -15254,7 +15229,7 @@
     "matched_text": "rồi đó cánh bôi quạt kích, thì em cứ đi học đại."
   },
   {
-    "line_number": 163,
+    "line_number": 165,
     "sentence": "Tôi định tọt miệng \"Mày lớn tồng ngồng, sức mấy người ta nhận mày vô học\" nhưng may sao, tôi tốp lại kịp.",
     "sentence_words": [
       "tôi",
@@ -15435,7 +15410,7 @@
     "matched_text": "Tôi định dọc miền, mày lớn tổng ngồng sức mấy mà người ta dọng mày yêu học, nhưng mày sao tôi tốt lại"
   },
   {
-    "line_number": 164,
+    "line_number": 166,
     "sentence": "Nếu tôi ngứa mồm nói ra, chắc Hồng Hoa càng buồn gấp bội.",
     "sentence_words": [
       "nếu",
@@ -15546,7 +15521,7 @@
     "matched_text": "kịp. Để tôi ngứa buồn nói ra, chắc không hoa, càng buồn ngấp"
   },
   {
-    "line_number": 165,
+    "line_number": 167,
     "sentence": "Câu chuyện giữa hai đứa tôi lại rơi vào im lặng.",
     "sentence_words": [
       "câu",
@@ -15649,7 +15624,7 @@
     "matched_text": "bồi. Cô chuyện dữa hai đứa tôi lạy rơi vào em lặng,"
   },
   {
-    "line_number": 166,
+    "line_number": 168,
     "sentence": "Không khí tĩnh mịch đến mức có thể nghe rõ tiếng còi xe từ tít ngoài đường vọng vào, và đôi khi tôi tưởng như nghe được cả tiếng cây uể oải vặn mình trong vườn.",
     "sentence_words": [
       "numtok",
@@ -15921,7 +15896,7 @@
     "matched_text": "không khí tính mịch đến mức, có thể ngay rõ tiến còi xe tự tiết ngoài đường dọng nhọc. Dạ đôi khi tôi tự nhiêu ngay được cả tiến cây, tự ái, dặng bình trong dự."
   },
   {
-    "line_number": 167,
+    "line_number": 169,
     "sentence": "Tôi hít một hơi đầy lồng ngực để mong giảm bớt cảm giác nặng nề.",
     "sentence_words": [
       "tôi",
@@ -16046,7 +16021,7 @@
     "matched_text": "Tôi kích một hơi đầy lòng ngực để mong giảm bước cảm giác nặng đẹp."
   },
   {
-    "line_number": 168,
+    "line_number": 170,
     "sentence": "Đồng thời tôi cũng tự trách mình, sao tự dưng đi hỏi chuyện về gia cảnh Hồng Hoa làm gì cho rắc rối không biết.",
     "sentence_words": [
       "đồng",
@@ -16241,7 +16216,7 @@
     "matched_text": "Đồng thời tôi công tự thích biệt, sát rồi dân đi hỏi chuyện dạy gặp hồng hoa làm gì, trọng rất rối không biết. Đàng"
   },
   {
-    "line_number": 169,
+    "line_number": 171,
     "sentence": "Đang lúng túng chưa biết nên làm gì để phá vỡ bầu không khí nặng nề đó, bỗng dưng tôi sực nhớ đến con sáo, liền hớn hở khoe:",
     "sentence_words": [
       "đang",
@@ -16464,7 +16439,7 @@
     "matched_text": "lũng tướng chưa biết đen làm gì để phái chạp bầu công khí nặng đẹp đó, bóng dân tôi sự nhớ đến cộng sáo liền hướng hợp khuê. Anh"
   },
   {
-    "line_number": 170,
+    "line_number": 172,
     "sentence": "- À nè, con sáo của tao biết chào mày rồi nghen!",
     "sentence_words": [
       "à",
@@ -16555,7 +16530,7 @@
     "matched_text": "ơi, còn sao có tao biết chào mày rồi nhanh."
   },
   {
-    "line_number": 171,
+    "line_number": 173,
     "sentence": "Hồng Hoa tươi ngay nét mặt:",
     "sentence_words": [
       "hồng",
@@ -16617,7 +16592,7 @@
     "matched_text": "Hồng hoa từ ngay nét mặt,"
   },
   {
-    "line_number": 172,
+    "line_number": 174,
     "sentence": "- Chào em hả?",
     "sentence_words": [
       "chào",
@@ -16664,7 +16639,7 @@
     "matched_text": "hả? Chào em hả?"
   },
   {
-    "line_number": 173,
+    "line_number": 175,
     "sentence": "Tôi gật đầu:",
     "sentence_words": [
       "tôi",
@@ -16705,7 +16680,7 @@
     "matched_text": "Tôi gật đồng,"
   },
   {
-    "line_number": 174,
+    "line_number": 176,
     "sentence": "- Ừ, hôm qua tao dạy nó suốt cả buổi chiều.",
     "sentence_words": [
       "ừ",
@@ -16795,7 +16770,7 @@
     "matched_text": "ưu, hồng hoa, tàu dạy nó xuất cả bối kiều"
   },
   {
-    "line_number": 175,
+    "line_number": 177,
     "sentence": "Bỗng Hồng Hoa \"hứ\" một tiếng:",
     "sentence_words": [
       "bỗng",
@@ -16863,7 +16838,7 @@
     "matched_text": "luôn. Bổng hồng hoa hứa một tiếng,"
   },
   {
-    "line_number": 176,
+    "line_number": 178,
     "sentence": "- Suốt buổi chiều đâu mà suốt buổi chiều!",
     "sentence_words": [
       "suốt",
@@ -16939,7 +16914,7 @@
     "matched_text": "xuất bối kiều đồng mà xuất bối kiều,"
   },
   {
-    "line_number": 177,
+    "line_number": 179,
     "sentence": "Hôm qua anh đi học đến năm giờ mới về kia mà!",
     "sentence_words": [
       "hôm",
@@ -17043,7 +17018,7 @@
     "matched_text": "hồng hoa, anh đi hợp đến 5 giờ mới về mặt. Tôi"
   },
   {
-    "line_number": 178,
+    "line_number": 180,
     "sentence": "Tôi gãi đầu, ấp úng:",
     "sentence_words": [
       "tôi",
@@ -17092,7 +17067,7 @@
     "matched_text": "dạy đầu ạp bún,"
   },
   {
-    "line_number": 179,
+    "line_number": 181,
     "sentence": "- Thì vậy!",
     "sentence_words": [
       "thì",
@@ -17126,7 +17101,7 @@
     "matched_text": "thiển dạy"
   },
   {
-    "line_number": 180,
+    "line_number": 182,
     "sentence": "Nhưng mà từ năm giờ trở đi, tao dạy nó nói đến tận tối mịt.",
     "sentence_words": [
       "nhưng",
@@ -17251,7 +17226,7 @@
     "matched_text": "nhưng mà từ 5 giờ chở đi, tàu dạy nó nói đen tận tối mặt"
   },
   {
-    "line_number": 181,
+    "line_number": 183,
     "sentence": "Rồi tôi liếc Hồng Hoa, nhăn mặt trách:",
     "sentence_words": [
       "rồi",
@@ -17327,7 +17302,7 @@
     "matched_text": "đó. Rồi, tôi liết hồng hoa nhanh mặt"
   },
   {
-    "line_number": 182,
+    "line_number": 184,
     "sentence": "-Mày sao ưa bắt bẻ quá!",
     "sentence_words": [
       "mày",
@@ -17389,7 +17364,7 @@
     "matched_text": "Mày, sao mới ưa bắt bé"
   },
   {
-    "line_number": 183,
+    "line_number": 185,
     "sentence": "Tao nói lộn có chút xíu mà mày cũng cãi tới cãi lui!",
     "sentence_words": [
       "tao",
@@ -17500,7 +17475,7 @@
     "matched_text": "tao quá vậy? Tàu tới lồn có chút xíu mà mày cũng cải"
   },
   {
-    "line_number": 184,
+    "line_number": 186,
     "sentence": "Hồng Hoa cười:",
     "sentence_words": [
       "hồng",
@@ -17541,7 +17516,7 @@
     "matched_text": "Hồng hoa kỳ"
   },
   {
-    "line_number": 185,
+    "line_number": 187,
     "sentence": "- Ai bảo anh nói lộn chi!",
     "sentence_words": [
       "ai",
@@ -17609,7 +17584,7 @@
     "matched_text": "nó, ai bảo anh đến lồn chì?"
   },
   {
-    "line_number": 186,
+    "line_number": 188,
     "sentence": "Không thèm cãi nhau với nó, tôi rảo bước lại phía gốc khế cạnh giếng nước, nói:",
     "sentence_words": [
       "numtok",
@@ -17748,7 +17723,7 @@
     "matched_text": "Không thể hầm cải nhau cái nó, tôi rõ pết lại phía gốc khế, cạnh dĩ nước"
   },
   {
-    "line_number": 187,
+    "line_number": 189,
     "sentence": "- Mày lại đây tao bảo nó chào mày cho nghe!",
     "sentence_words": [
       "mày",
@@ -17850,7 +17825,7 @@
     "matched_text": "nỗi. Mày lấy đây đi, tao bảo nói chào mày cho nghe."
   },
   {
-    "line_number": 188,
+    "line_number": 190,
     "sentence": "Không đợi tôi gọi đến lần thứ hai, Hồng Hoa vội vã chạy lại đứng bên cạnh tôi.",
     "sentence_words": [
       "numtok",
@@ -17996,7 +17971,7 @@
     "matched_text": "Không đợi, tôi gọi đến lần thứ 2, hồng hoa dội giá trầy lại đứng bên cạnh tuy."
   },
   {
-    "line_number": 189,
+    "line_number": 191,
     "sentence": "Tôi dòm con sáo, hắng giọng bảo:",
     "sentence_words": [
       "tôi",
@@ -18065,7 +18040,7 @@
     "matched_text": "Tôi dòng con xáo, hắng dòng bảo."
   },
   {
-    "line_number": 190,
+    "line_number": 192,
     "sentence": "- Sáo ơi, chào đi!",
     "sentence_words": [
       "sáo",
@@ -18113,7 +18088,7 @@
     "matched_text": "Xấu ơi, chào đi."
   },
   {
-    "line_number": 191,
+    "line_number": 193,
     "sentence": "Con sáo của tôi hôm nay dễ thương hết biết!",
     "sentence_words": [
       "con",
@@ -18203,7 +18178,7 @@
     "matched_text": "Cùng xáo của tôi hôm nay dễ thương hết biết,"
   },
   {
-    "line_number": 192,
+    "line_number": 194,
     "sentence": "Tôi vừa nói xong, nó vui vẻ đáp lại liền:",
     "sentence_words": [
       "tôi",
@@ -18293,7 +18268,7 @@
     "matched_text": "tôi dự nói sông nó dù dễ đáp lầy liên."
   },
   {
-    "line_number": 193,
+    "line_number": 195,
     "sentence": "- Chào anh Kha!",
     "sentence_words": [
       "chào",
@@ -18334,7 +18309,7 @@
     "matched_text": "Chào anh khá,"
   },
   {
-    "line_number": 194,
+    "line_number": 196,
     "sentence": "Chào anh Kha!",
     "sentence_words": [
       "chào",
@@ -18375,7 +18350,7 @@
     "matched_text": "chào anh khá."
   },
   {
-    "line_number": 195,
+    "line_number": 197,
     "sentence": "Vừa chào nó vừa nhảy tưng tưng quang lồng cánh đập cả vào các thanh gỗ.",
     "sentence_words": [
       "vừa",
@@ -18501,7 +18476,7 @@
     "matched_text": "Dự chào, nó dù dễ tuân tương quân lòng, cắn đập cả dào các thành"
   },
   {
-    "line_number": 196,
+    "line_number": 198,
     "sentence": "Tôi khoái chí khen:",
     "sentence_words": [
       "tôi",
@@ -18549,7 +18524,7 @@
     "matched_text": "Tôi khóa giết hình,"
   },
   {
-    "line_number": 197,
+    "line_number": 199,
     "sentence": "- Giỏi lắm!",
     "sentence_words": [
       "giỏi",
@@ -18583,7 +18558,7 @@
     "matched_text": "dội lắm,"
   },
   {
-    "line_number": 198,
+    "line_number": 200,
     "sentence": "Nhưng thôi, mày đừng chào tao nữa!",
     "sentence_words": [
       "nhưng",
@@ -18652,7 +18627,7 @@
     "matched_text": "dương thôi, mày đừng chào tao nữa,"
   },
   {
-    "line_number": 199,
+    "line_number": 201,
     "sentence": "Mày chào người đứng bên cạnh tao đây nè!",
     "sentence_words": [
       "mày",
@@ -18735,7 +18710,7 @@
     "matched_text": "mày chào người đứng cạnh tao đi nè. Tôi"
   },
   {
-    "line_number": 200,
+    "line_number": 202,
     "sentence": "Tôi chỉ tay vào người Hồng Hoa.",
     "sentence_words": [
       "tôi",
@@ -18798,7 +18773,7 @@
     "matched_text": "chỉ tay giả người hồng hoa,"
   },
   {
-    "line_number": 201,
+    "line_number": 203,
     "sentence": "Nhưng con sáo không thèm dòm tôi mà đưa mắt ngắm nghía mấy trái khế đong đưa trước mặt nó.",
     "sentence_words": [
       "nhưng",
@@ -18958,7 +18933,7 @@
     "matched_text": "nhưng con xáo không thể hầm dòng tôi, mà đưa mắt gắm nghĩa mấy trách khế đồng đưa trước mặt"
   },
   {
-    "line_number": 202,
+    "line_number": 204,
     "sentence": "Tôi kiên nhẫn nhắc:",
     "sentence_words": [
       "tôi",
@@ -19000,7 +18975,7 @@
     "matched_text": "Tôi kìa nhận"
   },
   {
-    "line_number": 203,
+    "line_number": 205,
     "sentence": "- Chào đi chứ!",
     "sentence_words": [
       "chào",
@@ -19047,7 +19022,7 @@
     "matched_text": "nhất. Chào đi chứ,"
   },
   {
-    "line_number": 204,
+    "line_number": 206,
     "sentence": "Hôm qua tao dạy mày những gì, mày còn nhớ không?",
     "sentence_words": [
       "hôm",
@@ -19144,7 +19119,7 @@
     "matched_text": "không qua tao dạy mày những gì, mày còn nhớ không?"
   },
   {
-    "line_number": 205,
+    "line_number": 207,
     "sentence": "Con sáo không màng trả lời tôi.",
     "sentence_words": [
       "con",
@@ -19213,7 +19188,7 @@
     "matched_text": "Cùng xáo không mặn tạo lại tôi,"
   },
   {
-    "line_number": 206,
+    "line_number": 208,
     "sentence": "Nó cứ nhảy qua nhảy lại, mắt thì nhìn tận đâu đâu, ra vẻ ta đây không còn nhớ gì hết, nhà ngươi đừng có mà hỏi han lôi thôi.",
     "sentence_words": [
       "nó",
@@ -19443,7 +19418,7 @@
     "matched_text": "nó cứ nhễ qua nghĩ lại mắt tìa nhìn tận đâu, ra dễ ta đi không còn nhớ gì hết. Nhà người đừng có mà hỏi hàng lôi thôi. Tôi"
   },
   {
-    "line_number": 207,
+    "line_number": 209,
     "sentence": "Tôi giận tím ruột nhưng không biết làm sao.",
     "sentence_words": [
       "tôi",
@@ -19526,7 +19501,7 @@
     "matched_text": "dẫn đến tiếm rồi, chừng không biết làm sao."
   },
   {
-    "line_number": 208,
+    "line_number": 210,
     "sentence": "Hồng Hoa đứng bên cạnh hết nhìn con sáo lại quay sang nhìn tôi khiến tôi không dám liếc nó một cái.",
     "sentence_words": [
       "hồng",
@@ -19700,7 +19675,7 @@
     "matched_text": "Hồng hoa, đứng bên gần, thất nhìn con xáo, lại quay sang nhìn tôi khiến tôi không giám liết nó một cái."
   },
   {
-    "line_number": 209,
+    "line_number": 211,
     "sentence": "Suy tính một hồi, thấy không có cách nào hơn là năn nỉ, tôi đành phải cất giọng dịu dàng:",
     "sentence_words": [
       "suy",
@@ -19860,7 +19835,7 @@
     "matched_text": "Sự tính một hồi, thay không có cách nào hơn là năng định, tôi đàn phải cức dòng dự dàng."
   },
   {
-    "line_number": 210,
+    "line_number": 212,
     "sentence": "- Sáo ơi, chào đi chứ!",
     "sentence_words": [
       "sáo",
@@ -19915,7 +19890,7 @@
     "matched_text": "Sau thôi, chào đi chứ,"
   },
   {
-    "line_number": 211,
+    "line_number": 213,
     "sentence": "Mày ngoan lắm mà!",
     "sentence_words": [
       "mày",
@@ -19969,7 +19944,7 @@
     "matched_text": "mày ngu ăn lắm mà,"
   },
   {
-    "line_number": 212,
+    "line_number": 214,
     "sentence": "Nói câu gì hôm qua tao dạy mày đó!",
     "sentence_words": [
       "nói",
@@ -20058,7 +20033,7 @@
     "matched_text": "nói cái câu gì hồng hoa tao dạy mày đó."
   },
   {
-    "line_number": 213,
+    "line_number": 215,
     "sentence": "Không biết cảm động trước cái giọng nịnh nọt của tôi hay vì nhảy lâu mỏi cẳng, con sáo của tôi liền đứng yên, cúi đầu nhìn xuống.",
     "sentence_words": [
       "numtok",
@@ -20274,7 +20249,7 @@
     "matched_text": "Không biết có phải vì cảm động trước cái dòng định nó của tôi, hay không hay là gì nhảy lâu mỗi cảnh, cầm xáo của tôi liền"
   },
   {
-    "line_number": 214,
+    "line_number": 216,
     "sentence": "Tôi mừng rơn, gạ:",
     "sentence_words": [
       "tôi",
@@ -20328,7 +20303,7 @@
     "matched_text": "xuống, tôi mừng rơn rạ,"
   },
   {
-    "line_number": 215,
+    "line_number": 217,
     "sentence": "- Chào đi!",
     "sentence_words": [
       "chào",
@@ -20368,7 +20343,7 @@
     "matched_text": "xáo, chào đi,"
   },
   {
-    "line_number": 216,
+    "line_number": 218,
     "sentence": "Chào Hồng... gì đó!",
     "sentence_words": [
       "chào",
@@ -20410,7 +20385,7 @@
     "matched_text": "chào hồng, hồng"
   },
   {
-    "line_number": 217,
+    "line_number": 219,
     "sentence": "Nghe tôi nhắc tuồng, con sáo hình như chợt nhớ ra.",
     "sentence_words": [
       "nghe",
@@ -20513,7 +20488,7 @@
     "matched_text": "gì đó. Nghe tôi nhất tuần, cầm xáo hình như chật nhớ"
   },
   {
-    "line_number": 218,
+    "line_number": 220,
     "sentence": "Nó liền hoan hỉ kêu lên:",
     "sentence_words": [
       "nó",
@@ -20581,7 +20556,7 @@
     "matched_text": "ra, đó liền hoàng hỉ chứ lên."
   },
   {
-    "line_number": 219,
+    "line_number": 221,
     "sentence": "- Chào Hồng Hoa!",
     "sentence_words": [
       "chào",
@@ -20622,7 +20597,7 @@
     "matched_text": "Chào hồng hoa,"
   },
   {
-    "line_number": 220,
+    "line_number": 222,
     "sentence": "Chào Hồng Hoa!",
     "sentence_words": [
       "chào",
@@ -20663,7 +20638,7 @@
     "matched_text": "chào hồng hoa."
   },
   {
-    "line_number": 221,
+    "line_number": 223,
     "sentence": "Tôi thở phào và quay sang Hồng Hoa, giọng hí hửng:",
     "sentence_words": [
       "tôi",
@@ -20760,7 +20735,7 @@
     "matched_text": "Tôi thở vào giả quy sang hồng hoa dòng hỉ hình."
   },
   {
-    "line_number": 222,
+    "line_number": 224,
     "sentence": "- Mày thấy chưa!",
     "sentence_words": [
       "mày",
@@ -20801,7 +20776,7 @@
     "matched_text": "Mày thấy chưa,"
   },
   {
-    "line_number": 223,
+    "line_number": 225,
     "sentence": "Tao đã bảo con sáo của tao khôn lắm mà!",
     "sentence_words": [
       "tao",
@@ -20891,7 +20866,7 @@
     "matched_text": "tao đã bảo là cầm xáo của tao không lắm"
   },
   {
-    "line_number": 224,
+    "line_number": 226,
     "sentence": "Hồng Hoa tỏ ra thích thú không kém gì tôi.",
     "sentence_words": [
       "hồng",
@@ -20987,7 +20962,7 @@
     "matched_text": "mà. Hồng hoa tỏ ra thích tua không kém gì tôi,"
   },
   {
-    "line_number": 225,
+    "line_number": 227,
     "sentence": "Nó nhìn con sáo bằng ánh mắt hân hoan và khen lấy khen để:",
     "sentence_words": [
       "nó",
@@ -21105,7 +21080,7 @@
     "matched_text": "nói nhìn tuần xáo bằng anh mắc hơn hoa, giả, khèng lý, khèng đẹp."
   },
   {
-    "line_number": 226,
+    "line_number": 228,
     "sentence": "- Con sáo ngoan ghê!",
     "sentence_words": [
       "con",
@@ -21153,7 +21128,7 @@
     "matched_text": "Cùng xáo hoa nghe"
   },
   {
-    "line_number": 227,
+    "line_number": 229,
     "sentence": "Sự trầm trồ của Hồng Hoa khiến tôi nở từng khúc ruột.",
     "sentence_words": [
       "sự",
@@ -21257,7 +21232,7 @@
     "matched_text": "anh ha. Sự trầm trộ của hồng hoa khiến tôi như nợ"
   },
   {
-    "line_number": 228,
+    "line_number": 230,
     "sentence": "Nhưng tôi chưa kịp tận hưởng trọn vẹn niềm vui do sự thông minh của con sáo đem lại thì cũng chính nó, cái con sáo chết tiệt đó, đã chơi tôi một vố đau hơn trời giáng.",
     "sentence_words": [
       "nhưng",
@@ -21543,7 +21518,7 @@
     "matched_text": "từng khúc rụng, nhưng tôi chưa kìa tận hưởng trọn dạng điểm duy với do sự thông minh của cùng xáo đem lại, thì cũng chính nó, cái cùng xáo kết tiệt kia đã chơi tôi một dũ"
   },
   {
-    "line_number": 229,
+    "line_number": 231,
     "sentence": "Hồng Hoa mới vừa khen nó ngoan, lời khen chưa kịp tan trong gió, nó đã chứng minh ngược lại liền.",
     "sentence_words": [
       "hồng",
@@ -21704,7 +21679,7 @@
     "matched_text": "đường trời nhắn. Hồng hoa dừa mới khêng năng hoang, lời khêng chưa kịp canh trong nhó, nó đã chứng"
   },
   {
-    "line_number": 230,
+    "line_number": 232,
     "sentence": "Không biết có phải vì ghét Hồng Hoa về cái tội chưa biết gì về nó mà cũng bày đặt khen, hay vì giận tôi hôm qua bắt nó học đến mệt lử mà không chịu bắt cho nó một con cào cào nào, con sáo của tôi thình lình la to lên cái tiếng bậy bạ trước đây nó học được của anh Khánh.",
     "sentence_words": [
       "numtok",
@@ -22076,7 +22051,7 @@
     "matched_text": "Không biết có phải dì ghét hồng hoa, dì cái tội chứ biết dì dì nó mà cũng bị đặt khêng. Hay gì dẫn tôi hồng hoa bắt nó học đến mệt lửa, mà không chứ bắt cho nó bụng con cao cao nào. Cùng xáo của tôi"
   },
   {
-    "line_number": 231,
+    "line_number": 233,
     "sentence": "Tiếng kêu của nó bất ngờ như sét đánh ngang tai.",
     "sentence_words": [
       "tiếng",
@@ -22222,7 +22197,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 232,
+    "line_number": 234,
     "sentence": "Tôi bàng hoàng cả người, mặt đỏ như ớt chín.",
     "sentence_words": [
       "tôi",
@@ -22306,7 +22281,7 @@
     "matched_text": "tay, tôi bàn quan các gửi mặt đó nhiều"
   },
   {
-    "line_number": 233,
+    "line_number": 235,
     "sentence": "Tôi giận con sáo đến nỗi muốn lấy đá ném cho nó một phát vào đầu.",
     "sentence_words": [
       "tôi",
@@ -22438,7 +22413,7 @@
     "matched_text": "ước chính. Tôi dẫn công xáo đến nổi, buông lấy đác nếm cho nó bộ phát"
   },
   {
-    "line_number": 234,
+    "line_number": 236,
     "sentence": "Cái từ ngữ khủng khiếp kia đã lâu rồi tôi ít nghe nó nói, cứ tưởng nó sắp sửa quên béng đi rồi.",
     "sentence_words": [
       "cái",
@@ -22619,7 +22594,7 @@
     "matched_text": "giao đầu. Cái từ người cùng kết kia đã lâu rồi, tôi ít nghe nó nói, cứ tưởng nó sắp xửa quyền bán"
   },
   {
-    "line_number": 235,
+    "line_number": 237,
     "sentence": "Không ngờ nó chọn đúng lúc có mặt Hồng Hoa để đem cái tiếng ác ôn đó ra \"chơi xỏ\" tôi.",
     "sentence_words": [
       "numtok",
@@ -22786,7 +22761,7 @@
     "matched_text": "đi rồi. Cùng ngờ nó trọng đúng lúc có mặt hồng hoa để đem cái tiếng ác ồn đó rạch chơi"
   },
   {
-    "line_number": 236,
+    "line_number": 238,
     "sentence": "Dòm sang bên cạnh, thấy Hồng Hoa đưa hai tay bịt lỗ tai lại, tôi như muốn chui ngay xuống đất.",
     "sentence_words": [
       "dòm",
@@ -22953,7 +22928,7 @@
     "matched_text": "sỏ tôi. Dòng sang bên cạnh, tôi thấy hồng hoa đưa hai tay bật tay lại từ múc chui ngày xuống"
   },
   {
-    "line_number": 237,
+    "line_number": 239,
     "sentence": "Mãi một lúc sau, Hồng Hoa mới chịu bỏ tay xuống.",
     "sentence_words": [
       "mãi",
@@ -23056,7 +23031,7 @@
     "matched_text": "đất. Mãi một lúc sau hồng hoa mới chịu bỏ tầy xuống,"
   },
   {
-    "line_number": 238,
+    "line_number": 240,
     "sentence": "Và nó nhăn mặt liếc sang tôi, trách:",
     "sentence_words": [
       "và",
@@ -23126,7 +23101,7 @@
     "matched_text": "dả nó nhanh mặt liết tự tất."
   },
   {
-    "line_number": 239,
+    "line_number": 241,
     "sentence": "- Anh dạy con sáo nói bậy!",
     "sentence_words": [
       "anh",
@@ -23194,7 +23169,7 @@
     "matched_text": "Anh, anh dạy công xó đến bấy"
   },
   {
-    "line_number": 240,
+    "line_number": 242,
     "sentence": "Tôi tặc lưỡi:",
     "sentence_words": [
       "tôi",
@@ -23241,7 +23216,7 @@
     "matched_text": "mà? Tôi tạc lưới,"
   },
   {
-    "line_number": 241,
+    "line_number": 243,
     "sentence": "- Tao đâu có dạy, tại nó bắt chước người ta.",
     "sentence_words": [
       "tao",
@@ -23331,7 +23306,7 @@
     "matched_text": "tao đồ có dạy đâu, tả nó bắt trước người"
   },
   {
-    "line_number": 242,
+    "line_number": 244,
     "sentence": "Hồng Hoa dòm tôi lom lom, giọng nghi ngờ:",
     "sentence_words": [
       "hồng",
@@ -23408,7 +23383,7 @@
     "matched_text": "ta. Hồng hoa dòng tôi lòng lòng, dòng"
   },
   {
-    "line_number": 243,
+    "line_number": 245,
     "sentence": "- Người ta nào?",
     "sentence_words": [
       "người",
@@ -23461,7 +23436,7 @@
     "matched_text": "ngờ. Hả, người ta nào,"
   },
   {
-    "line_number": 244,
+    "line_number": 246,
     "sentence": "Em chỉ thấy con sáo chơi với một mình anh.",
     "sentence_words": [
       "em",
@@ -23551,7 +23526,7 @@
     "matched_text": "em chỉ thấy công xó cho với một bình an"
   },
   {
-    "line_number": 245,
+    "line_number": 247,
     "sentence": "Thấy nó cứ khăng khăng đòi lên án tôi, tôi đã tính buộc miệng kể tội của anh Khánh.",
     "sentence_words": [
       "thấy",
@@ -23704,7 +23679,7 @@
     "matched_text": "thôi mà. Thì nó cứ khăn khăn đời lên án tôi, tôi đã tính bụng miền kết tội ông"
   },
   {
-    "line_number": 246,
+    "line_number": 248,
     "sentence": "Nhưng rồi nghĩ đi nghĩ lại, tôi cảm thấy ngượng ngùng, bèn thôi.",
     "sentence_words": [
       "nhưng",
@@ -23815,7 +23790,7 @@
     "matched_text": "Anh khánh, nhưng rồi nghĩ đi nghĩ lại tôi cảm thấy dựng gùng"
   },
   {
-    "line_number": 247,
+    "line_number": 249,
     "sentence": "Và tôi nói một câu bâng quơ:",
     "sentence_words": [
       "và",
@@ -23884,7 +23859,7 @@
     "matched_text": "dạy từ nói một cô bân cua."
   },
   {
-    "line_number": 248,
+    "line_number": 250,
     "sentence": "- Tao đã nói con sáo bắt chước người ta, mày không tin thì thôi!",
     "sentence_words": [
       "tao",
@@ -24002,7 +23977,7 @@
     "matched_text": "Tàu là nói là công xó bất trước người ta, mà mày không tin"
   },
   {
-    "line_number": 249,
+    "line_number": 251,
     "sentence": "Tôi vừa nói vừa nghiêm mặt lại.",
     "sentence_words": [
       "tôi",
@@ -24071,7 +24046,7 @@
     "matched_text": "Tôi dự nói dựng nghi mặt lại,"
   },
   {
-    "line_number": 250,
+    "line_number": 252,
     "sentence": "Thấy vậy, Hồng Hoa sợ hết hồn.",
     "sentence_words": [
       "thấy",
@@ -24140,7 +24115,7 @@
     "matched_text": "thế giày hồng hoa sợ hết thường,"
   },
   {
-    "line_number": 251,
+    "line_number": 253,
     "sentence": "Nó vội vàng mỉm cười:",
     "sentence_words": [
       "nó",
@@ -24195,7 +24170,7 @@
     "matched_text": "nói dựa dàng miếng cửa."
   },
   {
-    "line_number": 252,
+    "line_number": 254,
     "sentence": "- Em tin.",
     "sentence_words": [
       "em",
@@ -24235,7 +24210,7 @@
     "matched_text": "rồi, em tin"
   },
   {
-    "line_number": 253,
+    "line_number": 255,
     "sentence": "Tôi cũng cười theo:",
     "sentence_words": [
       "tôi",
@@ -24289,7 +24264,7 @@
     "matched_text": "mà, tôi cũng cửa theo."
   },
   {
-    "line_number": 254,
+    "line_number": 256,
     "sentence": "- Mày tin tao là đúng.",
     "sentence_words": [
       "mày",
@@ -24344,7 +24319,7 @@
     "matched_text": "Mày tin tao là đúng,"
   },
   {
-    "line_number": 255,
+    "line_number": 257,
     "sentence": "Chứ hồi chơi với tao đến giờ, mày thấy tao nói bậy lần nào chưa?",
     "sentence_words": [
       "chứ",
@@ -24469,7 +24444,7 @@
     "matched_text": "chứ hồi chơi với tao đứng giờ, mày có thấy tao thấy bày lần nào"
   },
   {
-    "line_number": 256,
+    "line_number": 258,
     "sentence": "Hồng Hoa xịu mặt:",
     "sentence_words": [
       "hồng",
@@ -24523,7 +24498,7 @@
     "matched_text": "trước. Hồng hoa sử mặt,"
   },
   {
-    "line_number": 257,
+    "line_number": 259,
     "sentence": "- Em đã bảo em tin anh rồi mà!",
     "sentence_words": [
       "em",
@@ -24605,7 +24580,7 @@
     "matched_text": "em đã bảo là em tin anh rồi mà,"
   },
   {
-    "line_number": 258,
+    "line_number": 260,
     "sentence": "Hỏi hoài!",
     "sentence_words": [
       "hỏi",
@@ -24639,7 +24614,7 @@
     "matched_text": "hỏi quay"
   },
   {
-    "line_number": 259,
+    "line_number": 261,
     "sentence": "Nói xong, Hồng Hoa lại cười ngay.",
     "sentence_words": [
       "nói",
@@ -24714,7 +24689,7 @@
     "matched_text": "á. Thế xong, hồng hoa lại cửa ngay,"
   },
   {
-    "line_number": 260,
+    "line_number": 262,
     "sentence": "Miệng nó cười tươi thật tươi.",
     "sentence_words": [
       "miệng",
@@ -24770,7 +24745,7 @@
     "matched_text": "bày nó cửa thật tươi,"
   },
   {
-    "line_number": 261,
+    "line_number": 263,
     "sentence": "Và tôi vô cùng ngạc nhiên khi nhìn thấy hai lúm đồng tiền trên má nó.",
     "sentence_words": [
       "và",
@@ -24902,7 +24877,7 @@
     "matched_text": "dạy tươi cho cộng nhận, khi nhìn thấy hay lướm tồng tuyền trên má nốt, dừng"
   },
   {
-    "line_number": 262,
+    "line_number": 264,
     "sentence": "Những lúm đồng tiền trông có duyên đáo để.",
     "sentence_words": [
       "những",
@@ -24985,7 +24960,7 @@
     "matched_text": "lướm tồng tuyền, chồng có duyên đáo đẹp, để"
   },
   {
-    "line_number": 263,
+    "line_number": 265,
     "sentence": "Vậy mà mấy bữa nay tôi không biết để chọc cho nó cười coi chơi!",
     "sentence_words": [
       "vậy",
@@ -25110,7 +25085,7 @@
     "matched_text": "mà mấy bữa nay, tự không biết để chọc cho nó cửa còi chơi. Điều"
   },
   {
-    "line_number": 264,
+    "line_number": 266,
     "sentence": "Hóa ra cái nghề... tự do của mẹ Hồng Hoa là nghề bán cháo lòng.",
     "sentence_words": [
       "hóa",
@@ -25133,7 +25108,7 @@
     "error": "No match found"
   },
   {
-    "line_number": 265,
+    "line_number": 267,
     "sentence": "Tôi biết được điều đó hoàn toàn là do ngẫu nhiên.",
     "sentence_words": [
       "tôi",
@@ -25230,7 +25205,7 @@
     "matched_text": "cháo lòng, biết được đều đó, quan toàn, dần gỗ nhiên."
   },
   {
-    "line_number": 266,
+    "line_number": 268,
     "sentence": "Một hôm, nhân mẹ tôi ra chợ, tôi lò dò đi theo để chọn mua cho mình một hộp chì màu vừa ý.",
     "sentence_words": [
       "numtok",
@@ -25411,7 +25386,7 @@
     "matched_text": "Bục hôm, nhưng mà tôi ra chờ, tôi là do đi theo để chọn mua cho mình một hôm chì màu dự ý."
   },
   {
-    "line_number": 267,
+    "line_number": 269,
     "sentence": "Đang len lỏi giữa chợ, đột nhiên tôi nhìn thấy một con nhỏ trông quen quen đang ngồi rửa bát cạnh một gánh cháo lòng.",
     "sentence_words": [
       "đang",
@@ -25606,7 +25581,7 @@
     "matched_text": "Đang lần lỗi dưới chờ, được nhiên, tôi nhìn thấy một con nhỏ trong quen quen, đang gời giữa bắt, cảnh một cảnh cháo lòng,"
   },
   {
-    "line_number": 268,
+    "line_number": 270,
     "sentence": "Tôi bước lại gần, trố mắt dòm kỹ và mừng rỡ kêu lên:",
     "sentence_words": [
       "tôi",
@@ -25717,7 +25692,7 @@
     "matched_text": "tuổi, cước lại gần, chú mắt dòng kỳ, gia, bình rỡ, cư lên."
   },
   {
-    "line_number": 269,
+    "line_number": 271,
     "sentence": "- Hồng Hoa!",
     "sentence_words": [
       "hồng",
@@ -25752,7 +25727,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 270,
+    "line_number": 272,
     "sentence": "Nghe kêu, Hồng Hoa giật mình ngó lên.",
     "sentence_words": [
       "nghe",
@@ -25828,7 +25803,7 @@
     "matched_text": "ghét yêu, hôm qua dịch mình ngó lên,"
   },
   {
-    "line_number": 271,
+    "line_number": 273,
     "sentence": "Thấy tôi, mặt nó thoáng lộ vẻ bối rối.",
     "sentence_words": [
       "thấy",
@@ -25911,7 +25886,7 @@
     "matched_text": "thấy tôi mặt nốt thoáng lộ dễ bối rồi."
   },
   {
-    "line_number": 272,
+    "line_number": 274,
     "sentence": "- Anh đi đâu đây?",
     "sentence_words": [
       "anh",
@@ -25959,7 +25934,7 @@
     "matched_text": "Anh, anh đi đâu"
   },
   {
-    "line_number": 273,
+    "line_number": 275,
     "sentence": "- Nó hỏi, giọng không được tự nhiên.",
     "sentence_words": [
       "nó",
@@ -26034,7 +26009,7 @@
     "matched_text": "vậy? Nó hỏi chồng hôm được tự nhiên,"
   },
   {
-    "line_number": 274,
+    "line_number": 276,
     "sentence": "Tôi vui vẻ:",
     "sentence_words": [
       "tôi",
@@ -26069,7 +26044,7 @@
     "matched_text": "Tôi đi"
   },
   {
-    "line_number": 275,
+    "line_number": 277,
     "sentence": "- Tao đi chợ với mẹ tao.",
     "sentence_words": [
       "tao",
@@ -26119,7 +26094,7 @@
     "matched_text": "chỏi với mẹ tao,"
   },
   {
-    "line_number": 276,
+    "line_number": 278,
     "sentence": "Tao định mua một hộp chì màu.",
     "sentence_words": [
       "tao",
@@ -26188,7 +26163,7 @@
     "matched_text": "tôi đỉnh buồn một hôm chì màu."
   },
   {
-    "line_number": 277,
+    "line_number": 279,
     "sentence": "Hồng Hoa ngó quanh:",
     "sentence_words": [
       "hồng",
@@ -26236,7 +26211,7 @@
     "matched_text": "Hôm qua ngó quen,"
   },
   {
-    "line_number": 278,
+    "line_number": 280,
     "sentence": "- Mẹ anh đâu?",
     "sentence_words": [
       "mẹ",
@@ -26283,7 +26258,7 @@
     "matched_text": "vậy mẹ anh đâu."
   },
   {
-    "line_number": 279,
+    "line_number": 281,
     "sentence": "- Mẹ tao đằng kia kìa!",
     "sentence_words": [
       "mẹ",
@@ -26338,7 +26313,7 @@
     "matched_text": "Mẹ tao đằng kia kia,"
   },
   {
-    "line_number": 280,
+    "line_number": 282,
     "sentence": "- Tôi chỉ tay về phía quầy rau.",
     "sentence_words": [
       "tôi",
@@ -26407,7 +26382,7 @@
     "matched_text": "tôi chỉ tay về phía quỷ sao?"
   },
   {
-    "line_number": 281,
+    "line_number": 283,
     "sentence": "Hồng Hoa nhìn theo tay chỉ của tôi:",
     "sentence_words": [
       "hồng",
@@ -26483,7 +26458,7 @@
     "matched_text": "Hôm qua nhìn theo tè chị của tôi."
   },
   {
-    "line_number": 282,
+    "line_number": 284,
     "sentence": "- Đâu?",
     "sentence_words": [
       "đâu"
@@ -26510,7 +26485,7 @@
     "matched_text": "Đâu,"
   },
   {
-    "line_number": 283,
+    "line_number": 285,
     "sentence": "- Đó!",
     "sentence_words": [
       "đó"
@@ -26537,7 +26512,7 @@
     "matched_text": "Đó,"
   },
   {
-    "line_number": 284,
+    "line_number": 286,
     "sentence": "Mẹ tao mặc áo đỏ đó!",
     "sentence_words": [
       "mẹ",
@@ -26599,7 +26574,7 @@
     "matched_text": "mẹ tao mặt kia au đỏ"
   },
   {
-    "line_number": 285,
+    "line_number": 287,
     "sentence": "Hồng Hoa chép miệng:",
     "sentence_words": [
       "hồng",
@@ -26647,7 +26622,7 @@
     "matched_text": "Hôm qua chết miệng,"
   },
   {
-    "line_number": 286,
+    "line_number": 288,
     "sentence": "- Mẹ anh trông đẹp quá hén?",
     "sentence_words": [
       "mẹ",
@@ -26709,10 +26684,18 @@
     "matched_text": "mẹ anh trong đẹp quá. Ừ,"
   },
   {
-    "line_number": 287,
-    "sentence": "- Ừ. Rồi tôi quay lại nhìn nó:",
+    "line_number": 289,
+    "sentence": "- Ừ.",
     "sentence_words": [
-      "ừ",
+      "ừ"
+    ],
+    "matched_words": null,
+    "error": "No match found"
+  },
+  {
+    "line_number": 290,
+    "sentence": "Rồi tôi quay lại nhìn nó:",
+    "sentence_words": [
       "rồi",
       "tôi",
       "quay",
@@ -26721,11 +26704,6 @@
       "nó"
     ],
     "matched_words": [
-      {
-        "word": "trời",
-        "start": 1149.88,
-        "end": 1150.2
-      },
       {
         "word": "tức",
         "start": 1150.2,
@@ -26753,26 +26731,25 @@
       }
     ],
     "word_indices": [
-      3098,
       3099,
       3100,
       3101,
       3102,
       3103
     ],
-    "start_word_idx": 3098,
+    "start_word_idx": 3099,
     "end_word_idx": 3103,
-    "start_time": 1149.88,
+    "start_time": 1150.2,
     "end_time": 1151.0,
-    "similarity": 0.8235294117647058,
-    "score": 1.0735294117647058,
-    "num_sentence_words": 7,
-    "num_matched_words": 6,
+    "similarity": 0.8181818181818182,
+    "score": 1.0681818181818183,
+    "num_sentence_words": 6,
+    "num_matched_words": 5,
     "word_diff": 1,
-    "matched_text": "trời tức quay lại nhìn nó."
+    "matched_text": "tức quay lại nhìn nó."
   },
   {
-    "line_number": 288,
+    "line_number": 291,
     "sentence": "- Mày làm gì ở đây vậy?",
     "sentence_words": [
       "mày",
@@ -26822,7 +26799,7 @@
     "matched_text": "Mày làm dễ vậy?"
   },
   {
-    "line_number": 289,
+    "line_number": 292,
     "sentence": "Hồng Hoa đáp, vẻ ngượng nghịu:",
     "sentence_words": [
       "hồng",
@@ -26885,7 +26862,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 290,
+    "line_number": 293,
     "sentence": "- Em phụ với mẹ em... bán cháo.",
     "sentence_words": [
       "em",
@@ -26954,7 +26931,7 @@
     "matched_text": "Em, em phụ mẹ em bán kéo."
   },
   {
-    "line_number": 291,
+    "line_number": 294,
     "sentence": "Tôi liếc người đàn bà đang ngồi trước gánh cháo, khẽ hỏi:",
     "sentence_words": [
       "tôi",
@@ -27058,7 +27035,7 @@
     "matched_text": "Tôi lý dịch người đằng bà đang người trước cắn cháo khẻ"
   },
   {
-    "line_number": 292,
+    "line_number": 295,
     "sentence": "- Mẹ mày đó hả?",
     "sentence_words": [
       "mẹ",
@@ -27112,7 +27089,7 @@
     "matched_text": "hỏi. Mẹ mày đó, hả?"
   },
   {
-    "line_number": 293,
+    "line_number": 296,
     "sentence": "Hồng Hoa gật đầu.",
     "sentence_words": [
       "hồng",
@@ -27160,7 +27137,7 @@
     "matched_text": "Hôm qua gật đầu."
   },
   {
-    "line_number": 294,
+    "line_number": 297,
     "sentence": "Đúng lúc đó mẹ Hồng Hoa quay lại và bắt gặp ánh mắt của tôi.",
     "sentence_words": [
       "đúng",
@@ -27285,7 +27262,7 @@
     "matched_text": "Đúng lúc đó, mẹ hôm qua quay lại, dạc, bắt gập anh mắt của tôi."
   },
   {
-    "line_number": 295,
+    "line_number": 298,
     "sentence": "Tôi liền gật đầu:",
     "sentence_words": [
       "tôi",
@@ -27333,7 +27310,7 @@
     "matched_text": "Tôi liền gật đầu."
   },
   {
-    "line_number": 296,
+    "line_number": 299,
     "sentence": "- Chào bác.",
     "sentence_words": [
       "chào",
@@ -27373,7 +27350,7 @@
     "matched_text": "cho chào bác."
   },
   {
-    "line_number": 297,
+    "line_number": 300,
     "sentence": "Mẹ nó mỉm cười:",
     "sentence_words": [
       "mẹ",
@@ -27421,7 +27398,7 @@
     "matched_text": "Mẹ nó miếng cười."
   },
   {
-    "line_number": 298,
+    "line_number": 301,
     "sentence": "- Chào cháụ Cháu là bạn của Hồng Hoa hả?",
     "sentence_words": [
       "chào",
@@ -27504,7 +27481,7 @@
     "matched_text": "Chào chào, chào là bán của hôm qua, hả?"
   },
   {
-    "line_number": 299,
+    "line_number": 302,
     "sentence": "Tôi gật đầu, lí nhí:",
     "sentence_words": [
       "tôi",
@@ -27553,7 +27530,7 @@
     "matched_text": "Tôi dạc đầu liên"
   },
   {
-    "line_number": 300,
+    "line_number": 303,
     "sentence": "- Dạ.",
     "sentence_words": [
       "dạ"
@@ -27580,7 +27557,7 @@
     "matched_text": "Dạ,"
   },
   {
-    "line_number": 301,
+    "line_number": 304,
     "sentence": "Và tôi liếc sang Hồng Hoa, cười bẽn lẽn.",
     "sentence_words": [
       "và",
@@ -27663,7 +27640,7 @@
     "matched_text": "dạ tôi lý dân hồng hòa, cười bán lẹn."
   },
   {
-    "line_number": 302,
+    "line_number": 305,
     "sentence": "Nhưng hôm đó, tôi không nói chuyện với Hồng Hoa được nhiều.",
     "sentence_words": [
       "nhưng",
@@ -27767,7 +27744,7 @@
     "matched_text": "Dừng hôm đó, tôi không nói chuyện với hồng hòa được nhiều."
   },
   {
-    "line_number": 303,
+    "line_number": 306,
     "sentence": "Hai đứa tôi mới hỏi han nhau dăm ba câu, mẹ tôi đã gọi giật:",
     "sentence_words": [
       "numtok",
@@ -27886,7 +27863,7 @@
     "matched_text": "Hà đứa tôi mới hỏi hăng giao, dầm bà câu, mẹ tôi đã gọi"
   },
   {
-    "line_number": 304,
+    "line_number": 307,
     "sentence": "- Kha ơi!",
     "sentence_words": [
       "kha",
@@ -27896,7 +27873,7 @@
     "error": "No match found"
   },
   {
-    "line_number": 305,
+    "line_number": 308,
     "sentence": "Lẹ lên chứ!",
     "sentence_words": [
       "numtok",
@@ -27937,7 +27914,7 @@
     "matched_text": "Cá, lẽ lên"
   },
   {
-    "line_number": 306,
+    "line_number": 309,
     "sentence": "Tôi đành phải chào hai mẹ con Hồng Hoa rồi hấp tấp rảo bước theo mẹ tôi.",
     "sentence_words": [
       "tôi",
@@ -28076,7 +28053,7 @@
     "matched_text": "lắm đi vậy. Tôi đành phép chào hay mẹ con hồng hòa, rồi hấp tấp rõ bước"
   },
   {
-    "line_number": 307,
+    "line_number": 310,
     "sentence": "- Ai vậy?",
     "sentence_words": [
       "ai",
@@ -28116,7 +28093,7 @@
     "matched_text": "tôi. Ai vậy?"
   },
   {
-    "line_number": 308,
+    "line_number": 311,
     "sentence": "- Đợi tôi lại gần, mẹ tôi hỏi:",
     "sentence_words": [
       "đợi",
@@ -28185,7 +28162,7 @@
     "matched_text": "Để tôi lấy gần, mẹ tôi hỏi."
   },
   {
-    "line_number": 309,
+    "line_number": 312,
     "sentence": "- Bạn con.",
     "sentence_words": [
       "bạn",
@@ -28225,7 +28202,7 @@
     "matched_text": "Dạ, bản con."
   },
   {
-    "line_number": 310,
+    "line_number": 313,
     "sentence": "- Bạn cùng lớp hả?",
     "sentence_words": [
       "bạn",
@@ -28273,7 +28250,7 @@
     "matched_text": "Bản cùng lớp, hả?"
   },
   {
-    "line_number": 311,
+    "line_number": 314,
     "sentence": "Phân vân một thoáng, tôi thấy nói thật không tiện, có khi bị mắng nữa không chừng, bèn gật đầu đại:",
     "sentence_words": [
       "phân",
@@ -28440,7 +28417,7 @@
     "matched_text": "thuán, tôi thấy nói thật thì không có tiền lắm. Có bây giờ khi lấy bị mắn nữa không trừng, bèn"
   },
   {
-    "line_number": 312,
+    "line_number": 315,
     "sentence": "- Dạ, bạn cùng lớp.",
     "sentence_words": [
       "dạ",
@@ -28494,7 +28471,7 @@
     "matched_text": "đại. Dạ, bản cùng lớp"
   },
   {
-    "line_number": 313,
+    "line_number": 316,
     "sentence": "Sau lần gặp gỡ bất ngờ đó, Hồng Hoa không đến khu vườn của tôi nữa.",
     "sentence_words": [
       "numtok",
@@ -28626,7 +28603,7 @@
     "matched_text": "con. Xôi lần gặp gỡ bất ngờ đó, hồng hòa không đến khu dường của tôi"
   },
   {
-    "line_number": 314,
+    "line_number": 317,
     "sentence": "Suốt một tuần, chiều nào tôi cũng ngồi ngoài vườn đợi nó một cách vô vọng.",
     "sentence_words": [
       "suốt",
@@ -28758,7 +28735,7 @@
     "matched_text": "nữa. Suốt một tuần, châu nào tôi cũng ngồi ngoài dương để nó một cách vô"
   },
   {
-    "line_number": 315,
+    "line_number": 318,
     "sentence": "Trong những thời khắc dài dằng dặc đó, bất cứ một tiếng động nhỏ nào cũng làm tôi giật mình ngoái cổ nhìn về phía hàng rào quen thuộc.",
     "sentence_words": [
       "trong",
@@ -28981,7 +28958,7 @@
     "matched_text": "dòng. Trong những thời khách dài dành dạc đó, bất cứ một tiến đồng nhỏ nào cũng làm tui dịch bình ngoái cổ, nhìn dị phía hẳn rào, quen"
   },
   {
-    "line_number": 316,
+    "line_number": 319,
     "sentence": "Tôi cứ ngỡ là nó đến.",
     "sentence_words": [
       "tôi",
@@ -29049,7 +29026,7 @@
     "matched_text": "thuộc. Tôi cứ ngỡ là nó đến,"
   },
   {
-    "line_number": 317,
+    "line_number": 320,
     "sentence": "Nhưng tiếp ngày sau đó, bao giờ tôi cũng rơi vào một nỗi thất vọng mênh mông.",
     "sentence_words": [
       "nhưng",
@@ -29188,7 +29165,7 @@
     "matched_text": "nhưng tiếp ngay sau đó, bao giờ tôi cũng rơi dào một nỗi thất dòng mình mông."
   },
   {
-    "line_number": 318,
+    "line_number": 321,
     "sentence": "Tôi không thể tự giải thích được, vì sao Hồng Hoa lại \"bỏ rơi\" tôi trong nhiều ngày liên tiếp như vậy.",
     "sentence_words": [
       "tôi",
@@ -29362,7 +29339,7 @@
     "matched_text": "Tôi không thể từ dạy thích được, vì sau hồng hòa lại bỏ rồi tôi trong dự nghị liên tiếp như vậy."
   },
   {
-    "line_number": 319,
+    "line_number": 322,
     "sentence": "Tôi cố nhớ xem tôi có làm gì để nó phải giận tôi không, nhưng tôi vẫn không tài nào nhớ ra.",
     "sentence_words": [
       "tôi",
@@ -29536,7 +29513,7 @@
     "matched_text": "Tôi cố nhớ xem, tôi có làm gì để nó phải dận tui không, nhưng tôi dẫn không tài nào dưới ra"
   },
   {
-    "line_number": 320,
+    "line_number": 323,
     "sentence": "Hay là Hồng Hoa ốm?",
     "sentence_words": [
       "hay",
@@ -29591,7 +29568,7 @@
     "matched_text": "Hình là, hồng hòa bị"
   },
   {
-    "line_number": 321,
+    "line_number": 324,
     "sentence": "Đôi khi tôi đâm ra nghĩ ngợi vẩn vơ, trong đầu tưởng tượng toàn cảnh kinh hãi và thế là tôi bỗng lo cuống cả người.",
     "sentence_words": [
       "đôi",
@@ -29793,7 +29770,7 @@
     "matched_text": "ốm, được khi tôi đầm ràng nghỉ ngợi dẫn dơ, trong đầu tưởng tượng toàn cảnh kinh hãy, dạy thay là tôi bỏng lòi cuốn cá"
   },
   {
-    "line_number": 322,
+    "line_number": 325,
     "sentence": "Nếu biết nhà Hồng Hoa ở đâu thì tôi đã tới tìm nó rồi.",
     "sentence_words": [
       "nếu",
@@ -29911,7 +29888,7 @@
     "matched_text": "người. Nếu mà biết nhà hồng hòa ở đâu, thì tôi đã tới tìm"
   },
   {
-    "line_number": 323,
+    "line_number": 326,
     "sentence": "Đằng này, tôi mù tịt.",
     "sentence_words": [
       "đằng",
@@ -29978,7 +29955,7 @@
     "matched_text": "nó rồi, đằng ngày tôi mù tịch,"
   },
   {
-    "line_number": 324,
+    "line_number": 327,
     "sentence": "Hôm trước tôi hỏi, nó chỉ bâng quơ ra đường, có trời mới biết.",
     "sentence_words": [
       "hôm",
@@ -30096,7 +30073,7 @@
     "matched_text": "hồng trước tôi hỏi, nó chỉ bân cơ ra được, tôi trời mới biết."
   },
   {
-    "line_number": 325,
+    "line_number": 328,
     "sentence": "Chẳng biết làm gì để giải khuây, tôi lôi dế ra đá.",
     "sentence_words": [
       "chẳng",
@@ -30200,7 +30177,7 @@
     "matched_text": "Chẳng biết làm gì để dạy khui, tôi lôi dễ rả đá,"
   },
   {
-    "line_number": 326,
+    "line_number": 329,
     "sentence": "Nhưng trò đá dế cũng chẳng khiến tôi vui lên được chút nào.",
     "sentence_words": [
       "nhưng",
@@ -30311,7 +30288,7 @@
     "matched_text": "nhưng trở đã dễ cùng chẳng khiến tôi dưới lên được chút nào."
   },
   {
-    "line_number": 327,
+    "line_number": 330,
     "sentence": "Nếu trước đây, tôi say mê xem những con dế trổ tài bao nhiêu thì lúc này, những màn múa máy của chúng lại khiến tôi hờ hững bấy nhiêu.",
     "sentence_words": [
       "nếu",
@@ -30541,7 +30518,7 @@
     "matched_text": "Nếu trước đây tôi sẽ mê xem những con dễ trộ tài bao nhiêu, thì lúc này, những mạng mua máy của chung là khiến tôi hở hưởng bế nhiều."
   },
   {
-    "line_number": 328,
+    "line_number": 331,
     "sentence": "Những con cá vàng thong thả vẫy những chiếc đuôi dài trong khi uể oải lượn lờ trong bể trông càng đáng chán hơn.",
     "sentence_words": [
       "những",
@@ -30729,7 +30706,7 @@
     "matched_text": "Những còn các dàn thông thả dễ những chiếc đôi dầy trong khi ễ hỏi lượng lời trong bẽ, trồng cả đáng chán hơn."
   },
   {
-    "line_number": 329,
+    "line_number": 332,
     "sentence": "Trông chúng cứ lừ đừ làm sao!",
     "sentence_words": [
       "trông",
@@ -30799,7 +30776,7 @@
     "relaxed_search": true
   },
   {
-    "line_number": 330,
+    "line_number": 333,
     "sentence": "Tôi đã buồn, dòm bọn cá, tôi càng buồn hơn.",
     "sentence_words": [
       "tôi",
@@ -30889,7 +30866,7 @@
     "matched_text": "tôi đã buồn, dòng bỏng cá, tôi còn buồn hơn"
   },
   {
-    "line_number": 331,
+    "line_number": 334,
     "sentence": "Chỉ có con sáo tôi có thể tạm đánh bạn được trong lúc này.",
     "sentence_words": [
       "chỉ",
@@ -31007,7 +30984,7 @@
     "matched_text": "nữa. Chỉ có con xáo là tôi có thể tạm đánh bàn đường trong"
   },
   {
-    "line_number": 332,
+    "line_number": 335,
     "sentence": "Nhờ cái miệng léo nhéo của nó mà khu vườn đỡ vắng vẻ và những buổi chiều bớt trống trải hơn.",
     "sentence_words": [
       "nhờ",
@@ -31174,7 +31151,7 @@
     "matched_text": "này. Nhớ cái miền léo nếu của nó mà cô dừng đỡ dẫn dễ, dàn những bữa trường bất, trống trải"
   },
   {
-    "line_number": 333,
+    "line_number": 336,
     "sentence": "Nhưng con sáo của tôi lại không được tế nhị lắm.",
     "sentence_words": [
       "nhưng",
@@ -31271,7 +31248,7 @@
     "matched_text": "hơn. Nhưng con xó của tôi lại không được tế nhị"
   },
   {
-    "line_number": 334,
+    "line_number": 337,
     "sentence": "Thỉnh thoảng nó kêu lên lảnh lót \"Chào Hồng Hoa, chào Hồng Hoa\" khiến lòng tôi bâng khuâng khôn tả.",
     "sentence_words": [
       "thỉnh",
@@ -31431,7 +31408,7 @@
     "matched_text": "lắm, thinh thỏa nó cư lên lạnh lúc. Chào hông hoa, chào hông hoa. Khiến lòng tôi bân quân khuôn"
   },
   {
-    "line_number": 335,
+    "line_number": 338,
     "sentence": "Trái tim tao đâu phải bằng sắt, sáo ơi!",
     "sentence_words": [
       "trái",
@@ -31514,7 +31491,7 @@
     "matched_text": "tả, trách tiêm tao đô phải bằng sắc, sáu"
   },
   {
-    "line_number": 336,
+    "line_number": 339,
     "sentence": "Trong những buổi chiều đi tha thẩn một mình trong vườn như vậy, tôi chợt nhìn thấy mô đất nhỏ hôm trước Hồng Hoa bẻ cây cắm xuống như để \"ếm bùa\" tôi.",
     "sentence_words": [
       "trong",
@@ -31765,7 +31742,7 @@
     "matched_text": "ơi. Trong dừng bữa trường đi thà thẳng một mình trong dường như vậy, tôi chật diện thế mua đất nhỏ, hôm trước, hông hoa, bẹ kỳ cảm xuống, như để em buồn"
   },
   {
-    "line_number": 337,
+    "line_number": 340,
     "sentence": "Tôi dòm dỏ, quan sát một hồi vẫn không đoán ra cái mô đất đó là cái mô đất... gì.",
     "sentence_words": [
       "tôi",
@@ -31925,7 +31902,7 @@
     "matched_text": "tôi. Tôi dậm nhỏ, quan sắc buồn, dẫn không đón ra, kề mua đất đó là mua đất gì. Thật"
   },
   {
-    "line_number": 338,
+    "line_number": 341,
     "sentence": "Thoạt đầu, tôi định đào lên coi.",
     "sentence_words": [
       "thoạt",
@@ -31988,7 +31965,7 @@
     "matched_text": "thơ, tôi định đào lên còi,"
   },
   {
-    "line_number": 339,
+    "line_number": 342,
     "sentence": "Nhưng rồi tôi lại nghĩ dưới đó chắc chẳng có quái gì, đào bới chỉ tổ nhọc xác, bèn thôi.",
     "sentence_words": [
       "nhưng",
@@ -32148,7 +32125,7 @@
     "matched_text": "nhưng rồi tôi lệ nghỉ dì đó, cho chẳng có quái gì đâu, đào chỉ tối nhọc sách, bẹn thôi."
   },
   {
-    "line_number": 340,
+    "line_number": 343,
     "sentence": "Không thèm nghiên cứu mô đất, tôi trèo lên nghiên cứu cây mận.",
     "sentence_words": [
       "numtok",
@@ -32259,7 +32236,7 @@
     "matched_text": "Cùng thành nghiên cứu mua đất, tôi chèo lên, nghiên cứu kì mật."
   },
   {
-    "line_number": 341,
+    "line_number": 344,
     "sentence": "Tôi nhớ hôm trước Hồng Hoa đã trèo lên ngắm nghía cái gì trên này.",
     "sentence_words": [
       "tôi",
@@ -32384,7 +32361,7 @@
     "matched_text": "Tôi nhớ hôm trước, hông hoa đã chèo lên ngắm nghĩa cái gì trên này."
   },
   {
-    "line_number": 342,
+    "line_number": 345,
     "sentence": "Tôi trèo lên tới chạc ba Hồng Hoa đứng hôm đó và lướt mắt dọc thân cây.",
     "sentence_words": [
       "tôi",
@@ -32523,7 +32500,7 @@
     "matched_text": "Tôi chèo lên tới chỗ chạc ba, hồng hoa, đứng hồng đó, dạ lước mắt dọc thương"
   },
   {
-    "line_number": 343,
+    "line_number": 346,
     "sentence": "Hóa ra trên cây có một hình vẽ, có lẽ được khắc bằng mảnh chai.",
     "sentence_words": [
       "hóa",
@@ -32648,7 +32625,7 @@
     "matched_text": "kì. Hoa ra, trần kì có một hình dễ, có lẽ được khách bằng mánh"
   },
   {
-    "line_number": 344,
+    "line_number": 347,
     "sentence": "Hình vẽ hình như được khắc từ khá lâu nên đường nét trông rất mờ nhạt.",
     "sentence_words": [
       "hình",
@@ -32780,7 +32757,7 @@
     "matched_text": "chai. Thình dễ, kênh như được khách từ khá lâu, nên đường nét tùng rất mời"
   },
   {
-    "line_number": 345,
+    "line_number": 348,
     "sentence": "Cũng có những nét vẽ mới, còn tươi, chắc là do Hồng Hoa lấy móng tay rạch chồng lên.",
     "sentence_words": [
       "cũng",
@@ -32933,7 +32910,7 @@
     "matched_text": "nhẹ. Cũng có dừng nét vẻ mới còn tuy, chắc là cho hồng hoa lý mống tầy rặt chọc"
   },
   {
-    "line_number": 346,
+    "line_number": 349,
     "sentence": "Tôi nheo mắt ngó một hồi vẫn không hiểu được hình vẽ đó là hình vẽ gì, bông hoa không ra bông hoa, mặt trời không ra mặt trời, chỉ toàn là những nét ngoằn ngoèo.",
     "sentence_words": [
       "tôi",
@@ -33205,7 +33182,7 @@
     "matched_text": "lên. Tôi nhiều mắt ngó mục hồi, dân không hiểu được hình dễ đó, là hình dễ gì. Bông hoa thì không ra bông hoa, mặt trời không ra mặt trời, chỉ tổng lại những nét"
   },
   {
-    "line_number": 347,
+    "line_number": 350,
     "sentence": "Dòm một hồi mỏi mắt, tôi ôm cây tụt xuống, miệng lẩm bẩm:",
     "sentence_words": [
       "dòm",
@@ -33316,7 +33293,7 @@
     "matched_text": "ngoan nghèo. Giò một hồi mỗi mắt, tôi ôm kè tục xuống, biển"
   },
   {
-    "line_number": 348,
+    "line_number": 351,
     "sentence": "\"Tưởng gì!",
     "sentence_words": [
       "tưởng",
@@ -33356,7 +33333,7 @@
     "matched_text": "bấm. Tưởng gì,"
   },
   {
-    "line_number": 349,
+    "line_number": 352,
     "sentence": "Cái hình vẽ xấu hoắc mà nó cũng leo lên ngắm ngắm nghía nghía cả buổi!\".",
     "sentence_words": [
       "cái",
@@ -33488,7 +33465,7 @@
     "matched_text": "kì hình dễ xu quắc, mà nó cũng lè lên ngắm ngắm niên nghĩa cả bối"
   },
   {
-    "line_number": 350,
+    "line_number": 353,
     "sentence": "Đúng vào lúc tôi sực nhớ đến khu chợ bữa trước và định chạy ra đó hỏi thăm tin tức về Hồng Hoa thì nó lại bất ngờ xuất hiện.",
     "sentence_words": [
       "đúng",
@@ -33718,7 +33695,7 @@
     "matched_text": "thiệt tình bó tay không hiểu nội. Đúng, dạ lúc tôi sự nhớ đến cư chờ bữa trước, dạ, đình chạy ra đó hỏi thăm tin tức dạ hồng hoa,"
   },
   {
-    "line_number": 351,
+    "line_number": 354,
     "sentence": "Tiếng động khẽ phía hàng rào khiến tôi quay phắt lại và khi nhìn thấy Hồng Hoa đang lính quýnh chui ra khỏi mớ dây leo, tim tôi như muốn ngừng đập.",
     "sentence_words": [
       "tiếng",
@@ -33962,7 +33939,7 @@
     "matched_text": "thì gọi lại bất ngờ xuất hiện. Tên tổng khẻ phía hàng rau, khiến tội quay phát lại, dạ kì dình thế hồng hoa, đàn lính quính chúi ra khỏi mớ gì"
   },
   {
-    "line_number": 352,
+    "line_number": 355,
     "sentence": "Sau một thoáng bàng hoàng, tôi kêu lên mừng rỡ và định ùa chạy về phía nó.",
     "sentence_words": [
       "numtok",
@@ -34094,7 +34071,7 @@
     "matched_text": "ngừng đập. Xong một thoáng bàn hoàng, tôi cứ lên bừng rõ, dạ đình ua trạy"
   },
   {
-    "line_number": 353,
+    "line_number": 356,
     "sentence": "Nhưng ngay lúc đó, một nỗi giận hờn vô cớ không biết từ đâu dâng lên làm nghẹn cổ tôi và ghìm chân tôi lại.",
     "sentence_words": [
       "nhưng",
@@ -34289,7 +34266,7 @@
     "matched_text": "dệ phía nó. Nhưng ngày lúc đó, một nỗi dần hơn dua cơ không biết tự đau dân lên, làm nghe nghe nghe của tôi"
   },
   {
-    "line_number": 354,
+    "line_number": 357,
     "sentence": "Và thế là tôi đứng im tại chỗ, môi mím chặt.",
     "sentence_words": [
       "và",
@@ -34386,7 +34363,7 @@
     "matched_text": "tôi lại. Dạ thay là tôi đứng nghiệm tại chỗ, mùi,"
   },
   {
-    "line_number": 355,
+    "line_number": 358,
     "sentence": "Chui khỏi hàng rào, Hồng Hoa bước thẳng lại chỗ tôi đứng.",
     "sentence_words": [
       "chui",
@@ -34496,7 +34473,7 @@
     "matched_text": "miếm chặt. Chui ra khỏi hàng rau, hồng hoa bước thẳng lệ chỗ"
   },
   {
-    "line_number": 356,
+    "line_number": 359,
     "sentence": "Đi chưa tới nơi, nó đã láu táu hỏi, giọng vui vẻ:",
     "sentence_words": [
       "đi",
@@ -34600,7 +34577,7 @@
     "matched_text": "tôi đứng, đi chưa tên hơi, nó đã láo tối hỏi, giống"
   },
   {
-    "line_number": 357,
+    "line_number": 360,
     "sentence": "- Anh đang làm gì đó?",
     "sentence_words": [
       "anh",
@@ -34667,7 +34644,7 @@
     "matched_text": "Anh khá, anh đang lắm gì đó?"
   },
   {
-    "line_number": 358,
+    "line_number": 361,
     "sentence": "Tôi càng mím chặt môi lại, không thèm trả lời.",
     "sentence_words": [
       "tôi",
@@ -34757,7 +34734,7 @@
     "matched_text": "Tôi cần miếm chặt môi lại, không thèm chả lời."
   },
   {
-    "line_number": 359,
+    "line_number": 362,
     "sentence": "Hồng Hoa lại gần và khi phát hiện ra vẻ quạu quọ trên gương mặt tôi, nó lo lắng hỏi:",
     "sentence_words": [
       "hồng",
@@ -34917,7 +34894,7 @@
     "matched_text": "Hồng hoa lệ gần dạ ký phát hiện ra dễ, wau, wau, trân gương mặt tôi, nó lò lắng hỏi."
   },
   {
-    "line_number": 360,
+    "line_number": 363,
     "sentence": "- Anh sao vậy?",
     "sentence_words": [
       "anh",
@@ -34964,7 +34941,7 @@
     "matched_text": "khá, anh sao vậy?"
   },
   {
-    "line_number": 361,
+    "line_number": 364,
     "sentence": "Tôi cứ đứng trơ trơ, không hó hé nửa tiếng.",
     "sentence_words": [
       "tôi",
@@ -35054,7 +35031,7 @@
     "matched_text": "Tôi cứ đứng trở trở, không hóa hê nửa tín,"
   },
   {
-    "line_number": 362,
+    "line_number": 365,
     "sentence": "Ngần ngừ một lát, Hồng Hoa lại cất giọng rụt rè:",
     "sentence_words": [
       "numtok",
@@ -35151,7 +35128,7 @@
     "matched_text": "ngừng ngừng một lách, hồng hoa lại cất giọng rụng về."
   },
   {
-    "line_number": 363,
+    "line_number": 366,
     "sentence": "- Anh giận em hả?",
     "sentence_words": [
       "anh",
@@ -35199,7 +35176,7 @@
     "matched_text": "anh dạng em hả?"
   },
   {
-    "line_number": 364,
+    "line_number": 367,
     "sentence": "- Nhìn đôi mắt lo âu đến sắp khóc của nó, tôi cảm thấy nguôi nguôi được đôi chút, bèn đáp:",
     "sentence_words": [
       "nhìn",
@@ -35359,7 +35336,7 @@
     "matched_text": "Dình tuy mất lòi đến sắp khóc cửa nó, tôi cảm thấy nguyên nguy được đời chúc bèn đắc. Ừ,"
   },
   {
-    "line_number": 365,
+    "line_number": 368,
     "sentence": "- Ừ.",
     "sentence_words": [
       "ừ"
@@ -35368,7 +35345,7 @@
     "error": "No match found"
   },
   {
-    "line_number": 366,
+    "line_number": 369,
     "sentence": "- Em làm gì mà anh giận em?",
     "sentence_words": [
       "em",
@@ -35437,7 +35414,7 @@
     "matched_text": "mạy đó. Em làm gì mà anh"
   },
   {
-    "line_number": 367,
+    "line_number": 370,
     "sentence": "- Giọng Hồng Hoa buồn buồn.",
     "sentence_words": [
       "giọng",
@@ -35492,7 +35469,7 @@
     "matched_text": "trước? Giọng hồng hoa bùng"
   },
   {
-    "line_number": 368,
+    "line_number": 371,
     "sentence": "Tôi đáp, giọng giận dỗi:",
     "sentence_words": [
       "tôi",
@@ -35553,7 +35530,7 @@
     "matched_text": "bùng. Tôi đáp, giọng, dẫn, dối."
   },
   {
-    "line_number": 369,
+    "line_number": 372,
     "sentence": "- Mày để tao chơi một mình cả tuần nay mà bảo là không làm gì!",
     "sentence_words": [
       "mày",
@@ -35678,7 +35655,7 @@
     "matched_text": "Thì, mày để đâu chơi một bình gần gái tuần ai bỏ là không lắm"
   },
   {
-    "line_number": 370,
+    "line_number": 373,
     "sentence": "Hồng Hoa chớp mắt:",
     "sentence_words": [
       "hồng",
@@ -35732,7 +35709,7 @@
     "matched_text": "nữa. Hồng hoa trước mắt."
   },
   {
-    "line_number": 371,
+    "line_number": 374,
     "sentence": "- Em bận chứ bộ!",
     "sentence_words": [
       "em",
@@ -35780,7 +35757,7 @@
     "matched_text": "Em bận chứ bộ."
   },
   {
-    "line_number": 372,
+    "line_number": 375,
     "sentence": "Tôi khịt mũi:",
     "sentence_words": [
       "tôi",
@@ -35821,7 +35798,7 @@
     "matched_text": "Tôi sịt mỗi."
   },
   {
-    "line_number": 373,
+    "line_number": 376,
     "sentence": "- Xạo đi mày!",
     "sentence_words": [
       "xạo",
@@ -35862,7 +35839,7 @@
     "matched_text": "sảo đi, mày"
   },
   {
-    "line_number": 374,
+    "line_number": 377,
     "sentence": "Mày trốn tao thì có!",
     "sentence_words": [
       "mày",
@@ -35911,7 +35888,7 @@
     "matched_text": "chốn tao thì có."
   },
   {
-    "line_number": 375,
+    "line_number": 378,
     "sentence": "Vừa nói tôi vừa nhìn Hồng Hoa.",
     "sentence_words": [
       "vừa",
@@ -35980,7 +35957,7 @@
     "matched_text": "Dự nói, tôi dừa nhìn hồng hoa,"
   },
   {
-    "line_number": 376,
+    "line_number": 379,
     "sentence": "Bắt gặp ánh mắt tôi, nó cúi nhìn xuống đất, không trả lời.",
     "sentence_words": [
       "bắt",
@@ -36091,7 +36068,7 @@
     "matched_text": "mắt gập anh mắt tôi, nó cuối nhìn xuống đất không trả lời,"
   },
   {
-    "line_number": 377,
+    "line_number": 380,
     "sentence": "Thấy vậy, tôi hỏi tới:",
     "sentence_words": [
       "thấy",
@@ -36146,7 +36123,7 @@
     "matched_text": "thay vậy, tuổi hỏi tới."
   },
   {
-    "line_number": 378,
+    "line_number": 381,
     "sentence": "- Mày trốn tao, đúng không?",
     "sentence_words": [
       "mày",
@@ -36195,7 +36172,7 @@
     "matched_text": "Mày chốn tao một"
   },
   {
-    "line_number": 379,
+    "line_number": 382,
     "sentence": "Hồng Hoa vẫn im lặng cắn môi.",
     "sentence_words": [
       "hồng",
@@ -36276,7 +36253,7 @@
     "matched_text": "đúng không? Hồng hoa dẫn em lặng cắn môi,"
   },
   {
-    "line_number": 380,
+    "line_number": 383,
     "sentence": "Thái độ của nó càng khiến tôi thắc mắc:",
     "sentence_words": [
       "thái",
@@ -36359,7 +36336,7 @@
     "matched_text": "thấy đồ của nó càng khiến tôi thắt mắt."
   },
   {
-    "line_number": 381,
+    "line_number": 384,
     "sentence": "- Nhưng tại sao mày lại trốn tao?",
     "sentence_words": [
       "nhưng",
@@ -36434,7 +36411,7 @@
     "matched_text": "Nhưng mà tại sao mày lại chốn tao"
   },
   {
-    "line_number": 382,
+    "line_number": 385,
     "sentence": "Lúc đầu Hồng Hoa không chịu nói.",
     "sentence_words": [
       "lúc",
@@ -36509,7 +36486,7 @@
     "matched_text": "trước? Giúp đầu, hồng hoa không chứ nói."
   },
   {
-    "line_number": 383,
+    "line_number": 386,
     "sentence": "Nó cứ lắc đầu hoài.",
     "sentence_words": [
       "nó",
@@ -36564,7 +36541,7 @@
     "matched_text": "Nó cuối lắt đầu quay,"
   },
   {
-    "line_number": 384,
+    "line_number": 387,
     "sentence": "Tôi phải gặng hỏi một hồi, nó mới ấp úng giải thích:",
     "sentence_words": [
       "tôi",
@@ -36674,7 +36651,7 @@
     "matched_text": "tôi phải gặng hỏi mái một hồi. Nó mối ấp ứng dạy thích."
   },
   {
-    "line_number": 385,
+    "line_number": 388,
     "sentence": "- Tại em... mắc cỡ.",
     "sentence_words": [
       "tại",
@@ -36746,7 +36723,7 @@
     "matched_text": "đâu. Bài vì, bài vì... Em mắt cỡ."
   },
   {
-    "line_number": 386,
+    "line_number": 389,
     "sentence": "Giải thích như nó càng khó hiểu thêm.",
     "sentence_words": [
       "giải",
@@ -36822,7 +36799,7 @@
     "matched_text": "Dạy thích chứ nó, gặng khó hiểu thêm."
   },
   {
-    "line_number": 387,
+    "line_number": 390,
     "sentence": "Tôi ngơ ngác:",
     "sentence_words": [
       "tôi",
@@ -36863,7 +36840,7 @@
     "matched_text": "Tôi ngờ ngắt"
   },
   {
-    "line_number": 388,
+    "line_number": 391,
     "sentence": "- Mắc cỡ chuyện gì?",
     "sentence_words": [
       "mắc",
@@ -36923,7 +36900,7 @@
     "matched_text": "hả? Mày mắt cỡ chuyện gì?"
   },
   {
-    "line_number": 389,
+    "line_number": 392,
     "sentence": "Hồng Hoa đỏ mặt:",
     "sentence_words": [
       "hồng",
@@ -36971,7 +36948,7 @@
     "matched_text": "Hồng hoa đỏ mặt."
   },
   {
-    "line_number": 390,
+    "line_number": 393,
     "sentence": "- Thì chuyện em... bán cháo lòng ngoài chợ đó.",
     "sentence_words": [
       "thì",
@@ -37048,7 +37025,7 @@
     "matched_text": "Tuyện chuyện... Chừng em bán cỡ ngoài chở"
   },
   {
-    "line_number": 391,
+    "line_number": 394,
     "sentence": "Tôi phì cười:",
     "sentence_words": [
       "tôi",
@@ -37089,7 +37066,7 @@
     "matched_text": "Tôi vì cửa."
   },
   {
-    "line_number": 392,
+    "line_number": 395,
     "sentence": "- Mày ngốc lắm!",
     "sentence_words": [
       "mày",
@@ -37130,7 +37107,7 @@
     "matched_text": "Mày ngốc lắm,"
   },
   {
-    "line_number": 393,
+    "line_number": 396,
     "sentence": "Bán cháo có gì phải mắc cỡ!",
     "sentence_words": [
       "bán",
@@ -37211,7 +37188,7 @@
     "matched_text": "bán cỡ để có gì đâu phải mắt cỡ."
   },
   {
-    "line_number": 394,
+    "line_number": 397,
     "sentence": "Dì Sáu tao ở dưới quê cũng bán cháo vậy!",
     "sentence_words": [
       "dì",
@@ -37295,7 +37272,7 @@
     "matched_text": "Dì xó tỏ với quẹ của bán cỡ vậy?"
   },
   {
-    "line_number": 395,
+    "line_number": 398,
     "sentence": "Rồi tôi tặc lưỡi, hít hà:",
     "sentence_words": [
       "rồi",
@@ -37357,7 +37334,7 @@
     "matched_text": "Rồi, tôi tạch lưới hết, hả?"
   },
   {
-    "line_number": 396,
+    "line_number": 399,
     "sentence": "- Cháo lòng ngon thấy mồ!",
     "sentence_words": [
       "cháo",
@@ -37412,7 +37389,7 @@
     "matched_text": "Chở đồng mắt ngon thí"
   },
   {
-    "line_number": 397,
+    "line_number": 400,
     "sentence": "Tao thích ăn cháo lòng lắm!",
     "sentence_words": [
       "tao",
@@ -37486,7 +37463,7 @@
     "matched_text": "màu luôn. Tàu thích ăn cho lòng lắm"
   },
   {
-    "line_number": 398,
+    "line_number": 401,
     "sentence": "Hồng Hoa cười khúc khích:",
     "sentence_words": [
       "hồng",
@@ -37547,7 +37524,7 @@
     "matched_text": "đó. Hồng hoa cười cư kích."
   },
   {
-    "line_number": 399,
+    "line_number": 402,
     "sentence": "- Cháo lòng mà ngon?",
     "sentence_words": [
       "cháo",
@@ -37595,7 +37572,7 @@
     "matched_text": "Chở đồng mắt ngon"
   },
   {
-    "line_number": 400,
+    "line_number": 403,
     "sentence": "Tôi trợn mắt:",
     "sentence_words": [
       "tôi",
@@ -37636,7 +37613,7 @@
     "matched_text": "Tôi chừng mắt."
   },
   {
-    "line_number": 401,
+    "line_number": 404,
     "sentence": "- Chứ gì nữa!",
     "sentence_words": [
       "chứ",
@@ -37677,7 +37654,7 @@
     "matched_text": "Chưa gì nữa?"
   },
   {
-    "line_number": 402,
+    "line_number": 405,
     "sentence": "Hồng Hoa rùn vai:",
     "sentence_words": [
       "hồng",
@@ -37725,7 +37702,7 @@
     "matched_text": "Hồng hoa dụp dạy."
   },
   {
-    "line_number": 403,
+    "line_number": 406,
     "sentence": "- Em chẳng thấy ngon chút nào!",
     "sentence_words": [
       "em",
@@ -37787,7 +37764,7 @@
     "matched_text": "Em chẳng thích con chút nào"
   },
   {
-    "line_number": 404,
+    "line_number": 407,
     "sentence": "Hôm nào bán ế, mẹ cũng kêu em ăn.",
     "sentence_words": [
       "hôm",
@@ -37876,7 +37853,7 @@
     "matched_text": "ta. Hồng nào bán ấy, mày cũng cứ em ăn."
   },
   {
-    "line_number": 405,
+    "line_number": 408,
     "sentence": "Ăn hoài ngán tận cổ!",
     "sentence_words": [
       "ăn",
@@ -37931,7 +37908,7 @@
     "matched_text": "Anh ngoài ngán cứng cổ"
   },
   {
-    "line_number": 406,
+    "line_number": 409,
     "sentence": "Tôi cười:",
     "sentence_words": [
       "tôi",
@@ -37965,7 +37942,7 @@
     "matched_text": "Tôi cửa."
   },
   {
-    "line_number": 407,
+    "line_number": 410,
     "sentence": "- Đó tại mày ăn hoài.",
     "sentence_words": [
       "đó",
@@ -38020,7 +37997,7 @@
     "matched_text": "Dó là tại mày, anh"
   },
   {
-    "line_number": 408,
+    "line_number": 411,
     "sentence": "Lâu lâu ăn một lần như tao mới thấy ngon!",
     "sentence_words": [
       "lâu",
@@ -38116,7 +38093,7 @@
     "matched_text": "Lò lụi ăn một lần với tao nào, mới đi ngon."
   },
   {
-    "line_number": 409,
+    "line_number": 412,
     "sentence": "- Rồi tôi nheo mắt nhìn nó - Hôm nào tao ra chợ ghé mày ăn nghen!",
     "sentence_words": [
       "rồi",
@@ -38241,7 +38218,7 @@
     "matched_text": "Trời tui nhiên, mắt dịnh nó. Hồng nào ta nói chở, ghế mày ăn cho"
   },
   {
-    "line_number": 410,
+    "line_number": 413,
     "sentence": "Lời đề nghị của tôi khiến Hồng Hoa giật mình.",
     "sentence_words": [
       "lời",
@@ -38331,7 +38308,7 @@
     "matched_text": "lòng nghe. Lời đề nghị của tôi, khiến hồng hoa"
   },
   {
-    "line_number": 411,
+    "line_number": 414,
     "sentence": "Nó lắc đầu nguầy nguậy:",
     "sentence_words": [
       "nó",
@@ -38386,7 +38363,7 @@
     "matched_text": "nó lắt đầu quay rồi."
   },
   {
-    "line_number": 412,
+    "line_number": 415,
     "sentence": "- Thôi, thôi, không được đâu!",
     "sentence_words": [
       "thôi",
@@ -38441,7 +38418,7 @@
     "matched_text": "Thôi thôi, hồng được đâu."
   },
   {
-    "line_number": 413,
+    "line_number": 416,
     "sentence": "- Sao lại không được?",
     "sentence_words": [
       "sao",
@@ -38483,7 +38460,7 @@
     "matched_text": "Sao hồng được"
   },
   {
-    "line_number": 414,
+    "line_number": 417,
     "sentence": "Hồng Hoa nhăn nhó:",
     "sentence_words": [
       "hồng",
@@ -38531,7 +38508,7 @@
     "matched_text": "Hồng hoa ngăn nhó."
   },
   {
-    "line_number": 415,
+    "line_number": 418,
     "sentence": "- Em bảo không được là không được chứ sao!",
     "sentence_words": [
       "em",
@@ -38620,7 +38597,7 @@
     "matched_text": "Em bảo không được là không được mà. Chứ sao?"
   },
   {
-    "line_number": 416,
+    "line_number": 419,
     "sentence": "Kỳ lắm!",
     "sentence_words": [
       "kỳ",
@@ -38654,7 +38631,7 @@
     "matched_text": "Kỳ lắm."
   },
   {
-    "line_number": 417,
+    "line_number": 420,
     "sentence": "Tôi nhún vai:",
     "sentence_words": [
       "tôi",
@@ -38695,7 +38672,7 @@
     "matched_text": "Tôi dũng dạ."
   },
   {
-    "line_number": 418,
+    "line_number": 421,
     "sentence": "- Có gì đâu mà kỳ!",
     "sentence_words": [
       "có",
@@ -38750,7 +38727,7 @@
     "matched_text": "Có gì đâu mà kỳ."
   },
   {
-    "line_number": 419,
+    "line_number": 422,
     "sentence": "Thấy tôi giở bài lì, Hồng Hoa nghinh mặt:",
     "sentence_words": [
       "thấy",
@@ -38833,7 +38810,7 @@
     "matched_text": "Thế tôi dở bay liệt, hồng hoa nghe nha."
   },
   {
-    "line_number": 420,
+    "line_number": 423,
     "sentence": "- Anh mà ghé ra đó một lần, em nghỉ chơi anh luôn!",
     "sentence_words": [
       "anh",
@@ -38949,7 +38926,7 @@
     "matched_text": "Anh bà ghế là đó một lần nữa, hả? Em nghĩ chê anh luôn"
   },
   {
-    "line_number": 421,
+    "line_number": 424,
     "sentence": "Tới lượt tôi giật thót.",
     "sentence_words": [
       "tới",
@@ -39004,7 +38981,7 @@
     "matched_text": "Đến lực tôi, dịch thót,"
   },
   {
-    "line_number": 422,
+    "line_number": 425,
     "sentence": "Đòn của Hồng Hoa đúng là đòn độc.",
     "sentence_words": [
       "đòn",
@@ -39080,7 +39057,7 @@
     "matched_text": "đồng cứ hồng hoa đúng là đồng độc."
   },
   {
-    "line_number": 423,
+    "line_number": 426,
     "sentence": "Tôi đành phải hạ giọng năn nỉ:",
     "sentence_words": [
       "tôi",
@@ -39149,7 +39126,7 @@
     "matched_text": "Tôi đàn phải hà dọng năng nghỉ."
   },
   {
-    "line_number": 424,
+    "line_number": 427,
     "sentence": "- Tao nói đùa vậy thôi chứ tao không ra chỗ mày đâu!",
     "sentence_words": [
       "tao",
@@ -39253,7 +39230,7 @@
     "matched_text": "Thôi mà, tao nói đồ dậy thôi. Chứ tao không ra chỗ"
   },
   {
-    "line_number": 425,
+    "line_number": 428,
     "sentence": "Mày đừng nghỉ chơi với tao nghen!",
     "sentence_words": [
       "mày",
@@ -39334,7 +39311,7 @@
     "matched_text": "đâu. Mày đừng có kỳ chơi với tao nghe."
   },
   {
-    "line_number": 426,
+    "line_number": 429,
     "sentence": "- Ừ.",
     "sentence_words": [
       "ừ"
@@ -39361,7 +39338,7 @@
     "matched_text": "Ừ,"
   },
   {
-    "line_number": 427,
+    "line_number": 430,
     "sentence": "Nhưng mà anh hứa đi!",
     "sentence_words": [
       "nhưng",
@@ -39416,7 +39393,7 @@
     "matched_text": "đừng mà anh hứa đi."
   },
   {
-    "line_number": 428,
+    "line_number": 431,
     "sentence": "- Hứa gì?",
     "sentence_words": [
       "hứa",
@@ -39450,7 +39427,7 @@
     "matched_text": "Hứa gì?"
   },
   {
-    "line_number": 429,
+    "line_number": 432,
     "sentence": "- Hứa không ra chỗ em.",
     "sentence_words": [
       "hứa",
@@ -39517,7 +39494,7 @@
     "matched_text": "hứa là anh không ra chỗ em"
   },
   {
-    "line_number": 430,
+    "line_number": 433,
     "sentence": "- Thì tao đã nói rồi.",
     "sentence_words": [
       "thì",
@@ -39578,7 +39555,7 @@
     "matched_text": "nữa. Thì tao đã nói rồi"
   },
   {
-    "line_number": 431,
+    "line_number": 434,
     "sentence": "Tao hứa.",
     "sentence_words": [
       "tao",
@@ -39618,7 +39595,7 @@
     "matched_text": "mà. Tao hứa."
   },
   {
-    "line_number": 432,
+    "line_number": 435,
     "sentence": "Rồi tôi nhìn nó, nói:",
     "sentence_words": [
       "rồi",
@@ -39673,7 +39650,7 @@
     "matched_text": "Trời tôi dịnh nó nó."
   },
   {
-    "line_number": 433,
+    "line_number": 436,
     "sentence": "- Cả mày nữa, mày cũng phải hứa với tao.",
     "sentence_words": [
       "cả",
@@ -39756,7 +39733,7 @@
     "matched_text": "Cả mày nữa, mày không phải hứa tao. Hả?"
   },
   {
-    "line_number": 434,
+    "line_number": 437,
     "sentence": "- Hứa sao?",
     "sentence_words": [
       "hứa",
@@ -39790,7 +39767,7 @@
     "matched_text": "Hứa sao?"
   },
   {
-    "line_number": 435,
+    "line_number": 438,
     "sentence": "Tôi nghiêm giọng:",
     "sentence_words": [
       "tôi",
@@ -39831,7 +39808,7 @@
     "matched_text": "Tôi nghiệm giọng."
   },
   {
-    "line_number": 436,
+    "line_number": 439,
     "sentence": "- Hứa không được để tao chơi một mình nữa.",
     "sentence_words": [
       "hứa",
@@ -39914,7 +39891,7 @@
     "matched_text": "Hứa không được để tao chơi một mình nữa."
   },
   {
-    "line_number": 437,
+    "line_number": 440,
     "sentence": "Hứa chiều nào tao nghỉ học, mày cũng đến chơi với tao.",
     "sentence_words": [
       "hứa",
@@ -40018,7 +39995,7 @@
     "matched_text": "Hứa chìa nào tao nghĩ học mày cũng đánh chơi với tao"
   },
   {
-    "line_number": 438,
+    "line_number": 441,
     "sentence": "Hồng Hoa cười tươi:",
     "sentence_words": [
       "hồng",
@@ -40072,7 +40049,7 @@
     "matched_text": "không? Hồng hoa cửa tươi."
   },
   {
-    "line_number": 439,
+    "line_number": 442,
     "sentence": "- Em hứa.",
     "sentence_words": [
       "em",
@@ -40112,7 +40089,7 @@
     "matched_text": "gì? Em hứa."
   },
   {
-    "line_number": 440,
+    "line_number": 443,
     "sentence": "Khi Hồng Hoa cười, hai cái lúm đồng tiền lộ ra trên má trông dễ thương ác!",
     "sentence_words": [
       "khi",
@@ -40251,7 +40228,7 @@
     "matched_text": "Kỳ hồng hoa cửa. Hà cái má lướm đồng tìm lộ ra trên má. Trồng dễ thương"
   },
   {
-    "line_number": 441,
+    "line_number": 444,
     "sentence": "Càng dễ thương hơn nữa sau khi nó đã hứa sẽ không \"bỏ rơi\" tôi như những ngày vừa qua, nó sẽ đến thăm khu vườn thường xuyên để tôi khỏi phải dài cổ trông chờ.",
     "sentence_words": [
       "càng",
@@ -40523,7 +40500,7 @@
     "matched_text": "ác luôn đó. Cảnh dễ thương hơn nữa. Sau khi nó đã hứa sẽ không bỏ ra tôi. Như những ngày dựa qua. Nó sẽ đến thăm cư dường thường suyên để tôi khỏi phải dài"
   },
   {
-    "line_number": 442,
+    "line_number": 445,
     "sentence": "Thấy tôi nhìn nó đăm đăm, Hồng Hoa hỏi:",
     "sentence_words": [
       "thấy",
@@ -40612,7 +40589,7 @@
     "matched_text": "trời. Thế tôi dình nói đồng đồng. Hồng hoa hỏi."
   },
   {
-    "line_number": 443,
+    "line_number": 446,
     "sentence": "- Làm gì anh ngó sững em vậy?",
     "sentence_words": [
       "làm",
@@ -40693,7 +40670,7 @@
     "matched_text": "Anh làm gì mà ngó sử nghe em vậy?"
   },
   {
-    "line_number": 444,
+    "line_number": 447,
     "sentence": "Tôi bâng khuâng:",
     "sentence_words": [
       "tôi",
@@ -40734,7 +40711,7 @@
     "matched_text": "Tôi bừng quần."
   },
   {
-    "line_number": 445,
+    "line_number": 448,
     "sentence": "- Mày cười có mấy cái lúm đồng tiền trông dễ thương quá!",
     "sentence_words": [
       "mày",
@@ -40838,7 +40815,7 @@
     "matched_text": "Mày cười á. Có má cái lúc đồng tìm. Trồng dễ thương"
   },
   {
-    "line_number": 446,
+    "line_number": 449,
     "sentence": "Hồng Hoa \"xí\" một tiếng và xấu hổ quay mặt đi:",
     "sentence_words": [
       "hồng",
@@ -40935,7 +40912,7 @@
     "matched_text": "lắm. Hồng hoa xí một tiếng dài xuất hộ quay mặc"
   },
   {
-    "line_number": 447,
+    "line_number": 450,
     "sentence": "- Em không thèm cười với anh nữa đâu!",
     "sentence_words": [
       "em",
@@ -41017,7 +40994,7 @@
     "matched_text": "Dạ, em không thể hình cười anh nữa đâu."
   },
   {
-    "line_number": 448,
+    "line_number": 451,
     "sentence": "Tôi cười hì hì:",
     "sentence_words": [
       "tôi",
@@ -41059,7 +41036,7 @@
     "matched_text": "Tôi cười hình."
   },
   {
-    "line_number": 449,
+    "line_number": 452,
     "sentence": "- Kệ mày!",
     "sentence_words": [
       "kệ",
@@ -41093,7 +41070,7 @@
     "matched_text": "Cà mày."
   },
   {
-    "line_number": 450,
+    "line_number": 453,
     "sentence": "Mày không cười thì tao chọc cho mày cười!",
     "sentence_words": [
       "mày",
@@ -41176,7 +41153,7 @@
     "matched_text": "Mày không cười. Thì đã chọc cho mày cười."
   },
   {
-    "line_number": 451,
+    "line_number": 454,
     "sentence": "Hồng Hoa ngúng nguẩy:",
     "sentence_words": [
       "hồng",
@@ -41224,7 +41201,7 @@
     "matched_text": "Hồng hoa ngũ vậy."
   },
   {
-    "line_number": 452,
+    "line_number": 455,
     "sentence": "- Em không cười!",
     "sentence_words": [
       "em",
@@ -41265,7 +41242,7 @@
     "matched_text": "Em không cười."
   },
   {
-    "line_number": 453,
+    "line_number": 456,
     "sentence": "Nó nói vậy nhưng tôi biết nó không thể làm nghiêm với tôi được.",
     "sentence_words": [
       "nó",
@@ -41389,7 +41366,7 @@
     "matched_text": "Em không cười. Nó nói vậy. Nhưng tôi biết nó không thể làm ghiêng với"
   },
   {
-    "line_number": 454,
+    "line_number": 457,
     "sentence": "Hễ tôi chọc là nó cười ngay, mặc dù trong lòng nó đang có lắm chuyện buồn.",
     "sentence_words": [
       "hễ",
@@ -41528,7 +41505,7 @@
     "matched_text": "được lâu đâu. Hãy tìm chọc là nó cười ngay. Bà gư trong lòng nó đang có"
   },
   {
-    "line_number": 455,
+    "line_number": 458,
     "sentence": "Đang nghĩ ngợi lan man, tôi sực nhớ đến cái mô đất khi nãy, liền hỏi:",
     "sentence_words": [
       "đang",
@@ -41660,7 +41637,7 @@
     "matched_text": "lắm chuyện buồn. Đàng nghĩ ngợi, làng mang. Tôi sực nhớ đến cái mùa đất kìa"
   },
   {
-    "line_number": 456,
+    "line_number": 459,
     "sentence": "- À, mấy hôm nay tao quên hỏi mày!",
     "sentence_words": [
       "à",
@@ -41742,7 +41719,7 @@
     "matched_text": "hả? Ah. Mấy hồng này, tôi quên hỏi mày."
   },
   {
-    "line_number": 457,
+    "line_number": 460,
     "sentence": "Cái mô đất đó là mô đất gì vậy?",
     "sentence_words": [
       "cái",
@@ -41831,7 +41808,7 @@
     "matched_text": "Cái mùa đất đó là cái mùa đất gì vậy?"
   },
   {
-    "line_number": 458,
+    "line_number": 461,
     "sentence": "Hồng Hoa tỏ vẻ ngạc nhiên:",
     "sentence_words": [
       "hồng",
@@ -41893,7 +41870,7 @@
     "matched_text": "Hồng hoa tỏ dễ ngặt nhiên."
   },
   {
-    "line_number": 459,
+    "line_number": 462,
     "sentence": "- Mô đất nào?",
     "sentence_words": [
       "mô",
@@ -41934,7 +41911,7 @@
     "matched_text": "Mùa đất nào?"
   },
   {
-    "line_number": 460,
+    "line_number": 463,
     "sentence": "Tôi chỉ tay vào mô đất:",
     "sentence_words": [
       "tôi",
@@ -41996,7 +41973,7 @@
     "matched_text": "Tôi chỉ tài giả mùa đất."
   },
   {
-    "line_number": 461,
+    "line_number": 464,
     "sentence": "- Mô đất này nè!",
     "sentence_words": [
       "mô",
@@ -42044,7 +42021,7 @@
     "matched_text": "Mùa đất đề nàng."
   },
   {
-    "line_number": 462,
+    "line_number": 465,
     "sentence": "Hôm trước tao thấy mày cắm mấy cái que gì đó!",
     "sentence_words": [
       "hôm",
@@ -42141,7 +42118,7 @@
     "matched_text": "Hồng trước, tao thêm mày cắm mấy cái quê gì đó"
   },
   {
-    "line_number": 463,
+    "line_number": 466,
     "sentence": "Hồng Hoa ấp úng:",
     "sentence_words": [
       "hồng",
@@ -42195,7 +42172,7 @@
     "matched_text": "đó. Hồng hoa ớp bún."
   },
   {
-    "line_number": 464,
+    "line_number": 467,
     "sentence": "- À, đó là nấm mộ.",
     "sentence_words": [
       "à",
@@ -42262,7 +42239,7 @@
     "matched_text": "Ah. Đó hả? Đó là nấm mộ."
   },
   {
-    "line_number": 465,
+    "line_number": 468,
     "sentence": "Tôi giật thót:",
     "sentence_words": [
       "tôi",
@@ -42303,7 +42280,7 @@
     "matched_text": "Từ dịch thót."
   },
   {
-    "line_number": 466,
+    "line_number": 469,
     "sentence": "- Nấm mộ?",
     "sentence_words": [
       "numtok",
@@ -42343,7 +42320,7 @@
     "matched_text": "Nghị. Nấm mộ."
   },
   {
-    "line_number": 467,
+    "line_number": 470,
     "sentence": "Nấm mộ gì mà nhỏ xíu vậy?",
     "sentence_words": [
       "numtok",
@@ -42418,7 +42395,7 @@
     "matched_text": "Nấm một gì mà nhỏ xíu vậy? Ừ."
   },
   {
-    "line_number": 468,
+    "line_number": 471,
     "sentence": "- Ừ.",
     "sentence_words": [
       "ừ"
@@ -42445,7 +42422,7 @@
     "matched_text": "Từ"
   },
   {
-    "line_number": 469,
+    "line_number": 472,
     "sentence": "Tôi gãi đầu:",
     "sentence_words": [
       "tôi",
@@ -42480,7 +42457,7 @@
     "matched_text": "gãy đầu."
   },
   {
-    "line_number": 470,
+    "line_number": 473,
     "sentence": "- Ừ là sao?",
     "sentence_words": [
       "ừ",
@@ -42533,7 +42510,7 @@
     "matched_text": "Ừ, Ừ, Ừ là sao?"
   },
   {
-    "line_number": 471,
+    "line_number": 474,
     "sentence": "Mày chôn cái gì dưới đó vậy?",
     "sentence_words": [
       "mày",
@@ -42602,7 +42579,7 @@
     "matched_text": "Mày chung bất gì dưới đó vậy?"
   },
   {
-    "line_number": 472,
+    "line_number": 475,
     "sentence": "- Em chôn con Mi-mi.",
     "sentence_words": [
       "em",
@@ -42656,7 +42633,7 @@
     "matched_text": "Em... Em chung con Mi"
   },
   {
-    "line_number": 473,
+    "line_number": 476,
     "sentence": "- Mi-mi?",
     "sentence_words": [
       "mimi"
@@ -42689,7 +42666,7 @@
     "matched_text": "Mi. Mi"
   },
   {
-    "line_number": 474,
+    "line_number": 477,
     "sentence": "Hồng Hoa nói, giọng buồn bã:",
     "sentence_words": [
       "hồng",
@@ -42763,7 +42740,7 @@
     "matched_text": "con gì? Hồng hoa nói dòng buồn bả."
   },
   {
-    "line_number": 475,
+    "line_number": 478,
     "sentence": "- Ừ, đó là con mèo nhỏ của em.",
     "sentence_words": [
       "ừ",
@@ -42851,7 +42828,7 @@
     "matched_text": "Ừ... Mi Mi đó là con mèo nhỏ của em."
   },
   {
-    "line_number": 476,
+    "line_number": 479,
     "sentence": "Nó ốm.",
     "sentence_words": [
       "nó",
@@ -42885,7 +42862,7 @@
     "matched_text": "Nó ớm,"
   },
   {
-    "line_number": 477,
+    "line_number": 480,
     "sentence": "Rồi nó chết.",
     "sentence_words": [
       "rồi",
@@ -42926,7 +42903,7 @@
     "matched_text": "rồi nói chết."
   },
   {
-    "line_number": 478,
+    "line_number": 481,
     "sentence": "Em khóc suốt một tuần.",
     "sentence_words": [
       "em",
@@ -42987,7 +42964,7 @@
     "matched_text": "Em khắp nó xuất một tuần"
   },
   {
-    "line_number": 479,
+    "line_number": 482,
     "sentence": "Tôi không giấu được sự thắc mắc:",
     "sentence_words": [
       "tôi",
@@ -43062,7 +43039,7 @@
     "matched_text": "luôn. Tôi không giấu được sự thật mắc."
   },
   {
-    "line_number": 480,
+    "line_number": 483,
     "sentence": "- Nhưng tại sao mày lại chôn trong vườn của tao?",
     "sentence_words": [
       "nhưng",
@@ -43158,7 +43135,7 @@
     "matched_text": "Nhưng để sao mày lại chung nói trong dừng của tao?"
   },
   {
-    "line_number": 481,
+    "line_number": 484,
     "sentence": "Mà mày chôn khi nào?",
     "sentence_words": [
       "mà",
@@ -43213,7 +43190,7 @@
     "matched_text": "Mà mày chung khi nào"
   },
   {
-    "line_number": 482,
+    "line_number": 485,
     "sentence": "Hồng Hoa lộ vẻ bối rối.",
     "sentence_words": [
       "hồng",
@@ -43275,7 +43252,7 @@
     "matched_text": "Hồng hoa lỗi dễ bôi rồi."
   },
   {
-    "line_number": 483,
+    "line_number": 486,
     "sentence": "Nó trả lời, giọng lúng túng:",
     "sentence_words": [
       "nó",
@@ -43337,7 +43314,7 @@
     "matched_text": "Nó chát lời dòng luôn tuân."
   },
   {
-    "line_number": 484,
+    "line_number": 487,
     "sentence": "- Em đâu có chôn nó... ở đây.",
     "sentence_words": [
       "em",
@@ -43406,7 +43383,7 @@
     "matched_text": "Em được có chung nói ở đây"
   },
   {
-    "line_number": 485,
+    "line_number": 488,
     "sentence": "Em chôn nó trong khu vườn của em ở dưới quê.",
     "sentence_words": [
       "em",
@@ -43503,7 +43480,7 @@
     "matched_text": "đâu. Em chung nói trong khu dường của em ở giết"
   },
   {
-    "line_number": 486,
+    "line_number": 489,
     "sentence": "Nhưng nấm đất này lại trông giống hệt... mộ.",
     "sentence_words": [
       "nhưng",
@@ -43586,7 +43563,7 @@
     "matched_text": "cua. Nhưng nấm đất này lại chung chung hạt"
   },
   {
-    "line_number": 487,
+    "line_number": 490,
     "sentence": "Mi-mi.",
     "sentence_words": [
       "mimi"
@@ -43619,7 +43596,7 @@
     "matched_text": "Mi Mi."
   },
   {
-    "line_number": 488,
+    "line_number": 491,
     "sentence": "Lời giải thích của Hồng Hoa khiến tôi nhẹ nhõm cả người.",
     "sentence_words": [
       "lời",
@@ -43723,7 +43700,7 @@
     "matched_text": "Lời giải thích của Hồng hoa khiến từa nhẹ nhỏng các người."
   },
   {
-    "line_number": 489,
+    "line_number": 492,
     "sentence": "Tôi thở phào:",
     "sentence_words": [
       "tôi",
@@ -43764,7 +43741,7 @@
     "matched_text": "Tôi thở vào."
   },
   {
-    "line_number": 490,
+    "line_number": 493,
     "sentence": "- Vậy mà tao cứ tưởng mày cắm mấy cây que để ếm bùa tao!",
     "sentence_words": [
       "vậy",
@@ -43882,7 +43859,7 @@
     "matched_text": "Dày mà tao cứ tưởng hả mày cắm mấy cái quê làm để em"
   },
   {
-    "line_number": 491,
+    "line_number": 494,
     "sentence": "Hồng Hoa tròn mắt:",
     "sentence_words": [
       "hồng",
@@ -43936,7 +43913,7 @@
     "matched_text": "tao? Hồng hoa chọn mắt."
   },
   {
-    "line_number": 492,
+    "line_number": 495,
     "sentence": "- Em ếm bùa anh làm gì?",
     "sentence_words": [
       "em",
@@ -43998,7 +43975,7 @@
     "matched_text": "Em em buồn ăn lắm gì?"
   },
   {
-    "line_number": 493,
+    "line_number": 496,
     "sentence": "Tôi ngớ người ra:",
     "sentence_words": [
       "tôi",
@@ -44046,7 +44023,7 @@
     "matched_text": "Tuyến ngưỡng người ra."
   },
   {
-    "line_number": 494,
+    "line_number": 497,
     "sentence": "- Thì tao đâu có biết!",
     "sentence_words": [
       "thì",
@@ -44101,7 +44078,7 @@
     "matched_text": "Thì tao đồ có biết"
   },
   {
-    "line_number": 495,
+    "line_number": 498,
     "sentence": "Tao chỉ tưởng vậy thôi!",
     "sentence_words": [
       "tao",
@@ -44162,7 +44139,7 @@
     "matched_text": "Tao giết tưởng tưởng vậy thôi"
   },
   {
-    "line_number": 496,
+    "line_number": 499,
     "sentence": "Hồng Hoa lườm tôi:",
     "sentence_words": [
       "hồng",
@@ -44216,7 +44193,7 @@
     "matched_text": "mà. Hồng hoa lượng tôi."
   },
   {
-    "line_number": 497,
+    "line_number": 500,
     "sentence": "- Tưởng gì kỳ vậy?",
     "sentence_words": [
       "tưởng",
@@ -44264,7 +44241,7 @@
     "matched_text": "Tưởng gì kì cục."
   },
   {
-    "line_number": 498,
+    "line_number": 501,
     "sentence": "Tôi chỉ biết nhe răng cườị Rồi tôi lại hỏi:",
     "sentence_words": [
       "tôi",
@@ -44354,7 +44331,7 @@
     "matched_text": "Tôi chỉ biết nha ra kỳ rồi tôi lấy hỏi."
   },
   {
-    "line_number": 499,
+    "line_number": 502,
     "sentence": "- Còn hình vẽ trên cây mận?",
     "sentence_words": [
       "còn",
@@ -44422,7 +44399,7 @@
     "matched_text": "Còn có hình dễ trên kì mận"
   },
   {
-    "line_number": 500,
+    "line_number": 503,
     "sentence": "- Sao?",
     "sentence_words": [
       "sao"
@@ -44449,7 +44426,7 @@
     "matched_text": "Tao"
   },
   {
-    "line_number": 501,
+    "line_number": 504,
     "sentence": "- Hình vẽ gì vậy?",
     "sentence_words": [
       "hình",
@@ -44503,7 +44480,7 @@
     "matched_text": "mày hình dễ gì vậy?"
   },
   {
-    "line_number": 502,
+    "line_number": 505,
     "sentence": "- Em đâu có biết.",
     "sentence_words": [
       "em",
@@ -44551,7 +44528,7 @@
     "matched_text": "Em đồ có biết"
   },
   {
-    "line_number": 503,
+    "line_number": 506,
     "sentence": "Tôi nhăn mặt:",
     "sentence_words": [
       "tôi",
@@ -44592,7 +44569,7 @@
     "matched_text": "Tuyên nhân mạnh."
   },
   {
-    "line_number": 504,
+    "line_number": 507,
     "sentence": "- Xạo đi mày!",
     "sentence_words": [
       "xạo",
@@ -44633,7 +44610,7 @@
     "matched_text": "tao thấy mày"
   },
   {
-    "line_number": 505,
+    "line_number": 508,
     "sentence": "Hôm trước tao thấy mày trèo lên cây mày xem rõ ràng!",
     "sentence_words": [
       "hôm",
@@ -44713,7 +44690,7 @@
     "matched_text": "chào lên kì mày xem rõ ràng mà."
   },
   {
-    "line_number": 506,
+    "line_number": 509,
     "sentence": "- Thì em có xem.",
     "sentence_words": [
       "thì",
@@ -44761,7 +44738,7 @@
     "matched_text": "Thì em có xem."
   },
   {
-    "line_number": 507,
+    "line_number": 510,
     "sentence": "Tôi hỏi, giọng nghi ngờ:",
     "sentence_words": [
       "tôi",
@@ -44816,7 +44793,7 @@
     "matched_text": "Tôi hỏi giống đi ngờ."
   },
   {
-    "line_number": 508,
+    "line_number": 511,
     "sentence": "- Như vậy mày phải biết đó là hình gì và do ai vẽ chứ?",
     "sentence_words": [
       "như",
@@ -44928,7 +44905,7 @@
     "matched_text": "Dì vậy là mày phải biết đó là hình gì và giỏi dễ"
   },
   {
-    "line_number": 509,
+    "line_number": 512,
     "sentence": "Hồng Hoa lắc lắc mái tóc:",
     "sentence_words": [
       "hồng",
@@ -44984,7 +44961,7 @@
     "matched_text": "Hồng hoa lắt mê tốt."
   },
   {
-    "line_number": 510,
+    "line_number": 513,
     "sentence": "- Làm sao em biết được?",
     "sentence_words": [
       "làm",
@@ -45045,7 +45022,7 @@
     "matched_text": "Hồng làm sao em biết được?"
   },
   {
-    "line_number": 511,
+    "line_number": 514,
     "sentence": "Em trèo lên cây mận chơi và tình cờ nhìn thấy hình vẽ vậy thôi!",
     "sentence_words": [
       "em",
@@ -45170,7 +45147,7 @@
     "matched_text": "Em chào lên kì mận chơi. Dạ tình cơ dình tích hình dễ vậy thôi."
   },
   {
-    "line_number": 512,
+    "line_number": 515,
     "sentence": "Tôi tặc lưỡi:",
     "sentence_words": [
       "tôi",
@@ -45211,7 +45188,7 @@
     "matched_text": "Tôi tạc lưỡng."
   },
   {
-    "line_number": 513,
+    "line_number": 516,
     "sentence": "- Chỉ vậy thôi hả?",
     "sentence_words": [
       "chỉ",
@@ -45259,7 +45236,7 @@
     "matched_text": "Chỉ dễ thôi hả?"
   },
   {
-    "line_number": 514,
+    "line_number": 517,
     "sentence": "- Ừ, vậy thôi!",
     "sentence_words": [
       "ừ",
@@ -45300,7 +45277,7 @@
     "matched_text": "Ừ... Dễ thôi"
   },
   {
-    "line_number": 515,
+    "line_number": 518,
     "sentence": "Tôi thở một hơi dài.",
     "sentence_words": [
       "tôi",
@@ -45361,7 +45338,7 @@
     "matched_text": "à. Tôi thở ra một hơi"
   },
   {
-    "line_number": 516,
+    "line_number": 519,
     "sentence": "Hóa ra nó cũng chẳng biết gì về xuất xứ của hình vẽ lạ lùng kia.",
     "sentence_words": [
       "hóa",
@@ -45493,7 +45470,7 @@
     "matched_text": "dạ. Hoa ra nó cũng chẳng biết gì vậy. Suốt sứ của hình dễ là lùm"
   },
   {
-    "line_number": 517,
+    "line_number": 520,
     "sentence": "Nó cũng giống như tôi thôi.",
     "sentence_words": [
       "nó",
@@ -45561,7 +45538,7 @@
     "matched_text": "kia. Nó cũng giống như tôi thôi."
   },
   {
-    "line_number": 518,
+    "line_number": 521,
     "sentence": "Vậy mà hôm trước nó làm ra vẻ lén lén lút lút trông phát ớn.",
     "sentence_words": [
       "vậy",
@@ -45686,7 +45663,7 @@
     "matched_text": "Dì mà hồng trước nó làm dễ liên liên lúc lúc chồng phát tướng. Hình"
   },
   {
-    "line_number": 519,
+    "line_number": 522,
     "sentence": "Hình vẽ lại xấu tệ, thế mà nó cứ thích thú đứng xem cả buổi.",
     "sentence_words": [
       "hình",
@@ -45811,7 +45788,7 @@
     "matched_text": "dễ lệ sấu tại. Thế mà nó cứ thích thứ đứng xem các bụi. Thật"
   },
   {
-    "line_number": 520,
+    "line_number": 523,
     "sentence": "Thật tôi chưa thấy ai kỳ cục hơn con nhỏ này.",
     "sentence_words": [
       "thật",
@@ -45902,7 +45879,7 @@
     "matched_text": "tôi chưa thấy ai kỳ cục hơn con nhỏ này."
   },
   {
-    "line_number": 521,
+    "line_number": 524,
     "sentence": "Ba mẹ tôi và anh Khánh mỗi khi nổi dóa lên thường mắng tôi là thằng khùng, nhưng xem ra Hồng Hoa còn khùng hơn tôi.",
     "sentence_words": [
       "numtok",
