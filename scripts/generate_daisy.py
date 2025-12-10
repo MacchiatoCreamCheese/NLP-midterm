@@ -36,6 +36,12 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import xml.etree.ElementTree as ET
 
+try:
+    import librosa
+    HAS_LIBROSA = True
+except ImportError:
+    HAS_LIBROSA = False
+
 
 DTBOOK_NS = "http://www.daisy.org/z3986/2005/dtbook/"
 SMIL_NS = "http://www.w3.org/2001/SMIL20/"
@@ -153,7 +159,19 @@ def audio_media_type(path: Path) -> str:
     return "audio/mpeg"
 
 
-def load_sentences(json_path: Path, chap_idx: int) -> List[Sentence]:
+def get_audio_duration(audio_path: Path) -> Optional[float]:
+    """Get audio file duration in seconds. Returns None if librosa is not available."""
+    if not HAS_LIBROSA:
+        return None
+    try:
+        duration = librosa.get_duration(path=str(audio_path))
+        return duration
+    except Exception as e:
+        print(f"Warning: Could not get duration for {audio_path}: {e}", file=sys.stderr)
+        return None
+
+
+def load_sentences(json_path: Path, chap_idx: int, audio_path: Optional[Path] = None) -> List[Sentence]:
     """Load sentences with timing, filling gaps like cut_audio_from_word_matches.py."""
     with json_path.open(encoding="utf-8") as f:
         data = json.load(f)
@@ -224,6 +242,14 @@ def load_sentences(json_path: Path, chap_idx: int) -> List[Sentence]:
 
         sid = f"s{chap_idx:02d}_{rec['line']:05d}"
         sentences.append(Sentence(rec["line"], rec["text"], start, end, sid))
+    
+    # For the last sentence, if it's the last one and we have audio, use actual audio duration
+    if sentences and audio_path and HAS_LIBROSA:
+        audio_duration = get_audio_duration(audio_path)
+        if audio_duration is not None and sentences[-1].end is not None:
+            # If last sentence end is close to or beyond audio duration, cap it at audio duration
+            if sentences[-1].end >= audio_duration * 0.95:  # Within 5% of end
+                sentences[-1].end = audio_duration
 
     # Warn on non-monotonic sequences but keep going.
     last_end = 0.0
@@ -402,6 +428,10 @@ def build_opf(meta: Metadata, chapters: List[Chapter], main_href: str, ncx_href:
             total_time += max((s.end or 0.0) for s in chapter.sentences)
     ET.SubElement(x_metadata, "meta", {"name": "dtb:totalTime", "content": format_smil_time(total_time)})
     ET.SubElement(x_metadata, "meta", {"name": "dtb:multimediaContent", "content": "audio,text"})
+    
+    # Add cover reference in x-metadata if cover exists
+    if cover_href:
+        ET.SubElement(x_metadata, "meta", {"name": "cover", "content": "cover"})
 
     manifest = ET.SubElement(package, f"{{{OPF_NS}}}manifest")
     ET.SubElement(manifest, f"{{{OPF_NS}}}item", {"id": "dtbook", "href": main_href, "media-type": "application/x-dtbook+xml"})
@@ -495,12 +525,15 @@ def build_ncx(
         # Point nav to SMIL so playback starts with audio while text links live in SMIL <text> refs.
         ET.SubElement(nav_point, f"{{{NCX_NS}}}content", {"src": f"smil/{chapter.smil_name}#seq_{chapter.cid}"})
 
+        # Only add sentence-level nav if explicitly requested (default is chapter-only for better navigation)
         if include_sentence_nav:
             for sentence in chapter.sentences:
                 child_np = ET.SubElement(nav_point, f"{{{NCX_NS}}}navPoint", {"id": f"np_{sentence.sid}", "playOrder": str(play_order)})
                 play_order += 1
                 child_label = ET.SubElement(child_np, f"{{{NCX_NS}}}navLabel")
-                ET.SubElement(child_label, f"{{{NCX_NS}}}text").text = sentence.text
+                # Truncate long sentences in nav for readability
+                nav_text = sentence.text[:100] + "..." if len(sentence.text) > 100 else sentence.text
+                ET.SubElement(child_label, f"{{{NCX_NS}}}text").text = nav_text
                 ET.SubElement(child_np, f"{{{NCX_NS}}}content", {"src": f"smil/{chapter.smil_name}#par_{sentence.sid}"})
 
     tree = ET.ElementTree(root)
@@ -538,7 +571,7 @@ def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
     for idx, json_path in enumerate(json_files, start=1):
         stem = json_path.name.replace("_word_level_matches.json", "")
         audio_path = stem_to_audio(stem, audio_map)
-        sentences = load_sentences(json_path, idx)
+        sentences = load_sentences(json_path, idx, audio_path)
         title = humanize_chapter_title(stem)
         cid = f"c{idx:02d}"
         smil_name = f"{stem}.smil"
@@ -604,7 +637,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     parser.add_argument("--out-dir", default=Path("build/daisy"), type=Path, help="Output directory for DAISY package.")
     parser.add_argument("--no-copy-media", action="store_true", help="Do not copy audio/cover into the output; reference existing paths.")
     parser.add_argument("--use-sentence-audio", action="store_true", help="Use per-sentence WAV segments; otherwise use chapter-level audio timings.")
-    parser.add_argument("--include-sentence-nav", action="store_true", help="Add navPoints for every sentence in navigation.ncx.")
+    parser.add_argument("--include-sentence-nav", action="store_true", help="Add navPoints for every sentence in navigation.ncx (default: only chapters for cleaner navigation).")
 
     parser.add_argument("--title", default="Xa Xôi Thôn Ngựa Già")
     parser.add_argument("--creator", default="Ma Văn Kháng")

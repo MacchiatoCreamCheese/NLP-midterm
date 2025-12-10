@@ -231,6 +231,7 @@ def match_sentences_using_words(
     current_word_idx = 0
     previous_end_time = None
     previous_matched = True  # Track if previous sentence matched; only allow big jumps after a miss
+    previous_similarity = None  # Track similarity of the last successful match
     consecutive_failures = 0  # Track consecutive failures for recovery
     
     for idx, sentence in enumerate(sentences):
@@ -262,6 +263,20 @@ def match_sentences_using_words(
         if is_short_sentence and previous_matched and not is_recovery_mode:
             allowed_word_jump = min(recovery_word_jump, 30)
             allowed_time_jump = min(recovery_time_jump, 10.0)
+
+        # If the previous sentence matched strongly, disallow large jumps to stay sequential.
+        # Also tighten jumps for very short follow-up lines after a decent match.
+        if previous_matched and not is_recovery_mode and previous_similarity is not None:
+            if previous_similarity >= 0.9:
+                allowed_word_jump = min(allowed_word_jump, 20)
+                allowed_time_jump = min(allowed_time_jump, 12.0)
+            elif previous_similarity >= 0.75:
+                allowed_word_jump = min(allowed_word_jump, 25)
+                allowed_time_jump = min(allowed_time_jump, 15.0)
+            elif previous_similarity >= 0.6 and len(sentence_words) <= 5:
+                # Short line after a reasonably good match: keep the search tight
+                allowed_word_jump = min(allowed_word_jump, 20)
+                allowed_time_jump = min(allowed_time_jump, 12.0)
         
         if not sentence_words:
             results.append({
@@ -317,6 +332,7 @@ def match_sentences_using_words(
                 current_word_idx = match_result['end_word_idx'] + 1
                 previous_end_time = match_result['end_time']
                 previous_matched = True
+                previous_similarity = match_result['similarity']
                 consecutive_failures = 0  # Reset failure counter on success
                 
                 duration = match_result['end_time'] - match_result['start_time']
@@ -388,6 +404,7 @@ def match_sentences_using_words(
                 current_word_idx = relaxed_match['end_word_idx'] + 1
                 previous_end_time = relaxed_match['end_time']
                 previous_matched = True
+                previous_similarity = relaxed_match['similarity']
                 consecutive_failures = 0  # Reset failure counter on success
                 
                 duration = relaxed_match['end_time'] - relaxed_match['start_time']
@@ -440,6 +457,7 @@ def match_sentences_using_words(
                         current_word_idx = aggressive_match['end_word_idx'] + 1
                         previous_end_time = aggressive_match['end_time']
                         previous_matched = True
+                        previous_similarity = aggressive_match['similarity']
                         consecutive_failures = 0
                         continue
                 
