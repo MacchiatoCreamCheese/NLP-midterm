@@ -34,6 +34,7 @@ from dataclasses import dataclass, replace
 import os
 from pathlib import Path
 from typing import Dict, List, Optional
+import urllib.request
 import xml.etree.ElementTree as ET
 
 try:
@@ -89,7 +90,7 @@ class Chapter:
 
 
 # Fixed navigation order for the six stories in Xa Xôi Thôn Ngựa Già.
-STORY_CONFIG = [
+XA_XOI_STORY_CONFIG = [
     {"title": "Seo Ly, Kẻ Khuấy Động Tình Trường", "stems": ["Seo_Ly_Ke_Khuay_Dong_Tinh_Truong"]},
     {"title": "Thắp Một Tuần Hương", "stems": ["Thap_Mot_Tuan_Huong"]},
     {"title": "Cố Vinh, Người Xứ Lạ", "stems": ["Co_Vinh_Nguoi_Xu_La", "Co_Vinh_Nguoi_Xu_La_P2"]},
@@ -601,13 +602,16 @@ def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
     return chapters
 
 
-def build_story_chapters(chapters: List[Chapter]) -> List[Chapter]:
+def build_story_chapters(chapters: List[Chapter], story_config: Optional[List[Dict[str, List[str]]]]) -> List[Chapter]:
     """
     Reorder and merge raw chapters into the fixed story order defined in STORY_CONFIG.
     Multi-part stems are concatenated in config order, and sentences are renumbered per story.
     """
+    if not story_config:
+        return chapters
+
     chapter_map = {chapter.stem: chapter for chapter in chapters}
-    expected_stems = [stem for story in STORY_CONFIG for stem in story["stems"]]
+    expected_stems = [stem for story in story_config for stem in story["stems"]]
 
     missing = [stem for stem in expected_stems if stem not in chapter_map]
     if missing:
@@ -618,7 +622,7 @@ def build_story_chapters(chapters: List[Chapter]) -> List[Chapter]:
         print(f"Warning: Unused chapters present (not in navigation config): {extras}", file=sys.stderr)
 
     story_chapters: List[Chapter] = []
-    for story_idx, story in enumerate(STORY_CONFIG, start=1):
+    for story_idx, story in enumerate(story_config, start=1):
         merged_sentences: List[Sentence] = []
         source_json_path: Optional[Path] = None
 
@@ -707,12 +711,70 @@ def maybe_copy(src: Path, dest: Path, enabled: bool) -> Path:
     return dest
 
 
+def download_cover(url: str, dest: Path) -> Optional[Path]:
+    """Download cover from URL to dest; return dest on success, None on failure."""
+    try:
+        ensure_dir(dest.parent)
+        urllib.request.urlretrieve(url, dest)
+        return dest
+    except Exception as e:
+        print(f"Warning: Failed to download cover from {url}: {e}", file=sys.stderr)
+        return None
+
+
+def apply_preset_defaults(args: argparse.Namespace) -> Optional[List[Dict[str, List[str]]]]:
+    """
+    Adjust argument defaults based on preset and return story_config to use.
+    Returns None when no story merge/reorder is needed.
+    """
+    if args.preset == "thienthan":
+        # Paths
+        args.json_dir = Path("output_thienthan")
+        args.audio_dir = Path("data/Audio-ThienThanNhoCuaToi")
+        args.sentence_audio_dir = Path("output_thienthan/audio_segments_method_w")
+        args.cover = Path("data/thien-than-nho-cua-toi.jpg")
+        if args.cover_url is None:
+            args.cover_url = "https://www.nxbtre.com.vn/Images/Book/copy_21_NXBTreStoryFull_19152013_021510.jpg"
+
+        # Metadata
+        args.title = "Thiên Thần Nhỏ Của Tôi"
+        args.creator = "Nguyễn Nhật Ánh"
+        args.date = "2004"
+        args.description = (
+            "Hai đứa ngồi trên thành giếng mát lạnh, rêu bám vào gót chân và bông khế\n"
+            "thỉnh thoảng rơi xuống đậu hững dờ trên tóc. Trên các vòm cây, lá bắt đầu\n"
+            "đi ngủ. Chúng thong thả rủ mình xuống như những cánh dơi đang im lặng\n"
+            "đeo mình chờ bay vào đêm tối. Trong bóng hoàng hôn chập choạng, gió đã\n"
+            "bớt rụt rè hơn, chúng lướt đi xào xạc trên cỏ và những giọt nắng cuối ngày\n"
+            "còn sót lại đang nhẩn nha thắp nốt buổi chiều trên những ngọn cây cao\n"
+            "trong vườn. Thả hồn vào khung cảnh êm đềm đó, tôi khẽ liếc vẻ mặt nôn\n"
+            "nao của Hồng Hao và mỉm cười kể: - Ngày xửa ngày xưa, có một nàng công chúa, xinh thật là xinh..."
+        )
+        args.language = "vi"
+        args.subject = "Văn học & Tiểu thuyết"
+        args.publisher = "NXB Trẻ"
+        args.identifier = "9786041005396"
+        args.source_isbn = "9786041005396"
+        args.source_url = "https://thuviensachnoihuongduong.com"
+        args.note = "Người đọc: Đức Trọng"
+        args.reader = "Đức Trọng"
+        args.collector = "Đức Trọng"
+
+        # No story merging/reordering for this preset.
+        return None
+
+    # Default preset (xaxoi) keeps existing story merging.
+    return XA_XOI_STORY_CONFIG
+
+
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Generate DAISY 3 package files from JSON + MP3 inputs.")
+    parser.add_argument("--preset", choices=["xaxoi", "thienthan"], default="xaxoi", help="Choose book preset for defaults.")
     parser.add_argument("--json-dir", default="output_xaxoi", type=Path, help="Directory containing *_word_level_matches.json files.")
     parser.add_argument("--audio-dir", default=Path("data/Audio-XaXoiThonNguaGia"), type=Path, help="Directory containing MP3s.")
     parser.add_argument("--sentence-audio-dir", default=Path("output_xaxoi/audio_segments_method_w"), type=Path, help="Directory containing per-sentence WAV segments (subfolders per chapter).")
     parser.add_argument("--cover", default=Path("data/xa-xoi-thon-ngua-gia-rs.jpg"), type=Path, help="Cover image (JPEG).")
+    parser.add_argument("--cover-url", default=None, help="Cover image URL to download when local cover is missing.")
     parser.add_argument("--out-dir", default=Path("build/daisy"), type=Path, help="Output directory for DAISY package.")
     parser.add_argument("--no-copy-media", action="store_true", help="Do not copy audio/cover into the output; reference existing paths.")
     parser.add_argument("--use-sentence-audio", action="store_true", help="Use per-sentence WAV segments; otherwise use chapter-level audio timings.")
@@ -739,13 +801,16 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     args = parser.parse_args(argv)
 
+    # Apply preset-specific defaults (paths, metadata, and optional story config).
+    story_config = apply_preset_defaults(args)
+
     copy_media = not args.no_copy_media
     out_dir: Path = args.out_dir
     smil_dir = out_dir / "smil"
     media_dir = out_dir / "media"
     ensure_dir(out_dir)
     ensure_dir(smil_dir)
-    if copy_media:
+    if copy_media or args.cover_url:
         ensure_dir(media_dir)
 
     use_sentence_audio = (
@@ -797,17 +862,24 @@ def main(argv: Optional[List[str]] = None) -> int:
     else:
         print("Sentence-level audio disabled or unavailable; using chapter audio with clip timings.")
 
-    # Reorder and merge into the fixed six-story navigation.
-    chapters = build_story_chapters(chapters)
+    # Reorder and merge according to story_config (if provided).
+    chapters = build_story_chapters(chapters, story_config)
 
     cover_href = None
+    cover_path: Optional[Path] = None
     if args.cover and args.cover.exists():
         if copy_media:
             cover_dest = media_dir / args.cover.name
             cover_path = maybe_copy(args.cover, cover_dest, copy_media)
         else:
-            # When not copying media, reference the existing cover file directly.
             cover_path = args.cover
+    elif args.cover_url:
+        # Download cover when local file is unavailable.
+        cover_filename = Path(args.cover_url).name or "cover.jpg"
+        cover_dest = media_dir / cover_filename
+        cover_path = download_cover(args.cover_url, cover_dest)
+
+    if cover_path and cover_path.exists():
         cover_href = Path(os.path.relpath(cover_path, out_dir)).as_posix()
 
     main_xml = out_dir / "main.xml"
