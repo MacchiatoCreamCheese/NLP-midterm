@@ -1,0 +1,3257 @@
+[
+  {
+    "id": 0,
+    "start": "1.640",
+    "end": "6.620",
+    "duration": "4.980",
+    "text": "Kể từ hôm hứa với tôi, Hồng Hoa đến thăm khu vườn của tôi khá thường xuyên."
+  },
+  {
+    "id": 1,
+    "start": "7.430",
+    "end": "12.580",
+    "duration": "5.150",
+    "text": "Trừ các buổi chiều tôi đi học, các buổi chiều còn lại Hồng Hoa đều đến chơi với tôi."
+  },
+  {
+    "id": 2,
+    "start": "13.410",
+    "end": "20.080",
+    "duration": "6.670",
+    "text": "Cuộc sống của tôi trong những ngày này bỗng thay đổi hẳn, nó trở nên ấm áp và đẹp đẽ xiết bao!"
+  },
+  {
+    "id": 3,
+    "start": "20.670",
+    "end": "26.800",
+    "duration": "6.130",
+    "text": "Cả khu vườn cũng vậỵ Dường như lá xanh hơn, còn gió thì reo vui suốt ngày trên những vòm lá biếc."
+  },
+  {
+    "id": 4,
+    "start": "27.650",
+    "end": "29.580",
+    "duration": "1.930",
+    "text": "Chúng tôi càng ngày càng thân nhau hơn."
+  },
+  {
+    "id": 5,
+    "start": "30.100",
+    "end": "41.090",
+    "duration": "10.990",
+    "text": "Tôi bê cả chồng sách ra vườn và chúng tôi nằm lăn ra bãi cỏ, mỗi đứa một cuốn sách trong tay, say mê đọc đến khi những dòng chữ nhòe đi trong bóng chiều chập choạng."
+  },
+  {
+    "id": 6,
+    "start": "42.130",
+    "end": "60.820",
+    "duration": "18.690",
+    "text": "Những lúc đó, mải cắm đầu vào trang sách, không ai nói với ai một lời nào, chỉ có tiếng lá xạc xào đuổi nhau trên cỏ, nhưng không hiểu sao lòng tôi dâng lên một cảm giác hân hoan khó tả và tôi cứ mong cuộc sống ngưng đọng lại mãi ở giây phút êm đềm này."
+  },
+  {
+    "id": 7,
+    "start": "62.010",
+    "end": "66.030",
+    "duration": "4.020",
+    "text": "Cũng có khi tôi và Hồng Hoa chụm đầu vào đọc chung một cuốn sách."
+  },
+  {
+    "id": 8,
+    "start": "66.840",
+    "end": "70.280",
+    "duration": "3.440",
+    "text": "Hồng Hoa nghỉ học từ hồi lớp năm nên nó đọc chậm rì."
+  },
+  {
+    "id": 9,
+    "start": "71.070",
+    "end": "77.800",
+    "duration": "6.730",
+    "text": "Đọc xong một trang sách, lần nào tôi cũng phải chờ nó đọc xong phần của nó mới được giở qua trang kế tiếp."
+  },
+  {
+    "id": 10,
+    "start": "78.460",
+    "end": "83.160",
+    "duration": "4.700",
+    "text": "Đợi một hồi, sốt ruột, tôi lại phải giục:\n- Đọc lẹ lên chút coi!"
+  },
+  {
+    "id": 11,
+    "start": "84.350",
+    "end": "88.570",
+    "duration": "4.220",
+    "text": "Hồng Hoa bao giờ cũng trả lời bằng câu:\n- Anh chờ em chút xíu nữa đi!"
+  },
+  {
+    "id": 12,
+    "start": "88.850",
+    "end": "89.720",
+    "duration": "0.870",
+    "text": "Gần xong rồi!"
+  },
+  {
+    "id": 13,
+    "start": "90.540",
+    "end": "92.820",
+    "duration": "2.280",
+    "text": "Tôi nhăn nhó:\n- Gần xong đâu mà gần xong!"
+  },
+  {
+    "id": 14,
+    "start": "93.140",
+    "end": "94.060",
+    "duration": "0.920",
+    "text": "Mày đọc lâu thấy mồ!"
+  },
+  {
+    "id": 15,
+    "start": "95.290",
+    "end": "98.710",
+    "duration": "3.420",
+    "text": "Hồng Hoa nuốt nước bọt:\n- Gần xong thật mà!"
+  },
+  {
+    "id": 16,
+    "start": "99.100",
+    "end": "101.750",
+    "duration": "2.650",
+    "text": "Còn chừng bảy, tám dòng nữa thôi!"
+  },
+  {
+    "id": 17,
+    "start": "103.580",
+    "end": "107.230",
+    "duration": "3.650",
+    "text": "Bảy tám dòng của nó bằng bảy, tám chục dòng của người ta."
+  },
+  {
+    "id": 18,
+    "start": "107.620",
+    "end": "111.900",
+    "duration": "4.280",
+    "text": "Và thế là tôi lại gắt:\n- Đọc sách chung với mày chán ơi là chán!"
+  },
+  {
+    "id": 19,
+    "start": "112.390",
+    "end": "113.950",
+    "duration": "1.560",
+    "text": "Mày đọc cứ như rùa bò!"
+  },
+  {
+    "id": 20,
+    "start": "115.230",
+    "end": "123.080",
+    "duration": "7.850",
+    "text": "Thấy tôi nổi cáu, Hồng Hoa chớp mắt, giọng biết lỗi:\n- Ừ, thôi anh lật qua trang mới đi!"
+  },
+  {
+    "id": 21,
+    "start": "124.240",
+    "end": "128.180",
+    "duration": "3.940",
+    "text": "Tôi liếc nó, áy náy:\n- Nhưng mày đã đọc xong đâu?"
+  },
+  {
+    "id": 22,
+    "start": "129.290",
+    "end": "132.020",
+    "duration": "2.730",
+    "text": "Hồng Hoa mỉm cười:\n- Kệ nó!"
+  },
+  {
+    "id": 23,
+    "start": "132.490",
+    "end": "133.880",
+    "duration": "1.390",
+    "text": "Em đọc chừng đó cũng được rồi!"
+  },
+  {
+    "id": 24,
+    "start": "135.330",
+    "end": "138.950",
+    "duration": "3.620",
+    "text": "Nghe cái giọng hiền hòa của nó, lòng tôi tự dưng mềm hẳn đi."
+  },
+  {
+    "id": 25,
+    "start": "139.380",
+    "end": "143.900",
+    "duration": "4.520",
+    "text": "Tôi chẳng còn buồn giục nó nữa:\n- Thôi, mày cứ đọc cho xong đi!"
+  },
+  {
+    "id": 26,
+    "start": "144.370",
+    "end": "145.610",
+    "duration": "1.240",
+    "text": "Tao chờ thêm một chút nữa vậy!"
+  },
+  {
+    "id": 27,
+    "start": "146.670",
+    "end": "150.840",
+    "duration": "4.170",
+    "text": "Hồng Hoa khẽ lắc đầu:\n- Anh cứ lật qua đọc đi!"
+  },
+  {
+    "id": 28,
+    "start": "151.070",
+    "end": "151.890",
+    "duration": "0.820",
+    "text": "Đừng đợi em!"
+  },
+  {
+    "id": 29,
+    "start": "152.590",
+    "end": "153.490",
+    "duration": "0.900",
+    "text": "Em đọc chậm lắm!"
+  },
+  {
+    "id": 30,
+    "start": "154.620",
+    "end": "158.940",
+    "duration": "4.320",
+    "text": "Tôi lại gắt:\n- Tao đã bảo tao đợi mày là tao đợi kia mà!"
+  },
+  {
+    "id": 31,
+    "start": "159.350",
+    "end": "162.740",
+    "duration": "3.390",
+    "text": "Mày chưa đọc xong, tao cũng chẳng thèm đọc phần của tao đâu!"
+  },
+  {
+    "id": 32,
+    "start": "164.430",
+    "end": "168.520",
+    "duration": "4.090",
+    "text": "Trước sự nạt nộ của tôi, Hồng Hoa không dám hé môi nói lại nửa tiếng."
+  },
+  {
+    "id": 33,
+    "start": "168.990",
+    "end": "171.060",
+    "duration": "2.070",
+    "text": "Nó đành im lặng cúi xuống đọc tiếp."
+  },
+  {
+    "id": 34,
+    "start": "172.750",
+    "end": "182.290",
+    "duration": "9.540",
+    "text": "Trong khi chờ đợi, tôi ngả đầu trên cỏ, vẩn vơ nhìn những con chim sâu nhỏ hơn nắm tay vừa thoăn thoa+'t chuyền cành vừa kêu lích chích luôn mồm."
+  },
+  {
+    "id": 35,
+    "start": "182.290",
+    "end": "193.770",
+    "duration": "11.480",
+    "text": "Đôi khi tôi lại thích thú nhìn ngắm những tia nắng nhấp nháy trên vòm lá, những lúc như vậy tôi cố tình nheo mắt lại để thấy những tia nắng trở nên lung linh hơn."
+  },
+  {
+    "id": 36,
+    "start": "193.800",
+    "end": "196.750",
+    "duration": "2.950",
+    "text": "Thỉnh thoảng, tôi liếc sang Hồng Hoa."
+  },
+  {
+    "id": 37,
+    "start": "196.820",
+    "end": "207.140",
+    "duration": "10.320",
+    "text": "Mặc dù ngoài miệng bảo đợi nhưng thấy nó dò dẫm từng chữ trên trang sách, không biết đời nào mới xong, tôi không nén được tiếng thở dài ngán ngẩm."
+  },
+  {
+    "id": 38,
+    "start": "207.310",
+    "end": "216.440",
+    "duration": "9.130",
+    "text": "Rốt cuộc, không thể nào kiên nhẫn hơn được, tôi đành lên tiếng đề nghị:\n- Thôi để tao đọc cho mày nghe hén?"
+  },
+  {
+    "id": 39,
+    "start": "216.440",
+    "end": "219.930",
+    "duration": "3.490",
+    "text": "Hồng Hoa mở to mắt:\n- Anh đọc?"
+  },
+  {
+    "id": 40,
+    "start": "220.650",
+    "end": "224.630",
+    "duration": "3.980",
+    "text": "Tôi gật đầu:\n- Ừ, tao đọc."
+  },
+  {
+    "id": 41,
+    "start": "224.630",
+    "end": "228.220",
+    "duration": "3.590",
+    "text": "Tao sẽ đọc to lên cho hai đứa cùng nghe, mày chịu không?"
+  },
+  {
+    "id": 42,
+    "start": "228.220",
+    "end": "230.500",
+    "duration": "2.280",
+    "text": "Hồng Hoa chịu liền."
+  },
+  {
+    "id": 43,
+    "start": "230.500",
+    "end": "232.780",
+    "duration": "2.280",
+    "text": "Nó gật đầu, mặt mày hớn hở."
+  },
+  {
+    "id": 44,
+    "start": "232.780",
+    "end": "238.840",
+    "duration": "6.060",
+    "text": "Thế là từ hôm đó, chiều nào tôi cũng đọc sách cho Hồng Hoa nghe."
+  },
+  {
+    "id": 45,
+    "start": "238.840",
+    "end": "247.640",
+    "duration": "8.800",
+    "text": "Khi thì ngồi trên thành giếng, khi tựa lưng vào gốc mận, lúc lại nằm dài trên cỏ, Hồng Hoa luôn luôn xúm xít bên tôi."
+  },
+  {
+    "id": 46,
+    "start": "247.640",
+    "end": "256.940",
+    "duration": "9.300",
+    "text": "Sách mở trên tay, tôi vừa đọc vừa cố sửa giọng cho diễn cảm, còn Hồng Hoa thì nghểnh cổ nghe, chốc chốc lại tặc lưỡi xuýt xoa."
+  },
+  {
+    "id": 47,
+    "start": "257.060",
+    "end": "262.610",
+    "duration": "5.550",
+    "text": "Đọc sách cho Hồng Hoa nghe vài lần, tôi đã biết rõ tính nó."
+  },
+  {
+    "id": 48,
+    "start": "262.610",
+    "end": "269.360",
+    "duration": "6.750",
+    "text": "Nó chỉ thích các câu chuyện có hậu trong đó người tốt luôn luôn thắng còn kẻ xấu bao giờ cũng thua."
+  },
+  {
+    "id": 49,
+    "start": "269.360",
+    "end": "278.310",
+    "duration": "8.950",
+    "text": "Lần nào cũng vậy, hễ tôi đọc tới chỗ nhân vật tốt lâm nạn hay gặp phải những nghịch cảnh là nó bắt đầu khụt khịt mũi."
+  },
+  {
+    "id": 50,
+    "start": "278.360",
+    "end": "285.980",
+    "duration": "7.620",
+    "text": "Cái giọng sụt sịt lẵng nhẵng của nó nhiều lúc khiến tôi phát bực, phải gắt lên:\n- Mày có im đi không!"
+  },
+  {
+    "id": 51,
+    "start": "285.980",
+    "end": "288.420",
+    "duration": "2.440",
+    "text": "Mày cứ làm ầm ĩ như vậy làm sao tao đọc tiếp được!"
+  },
+  {
+    "id": 52,
+    "start": "288.460",
+    "end": "295.690",
+    "duration": "7.230",
+    "text": "Thấy tôi nổi khùng, Hồng Hoa đưa tay quệt nước mắt và cố mím chặt môi lại để khỏi bật ra tiếng nấc."
+  },
+  {
+    "id": 53,
+    "start": "295.690",
+    "end": "301.460",
+    "duration": "5.770",
+    "text": "Dòm điệu bộ của nó, tôi thấy tội tội, bèn an ủi:\n- Mày ngốc quá!"
+  },
+  {
+    "id": 54,
+    "start": "301.549",
+    "end": "302.929",
+    "duration": "1.380",
+    "text": "Có gì đâu mà khóc!"
+  },
+  {
+    "id": 55,
+    "start": "303.049",
+    "end": "311.100",
+    "duration": "8.051",
+    "text": "Tới đoạn này thì thằng Hạt Tiêu bị bắt cóc nhưng lát nữa tới phần sau, người ta đã cứu nó ra rồi và nó lại trở về với mẹ nó."
+  },
+  {
+    "id": 56,
+    "start": "311.100",
+    "end": "313.829",
+    "duration": "2.729",
+    "text": "Còn bọn cướp thì bị tóm sạch không sót một tên."
+  },
+  {
+    "id": 57,
+    "start": "313.829",
+    "end": "317.109",
+    "duration": "3.280",
+    "text": "Hồng Hoa tươi ngay nét mặt."
+  },
+  {
+    "id": 58,
+    "start": "317.139",
+    "end": "321.009",
+    "duration": "3.870",
+    "text": "Nó mỉm cười và nhìn tôi bằng đôi mắt ướt:\n- Thật không?"
+  },
+  {
+    "id": 59,
+    "start": "321.109",
+    "end": "321.979",
+    "duration": "0.870",
+    "text": "Sao anh biết?"
+  },
+  {
+    "id": 60,
+    "start": "321.979",
+    "end": "327.789",
+    "duration": "5.810",
+    "text": "Tôi nhún vai:\n- Tao đã đọc cuốn này cả chục lần, sao lại không biết!"
+  },
+  {
+    "id": 61,
+    "start": "327.789",
+    "end": "333.189",
+    "duration": "5.400",
+    "text": "Hồng Hoa có vẻ bẽn lẽn:\n- Vậy mà em cứ lo lo..."
+  },
+  {
+    "id": 62,
+    "start": "333.189",
+    "end": "340.279",
+    "duration": "7.090",
+    "text": "Nhờ tôi kể trước đoạn kết, Hồng Hoa mới thôi sụt sùi và lặng yên nghe tôi đọc tiếp."
+  },
+  {
+    "id": 63,
+    "start": "340.369",
+    "end": "345.759",
+    "duration": "5.390",
+    "text": "Nhưng đọc sách hoài cũng chán, chúng tôi chuyển sang trò chơi khác."
+  },
+  {
+    "id": 64,
+    "start": "345.759",
+    "end": "350.609",
+    "duration": "4.850",
+    "text": "Tôi rủ Hồng Hoa:\n- Tao với mày chơi đá dế đi!"
+  },
+  {
+    "id": 65,
+    "start": "350.609",
+    "end": "353.929",
+    "duration": "3.320",
+    "text": "Mày một con tao một con, đá nhau xem bên nào thắng!"
+  },
+  {
+    "id": 66,
+    "start": "353.929",
+    "end": "359.529",
+    "duration": "5.600",
+    "text": "Nào ngờ Hồng Hoa lắc đầu:\n- Thôi, em không chơi trò đá dế đâu!"
+  },
+  {
+    "id": 67,
+    "start": "359.529",
+    "end": "362.369",
+    "duration": "2.840",
+    "text": "Tôi ngạc nhiên:\n- Sao vậy?"
+  },
+  {
+    "id": 68,
+    "start": "362.399",
+    "end": "366.419",
+    "duration": "4.020",
+    "text": "Hồng Hoa cười:\n- Con gái ai lại chơi trò đó!"
+  },
+  {
+    "id": 69,
+    "start": "366.419",
+    "end": "369.689",
+    "duration": "3.270",
+    "text": "Tôi hừ giọng:\n- Có sao đâu!"
+  },
+  {
+    "id": 70,
+    "start": "369.689",
+    "end": "371.509",
+    "duration": "1.820",
+    "text": "Con gái con trai gì chơi chẳng được!"
+  },
+  {
+    "id": 71,
+    "start": "371.509",
+    "end": "381.699",
+    "duration": "10.190",
+    "text": "Nhưng Hồng Hoa tỏ ra chẳng mê trò đá dế của tôi chút nàọ Nó vẫn một mực từ chối:\n- Với lại, xem hai con dế đá nhau em thấy ghê ghê làm sao!"
+  },
+  {
+    "id": 72,
+    "start": "381.699",
+    "end": "383.999",
+    "duration": "2.300",
+    "text": "- Có gì đâu mà ghê!"
+  },
+  {
+    "id": 73,
+    "start": "383.999",
+    "end": "386.589",
+    "duration": "2.590",
+    "text": "Tại mày là con gái, mày nhát gan đó thôi!"
+  },
+  {
+    "id": 74,
+    "start": "386.589",
+    "end": "391.889",
+    "duration": "5.300",
+    "text": "Tôi có ý nói khích nó để nó đồng ý chơi với tôi."
+  },
+  {
+    "id": 75,
+    "start": "391.889",
+    "end": "396.969",
+    "duration": "5.080",
+    "text": "Không ngờ nó gật đầu, giọng thản nhiên:\n- Ừ, em nhát gan hồi nào đến giờ."
+  },
+  {
+    "id": 76,
+    "start": "397.019",
+    "end": "401.419",
+    "duration": "4.400",
+    "text": "Tôi đành thở dài xuôi xị:\n- Vậy thì thôi!"
+  },
+  {
+    "id": 77,
+    "start": "401.419",
+    "end": "409.769",
+    "duration": "8.350",
+    "text": "Sợ tôi buồn, Hồng Hoa lại rụt rè đề nghị:\n- Hay mình chơi đá gà đi!"
+  },
+  {
+    "id": 78,
+    "start": "409.769",
+    "end": "413.329",
+    "duration": "3.560",
+    "text": "Tôi trố mắt:\n- Gà đâu mà đá?"
+  },
+  {
+    "id": 79,
+    "start": "413.329",
+    "end": "415.699",
+    "duration": "2.370",
+    "text": "- Không phải là gà thật!"
+  },
+  {
+    "id": 80,
+    "start": "415.699",
+    "end": "420.769",
+    "duration": "5.070",
+    "text": "- Hồng Hoa chớp mắt - Đá gà là đá cỏ gà ấy mà!"
+  },
+  {
+    "id": 81,
+    "start": "420.769",
+    "end": "424.209",
+    "duration": "3.440",
+    "text": "Tôi bĩu môi:\n- Tưởng gì!"
+  },
+  {
+    "id": 82,
+    "start": "424.209",
+    "end": "426.119",
+    "duration": "1.910",
+    "text": "Cái trò này hồi ở dưới quê tao chơi hoài!"
+  },
+  {
+    "id": 83,
+    "start": "426.119",
+    "end": "433.939",
+    "duration": "7.820",
+    "text": "Nói vậy nhưng tôi vẫn cùng với Hồng Hoa lom khom đi tìm cỏ gà quanh giếng đá và dọc các hàng rào."
+  },
+  {
+    "id": 84,
+    "start": "433.939",
+    "end": "440.568",
+    "duration": "6.629",
+    "text": "Trong vườn tôi, cỏ gà không nhiều nhưng một lát sau, hai đứa cũng hái được ba, bốn cọng."
+  },
+  {
+    "id": 85,
+    "start": "440.608",
+    "end": "444.188",
+    "duration": "3.580",
+    "text": "Không biết sao Hồng Hoa nó gặp hên quá chừng."
+  },
+  {
+    "id": 86,
+    "start": "444.188",
+    "end": "453.568",
+    "duration": "9.380",
+    "text": "Các cọng cỏ gà trên tay nó cọng nào cọng nấy trông dẻo dai và chắc nịch, còn các cọng của tôi thì nom èo uột chẳng ra làm sao."
+  },
+  {
+    "id": 87,
+    "start": "453.568",
+    "end": "460.238",
+    "duration": "6.670",
+    "text": "Quả đúng như tôi lo ngại, đá nhau một hồi, những \"con gà\" của tôi rụng đầu ráo trọi."
+  },
+  {
+    "id": 88,
+    "start": "460.308",
+    "end": "466.038",
+    "duration": "5.730",
+    "text": "Hồng Hoa toàn thắng, bèn hí hửng rủ tiếp:\n- Chơi nữa không?"
+  },
+  {
+    "id": 89,
+    "start": "466.068",
+    "end": "475.418",
+    "duration": "9.350",
+    "text": "Tôi vứt cọng cỏ xơ xác còn nằm trên tay xuống đất, giọng gây sự:\n- Tao không thèm chơi với mày nữa đâu!"
+  },
+  {
+    "id": 90,
+    "start": "475.418",
+    "end": "476.228",
+    "duration": "0.810",
+    "text": "Mày ăn gian!"
+  },
+  {
+    "id": 91,
+    "start": "476.228",
+    "end": "480.398",
+    "duration": "4.170",
+    "text": "Hồng Hoa tròn mắt:\n- Em ăn gian hồi nào?"
+  },
+  {
+    "id": 92,
+    "start": "480.398",
+    "end": "483.038",
+    "duration": "2.640",
+    "text": "Tôi cộc lốc:\n- Hồi nãy."
+  },
+  {
+    "id": 93,
+    "start": "483.038",
+    "end": "486.738",
+    "duration": "3.700",
+    "text": "Hồng Hoa thấp thỏm:\n- Hồi nãy là hồi nào?"
+  },
+  {
+    "id": 94,
+    "start": "486.738",
+    "end": "492.418",
+    "duration": "5.680",
+    "text": "Tôi nhún vai và quay mặt đi:\n- Hồi nãy là hồi đi hái cỏ gà chứ hồi nào!"
+  },
+  {
+    "id": 95,
+    "start": "492.418",
+    "end": "496.148",
+    "duration": "3.730",
+    "text": "Mày giành mày hái toàn cọng lớn, chỉ chừa cho tao những cọng bé xíu."
+  },
+  {
+    "id": 96,
+    "start": "496.148",
+    "end": "501.678",
+    "duration": "5.530",
+    "text": "Nghe tôi trách, Hồng Hoa có vẻ áy náy:\n- Em đâu có giành với anh!"
+  },
+  {
+    "id": 97,
+    "start": "501.678",
+    "end": "503.628",
+    "duration": "1.950",
+    "text": "Em với anh cùng hái kia mà!"
+  },
+  {
+    "id": 98,
+    "start": "503.628",
+    "end": "507.967",
+    "duration": "4.339",
+    "text": "Tôi lúng túng chép miệng:\n- Thì mày không giành!"
+  },
+  {
+    "id": 99,
+    "start": "507.967",
+    "end": "510.107",
+    "duration": "2.140",
+    "text": "Nhưng mày khôn mày hái toàn cọng lớn!"
+  },
+  {
+    "id": 100,
+    "start": "510.107",
+    "end": "520.458",
+    "duration": "10.351",
+    "text": "Thấy tôi cứ nằng nặc kết tội nó, Hồng Hoa bối rối phân trần:\nThì nhìn thấy cỏ gà là em bứt đại, em có lựa cọng lớn cọng nhỏ gì đâu!"
+  },
+  {
+    "id": 101,
+    "start": "520.458",
+    "end": "526.138",
+    "duration": "5.680",
+    "text": "Khi nãy cùng đi hái chung, quả là tôi chẳng thấy nó lựa chọn gì thật."
+  },
+  {
+    "id": 102,
+    "start": "526.138",
+    "end": "531.098",
+    "duration": "4.960",
+    "text": "Nhưng không hiểu sao nó lại vớ được những cọng cỏ ngon lành quá xá!"
+  },
+  {
+    "id": 103,
+    "start": "531.128",
+    "end": "535.468",
+    "duration": "4.340",
+    "text": "Chắc là tại nó \"mát tay\" hơn tôi, nói theo kiểu ngoại tôi thường nói."
+  },
+  {
+    "id": 104,
+    "start": "535.468",
+    "end": "539.158",
+    "duration": "3.690",
+    "text": "Nghĩ vậy, nỗi hờn dỗi trong lòng tôi bay biến đâu mất."
+  },
+  {
+    "id": 105,
+    "start": "539.158",
+    "end": "544.048",
+    "duration": "4.890",
+    "text": "Và tôi liền dịu giọng \"giải oan\" cho nó:\n- Ừ thì mày không lựa."
+  },
+  {
+    "id": 106,
+    "start": "544.048",
+    "end": "548.698",
+    "duration": "4.650",
+    "text": "Hồng Hoa mừng quýnh:\n- Vậy là em không ăn gian hén?"
+  },
+  {
+    "id": 107,
+    "start": "548.698",
+    "end": "553.278",
+    "duration": "4.580",
+    "text": "Tôi hiền khô:\n- Ừ, không ăn gian."
+  },
+  {
+    "id": 108,
+    "start": "553.618",
+    "end": "558.249",
+    "duration": "4.631",
+    "text": "Hồng Hoa hắng giọng:\n- Vậy thì anh quay mặt lại đi!"
+  },
+  {
+    "id": 109,
+    "start": "558.249",
+    "end": "564.219",
+    "duration": "5.970",
+    "text": "Tôi quay mặt lại và thấy Hồng Hoa đang cười khoe hai cái lúm đồng tiền."
+  },
+  {
+    "id": 110,
+    "start": "564.219",
+    "end": "567.059",
+    "duration": "2.840",
+    "text": "Tôi liền nhe răng cười theo, lòng nhẹ nhõm."
+  },
+  {
+    "id": 111,
+    "start": "567.059",
+    "end": "571.328",
+    "duration": "4.269",
+    "text": "Nhưng dường như Hồng Hoa muốn làm tôi cụt hứng cho bõ ghét chơi."
+  },
+  {
+    "id": 112,
+    "start": "571.378",
+    "end": "574.609",
+    "duration": "3.231",
+    "text": "Nó đột ngột rủ:\n- Chơi tiếp hén?"
+  },
+  {
+    "id": 113,
+    "start": "574.669",
+    "end": "580.579",
+    "duration": "5.910",
+    "text": "Tôi giật thót, nụ cười biến mất:\n- Đá cỏ gà nữa hả?"
+  },
+  {
+    "id": 114,
+    "start": "580.579",
+    "end": "593.069",
+    "duration": "12.490",
+    "text": "- Ừ, - Hồng Hoa gật đầu, rồi hình như kịp nhận ra nỗi kinh hoàng trong mắt tôi, nó vội vàng trấn an - Nhưng lần này, hái xong, mình chia đều cọng lớn cọng nhỏ cho hai bên."
+  },
+  {
+    "id": 115,
+    "start": "593.069",
+    "end": "597.539",
+    "duration": "4.470",
+    "text": "Tôi thở phào như người sắp chết đuối vớ phải cái phao."
+  },
+  {
+    "id": 116,
+    "start": "597.539",
+    "end": "606.239",
+    "duration": "8.700",
+    "text": "Tuy nhiên, không muốn để lộ cho Hồng Hoa thấy sự mừng rỡ quá đáng của mình, tôi làm bộ gật gù:\n- Ừ, mày muốn vậy cũng được!"
+  },
+  {
+    "id": 117,
+    "start": "606.239",
+    "end": "610.989",
+    "duration": "4.750",
+    "text": "Hồng Hoa chẳng buồn để ý đến bộ tịch vờ vịt của tôi."
+  },
+  {
+    "id": 118,
+    "start": "610.989",
+    "end": "614.079",
+    "duration": "3.090",
+    "text": "Đối với nó, hễ tôi vui là nó vui rồi."
+  },
+  {
+    "id": 119,
+    "start": "614.079",
+    "end": "621.809",
+    "duration": "7.730",
+    "text": "Vì vậy, vừa thấy tôi bằng lòng chơi tiếp, nó đã hớn hở nắm tay tôi kéo đi:\n- Giờ anh với em đi tìm cỏ gà nữa hén!"
+  },
+  {
+    "id": 120,
+    "start": "621.809",
+    "end": "628.979",
+    "duration": "7.170",
+    "text": "Thế là tôi với nó lại lui cui đi hái cỏ gà và đá đến tận tối mịt."
+  },
+  {
+    "id": 121,
+    "start": "629.039",
+    "end": "634.919",
+    "duration": "5.880",
+    "text": "Nhưng trò chơi Hồng Hoa thích nhất vẫn là trò chuyện với con sáo trên cây khế."
+  },
+  {
+    "id": 122,
+    "start": "634.989",
+    "end": "639.040",
+    "duration": "4.051",
+    "text": "Con sáo của tôi dạo này tỏ ra thân thiết với Hồng Hoa lắm."
+  },
+  {
+    "id": 123,
+    "start": "639.040",
+    "end": "648.690",
+    "duration": "9.650",
+    "text": "Bây giờ không cần tôi phải nhắc, hễ thấy mặt Hồng Hoa là nó bô bô \"Chào Hồng Hoa\" khiến Hồng Hoa thích chí vô cùng."
+  },
+  {
+    "id": 124,
+    "start": "648.760",
+    "end": "653.400",
+    "duration": "4.640",
+    "text": "Gặp tôi, con sáo cũng chào nhưng kiểu chào của nó trông thờ ơ phát ghét."
+  },
+  {
+    "id": 125,
+    "start": "653.430",
+    "end": "658.620",
+    "duration": "5.190",
+    "text": "Lúc vui nó nói \"Chào anh Kha\", lúc buồn nó kêu \"Chào anh Khánh\"."
+  },
+  {
+    "id": 126,
+    "start": "658.620",
+    "end": "660.520",
+    "duration": "1.900",
+    "text": "Nó cứ lầm lẫn muôn đời."
+  },
+  {
+    "id": 127,
+    "start": "660.520",
+    "end": "663.900",
+    "duration": "3.380",
+    "text": "Hồng Hoa đã dạy cho con sáo thêm nhiều câu mới."
+  },
+  {
+    "id": 128,
+    "start": "663.900",
+    "end": "670.531",
+    "duration": "6.631",
+    "text": "Bây giờ con sáo đã nói được \"tối rồi\", \"cười đi\"..."
+  },
+  {
+    "id": 129,
+    "start": "670.531",
+    "end": "673.281",
+    "duration": "2.750",
+    "text": "Nó còn nói \"nghỉ chơi anh ra\"."
+  },
+  {
+    "id": 130,
+    "start": "673.281",
+    "end": "679.251",
+    "duration": "5.970",
+    "text": "Cứ mỗi lần nó nói câu đó, Hồng Hoa lại ôm bụng cười ngặt nghẽo."
+  },
+  {
+    "id": 131,
+    "start": "679.251",
+    "end": "685.671",
+    "duration": "6.420",
+    "text": "Không hiểu sao trước một ông thầy oai phong như tôi, con sáo học tập có vẻ uể oải và lơ đễnh."
+  },
+  {
+    "id": 132,
+    "start": "685.671",
+    "end": "691.491",
+    "duration": "5.820",
+    "text": "Ngược lại, trước cái giọng thủ thỉ nghe phát chán của Hồng Hoa, nó lại tỏ ra ngoan ngoãn hết biết."
+  },
+  {
+    "id": 133,
+    "start": "691.531",
+    "end": "695.261",
+    "duration": "3.730",
+    "text": "Thậm chí mới đây, Hồng Hoa còn tập cho nó hát."
+  },
+  {
+    "id": 134,
+    "start": "695.261",
+    "end": "707.561",
+    "duration": "12.300",
+    "text": "Và khi nghe nó bập bẹ câu \"Đào vừa ra hoạ..\" trong bản Ca-chiu-sa, tôi đã trố mắt lên vì ngạc nhiên và thích thú."
+  },
+  {
+    "id": 135,
+    "start": "707.631",
+    "end": "758.431",
+    "duration": "50.800",
+    "text": "Trong những ngày này, khu vườn của tôi giống như một thiên đường nhỏ bé."
+  },
+  {
+    "id": 136,
+    "start": "758.731",
+    "end": "771.551",
+    "duration": "12.820",
+    "text": "Ở đó, tuổi thơ của tôi và Hồng Hoa đã tình cờ gặp nhau và sự hồn nhiên, tấm lòng trong sáng cùng mối đồng cảm với thiên nhiên đã khiến chúng tôi mỗi ngàt thêm quyến luyến nhau hơn."
+  },
+  {
+    "id": 137,
+    "start": "771.581",
+    "end": "823.681",
+    "duration": "52.100",
+    "text": "Suốt một thời gian dài, tôi với Hồng Hoa chỉ chơi loanh quanh ở ngoài vườn."
+  },
+  {
+    "id": 138,
+    "start": "823.711",
+    "end": "830.891",
+    "duration": "7.180",
+    "text": "Hồng Hoa chưa bao giờ đặt chân vào nhà tôi và tôi có cảm giác Hồng Hoa dường như e ngại điều đó."
+  },
+  {
+    "id": 139,
+    "start": "830.941",
+    "end": "835.271",
+    "duration": "4.330",
+    "text": "Có lần tôi rủ:\n- Tao với mày vô nhà chơi đi!"
+  },
+  {
+    "id": 140,
+    "start": "835.271",
+    "end": "839.601",
+    "duration": "4.330",
+    "text": "Hồng Hoa lắc đầu:\n- Thôi, em không vô nhà đâu!"
+  },
+  {
+    "id": 141,
+    "start": "839.701",
+    "end": "841.461",
+    "duration": "1.760",
+    "text": "Chơi ở ngoài vườn thích hơn!"
+  },
+  {
+    "id": 142,
+    "start": "841.521",
+    "end": "844.581",
+    "duration": "3.060",
+    "text": "- Nhưng vô nhà tao cho mày xem bể cá của tao."
+  },
+  {
+    "id": 143,
+    "start": "844.581",
+    "end": "845.821",
+    "duration": "1.240",
+    "text": "Xem xong, chạy ra liền."
+  },
+  {
+    "id": 144,
+    "start": "845.821",
+    "end": "850.331",
+    "duration": "4.510",
+    "text": "Hồng Hoa tỏ vẻ ngần ngừ:\n- Vô sao được mà vô!"
+  },
+  {
+    "id": 145,
+    "start": "850.411",
+    "end": "853.372",
+    "duration": "2.961",
+    "text": "Mẹ anh biết em chui hàng rào mẹ anh la chết!"
+  },
+  {
+    "id": 146,
+    "start": "853.452",
+    "end": "856.422",
+    "duration": "2.970",
+    "text": "Tôi nhún vai:\n-Tưởng gì!"
+  },
+  {
+    "id": 147,
+    "start": "856.422",
+    "end": "858.971",
+    "duration": "2.549",
+    "text": "Nếu muốn cho mẹ tao khỏi la thì dễ ợt!"
+  },
+  {
+    "id": 148,
+    "start": "858.971",
+    "end": "863.451",
+    "duration": "4.480",
+    "text": "Bây giờ mày chui trở ra rồi chạy vòng đến đằng trước nhà, tao sẽ đón mày vô."
+  },
+  {
+    "id": 149,
+    "start": "863.481",
+    "end": "864.412",
+    "duration": "0.931",
+    "text": "Mẹ tao đâu có biết."
+  },
+  {
+    "id": 150,
+    "start": "864.412",
+    "end": "869.672",
+    "duration": "5.260",
+    "text": "Hồng Hoa vẫn lắc đầu:\n- Em không vô đâu."
+  },
+  {
+    "id": 151,
+    "start": "869.672",
+    "end": "870.942",
+    "duration": "1.270",
+    "text": "- Sao vậy?"
+  },
+  {
+    "id": 152,
+    "start": "870.972",
+    "end": "872.782",
+    "duration": "1.810",
+    "text": "- Thì em không thích chứ sao!"
+  },
+  {
+    "id": 153,
+    "start": "872.782",
+    "end": "875.862",
+    "duration": "3.080",
+    "text": "Tôi nổi sùng:\n- Bộ mày chê nhà tao hả?"
+  },
+  {
+    "id": 154,
+    "start": "875.862",
+    "end": "880.002",
+    "duration": "4.140",
+    "text": "Hồng Hoa chớp mắt:\n- Em đâu có chê nhà anh."
+  },
+  {
+    "id": 155,
+    "start": "880.002",
+    "end": "882.172",
+    "duration": "2.170",
+    "text": "- Vậy sao mày không vô nhà chơi?"
+  },
+  {
+    "id": 156,
+    "start": "882.172",
+    "end": "885.462",
+    "duration": "3.290",
+    "text": "Hồng Hoa ấp úng:\n- Tại em..."
+  },
+  {
+    "id": 157,
+    "start": "886.142",
+    "end": "888.272",
+    "duration": "2.130",
+    "text": "thích chơi ngoài vườn hơn."
+  },
+  {
+    "id": 158,
+    "start": "888.272",
+    "end": "892.972",
+    "duration": "4.700",
+    "text": "Tôi hắng giọng:\n- Thì tao cũng thích chơi ngoài vườn vậy!"
+  },
+  {
+    "id": 159,
+    "start": "892.972",
+    "end": "895.292",
+    "duration": "2.320",
+    "text": "Nhưng đây là mình vào mình xem bể cá."
+  },
+  {
+    "id": 160,
+    "start": "895.362",
+    "end": "896.672",
+    "duration": "1.310",
+    "text": "Xem chút xíu thôi."
+  },
+  {
+    "id": 161,
+    "start": "896.672",
+    "end": "897.812",
+    "duration": "1.140",
+    "text": "Rồi lại chạy ra vườn."
+  },
+  {
+    "id": 162,
+    "start": "898.042",
+    "end": "902.003",
+    "duration": "3.961",
+    "text": "Đề nghị của tôi chẳng lay chuyển được Hồng Hoa tí ti."
+  },
+  {
+    "id": 163,
+    "start": "902.003",
+    "end": "906.623",
+    "duration": "4.620",
+    "text": "Nó liếc tôi, nói:\n- Vậy sao anh không bê bể cá ra đây?"
+  },
+  {
+    "id": 164,
+    "start": "906.623",
+    "end": "910.153",
+    "duration": "3.530",
+    "text": "Tôi tức điên:\n- Bê sao được mà bê!"
+  },
+  {
+    "id": 165,
+    "start": "910.153",
+    "end": "913.963",
+    "duration": "3.810",
+    "text": "Bể cá nặng ì, mỗi lần đem đi đâu, tao toàn phải nhờ người lớn bê giùm."
+  },
+  {
+    "id": 166,
+    "start": "913.963",
+    "end": "917.933",
+    "duration": "3.970",
+    "text": "Hồng Hoa chép miệng:\n- Vậy thì thôi."
+  },
+  {
+    "id": 167,
+    "start": "917.933",
+    "end": "921.433",
+    "duration": "3.500",
+    "text": "Tôi trố mắt:\n- Thôi là sao?"
+  },
+  {
+    "id": 168,
+    "start": "921.433",
+    "end": "926.513",
+    "duration": "5.080",
+    "text": "Hồng Hoa tỉnh khô:\n- Thôi thì khỏi xem bể cá chứ sao!"
+  },
+  {
+    "id": 169,
+    "start": "926.543",
+    "end": "930.573",
+    "duration": "4.030",
+    "text": "Thái độ bướng bỉnh của Hồng Hoa khiến tôi giận phát khóc."
+  },
+  {
+    "id": 170,
+    "start": "930.573",
+    "end": "935.503",
+    "duration": "4.930",
+    "text": "Tôi vùng vằng quay mặt đi chỗ khác và không thèm nói chuyện vớ nó suốt cả tiếng đồng hồ."
+  },
+  {
+    "id": 171,
+    "start": "935.503",
+    "end": "939.683",
+    "duration": "4.180",
+    "text": "Thấy tôi giận dỗi ghê quá, Hồng Hoa sợ xanh cả mặt."
+  },
+  {
+    "id": 172,
+    "start": "939.683",
+    "end": "948.023",
+    "duration": "8.340",
+    "text": "Nó cứ cầm tay tôi lay lay và năn nỉ luôn miệng:\n- Thôi đừng giận em nữa!"
+  },
+  {
+    "id": 173,
+    "start": "948.023",
+    "end": "959.173",
+    "duration": "11.150",
+    "text": "Hồng Hoa năn nỉ tôi hàng trăm câu, nhưng chẳng có câu nào nhắc đến chuyện vô nhà xem bể cá, vì vậy tôi càng giận và mặt mày mỗi lúc mỗi lầm lì tợn."
+  },
+  {
+    "id": 174,
+    "start": "959.173",
+    "end": "964.863",
+    "duration": "5.690",
+    "text": "Chẳng biết làm sao, cuối cùng Hồng Hoa đành phải chạy lại cầu cứu con sáo."
+  },
+  {
+    "id": 175,
+    "start": "964.863",
+    "end": "971.173",
+    "duration": "6.310",
+    "text": "Nghe nó xúi giục một hồi, con sáo của tôi liền hùa theo nó, ré lên \"cười đi!"
+  },
+  {
+    "id": 176,
+    "start": "971.173",
+    "end": "972.463",
+    "duration": "1.290",
+    "text": "cười đi!\"."
+  },
+  {
+    "id": 177,
+    "start": "972.463",
+    "end": "974.243",
+    "duration": "1.780",
+    "text": "Thế là tôi bật cười."
+  },
+  {
+    "id": 178,
+    "start": "974.333",
+    "end": "975.153",
+    "duration": "0.820",
+    "text": "Tức ghê!"
+  },
+  {
+    "id": 179,
+    "start": "975.283",
+    "end": "978.893",
+    "duration": "3.610",
+    "text": "Lần khác, tôi khoe với Hồng Hoa căn phòng của tôi."
+  },
+  {
+    "id": 180,
+    "start": "978.893",
+    "end": "981.293",
+    "duration": "2.400",
+    "text": "Tôi nói:\n- Lên phòng tao chơi không?"
+  },
+  {
+    "id": 181,
+    "start": "981.293",
+    "end": "982.653",
+    "duration": "1.360",
+    "text": "Phòng tao đẹp lắm!"
+  },
+  {
+    "id": 182,
+    "start": "982.654",
+    "end": "986.314",
+    "duration": "3.660",
+    "text": "Hồng Hoa nheo mắt:\n- Phòng anh có những gì?"
+  },
+  {
+    "id": 183,
+    "start": "986.314",
+    "end": "988.874",
+    "duration": "2.560",
+    "text": "Tôi ấp úng:\n- Phòng tao hả?"
+  },
+  {
+    "id": 184,
+    "start": "988.874",
+    "end": "990.264",
+    "duration": "1.390",
+    "text": "Phòng tao cũng chẳng có gì..."
+  },
+  {
+    "id": 185,
+    "start": "990.264",
+    "end": "990.664",
+    "duration": "0.400",
+    "text": "đặc biệt."
+  },
+  {
+    "id": 186,
+    "start": "990.664",
+    "end": "992.963",
+    "duration": "2.299",
+    "text": "Cũng bàn, cũng ghế, cũng tủ..."
+  },
+  {
+    "id": 187,
+    "start": "992.964",
+    "end": "994.014",
+    "duration": "1.050",
+    "text": "như người ta thôi."
+  },
+  {
+    "id": 188,
+    "start": "994.014",
+    "end": "996.194",
+    "duration": "2.180",
+    "text": "- Vậy sao anh bảo đẹp?"
+  },
+  {
+    "id": 189,
+    "start": "996.324",
+    "end": "999.954",
+    "duration": "3.630",
+    "text": "Tôi tặc lưỡi:\n- Tao nói đẹp là tao nói chuyện khác."
+  },
+  {
+    "id": 190,
+    "start": "999.954",
+    "end": "1001.803",
+    "duration": "1.849",
+    "text": "Phòng tao có cửa sổ mở ra vườn."
+  },
+  {
+    "id": 191,
+    "start": "1001.853",
+    "end": "1006.824",
+    "duration": "4.971",
+    "text": "Hồng Hoa gật gù:\n- Vậy là anh ở căn phòng tuốt phía sau?"
+  },
+  {
+    "id": 192,
+    "start": "1006.824",
+    "end": "1011.064",
+    "duration": "4.240",
+    "text": "Tôi vui vẻ:\n- Ừ, tao ở căn phòng phía sau."
+  },
+  {
+    "id": 193,
+    "start": "1011.134",
+    "end": "1015.264",
+    "duration": "4.130",
+    "text": "Đứng chỗ cửa sổ phòng tao, mày có thể nhìn thấy rõ những ngọn cây trong vườn."
+  },
+  {
+    "id": 194,
+    "start": "1015.294",
+    "end": "1018.794",
+    "duration": "3.500",
+    "text": "Hồng Hoa buột miệng khen:\n- Thích quá hén!"
+  },
+  {
+    "id": 195,
+    "start": "1018.824",
+    "end": "1021.934",
+    "duration": "3.110",
+    "text": "Tôi liếc nó:\n- Mày lên chơi không?"
+  },
+  {
+    "id": 196,
+    "start": "1021.934",
+    "end": "1024.904",
+    "duration": "2.970",
+    "text": "Hồng Hoa không trả lời câu hỏi của tôi."
+  },
+  {
+    "id": 197,
+    "start": "1024.904",
+    "end": "1030.965",
+    "duration": "6.061",
+    "text": "Nó trầm ngâm một lát rồi lại hỏi:\n- Cửa sổ phòng anh có nan hoa bằng sắt không?"
+  },
+  {
+    "id": 198,
+    "start": "1031.035",
+    "end": "1031.265",
+    "duration": "0.230",
+    "text": "- Có."
+  },
+  {
+    "id": 199,
+    "start": "1032.095",
+    "end": "1034.445",
+    "duration": "2.350",
+    "text": "- Nan hoa bằng ngôi sao phải không?"
+  },
+  {
+    "id": 200,
+    "start": "1034.445",
+    "end": "1034.645",
+    "duration": "0.200",
+    "text": "- Ừ."
+  },
+  {
+    "id": 201,
+    "start": "1035.625",
+    "end": "1036.545",
+    "duration": "0.920",
+    "text": "Sao mày biết?"
+  },
+  {
+    "id": 202,
+    "start": "1036.545",
+    "end": "1037.675",
+    "duration": "1.130",
+    "text": "- Tôi ngạc nhiên."
+  },
+  {
+    "id": 203,
+    "start": "1037.735",
+    "end": "1041.626",
+    "duration": "3.891",
+    "text": "Hồng Hoa cắn môi:\n- Em chỉ đoán vậy thôi!"
+  },
+  {
+    "id": 204,
+    "start": "1041.656",
+    "end": "1044.596",
+    "duration": "2.940",
+    "text": "Nhà bạn em cũng có khung cửa sổ y hệt vậy."
+  },
+  {
+    "id": 205,
+    "start": "1044.686",
+    "end": "1048.166",
+    "duration": "3.480",
+    "text": "Tôi tò mò:\n- Nhà bạn mày ở đâu?"
+  },
+  {
+    "id": 206,
+    "start": "1048.166",
+    "end": "1050.256",
+    "duration": "2.090",
+    "text": "- Ở đằng kia kìa!"
+  },
+  {
+    "id": 207,
+    "start": "1050.346",
+    "end": "1063.157",
+    "duration": "12.811",
+    "text": "- Hồng Hoa vung tay chỉ bâng quơ ra đường theo cái kiểu cách mơ hồ trước nay của nó rồi không để tôi kịp gặng hỏi, nó nói tiếp - Nhà bạn em cũng hai tầng, có cầu thang hình vòng cung chạy sát tường."
+  },
+  {
+    "id": 208,
+    "start": "1063.157",
+    "end": "1067.087",
+    "duration": "3.930",
+    "text": "Tôi reo lên:\n- Cầu thang nhà tao cũng in hệt như vậy!"
+  },
+  {
+    "id": 209,
+    "start": "1067.117",
+    "end": "1068.147",
+    "duration": "1.030",
+    "text": "Ngộ quá hén!"
+  },
+  {
+    "id": 210,
+    "start": "1068.147",
+    "end": "1073.098",
+    "duration": "4.951",
+    "text": "Hồng Hoa nhún vai:\n- Thì em đã bảo hai ngôi nhà giống nhau mà lại!"
+  },
+  {
+    "id": 211,
+    "start": "1073.098",
+    "end": "1077.578",
+    "duration": "4.480",
+    "text": "Tôi hắng giọng:\n- Thế mày có biết cầu thang nhà bạn mày có bao nhiêu bậc không?"
+  },
+  {
+    "id": 212,
+    "start": "1077.638",
+    "end": "1079.598",
+    "duration": "1.960",
+    "text": "- Sao lại không biết!"
+  },
+  {
+    "id": 213,
+    "start": "1079.598",
+    "end": "1082.539",
+    "duration": "2.941",
+    "text": "Lần nào lên xuống cầu thang mà em chẳng đếm!"
+  },
+  {
+    "id": 214,
+    "start": "1082.539",
+    "end": "1086.629",
+    "duration": "4.090",
+    "text": "Tôi hồi hộp:\n- Thế bao nhiệu bậc?"
+  },
+  {
+    "id": 215,
+    "start": "1086.629",
+    "end": "1088.799",
+    "duration": "2.170",
+    "text": "- Hai mươi bốn bậc."
+  },
+  {
+    "id": 216,
+    "start": "1088.799",
+    "end": "1092.929",
+    "duration": "4.130",
+    "text": "Tôi thè lưỡi:\n- Đúng là nhà bạn mày giống hệt nhà tao."
+  },
+  {
+    "id": 217,
+    "start": "1092.929",
+    "end": "1095.279",
+    "duration": "2.350",
+    "text": "Cầu thang nhà tao cũng hai mươi bốn bậc."
+  },
+  {
+    "id": 218,
+    "start": "1095.279",
+    "end": "1109.620",
+    "duration": "14.341",
+    "text": "Từ khi phát hiện ra Hồng Hoa có một người bạn và người bạn của nó lại có một ngôi nhà xinh đẹp không khác gì ngôi nhà của tôi, tự dưng tôi đâm ra cụt hứng, không tha thiết đến chuyện rủ Hồng Hoa vào nhà chơi nữa."
+  },
+  {
+    "id": 219,
+    "start": "1109.620",
+    "end": "1116.891",
+    "duration": "7.271",
+    "text": "Tôi định khoe khoang căn phòng của mình, hóa ra nó đã từng chơi hằng giờ trong một căn phòng giống y như vậy."
+  },
+  {
+    "id": 220,
+    "start": "1116.921",
+    "end": "1125.611",
+    "duration": "8.690",
+    "text": "Đang chán nản, chợt tôi sáng mắt lên:\n- Nhưng cửa sổ ở nhà bạn mày chắc gì mở ra vườn?"
+  },
+  {
+    "id": 221,
+    "start": "1126.151",
+    "end": "1127.671",
+    "duration": "1.520",
+    "text": "- Cũng mở ra vườn."
+  },
+  {
+    "id": 222,
+    "start": "1127.731",
+    "end": "1132.171",
+    "duration": "4.440",
+    "text": "Câu trả lời thản nhiên của Hồng Hoa khiến tôi thất vọng ghê gớm."
+  },
+  {
+    "id": 223,
+    "start": "1132.171",
+    "end": "1137.461",
+    "duration": "5.290",
+    "text": "Tôi hỏi, giọng chán nản:\n- Nhà bạn mày cũng có vườn giống như nhà tao hả?"
+  },
+  {
+    "id": 224,
+    "start": "1137.461",
+    "end": "1137.681",
+    "duration": "0.220",
+    "text": "- Ừ."
+  },
+  {
+    "id": 225,
+    "start": "1138.571",
+    "end": "1143.562",
+    "duration": "4.991",
+    "text": "Tôi cố vớt vát:\n- Nhưng khu vườn của tao dù sao cũng đẹp hơn chứ?"
+  },
+  {
+    "id": 226,
+    "start": "1143.562",
+    "end": "1157.473",
+    "duration": "13.911",
+    "text": "Hồng Hoa lắc đầu:\n- Hai khu vườn đẹp bằng nhaụ Thấy Hồng Hoa không chịu bênh vực khu vườn của tôi, tôi nổi dóa:\n- Vậy sao mày không chơi ở nhà bạn mày, đến đây làm chi?"
+  },
+  {
+    "id": 227,
+    "start": "1157.473",
+    "end": "1164.483",
+    "duration": "7.010",
+    "text": "Hồng Hoa thở dàị Nó nói, giọng buồn thiu:\n- Từ lâu rồi bạn em đâu còn ở đó nữa!"
+  },
+  {
+    "id": 228,
+    "start": "1164.483",
+    "end": "1167.843",
+    "duration": "3.360",
+    "text": "Tôi trợn tròn mắt:\n- Ủa sao vậy?"
+  },
+  {
+    "id": 229,
+    "start": "1167.873",
+    "end": "1170.103",
+    "duration": "2.230",
+    "text": "Bộ bạn mày bán nhà dọn đi nơi khác hả?"
+  },
+  {
+    "id": 230,
+    "start": "1170.103",
+    "end": "1174.353",
+    "duration": "4.250",
+    "text": "Hồng Hoa không đáp mà lặng lẽ nhìn xuống đất."
+  },
+  {
+    "id": 231,
+    "start": "1174.353",
+    "end": "1177.183",
+    "duration": "2.830",
+    "text": "Bao giờ buồn bã, nó cũng nhìn xuống đất."
+  },
+  {
+    "id": 232,
+    "start": "1177.183",
+    "end": "1185.254",
+    "duration": "8.071",
+    "text": "Tôi nhìn nó, giọng bâng khuâng:\n- Nếu bạn mày đã bán nhà thì mày đến đây chơi với tao, có gì mà phải buồn!"
+  },
+  {
+    "id": 233,
+    "start": "1185.255",
+    "end": "1192.545",
+    "duration": "7.290",
+    "text": "Hồng Hoa ngước nhìn tôi bằng ánh mắt long lanh:\n- Anh cho em đến đây chơi hoài hoài nghen?"
+  },
+  {
+    "id": 234,
+    "start": "1192.545",
+    "end": "1194.725",
+    "duration": "2.180",
+    "text": "- Ừ, chơi hoài hoài!"
+  },
+  {
+    "id": 235,
+    "start": "1194.725",
+    "end": "1196.695",
+    "duration": "1.970",
+    "text": "- Anh hứa đi!"
+  },
+  {
+    "id": 236,
+    "start": "1196.695",
+    "end": "1197.855",
+    "duration": "1.160",
+    "text": "- Hứa gì?"
+  },
+  {
+    "id": 237,
+    "start": "1198.015",
+    "end": "1200.995",
+    "duration": "2.980",
+    "text": "- Hứa cho em đến đây chơi hoài hoài."
+  },
+  {
+    "id": 238,
+    "start": "1200.995",
+    "end": "1204.075",
+    "duration": "3.080",
+    "text": "Tôi khịt mũi:\n- Cần gì phải hứa!"
+  },
+  {
+    "id": 239,
+    "start": "1204.075",
+    "end": "1206.926",
+    "duration": "2.851",
+    "text": "Trước nay mày chẳng đến đây chơi hoài là gì!"
+  },
+  {
+    "id": 240,
+    "start": "1206.926",
+    "end": "1210.666",
+    "duration": "3.740",
+    "text": "Hồng Hoa chớp mắt:\n- Nhưng còn mai mốt?"
+  },
+  {
+    "id": 241,
+    "start": "1210.666",
+    "end": "1213.346",
+    "duration": "2.680",
+    "text": "- Mai mốt sao?"
+  },
+  {
+    "id": 242,
+    "start": "1213.386",
+    "end": "1216.976",
+    "duration": "3.590",
+    "text": "- Mai mốt biết đâu anh không cho em đến chơi nữa!"
+  },
+  {
+    "id": 243,
+    "start": "1216.976",
+    "end": "1220.126",
+    "duration": "3.150",
+    "text": "Tôi mỉm cười:\n- Làm gì có chuyện đó!"
+  },
+  {
+    "id": 244,
+    "start": "1220.126",
+    "end": "1222.067",
+    "duration": "1.941",
+    "text": "Tao mong mày đến chơi với tao thấy mồ!"
+  },
+  {
+    "id": 245,
+    "start": "1222.067",
+    "end": "1224.877",
+    "duration": "2.810",
+    "text": "Hồng Hoa vẫn chưa yên tâm."
+  },
+  {
+    "id": 246,
+    "start": "1224.877",
+    "end": "1231.817",
+    "duration": "6.940",
+    "text": "Nó dòm tôi lom lom:\n- Biết đâu mai mốt anh có nhiều bạn mới, lúc đó anh sẽ không chới với em nữa!"
+  },
+  {
+    "id": 247,
+    "start": "1231.817",
+    "end": "1236.297",
+    "duration": "4.480",
+    "text": "Tôi hừ mũi:\n- Cần gì phải mai mốt!"
+  },
+  {
+    "id": 248,
+    "start": "1236.297",
+    "end": "1238.748",
+    "duration": "2.451",
+    "text": "Bây giờ tao cũng có cả đống bạn vậy!"
+  },
+  {
+    "id": 249,
+    "start": "1238.778",
+    "end": "1240.308",
+    "duration": "1.530",
+    "text": "Nhưng tao vẫn thích chơi với mày hơn."
+  },
+  {
+    "id": 250,
+    "start": "1240.308",
+    "end": "1244.208",
+    "duration": "3.900",
+    "text": "Hồng Hoa lộ vẻ sung sướng:\n- Thật không?"
+  },
+  {
+    "id": 251,
+    "start": "1244.338",
+    "end": "1244.728",
+    "duration": "0.390",
+    "text": "- Thật."
+  },
+  {
+    "id": 252,
+    "start": "1245.568",
+    "end": "1248.529",
+    "duration": "2.961",
+    "text": "- Tại sao anh lại thích chơi với em?"
+  },
+  {
+    "id": 253,
+    "start": "1248.529",
+    "end": "1251.069",
+    "duration": "2.540",
+    "text": "- Hồng Hoa nheo mắt tinh nghịch hỏi."
+  },
+  {
+    "id": 254,
+    "start": "1251.069",
+    "end": "1255.610",
+    "duration": "4.541",
+    "text": "Tôi chép miệng:\n- Tại vì mày thích dạo chơi trong vườn như tao."
+  },
+  {
+    "id": 255,
+    "start": "1255.610",
+    "end": "1258.910",
+    "duration": "3.300",
+    "text": "Mày cũng thích nhặt hoa khế thả vào lòng giếng."
+  },
+  {
+    "id": 256,
+    "start": "1259.660",
+    "end": "1260.410",
+    "duration": "0.750",
+    "text": "Mày biết..."
+  },
+  {
+    "id": 257,
+    "start": "1260.410",
+    "end": "1260.840",
+    "duration": "0.430",
+    "text": "trèo cây."
+  },
+  {
+    "id": 258,
+    "start": "1260.840",
+    "end": "1261.160",
+    "duration": "0.320",
+    "text": "Rồi..."
+  },
+  {
+    "id": 259,
+    "start": "1261.510",
+    "end": "1265.310",
+    "duration": "3.800",
+    "text": "rồi mày cũng thích nằm lăn ra trên cỏ như tao, không sợ dơ quần áo..."
+  },
+  {
+    "id": 260,
+    "start": "1265.310",
+    "end": "1272.451",
+    "duration": "7.141",
+    "text": "Nghĩ ngợi loay hoay một hồi, tôi đâm ra bối rối chẳng biết phải kể thêm gì nữa."
+  },
+  {
+    "id": 261,
+    "start": "1272.451",
+    "end": "1277.911",
+    "duration": "5.460",
+    "text": "Tôi ú ớ vài ba tiếng rồi tắc tịt, đành quay sang Hồng Hoa, nhe răng cười."
+  },
+  {
+    "id": 262,
+    "start": "1277.951",
+    "end": "1282.291",
+    "duration": "4.340",
+    "text": "Hồng Hoa chắc cũng chẳng cần tôi kể nhiều thêm nữa."
+  },
+  {
+    "id": 263,
+    "start": "1282.291",
+    "end": "1290.851",
+    "duration": "8.560",
+    "text": "Chỉ riêng việc tôi thú nhận tôi thích chơi với nó, và khen nó có nhiều điểm giống tôi, đủ khiến mặt mày nó rạng rỡ lên rồi."
+  },
+  {
+    "id": 264,
+    "start": "1290.851",
+    "end": "1298.632",
+    "duration": "7.781",
+    "text": "Vì vậy, vừa thấy tôi quay sang cười với nó, nó liền đáp lại bằng một nụ cười còn tươi gấp mấy lần nụ cười..."
+  },
+  {
+    "id": 265,
+    "start": "1298.632",
+    "end": "1299.612",
+    "duration": "0.980",
+    "text": "ruồi của tôi."
+  },
+  {
+    "id": 266,
+    "start": "1299.612",
+    "end": "1308.782",
+    "duration": "9.170",
+    "text": "Nhìn nụ cười xinh như hoa của nó, tôi chợt nhớ ra:\n- Tao thích chơi với mày còn vì nụ cười lúm đồng tiền của mày nữa."
+  },
+  {
+    "id": 267,
+    "start": "1308.782",
+    "end": "1310.972",
+    "duration": "2.190",
+    "text": "Mày cười dễ thương ghê!"
+  },
+  {
+    "id": 268,
+    "start": "1311.002",
+    "end": "1316.263",
+    "duration": "5.261",
+    "text": "Đang cười, nghe tôi khen, Hồng Hoa lập tức mím môi lại."
+  },
+  {
+    "id": 269,
+    "start": "1316.263",
+    "end": "1319.743",
+    "duration": "3.480",
+    "text": "Nhưng rồi không nhịn được, nó lại bật cười khúc khích."
+  },
+  {
+    "id": 270,
+    "start": "1319.783",
+    "end": "1322.553",
+    "duration": "2.770",
+    "text": "Nhưng lần này, nó ngó lơ đi chỗ khác."
+  },
+  {
+    "id": 271,
+    "start": "1322.603",
+    "end": "1329.954",
+    "duration": "7.351",
+    "text": "Tôi vẫn đứng yên, lặng lẽ nhìn Hồng Hoa từ phía sau."
+  },
+  {
+    "id": 272,
+    "start": "1329.954",
+    "end": "1342.414",
+    "duration": "12.460",
+    "text": "Bất giác tim tôi như thót lại khi những tia nắng chiều đột ngột xuyên qua kẽ lá và phủ quanh mái tóc Hồng Hoa một đường viền sáng lung linh và rực rỡ đến nao lòng."
+  },
+  {
+    "id": 273,
+    "start": "1342.414",
+    "end": "1346.924",
+    "duration": "4.510",
+    "text": "Trước mắt tôi, mái tóc Hồng Hoa dường như đang bốc cháy."
+  },
+  {
+    "id": 274,
+    "start": "1347.054",
+    "end": "1350.034",
+    "duration": "2.980",
+    "text": "Xa hơn nữa mới là hoàng hôn."
+  },
+  {
+    "id": 275,
+    "start": "1350.404",
+    "end": "1419.455",
+    "duration": "69.051",
+    "text": "Một hôm, Hồng Hoa đến chơi với tôi với một vết bầm trên má."
+  },
+  {
+    "id": 276,
+    "start": "1419.525",
+    "end": "1422.025",
+    "duration": "2.500",
+    "text": "Thoạt đầu tôi không để ý."
+  },
+  {
+    "id": 277,
+    "start": "1422.025",
+    "end": "1428.546",
+    "duration": "6.521",
+    "text": "Vừa thấy nó ló đầu qua hàng rào, tôi đã mừng rỡ chạy lại, khoe:\n- Lẹ lên, tao cho mày xem cái này nè!"
+  },
+  {
+    "id": 278,
+    "start": "1428.546",
+    "end": "1430.486",
+    "duration": "1.940",
+    "text": "- Cái gì vậy?"
+  },
+  {
+    "id": 279,
+    "start": "1430.516",
+    "end": "1433.286",
+    "duration": "2.770",
+    "text": "- Hồng Hoa tò mò hỏi, giọng thích thú."
+  },
+  {
+    "id": 280,
+    "start": "1433.346",
+    "end": "1434.846",
+    "duration": "1.500",
+    "text": "- Con sáo."
+  },
+  {
+    "id": 281,
+    "start": "1436.087",
+    "end": "1437.217",
+    "duration": "1.130",
+    "text": "- Con sáo sao?"
+  },
+  {
+    "id": 282,
+    "start": "1437.217",
+    "end": "1439.107",
+    "duration": "1.890",
+    "text": "- Thì lại đây đi!"
+  },
+  {
+    "id": 283,
+    "start": "1439.107",
+    "end": "1443.717",
+    "duration": "4.610",
+    "text": "Vừa nói tôi vừa nắm tay Hồng Hoa hấp tấp kéo lại chỗ gốc khế."
+  },
+  {
+    "id": 284,
+    "start": "1443.758",
+    "end": "1448.358",
+    "duration": "4.600",
+    "text": "Chúng tôi chạy chưa tới nơi, con sáo đã nhanh nhẩu cất tiếng chào."
+  },
+  {
+    "id": 285,
+    "start": "1448.358",
+    "end": "1453.758",
+    "duration": "5.400",
+    "text": "Nhưng nó chỉ chào mỗi Hồng Hoa, còn tôi thì nó chẳng thèm đếm xỉa tới."
+  },
+  {
+    "id": 286,
+    "start": "1453.808",
+    "end": "1458.949",
+    "duration": "5.141",
+    "text": "Tôi đã quen với cái trò \"nịnh đầm\" của nó nên chẳng buồn giận dỗi."
+  },
+  {
+    "id": 287,
+    "start": "1458.949",
+    "end": "1463.379",
+    "duration": "4.430",
+    "text": "Tôi chỉ nhắc:\n- Còn tao nữa chi!"
+  },
+  {
+    "id": 288,
+    "start": "1463.429",
+    "end": "1469.819",
+    "duration": "6.390",
+    "text": "Con sáo vừa nhảy nhót vừa liếc tôi, ý chừng đang cân nhắc xem có nên chào tôi không."
+  },
+  {
+    "id": 289,
+    "start": "1470.009",
+    "end": "1475.329",
+    "duration": "5.320",
+    "text": "Sau một hồi lưỡng lự, nó tỏ ra biết điều:\n- Chào anh Kha!"
+  },
+  {
+    "id": 290,
+    "start": "1476.199",
+    "end": "1482.949",
+    "duration": "6.750",
+    "text": "Tôi khoái chí, nhắc tiếp:\n- Còn cái câu gì tao mới dạy mày hôm qua đó!"
+  },
+  {
+    "id": 291,
+    "start": "1482.949",
+    "end": "1487.119",
+    "duration": "4.170",
+    "text": "Con sáo đứng nghệch mặt, ra chiều ngẫm nghĩ."
+  },
+  {
+    "id": 292,
+    "start": "1487.119",
+    "end": "1493.009",
+    "duration": "5.890",
+    "text": "Dòm bộ tịch của nó, tôi đoán chắc nó đứng tới già cũng không nhớ ra cái câu tôi vừa dạy."
+  },
+  {
+    "id": 293,
+    "start": "1493.010",
+    "end": "1496.440",
+    "duration": "3.430",
+    "text": "Tôi đành phải gỡ bí cho nó:\n- Dễ..."
+  },
+  {
+    "id": 294,
+    "start": "1497.490",
+    "end": "1497.580",
+    "duration": "0.090",
+    "text": "dễ..."
+  },
+  {
+    "id": 295,
+    "start": "1498.650",
+    "end": "1499.630",
+    "duration": "0.980",
+    "text": "dễ..."
+  },
+  {
+    "id": 296,
+    "start": "1500.020",
+    "end": "1500.510",
+    "duration": "0.490",
+    "text": "gì?"
+  },
+  {
+    "id": 297,
+    "start": "1500.890",
+    "end": "1507.660",
+    "duration": "6.770",
+    "text": "Như sực nhớ ra, con sáo liền buột miệng:\n- Dễ thương ghê!"
+  },
+  {
+    "id": 298,
+    "start": "1508.480",
+    "end": "1515.460",
+    "duration": "6.980",
+    "text": "Chỉ đợi có vậy, tôi quay sang Hồng Hoa, cười toe:\n- Nó khen mày đó!"
+  },
+  {
+    "id": 299,
+    "start": "1515.460",
+    "end": "1518.741",
+    "duration": "3.281",
+    "text": "Hồng Hoa nửa thinh thích nửa mắc cỡ."
+  },
+  {
+    "id": 300,
+    "start": "1518.801",
+    "end": "1521.971",
+    "duration": "3.170",
+    "text": "Nó lườm tôi:\n- Anh dạy nó câu gì đâu không!"
+  },
+  {
+    "id": 301,
+    "start": "1521.971",
+    "end": "1523.941",
+    "duration": "1.970",
+    "text": "- Vậy mà gì đâu!"
+  },
+  {
+    "id": 302,
+    "start": "1523.941",
+    "end": "1524.151",
+    "duration": "0.210",
+    "text": "Nó..."
+  },
+  {
+    "id": 303,
+    "start": "1524.581",
+    "end": "1532.232",
+    "duration": "7.651",
+    "text": "Đang nói, thốt nhiên tôi nhìn sững gương mặt Hồng Hoa, ngạc nhiên hỏi:\n- Mặt mày bị sao vậy?"
+  },
+  {
+    "id": 304,
+    "start": "1532.262",
+    "end": "1534.432",
+    "duration": "2.170",
+    "text": "- Bị gì đâu?"
+  },
+  {
+    "id": 305,
+    "start": "1534.432",
+    "end": "1539.682",
+    "duration": "5.250",
+    "text": "Tôi chỉ tay vôi vết bầm trên má nó:\n- Vậy mà kêu không!"
+  },
+  {
+    "id": 306,
+    "start": "1539.682",
+    "end": "1541.302",
+    "duration": "1.620",
+    "text": "Bầm tím đây nè!"
+  },
+  {
+    "id": 307,
+    "start": "1541.302",
+    "end": "1546.573",
+    "duration": "5.271",
+    "text": "Hồng Hoa đưa tay xoa xoa vết bầm, lúng túng:\n- À, cái này là..."
+  },
+  {
+    "id": 308,
+    "start": "1546.573",
+    "end": "1548.323",
+    "duration": "1.750",
+    "text": "do em bị té."
+  },
+  {
+    "id": 309,
+    "start": "1548.383",
+    "end": "1552.363",
+    "duration": "3.980",
+    "text": "Tôi bán tính bán nghi:\n- Thật không?"
+  },
+  {
+    "id": 310,
+    "start": "1552.403",
+    "end": "1553.523",
+    "duration": "1.120",
+    "text": "Mày té ở đâu vậy?"
+  },
+  {
+    "id": 311,
+    "start": "1553.553",
+    "end": "1555.523",
+    "duration": "1.970",
+    "text": "- Em té ở nhà."
+  },
+  {
+    "id": 312,
+    "start": "1555.523",
+    "end": "1561.374",
+    "duration": "5.851",
+    "text": "Câu trả lời của Hồng Hoa khiến tôi càng thắc mắc:\n- Ở nhà mà té?"
+  },
+  {
+    "id": 313,
+    "start": "1561.374",
+    "end": "1562.574",
+    "duration": "1.200",
+    "text": "Tao không tin!"
+  },
+  {
+    "id": 314,
+    "start": "1564.194",
+    "end": "1564.504",
+    "duration": "0.310",
+    "text": "- Thật mà."
+  },
+  {
+    "id": 315,
+    "start": "1564.504",
+    "end": "1565.964",
+    "duration": "1.460",
+    "text": "- Mày nói xạo!"
+  },
+  {
+    "id": 316,
+    "start": "1565.964",
+    "end": "1567.785",
+    "duration": "1.821",
+    "text": "Chắc là mày đánh nhau với ai!"
+  },
+  {
+    "id": 317,
+    "start": "1567.785",
+    "end": "1571.875",
+    "duration": "4.090",
+    "text": "Hồng Hoa chớp mắt:\n- Em đâu có biết đánh nhau."
+  },
+  {
+    "id": 318,
+    "start": "1571.875",
+    "end": "1576.166",
+    "duration": "4.291",
+    "text": "Tôi tặc lưỡi:\n- Nếu vậy chắc có ai đánh mày."
+  },
+  {
+    "id": 319,
+    "start": "1576.166",
+    "end": "1579.137",
+    "duration": "2.971",
+    "text": "Lần này Hồng Hoa không cãi."
+  },
+  {
+    "id": 320,
+    "start": "1579.137",
+    "end": "1580.177",
+    "duration": "1.040",
+    "text": "Nó đứng im."
+  },
+  {
+    "id": 321,
+    "start": "1580.177",
+    "end": "1583.187",
+    "duration": "3.010",
+    "text": "Tôi càng nghi:\n- Ai đánh mày phải không?"
+  },
+  {
+    "id": 322,
+    "start": "1583.187",
+    "end": "1586.147",
+    "duration": "2.960",
+    "text": "Hồng Hoa vẫn không hé môi."
+  },
+  {
+    "id": 323,
+    "start": "1586.147",
+    "end": "1588.247",
+    "duration": "2.100",
+    "text": "Chỉ có đôi mắt nó rưng rưng."
+  },
+  {
+    "id": 324,
+    "start": "1588.247",
+    "end": "1590.678",
+    "duration": "2.431",
+    "text": "Như vậy đúng là nó bị ai đánh rồi!"
+  },
+  {
+    "id": 325,
+    "start": "1590.678",
+    "end": "1595.208",
+    "duration": "4.530",
+    "text": "Tôi nhủ thầm và lo lắng hỏi:\n- Ba mày đánh mày phải không?"
+  },
+  {
+    "id": 326,
+    "start": "1595.208",
+    "end": "1597.508",
+    "duration": "2.300",
+    "text": "Hồng Hoa khẽ lắc đầu."
+  },
+  {
+    "id": 327,
+    "start": "1597.508",
+    "end": "1599.578",
+    "duration": "2.070",
+    "text": "- Hay mày bị mẹ đánh?"
+  },
+  {
+    "id": 328,
+    "start": "1599.578",
+    "end": "1601.939",
+    "duration": "2.361",
+    "text": "Hồng Hoa vẫn lắc đầu."
+  },
+  {
+    "id": 329,
+    "start": "1601.939",
+    "end": "1607.869",
+    "duration": "5.930",
+    "text": "Tôi nhìn vào đôi mắt đỏ hoe của nó, giọng hoang mang:\n- Vậy chứ ai?"
+  },
+  {
+    "id": 330,
+    "start": "1608.149",
+    "end": "1614.449",
+    "duration": "6.300",
+    "text": "Hồng Hoa im lặng một lúc rồi thẩn thờ đáp:\n- Anh Quý em."
+  },
+  {
+    "id": 331,
+    "start": "1614.630",
+    "end": "1619.000",
+    "duration": "4.370",
+    "text": "Tôi thở dài:\n- Hóa ra là anh mày!"
+  },
+  {
+    "id": 332,
+    "start": "1619.000",
+    "end": "1620.900",
+    "duration": "1.900",
+    "text": "Mày có một ông anh mà tao đâu có biết!"
+  },
+  {
+    "id": 333,
+    "start": "1620.900",
+    "end": "1626.080",
+    "duration": "5.180",
+    "text": "Hồng Hoa khịt mũi:\n- Anh Quý không phải là anh ruột em."
+  },
+  {
+    "id": 334,
+    "start": "1626.080",
+    "end": "1627.921",
+    "duration": "1.841",
+    "text": "Anh Quý là con ông bác."
+  },
+  {
+    "id": 335,
+    "start": "1627.921",
+    "end": "1631.281",
+    "duration": "3.360",
+    "text": "Tôi gật gù:\n- Thì ra vậy!"
+  },
+  {
+    "id": 336,
+    "start": "1631.551",
+    "end": "1635.381",
+    "duration": "3.830",
+    "text": "- Rồi tôi mím môi, hỏi - Bộ thằng đó hung hăng lắm hả?"
+  },
+  {
+    "id": 337,
+    "start": "1635.381",
+    "end": "1640.452",
+    "duration": "5.071",
+    "text": "Hồng Hoa nhăn mặt:\n- Anh em mà anh gọi là thằng đó!"
+  },
+  {
+    "id": 338,
+    "start": "1640.452",
+    "end": "1643.922",
+    "duration": "3.470",
+    "text": "Tôi hừ mũi:\n- Tao cứ gọi nó là thằng!"
+  },
+  {
+    "id": 339,
+    "start": "1643.922",
+    "end": "1645.173",
+    "duration": "1.251",
+    "text": "Ai bảo nó đánh mày chi!"
+  },
+  {
+    "id": 340,
+    "start": "1645.173",
+    "end": "1652.593",
+    "duration": "7.420",
+    "text": "- Tôi liếc Hồng Hoa, mắt nheo nheo - Nó đánh mày thì lần sau nó đến chơi, mày đừng cho nó vô nhà."
+  },
+  {
+    "id": 341,
+    "start": "1652.594",
+    "end": "1654.724",
+    "duration": "2.130",
+    "text": "- Nhà nào?"
+  },
+  {
+    "id": 342,
+    "start": "1654.724",
+    "end": "1656.824",
+    "duration": "2.100",
+    "text": "- Thì nhà mày chứ nhà nào!"
+  },
+  {
+    "id": 343,
+    "start": "1656.824",
+    "end": "1657.834",
+    "duration": "1.010",
+    "text": "Mày hỏi lãng xẹt!"
+  },
+  {
+    "id": 344,
+    "start": "1657.834",
+    "end": "1662.854",
+    "duration": "5.020",
+    "text": "Giọng Hồng Hoa bùi ngùi:\n- Em đâu có nhà!"
+  },
+  {
+    "id": 345,
+    "start": "1662.854",
+    "end": "1667.054",
+    "duration": "4.200",
+    "text": "Gia đình em hiện nay đang ở đậu nhà ông bác kia mà!"
+  },
+  {
+    "id": 346,
+    "start": "1667.054",
+    "end": "1671.994",
+    "duration": "4.940",
+    "text": "Tôi sửng sốt:\n- Chứ nhà mày đâu?"
+  },
+  {
+    "id": 347,
+    "start": "1671.994",
+    "end": "1674.844",
+    "duration": "2.850",
+    "text": "- Thì em đã nói anh nghe rồi!"
+  },
+  {
+    "id": 348,
+    "start": "1674.844",
+    "end": "1680.004",
+    "duration": "5.160",
+    "text": "- Giọng Hồng Hoa thoáng lộ vẻ bối rối Nhà em ở..."
+  },
+  {
+    "id": 349,
+    "start": "1680.784",
+    "end": "1681.144",
+    "duration": "0.360",
+    "text": "dưới quê!"
+  },
+  {
+    "id": 350,
+    "start": "1681.254",
+    "end": "1685.885",
+    "duration": "4.631",
+    "text": "Tôi sực nhớ ra:\n- À, mày có nói mà tao quên!"
+  },
+  {
+    "id": 351,
+    "start": "1685.885",
+    "end": "1690.425",
+    "duration": "4.540",
+    "text": "- Rồi tôi thở dài, chép miệng - Nhà mày khổ quá hén!"
+  },
+  {
+    "id": 352,
+    "start": "1690.425",
+    "end": "1694.025",
+    "duration": "3.600",
+    "text": "Câu nói của tôi có lẽ khiến Hồng Hoa động lòng."
+  },
+  {
+    "id": 353,
+    "start": "1694.025",
+    "end": "1700.266",
+    "duration": "6.241",
+    "text": "Những giọt nước lệ nãy giờ kềm giữ bỗng trào ra khỏi mắt và chảy thành giòng trên má nó."
+  },
+  {
+    "id": 354,
+    "start": "1700.296",
+    "end": "1706.626",
+    "duration": "6.330",
+    "text": "Trước tình cảm đó, tôi không dám nhìn Hồng Hoa mà vội đưa mắt ngó vẩn vơ lên tàng cây mận."
+  },
+  {
+    "id": 355,
+    "start": "1706.626",
+    "end": "1715.406",
+    "duration": "8.780",
+    "text": "Trên đó, những chiếc lá nằm im phắt, không buồn cựa mình, dường như chúng đang lặng lẽ lắng nghe câu chuyện buồn bã của Hồng Hoa."
+  },
+  {
+    "id": 356,
+    "start": "1715.506",
+    "end": "1722.786",
+    "duration": "7.280",
+    "text": "Mắt vẫn không rời những chiếc lá trên cao, tôi bồi hồi hỏi:\n- Sao nó đánh mày?"
+  },
+  {
+    "id": 357,
+    "start": "1722.786",
+    "end": "1729.517",
+    "duration": "6.731",
+    "text": "Tiếng Hồng Hoa sụt sịt bên tai tôi:\n- Ảnh giật sách của em, em không cho."
+  },
+  {
+    "id": 358,
+    "start": "1729.597",
+    "end": "1732.747",
+    "duration": "3.150",
+    "text": "Thế là ảnh đẩy em đập mặt vào cạnh bàn."
+  },
+  {
+    "id": 359,
+    "start": "1732.747",
+    "end": "1736.778",
+    "duration": "4.031",
+    "text": "Tôi nghe Hồng Hoa nói mà bụng cứ tức sôi lên."
+  },
+  {
+    "id": 360,
+    "start": "1736.778",
+    "end": "1744.579",
+    "duration": "7.801",
+    "text": "Không biết làm gì cho nguôi ngoai, tôi quay ra cằn nhằn Hồng Hoa:\n- Nó giật sách của mày thì mày cứ đưa đại cho nó!"
+  },
+  {
+    "id": 361,
+    "start": "1744.579",
+    "end": "1746.959",
+    "duration": "2.380",
+    "text": "Ai bảo mày giật lại chi cho nó đánh mày!"
+  },
+  {
+    "id": 362,
+    "start": "1746.959",
+    "end": "1750.999",
+    "duration": "4.040",
+    "text": "- Thì những lần trước ảnh giật em đâu có cản."
+  },
+  {
+    "id": 363,
+    "start": "1750.999",
+    "end": "1754.539",
+    "duration": "3.540",
+    "text": "Nhưng đây là cuốn \"Cu li lùn\" anh cho em mượn."
+  },
+  {
+    "id": 364,
+    "start": "1754.539",
+    "end": "1758.060",
+    "duration": "3.521",
+    "text": "Tôi hắng giọng:\n- Mày ngốc quá!"
+  },
+  {
+    "id": 365,
+    "start": "1758.090",
+    "end": "1760.620",
+    "duration": "2.530",
+    "text": "Sách của tao thì cũng như sách của mày thôi."
+  },
+  {
+    "id": 366,
+    "start": "1760.620",
+    "end": "1762.980",
+    "duration": "2.360",
+    "text": "Đọc xong, nó trả lại chứ lo gì!"
+  },
+  {
+    "id": 367,
+    "start": "1762.980",
+    "end": "1768.901",
+    "duration": "5.921",
+    "text": "Hồng Hoa đưa tay quệt nước mắt, nói:\n- Ảnh không có trả lại đâu!"
+  },
+  {
+    "id": 368,
+    "start": "1768.901",
+    "end": "1772.201",
+    "duration": "3.300",
+    "text": "Tôi ngạc nhiên:\n- Sao lại không trả?"
+  },
+  {
+    "id": 369,
+    "start": "1772.201",
+    "end": "1774.141",
+    "duration": "1.940",
+    "text": "Không trả thì nó làm gì?"
+  },
+  {
+    "id": 370,
+    "start": "1774.141",
+    "end": "1777.191",
+    "duration": "3.050",
+    "text": "- Ảnh toàn là đem vứt ở đâu đâu!"
+  },
+  {
+    "id": 371,
+    "start": "1777.251",
+    "end": "1783.342",
+    "duration": "6.091",
+    "text": "- Hồng Hoa buồn bã đáp - Có khi ảnh xé đôi cuốn sách rồi ném vào thùng rác."
+  },
+  {
+    "id": 372,
+    "start": "1783.372",
+    "end": "1786.732",
+    "duration": "3.360",
+    "text": "Tôi nghiến răng:\n- Đồ mất dạy!"
+  },
+  {
+    "id": 373,
+    "start": "1786.732",
+    "end": "1796.353",
+    "duration": "9.621",
+    "text": "Khi nỗi tức tối đã lắng dịu bớt, tôi nhìn thẳng vào mặt Hồng Hoa, giọng băn khoăn:\n- Chắc là thằng đó nó không ưa mày phải không?"
+  },
+  {
+    "id": 374,
+    "start": "1796.353",
+    "end": "1798.923",
+    "duration": "2.570",
+    "text": "Hồng Hoa lặng lẽ gật đầu."
+  },
+  {
+    "id": 375,
+    "start": "1798.923",
+    "end": "1801.574",
+    "duration": "2.651",
+    "text": "- Mày có gây sự gì với nó không?"
+  },
+  {
+    "id": 376,
+    "start": "1801.574",
+    "end": "1801.734",
+    "duration": "0.160",
+    "text": "- Không!"
+  },
+  {
+    "id": 377,
+    "start": "1802.764",
+    "end": "1804.244",
+    "duration": "1.480",
+    "text": "Em có làm gì ảnh đâu!"
+  },
+  {
+    "id": 378,
+    "start": "1804.244",
+    "end": "1808.024",
+    "duration": "3.780",
+    "text": "Tôi phân vân hỏi:\n- Vậy sao nó ghét mày dữ vậy?"
+  },
+  {
+    "id": 379,
+    "start": "1808.094",
+    "end": "1811.675",
+    "duration": "3.581",
+    "text": "Hồng Hoa có vẻ ngần ngừ trước câu hỏi của tôi."
+  },
+  {
+    "id": 380,
+    "start": "1811.675",
+    "end": "1815.795",
+    "duration": "4.120",
+    "text": "Nó ấp a ấp úng định trả lời nhưng rồi cuối cùng nó im bặt."
+  },
+  {
+    "id": 381,
+    "start": "1815.795",
+    "end": "1818.595",
+    "duration": "2.800",
+    "text": "Tôi càng sốt ruột:\n- Sao vậy?"
+  },
+  {
+    "id": 382,
+    "start": "1818.625",
+    "end": "1825.755",
+    "duration": "7.130",
+    "text": "Hồng Hoa đỏ mặt, giọng ngập ngừng:\n- Ảnh bảo em là đồ..."
+  },
+  {
+    "id": 383,
+    "start": "1827.115",
+    "end": "1830.225",
+    "duration": "3.110",
+    "text": "không nhà không cửa, sống bám gia đình ảnh."
+  },
+  {
+    "id": 384,
+    "start": "1830.225",
+    "end": "1834.256",
+    "duration": "4.031",
+    "text": "Tôi tặc lưỡi:\n- Chỉ vậy mà nó ghét mày?"
+  },
+  {
+    "id": 385,
+    "start": "1834.256",
+    "end": "1841.476",
+    "duration": "7.220",
+    "text": "Hồng Hoa cắn môi:\n- Ảnh bảo gia đình em dọn đến ở làm nhà ảnh chật chội."
+  },
+  {
+    "id": 386,
+    "start": "1841.526",
+    "end": "1844.105",
+    "duration": "2.579",
+    "text": "Rồi bác em lại hay mua quà cho em."
+  },
+  {
+    "id": 387,
+    "start": "1844.105",
+    "end": "1846.616",
+    "duration": "2.511",
+    "text": "Thế là ảnh bảo bác em thương em hơn ảnh."
+  },
+  {
+    "id": 388,
+    "start": "1846.616",
+    "end": "1851.026",
+    "duration": "4.410",
+    "text": "Tôi phấp phỏng:\n- Như vậy chắc là nó đánh mày hoài?"
+  },
+  {
+    "id": 389,
+    "start": "1851.026",
+    "end": "1854.176",
+    "duration": "3.150",
+    "text": "Hồng Hoa chớp mắt, không trả lời."
+  },
+  {
+    "id": 390,
+    "start": "1854.176",
+    "end": "1862.377",
+    "duration": "8.201",
+    "text": "Nhưng nhìn vẻ mặt dàu dàu của nó, tôi cũng có thể hình dung ra những trò hiếp đáp mà nó phải chịu đựng trong thời gian qua."
+  },
+  {
+    "id": 391,
+    "start": "1862.377",
+    "end": "1866.017",
+    "duration": "3.640",
+    "text": "Tự dưng tôi thấy tội nghiệp Hồng Hoa vô cùng."
+  },
+  {
+    "id": 392,
+    "start": "1866.047",
+    "end": "1871.418",
+    "duration": "5.371",
+    "text": "Tuy nhiên, tôi không thể giúp đỡ gì nó được, ngoài nỗi xót xa dâng ngập lòng tôi."
+  },
+  {
+    "id": 393,
+    "start": "1871.508",
+    "end": "1877.078",
+    "duration": "5.570",
+    "text": "Mãi một lúc lâu, tôi mới ngậm ngùi hỏi:\n- Sao mày không nói cho ba mày biết?"
+  },
+  {
+    "id": 394,
+    "start": "1877.078",
+    "end": "1879.108",
+    "duration": "2.030",
+    "text": "- Em có nói."
+  },
+  {
+    "id": 395,
+    "start": "1879.828",
+    "end": "1883.878",
+    "duration": "4.050",
+    "text": "Tôi hồi hộp:\n- Ba mày bảo sao?"
+  },
+  {
+    "id": 396,
+    "start": "1884.238",
+    "end": "1888.578",
+    "duration": "4.340",
+    "text": "- Ba em bảo em phải tập nhường nhịn và chịu đựng."
+  },
+  {
+    "id": 397,
+    "start": "1888.578",
+    "end": "1892.869",
+    "duration": "4.291",
+    "text": "Tôi thất vọng ra mặt:\n- Chịu đựng thế quái nào được!"
+  },
+  {
+    "id": 398,
+    "start": "1892.869",
+    "end": "1894.309",
+    "duration": "1.440",
+    "text": "Thế mày có nói với mẹ mày không?"
+  },
+  {
+    "id": 399,
+    "start": "1894.309",
+    "end": "1894.479",
+    "duration": "0.170",
+    "text": "- Có."
+  },
+  {
+    "id": 400,
+    "start": "1895.609",
+    "end": "1899.060",
+    "duration": "3.451",
+    "text": "Tôi thấp thỏm:\n- Mẹ mày có bảo mày chịu đựng không?"
+  },
+  {
+    "id": 401,
+    "start": "1899.170",
+    "end": "1904.029",
+    "duration": "4.859",
+    "text": "Giọng Hồng Hoa nghẹn ngào:\n- Mẹ em không nói gì cả."
+  },
+  {
+    "id": 402,
+    "start": "1904.029",
+    "end": "1906.539",
+    "duration": "2.510",
+    "text": "Mẹ em chỉ ngồi khóc."
+  },
+  {
+    "id": 403,
+    "start": "1906.649",
+    "end": "1911.200",
+    "duration": "4.551",
+    "text": "Nghe Hồng Hoa đáp, tôi vừa buồn vừa giận."
+  },
+  {
+    "id": 404,
+    "start": "1911.200",
+    "end": "1917.200",
+    "duration": "6.000",
+    "text": "Nếu như tôi là ba mẹ của Hồng Hoa, tôi đã đánh thằng khốn nạn kia một trận nhừ xương rồi."
+  },
+  {
+    "id": 405,
+    "start": "1917.200",
+    "end": "1921.369",
+    "duration": "4.169",
+    "text": "Chẳng hiểu sao ba mẹ Hồng Hoa lại hiền lành quá xá như vậy!"
+  },
+  {
+    "id": 406,
+    "start": "1921.399",
+    "end": "1928.480",
+    "duration": "7.081",
+    "text": "Đang rầu rĩ, chợt tôi nghĩ ra một kế liền reo lên:\n- Sao mày không méc với bác mày?"
+  },
+  {
+    "id": 407,
+    "start": "1928.480",
+    "end": "1933.980",
+    "duration": "5.500",
+    "text": "Nếu bác mày biết chuyện, chắc chắn thằng mất dạy kia sẽ nhừ đòn và nó sẽ hết dám hành hạ mày."
+  },
+  {
+    "id": 408,
+    "start": "1933.980",
+    "end": "1941.921",
+    "duration": "7.941",
+    "text": "Tôi tưởng Hồng Hoa sẽ mừng rỡ trược diệu kế của tôi, nào ngờ nó lắc đầu:\n- Em không dám."
+  },
+  {
+    "id": 409,
+    "start": "1941.921",
+    "end": "1945.751",
+    "duration": "3.830",
+    "text": "Tôi nhún vai:\n- Gì mà không dám!"
+  },
+  {
+    "id": 410,
+    "start": "1945.751",
+    "end": "1947.152",
+    "duration": "1.401",
+    "text": "Mày cứ méc đại đi!"
+  },
+  {
+    "id": 411,
+    "start": "1947.152",
+    "end": "1952.472",
+    "duration": "5.320",
+    "text": "Hồng Hoa vẫn lắc đầu nguậy nguậy:\n- Thôi, em không dám đâu!"
+  },
+  {
+    "id": 412,
+    "start": "1952.472",
+    "end": "1955.082",
+    "duration": "2.610",
+    "text": "Ảnh mà bị đòn, ảnh sẽ trả thù em chết!"
+  },
+  {
+    "id": 413,
+    "start": "1955.082",
+    "end": "1958.492",
+    "duration": "3.410",
+    "text": "Tôi hùng hổ:\n- Mày đừng sợ!"
+  },
+  {
+    "id": 414,
+    "start": "1958.492",
+    "end": "1963.893",
+    "duration": "5.401",
+    "text": "- Vừa nói tôi vừa nắm chặt tay lại - Nó mà trả thù mày, tao sẽ cho nó mền xương!"
+  },
+  {
+    "id": 415,
+    "start": "1963.893",
+    "end": "1968.353",
+    "duration": "4.460",
+    "text": "Thấy tôi lăm le nhảy vào vòng chiến, Hồng Hoa sợ xanh mặt."
+  },
+  {
+    "id": 416,
+    "start": "1968.353",
+    "end": "1973.603",
+    "duration": "5.250",
+    "text": "Nó nói giọng khẩn khoản:\n- Thôi, thôi, anh đừng có đánh nhau với ảnh!"
+  },
+  {
+    "id": 417,
+    "start": "1973.603",
+    "end": "1975.423",
+    "duration": "1.820",
+    "text": "Ba mẹ em không bằng lòng đâu!"
+  },
+  {
+    "id": 418,
+    "start": "1975.423",
+    "end": "1979.263",
+    "duration": "3.840",
+    "text": "Ba em bảo ở nhờ nhà người ta, không nên gây gổ."
+  },
+  {
+    "id": 419,
+    "start": "1979.263",
+    "end": "1983.183",
+    "duration": "3.920",
+    "text": "Ba hay nói với em là một sự nhịn chín sự lành."
+  },
+  {
+    "id": 420,
+    "start": "1983.183",
+    "end": "1987.203",
+    "duration": "4.020",
+    "text": "Tôi gầm gừ:\n- Nhịn sao được mà nhịn!"
+  },
+  {
+    "id": 421,
+    "start": "1987.203",
+    "end": "1994.394",
+    "duration": "7.191",
+    "text": "Mặc dù nói vậy nhưng nhìn vẻ mặt hốt hoảng của Hồng Hoa, lòng tôi cũng dần dần bình tĩnh lại."
+  },
+  {
+    "id": 422,
+    "start": "1994.394",
+    "end": "2002.374",
+    "duration": "7.980",
+    "text": "Ừ hén, mình đánh thằng con ông bác nó, rủi ông bác nó nổi sùng đuổi cả nhà nó ra đường thì gia đình nó biết ở đâu!"
+  },
+  {
+    "id": 423,
+    "start": "2002.374",
+    "end": "2012.015",
+    "duration": "9.641",
+    "text": "Nghĩ loay hoay một hồi, lòng tôi bỗng xìu như bún và tôi ngán ngẩm nói:\n- Nếu mày sợ thì thôi, tao không thèm đánh nhau với nó đâu!"
+  },
+  {
+    "id": 424,
+    "start": "2012.015",
+    "end": "2016.975",
+    "duration": "4.960",
+    "text": "Nghe tôi tuyên bố \"tha tội\" cho ông anh của nó, Hồng Hoa mừng lắm."
+  },
+  {
+    "id": 425,
+    "start": "2016.975",
+    "end": "2019.855",
+    "duration": "2.880",
+    "text": "Nó còn hỏi:\n- Anh nói thật chứ?"
+  },
+  {
+    "id": 426,
+    "start": "2019.955",
+    "end": "2022.955",
+    "duration": "3.000",
+    "text": "- Trước giờ tao có nói dối mày lần nào đâu!"
+  },
+  {
+    "id": 427,
+    "start": "2022.955",
+    "end": "2025.126",
+    "duration": "2.171",
+    "text": "- Tôi đáp với giọng uể oải."
+  },
+  {
+    "id": 428,
+    "start": "2025.126",
+    "end": "2030.376",
+    "duration": "5.250",
+    "text": "Trong khi tôi chán nản bao nhiêu thì Hồng Hoa lại tỏ ra tươi tỉnh bấy nhiêu."
+  },
+  {
+    "id": 429,
+    "start": "2030.376",
+    "end": "2032.736",
+    "duration": "2.360",
+    "text": "Nó quên mất vết bầm trên má."
+  },
+  {
+    "id": 430,
+    "start": "2032.736",
+    "end": "2035.006",
+    "duration": "2.270",
+    "text": "Nó cũng quên cả nỗi buồn bị hành hạ."
+  },
+  {
+    "id": 431,
+    "start": "2035.006",
+    "end": "2041.167",
+    "duration": "6.161",
+    "text": "Đối với nó, chỉ cần tôi hứa không can thiệp vào chuyện gia đình nó là nó vui rồi."
+  },
+  {
+    "id": 432,
+    "start": "2041.167",
+    "end": "2048.447",
+    "duration": "7.280",
+    "text": "Vì vậy, trong khi những giọt nước mắt chưa kịp khô trên má, Hồng Hoa đã mỉm cười nhìn tôi, vẻ cảm kích."
+  },
+  {
+    "id": 433,
+    "start": "2048.447",
+    "end": "2052.028",
+    "duration": "3.581",
+    "text": "- Chẳng hiểu sao sống vậy mà mày sống được!"
+  },
+  {
+    "id": 434,
+    "start": "2052.029",
+    "end": "2054.080",
+    "duration": "2.051",
+    "text": "Tao mà là mày, tao bỏ nhà đi quách!"
+  },
+  {
+    "id": 435,
+    "start": "2054.080",
+    "end": "2058.640",
+    "duration": "4.560",
+    "text": "Hồng Hoa \"hứ\" một tiếng:\n- Nói như anh!"
+  },
+  {
+    "id": 436,
+    "start": "2058.640",
+    "end": "2066.332",
+    "duration": "7.692",
+    "text": "Tôi nói là nói cho bỏ tức thôi chứ thật ra, nếu rời khỏi nhà tôi cũng chẳng biết đi đâu."
+  },
+  {
+    "id": 437,
+    "start": "2066.333",
+    "end": "2069.254",
+    "duration": "2.921",
+    "text": "Cùng lắm, tôi bỏ về dưới quê ở với ngoại tôi."
+  },
+  {
+    "id": 438,
+    "start": "2069.294",
+    "end": "2073.827",
+    "duration": "4.533",
+    "text": "Nhưng sống với ngoại, đằng nào ba mẹ tôi cũng lần ra và bắt tôi về."
+  },
+  {
+    "id": 439,
+    "start": "2073.857",
+    "end": "2075.238",
+    "duration": "1.381",
+    "text": "Thế thì cũng như không."
+  },
+  {
+    "id": 440,
+    "start": "2075.238",
+    "end": "2077.579",
+    "duration": "2.341",
+    "text": "Hồng Hoa chắc chẳng khác gì tôi."
+  },
+  {
+    "id": 441,
+    "start": "2077.649",
+    "end": "2084.483",
+    "duration": "6.834",
+    "text": "Thậm chí nếu bỏ nhà đi, nó còn gặp khó khăn nhiều hơn tôi gấp bội, bởi nó là con gái."
+  },
+  {
+    "id": 442,
+    "start": "2084.483",
+    "end": "2092.636",
+    "duration": "8.153",
+    "text": "Nghĩ tới nghĩ lui một hồi, tôi vẫn chẳng tìm ra được cách nào giúp nó và điều đó khiến tôi khổ sở ghê gớm."
+  },
+  {
+    "id": 443,
+    "start": "2092.666",
+    "end": "2098.328",
+    "duration": "5.662",
+    "text": "Chẳng lẽ nó cứ phải chịu đựng, chịu đựng hoài như lời khuyên của ba nó?"
+  },
+  {
+    "id": 444,
+    "start": "2098.328",
+    "end": "2103.160",
+    "duration": "4.832",
+    "text": "Tôi tự hỏi và bỗng dưng cảm thấy mũi lòng trước câu hỏi của mình."
+  },
+  {
+    "id": 445,
+    "start": "2103.160",
+    "end": "2106.381",
+    "duration": "3.221",
+    "text": "Và bất giác, tôi quay lưng chạy vào nhà."
+  },
+  {
+    "id": 446,
+    "start": "2106.381",
+    "end": "2111.603",
+    "duration": "5.222",
+    "text": "Thấy tôi vùng chạy, Hồng Hoa cuống quít gọi theo:\n- Anh Kha!"
+  },
+  {
+    "id": 447,
+    "start": "2112.513",
+    "end": "2113.833",
+    "duration": "1.320",
+    "text": "Anh đi đâu vậy?"
+  },
+  {
+    "id": 448,
+    "start": "2113.863",
+    "end": "2118.525",
+    "duration": "4.662",
+    "text": "Tôi vừa chạy vừa ngoái đầu lại, đáp:\n- Mày chờ tao chút xíu!"
+  },
+  {
+    "id": 449,
+    "start": "2118.525",
+    "end": "2127.939",
+    "duration": "9.414",
+    "text": "Tôi vào nhà lục lọi tủ thuốc của mẹ tôi và lát sau tôi cầm ra đưa cho Hồng Hoa một lọ dầu nóng:\n- Cho mày nè!"
+  },
+  {
+    "id": 450,
+    "start": "2127.939",
+    "end": "2133.330",
+    "duration": "5.391",
+    "text": "Hồng Hoa rụt rè cầm lấy chai dầu và trố mắt hỏi:\n- Chai gì vậy?"
+  },
+  {
+    "id": 451,
+    "start": "2133.360",
+    "end": "2134.951",
+    "duration": "1.591",
+    "text": "- Dầu nóng!"
+  },
+  {
+    "id": 452,
+    "start": "2134.951",
+    "end": "2142.784",
+    "duration": "7.833",
+    "text": "- Tôi nhìn nó bằng ánh mắt dịu dàng - Khi nào bị đánh đau, mày xoa dầu này lên vết bầm là nó hết đau ngay."
+  },
+  {
+    "id": 453,
+    "start": "2142.784",
+    "end": "2146.635",
+    "duration": "3.851",
+    "text": "Hồng Hoa cầm khư khư chai dầu trên tay."
+  },
+  {
+    "id": 454,
+    "start": "2146.635",
+    "end": "2150.746",
+    "duration": "4.111",
+    "text": "Và không biết nó nghĩ ngợi điều gì mà mắt nó lại rưng rưng."
+  },
+  {
+    "id": 455,
+    "start": "2150.746",
+    "end": "2154.657",
+    "duration": "3.911",
+    "text": "Còn tôi, tôi cũng nghe cay xè nơi sống mũi."
+  },
+  {
+    "id": 456,
+    "start": "2154.657",
+    "end": "2165.489",
+    "duration": "10.832",
+    "text": "Rồi vừa nói vừa cố khụt khịt để che giấu sự xúc động, tôi dặn nó:\n- Còn sách của tao, mày thích cuốn nào thì cứ đem về đọc."
+  },
+  {
+    "id": 457,
+    "start": "2165.489",
+    "end": "2171.512",
+    "duration": "6.023",
+    "text": "Thằng kia có giật thì mặc nó giật, đừng giằng co với nó làm chi."
+  },
+  {
+    "id": 458,
+    "start": "2171.512",
+    "end": "2178.024",
+    "duration": "6.512",
+    "text": "Hồng Hoa ngước nhìn tôi bằng đôi mắt ướt:\n- Ảnh sẽ vứt sách của anh mất!"
+  },
+  {
+    "id": 459,
+    "start": "2178.024",
+    "end": "2179.805",
+    "duration": "1.781",
+    "text": "- Kệ nó!"
+  },
+  {
+    "id": 460,
+    "start": "2179.805",
+    "end": "2182.216",
+    "duration": "2.411",
+    "text": "Mất thì tao mua cuốn khác!"
+  },
+  {
+    "id": 461,
+    "start": "2182.216",
+    "end": "2189.678",
+    "duration": "7.462",
+    "text": "- Tôi mỉm cười trấn an - Với lại, những cuốn sách này tao đã đọc đi đọc lại đến thuộc lòng rồi."
+  },
+  {
+    "id": 462,
+    "start": "2189.678",
+    "end": "2196.000",
+    "duration": "6.322",
+    "text": "Hồng Hoa nhìn tôi với vẻ tin cậy và đột ngột nó cầm lấy tay tôi."
+  },
+  {
+    "id": 463,
+    "start": "2196.000",
+    "end": "2206.935",
+    "duration": "10.935",
+    "text": "Tôi từng nắm tay Hồng Hoa dắt nó đi chơi tha thẩn trong vườn hàng trăm lần nhưng phải đợi đến bây giờ, tôi mới ngạc nhiên nhận ra sự mềm mại của bàn tay nó."
+  },
+  {
+    "id": 464,
+    "start": "2206.936",
+    "end": "2219.929",
+    "duration": "12.993",
+    "text": "Và bàn tay mềm mại đáng yêu đó hiện đang nằm khép nép và run rẩy trong tay tôi như một con chim non lạc tổ đang cần vô cùng sự ấm áp chở che."
+  }
+]
