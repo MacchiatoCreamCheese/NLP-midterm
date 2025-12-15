@@ -1,0 +1,3817 @@
+[
+  {
+    "id": 0,
+    "start": "1.960",
+    "end": "2.880",
+    "duration": "0.920",
+    "text": "Phần 4."
+  },
+  {
+    "id": 1,
+    "start": "4.300",
+    "end": "5.380",
+    "duration": "1.080",
+    "text": "Bố đọc cái gì thế?"
+  },
+  {
+    "id": 2,
+    "start": "5.800",
+    "end": "6.850",
+    "duration": "1.050",
+    "text": "Ông Chí nhổm dậy."
+  },
+  {
+    "id": 3,
+    "start": "7.110",
+    "end": "13.720",
+    "duration": "6.610",
+    "text": "Nga bước vào, nhìn trên mặt bàn thấy cuốn Năm vở bi kịch của Shakespeare và cuốn Kỹ thuật chơi cầu lông."
+  },
+  {
+    "id": 4,
+    "start": "14.230",
+    "end": "16.410",
+    "duration": "2.180",
+    "text": "- Hai cuốn đều là của cô Loan cho bố mượn."
+  },
+  {
+    "id": 5,
+    "start": "16.750",
+    "end": "17.630",
+    "duration": "0.880",
+    "text": "- Ông Chí nói."
+  },
+  {
+    "id": 6,
+    "start": "18.930",
+    "end": "19.640",
+    "duration": "0.710",
+    "text": "- Bố liệu sức."
+  },
+  {
+    "id": 7,
+    "start": "19.760",
+    "end": "25.890",
+    "duration": "6.130",
+    "text": "Chơi cầu lông có thể là hơi nặng so với sức bố mới phẫu thuật tim đấy, bố!"
+  },
+  {
+    "id": 8,
+    "start": "26.660",
+    "end": "28.280",
+    "duration": "1.620",
+    "text": "- Nể cô thì bố cầm thôi."
+  },
+  {
+    "id": 9,
+    "start": "28.590",
+    "end": "30.560",
+    "duration": "1.970",
+    "text": "Bố làm gì có thì giờ chơi cầu lông."
+  },
+  {
+    "id": 10,
+    "start": "30.940",
+    "end": "32.360",
+    "duration": "1.420",
+    "text": "Bố chỉ đọc cuốn kịch thôi."
+  },
+  {
+    "id": 11,
+    "start": "32.640",
+    "end": "39.000",
+    "duration": "6.360",
+    "text": "Nhưng bố không hiểu hết, trừ vở kịch Ôtenlô vì bố đã được xem phim."
+  },
+  {
+    "id": 12,
+    "start": "39.320",
+    "end": "41.920",
+    "duration": "2.600",
+    "text": "Ông này có cuộc đời chinh chiến thật là oanh liệt."
+  },
+  {
+    "id": 13,
+    "start": "42.200",
+    "end": "45.710",
+    "duration": "3.510",
+    "text": "Cô thiếu nữ quý tộc Đetxđêmôna cảm phục là phải!"
+  },
+  {
+    "id": 14,
+    "start": "46.410",
+    "end": "51.010",
+    "duration": "4.600",
+    "text": "Ngừng một lát, ông Chí nhìn cô con gái cả:\n- Dạo này con học hành thế nào?"
+  },
+  {
+    "id": 15,
+    "start": "51.270",
+    "end": "52.210",
+    "duration": "0.940",
+    "text": "Em Mai con nữa?"
+  },
+  {
+    "id": 16,
+    "start": "53.070",
+    "end": "54.140",
+    "duration": "1.070",
+    "text": "- Con vẫn bình thường."
+  },
+  {
+    "id": 17,
+    "start": "54.450",
+    "end": "55.980",
+    "duration": "1.530",
+    "text": "Nhưng con có một chuyện quan trọng."
+  },
+  {
+    "id": 18,
+    "start": "56.220",
+    "end": "57.730",
+    "duration": "1.510",
+    "text": "Lúc nào con sẽ nói với bố."
+  },
+  {
+    "id": 19,
+    "start": "58.150",
+    "end": "59.770",
+    "duration": "1.620",
+    "text": "Cái Mai nó học đều các môn."
+  },
+  {
+    "id": 20,
+    "start": "60.010",
+    "end": "61.110",
+    "duration": "1.100",
+    "text": "Giỏi toán và văn."
+  },
+  {
+    "id": 21,
+    "start": "61.440",
+    "end": "63.660",
+    "duration": "2.220",
+    "text": "Riêng môn tiếng Anh nó chỉ xếp loại khá."
+  },
+  {
+    "id": 22,
+    "start": "64.020",
+    "end": "67.740",
+    "duration": "3.720",
+    "text": "Cô Loan bảo nó từ tháng sau, một tuần cô kèm cho hai buổi."
+  },
+  {
+    "id": 23,
+    "start": "68.190",
+    "end": "68.650",
+    "duration": "0.460",
+    "text": "Bố à!"
+  },
+  {
+    "id": 24,
+    "start": "68.980",
+    "end": "70.930",
+    "duration": "1.950",
+    "text": "Còn chủ nhật tới là giỗ mẹ con."
+  },
+  {
+    "id": 25,
+    "start": "71.700",
+    "end": "73.710",
+    "duration": "2.010",
+    "text": "- Bố đang muốn hỏi con về việc ấy đấy."
+  },
+  {
+    "id": 26,
+    "start": "74.400",
+    "end": "75.090",
+    "duration": "0.690",
+    "text": "- Bố yên tâm."
+  },
+  {
+    "id": 27,
+    "start": "75.330",
+    "end": "76.520",
+    "duration": "1.190",
+    "text": "Con lo liệu hết rồi."
+  },
+  {
+    "id": 28,
+    "start": "76.790",
+    "end": "78.110",
+    "duration": "1.320",
+    "text": "Con định hỏi ý kiến bố."
+  },
+  {
+    "id": 29,
+    "start": "78.370",
+    "end": "80.740",
+    "duration": "2.370",
+    "text": "Buổi giỗ mẹ con, bố có định mời ai không?"
+  },
+  {
+    "id": 30,
+    "start": "81.080",
+    "end": "83.700",
+    "duration": "2.620",
+    "text": "Họ hàng nhà mình ở thành phố thì chẳng còn ai."
+  },
+  {
+    "id": 31,
+    "start": "84.100",
+    "end": "87.470",
+    "duration": "3.370",
+    "text": "Con định mời cô Loan là người chúng con rất quý trọng và mến mộ."
+  },
+  {
+    "id": 32,
+    "start": "87.780",
+    "end": "90.870",
+    "duration": "3.090",
+    "text": "Cô dạy con hồi con học phổ thông ở trưởng Lê Quý Đôn đấy."
+  },
+  {
+    "id": 33,
+    "start": "91.260",
+    "end": "94.520",
+    "duration": "3.260",
+    "text": "Con cũng định mời thêm bác Khái là cán bộ lãnh đạo phường."
+  },
+  {
+    "id": 34,
+    "start": "94.870",
+    "end": "97.190",
+    "duration": "2.320",
+    "text": "Hai người cũng là hàng xóm kề bên nhà mình."
+  },
+  {
+    "id": 35,
+    "start": "99.280",
+    "end": "99.820",
+    "duration": "0.540",
+    "text": "- Được đấy."
+  },
+  {
+    "id": 36,
+    "start": "100.100",
+    "end": "101.950",
+    "duration": "1.850",
+    "text": "Con lo liệu thế là tốt quá rồi."
+  },
+  {
+    "id": 37,
+    "start": "102.280",
+    "end": "103.620",
+    "duration": "1.340",
+    "text": "Bố thật là đoảng vị."
+  },
+  {
+    "id": 38,
+    "start": "103.870",
+    "end": "105.030",
+    "duration": "1.160",
+    "text": "Thật là vô tích sự."
+  },
+  {
+    "id": 39,
+    "start": "105.310",
+    "end": "107.100",
+    "duration": "1.790",
+    "text": "Cả đời chỉ lang bạt kỳ hồ."
+  },
+  {
+    "id": 40,
+    "start": "107.370",
+    "end": "108.990",
+    "duration": "1.620",
+    "text": "Chẳng giúp được gì cho mẹ con."
+  },
+  {
+    "id": 41,
+    "start": "109.290",
+    "end": "111.040",
+    "duration": "1.750",
+    "text": "Đến già vẫn cái thói ấy."
+  },
+  {
+    "id": 42,
+    "start": "111.480",
+    "end": "112.740",
+    "duration": "1.260",
+    "text": "À này con..."
+  },
+  {
+    "id": 43,
+    "start": "114.470",
+    "end": "115.670",
+    "duration": "1.200",
+    "text": "- Bố định hỏi gì con?"
+  },
+  {
+    "id": 44,
+    "start": "115.900",
+    "end": "119.900",
+    "duration": "4.000",
+    "text": "Có phải bố còn băn khoăn về khoản tiền viện phí gần một trăm năm mươi triệu không?"
+  },
+  {
+    "id": 45,
+    "start": "120.330",
+    "end": "121.190",
+    "duration": "0.860",
+    "text": "Bố đừng lo."
+  },
+  {
+    "id": 46,
+    "start": "121.430",
+    "end": "131.090",
+    "duration": "9.660",
+    "text": "Tiền mẹ để lại và tiền con vay vỏ thêm, rồi một năm nữa con ra trường, có nơi nhận con vào làm rồi, lương bổng cũng khá, con sẽ lo toan đủ, bố ạ."
+  },
+  {
+    "id": 47,
+    "start": "132.040",
+    "end": "140.630",
+    "duration": "8.590",
+    "text": "Mắt ngân ngấn nước, ông Chí thở dài, rồi quay đi:\n- Bố cám ơn con."
+  },
+  {
+    "id": 48,
+    "start": "140.930",
+    "end": "142.330",
+    "duration": "1.400",
+    "text": "Bố nợ con nhiều quá."
+  },
+  {
+    "id": 49,
+    "start": "143.080",
+    "end": "143.990",
+    "duration": "0.910",
+    "text": "- Bố đừng nói thế."
+  },
+  {
+    "id": 50,
+    "start": "144.340",
+    "end": "147.220",
+    "duration": "2.880",
+    "text": "Con và em Mai con giờ chỉ thương và lo cho bố thôi."
+  },
+  {
+    "id": 51,
+    "start": "147.760",
+    "end": "150.350",
+    "duration": "2.590",
+    "text": "Từ nay bố cứ yên tâm nghỉ ngơi tĩnh dưỡng nhé."
+  },
+  {
+    "id": 52,
+    "start": "154.670",
+    "end": "156.110",
+    "duration": "1.440",
+    "text": "Bố ở nhà với chúng con."
+  },
+  {
+    "id": 53,
+    "start": "157.180",
+    "end": "159.660",
+    "duration": "2.480",
+    "text": "Một phút yên lặng giữa hai bố con trôi qua."
+  },
+  {
+    "id": 54,
+    "start": "160.150",
+    "end": "166.110",
+    "duration": "5.960",
+    "text": "Nhưng nhìn cặp mày đang nhíu lại của ông Chí, Nga biết là chuyện chưa xong nên còn nấn ná ngồi lại."
+  },
+  {
+    "id": 55,
+    "start": "166.620",
+    "end": "173.590",
+    "duration": "6.970",
+    "text": "Quả nhiên ông bố đã quay lại mắt chớp chớp dè dặt rất lạ:\n- Nga này, có việc này bố muốn hỏi con."
+  },
+  {
+    "id": 56,
+    "start": "174.110",
+    "end": "180.460",
+    "duration": "6.350",
+    "text": "Hôm bố từ phòng can thiệp tim mạch trở về buồng hậu phẫu rồi bố ngủ thiếp đi, con có ở đấy không?"
+  },
+  {
+    "id": 57,
+    "start": "181.240",
+    "end": "181.900",
+    "duration": "0.660",
+    "text": "- Có chứ ạ!"
+  },
+  {
+    "id": 58,
+    "start": "182.570",
+    "end": "185.370",
+    "duration": "2.800",
+    "text": "- Con có thấy bố ngủ mê nói năng lảm nhảm gì không?"
+  },
+  {
+    "id": 59,
+    "start": "186.000",
+    "end": "186.800",
+    "duration": "0.800",
+    "text": "- Hình như là có."
+  },
+  {
+    "id": 60,
+    "start": "187.230",
+    "end": "188.280",
+    "duration": "1.050",
+    "text": "- Sao lại hình như?"
+  },
+  {
+    "id": 61,
+    "start": "189.060",
+    "end": "201.020",
+    "duration": "11.960",
+    "text": "- Hình như bố có nói về con trâu với việc tập cày cho ai đấy .Vì lúc ấy sau khi chú Khang vào thăm bố, con mệt quá, con gục xuống cạnh bố, thiếp đi, chỉ nghe được loáng thoáng thế thôi."
+  },
+  {
+    "id": 62,
+    "start": "203.070",
+    "end": "204.680",
+    "duration": "1.610",
+    "text": "- Thế con có thấy bố khóc không?"
+  },
+  {
+    "id": 63,
+    "start": "205.410",
+    "end": "206.700",
+    "duration": "1.290",
+    "text": "- Con cũng không biết nữa."
+  },
+  {
+    "id": 64,
+    "start": "207.330",
+    "end": "210.930",
+    "duration": "3.600",
+    "text": "Thần mặt một lát, đến khi Nga hỏi:\nSao cơ ạ?"
+  },
+  {
+    "id": 65,
+    "start": "211.430",
+    "end": "213.170",
+    "duration": "1.740",
+    "text": "Bố còn nghĩ ngợi điều gì nữa thế?"
+  },
+  {
+    "id": 66,
+    "start": "213.730",
+    "end": "219.500",
+    "duration": "5.770",
+    "text": "Thì ông Chí xoay người đứng dậy, đặt chân xuống sàn nhà, quờ quờ tìm đôi dép:\n- Không!"
+  },
+  {
+    "id": 67,
+    "start": "219.730",
+    "end": "220.890",
+    "duration": "1.160",
+    "text": "Không có việc gì đâu!"
+  },
+  {
+    "id": 68,
+    "start": "222.340",
+    "end": "230.120",
+    "duration": "7.780",
+    "text": "Nói, rồi ngừng hẳn đi mấy phút, ông Chí mới ngẩng lên, nhìn con gái:\n- Nga này, con giúp bố một việc nhé!"
+  },
+  {
+    "id": 69,
+    "start": "230.850",
+    "end": "231.750",
+    "duration": "0.900",
+    "text": "- Bố định làm gì?"
+  },
+  {
+    "id": 70,
+    "start": "232.230",
+    "end": "235.020",
+    "duration": "2.790",
+    "text": "Nhưng mà con nghĩ lúc này bố không nên nghĩ ngợi gì nữa."
+  },
+  {
+    "id": 71,
+    "start": "235.430",
+    "end": "236.380",
+    "duration": "0.950",
+    "text": "Bố nghỉ ngơi đi."
+  },
+  {
+    "id": 72,
+    "start": "236.670",
+    "end": "238.420",
+    "duration": "1.750",
+    "text": "Bố ra sân cầu lông chơi tiếp đi."
+  },
+  {
+    "id": 73,
+    "start": "238.740",
+    "end": "241.060",
+    "duration": "2.320",
+    "text": "Bố phải nghe lời cô giáo Loan với chú Khang."
+  },
+  {
+    "id": 74,
+    "start": "241.970",
+    "end": "242.940",
+    "duration": "0.970",
+    "text": "- Thông cảm cho bố."
+  },
+  {
+    "id": 75,
+    "start": "243.390",
+    "end": "245.040",
+    "duration": "1.650",
+    "text": "Bố không quen sống như mọi người!"
+  },
+  {
+    "id": 76,
+    "start": "245.470",
+    "end": "247.600",
+    "duration": "2.130",
+    "text": "Kiếp bố là kiếp ngựa kiếp trâu, con à."
+  },
+  {
+    "id": 77,
+    "start": "247.970",
+    "end": "249.670",
+    "duration": "1.700",
+    "text": "Nhưng mà con đừng lo quá cho bố."
+  },
+  {
+    "id": 78,
+    "start": "249.970",
+    "end": "251.380",
+    "duration": "1.410",
+    "text": "Việc này nhẹ nhàng thôi."
+  },
+  {
+    "id": 79,
+    "start": "254.360",
+    "end": "256.410",
+    "duration": "2.050",
+    "text": "Ông Chí vừa nói vừa cười nhè nhẹ."
+  },
+  {
+    "id": 80,
+    "start": "256.770",
+    "end": "262.260",
+    "duration": "5.490",
+    "text": "Thì ra ông nhờ cô con gái cùng mình đào cái ụ củ mỡ ông trồng đã sáu tháng nay."
+  },
+  {
+    "id": 81,
+    "start": "263.080",
+    "end": "268.970",
+    "duration": "5.890",
+    "text": "Việc tất nhiên sẽ đến là ngày hôm sau, tôi vừa thức giấc trưa thì đã thấy ông Chí có mặt ở trong nhà."
+  },
+  {
+    "id": 82,
+    "start": "269.350",
+    "end": "277.720",
+    "duration": "8.370",
+    "text": "Ngồi xuống cái ghế đẩu cạnh bàn viết của tôi, mặt ông hừng sáng, trong khi tay ông rút từ trong túi ra một cái vỏ chai rượu bẹt to bằng bàn tay."
+  },
+  {
+    "id": 83,
+    "start": "278.280",
+    "end": "278.820",
+    "duration": "0.540",
+    "text": "- Khang này!"
+  },
+  {
+    "id": 84,
+    "start": "279.180",
+    "end": "280.690",
+    "duration": "1.510",
+    "text": "Anh nhìn cái ve chai này đây."
+  },
+  {
+    "id": 85,
+    "start": "281.390",
+    "end": "283.200",
+    "duration": "1.810",
+    "text": "- Cái ve chai rượu bẹt Henessy."
+  },
+  {
+    "id": 86,
+    "start": "283.600",
+    "end": "284.130",
+    "duration": "0.530",
+    "text": "Tôi nói."
+  },
+  {
+    "id": 87,
+    "start": "284.370",
+    "end": "288.150",
+    "duration": "3.780",
+    "text": "Ông Chí gật đẩu và hất hàm:\n- Có thể sử dụng được vào việc gì?"
+  },
+  {
+    "id": 88,
+    "start": "288.750",
+    "end": "290.570",
+    "duration": "1.820",
+    "text": "- Tất nhiên là chứa đựng một cái gì đó."
+  },
+  {
+    "id": 89,
+    "start": "291.010",
+    "end": "291.400",
+    "duration": "0.390",
+    "text": "- Được."
+  },
+  {
+    "id": 90,
+    "start": "291.680",
+    "end": "292.460",
+    "duration": "0.780",
+    "text": "Anh xem đây!"
+  },
+  {
+    "id": 91,
+    "start": "294.480",
+    "end": "306.470",
+    "duration": "11.990",
+    "text": "Ông móc từ trong cái xắc cốt giả da đỏ quạch đeo bên sườn ra một cái túi ni lông màu xanh và lấy từ trong đó ra từng vốc sỏi cuội, rồi thả từ từ từng viên vào vỏ cái ve chai."
+  },
+  {
+    "id": 92,
+    "start": "306.890",
+    "end": "310.389",
+    "duration": "3.499",
+    "text": "Tới lúc đã đầy chai, ông hỏi tôi:\n- Đầy chưa?"
+  },
+  {
+    "id": 93,
+    "start": "310.849",
+    "end": "311.559",
+    "duration": "0.710",
+    "text": "Tôi gật đầu."
+  },
+  {
+    "id": 94,
+    "start": "311.809",
+    "end": "313.309",
+    "duration": "1.500",
+    "text": "Ông cười:\n- Đầy rồi!"
+  },
+  {
+    "id": 95,
+    "start": "313.609",
+    "end": "316.069",
+    "duration": "2.460",
+    "text": "Nghĩa là không thể cho thêm cái gì nữa chứ gì?"
+  },
+  {
+    "id": 96,
+    "start": "316.439",
+    "end": "316.979",
+    "duration": "0.540",
+    "text": "Thế mà..."
+  },
+  {
+    "id": 97,
+    "start": "317.229",
+    "end": "318.229",
+    "duration": "1.000",
+    "text": "anh theo dõi nhé!"
+  },
+  {
+    "id": 98,
+    "start": "318.849",
+    "end": "328.839",
+    "duration": "9.990",
+    "text": "Nói rồi, ông lại lôi từ trong cái xắc cốt đeo bên sườn ra một cái túi ni lông nhỏ màu đỏ và nhúm từ trong đó từng dúm cát một bỏ vào miệng cái ve chai."
+  },
+  {
+    "id": 99,
+    "start": "329.299",
+    "end": "334.499",
+    "duration": "5.200",
+    "text": "Hóa ra giữa các viên sỏi vẫn còn những kẽ hở để những hạt cát nhỏ lọt vào."
+  },
+  {
+    "id": 100,
+    "start": "335.159",
+    "end": "335.819",
+    "duration": "0.660",
+    "text": "- Đầy chưa?"
+  },
+  {
+    "id": 101,
+    "start": "336.559",
+    "end": "336.959",
+    "duration": "0.400",
+    "text": "- Rồi!"
+  },
+  {
+    "id": 102,
+    "start": "337.429",
+    "end": "339.959",
+    "duration": "2.530",
+    "text": "Tôi đáp và một lần nữa, tôi lại thua ông."
+  },
+  {
+    "id": 103,
+    "start": "340.349",
+    "end": "341.899",
+    "duration": "1.550",
+    "text": "Ông cầm cốc nước trên bàn."
+  },
+  {
+    "id": 104,
+    "start": "342.199",
+    "end": "348.919",
+    "duration": "6.720",
+    "text": "Nước len lỏi vào những khe hở, chen vào cạnh từng hạt cát, cho đến khi nước đầy phè đến miệng chai."
+  },
+  {
+    "id": 105,
+    "start": "350.979",
+    "end": "355.829",
+    "duration": "4.850",
+    "text": "Đắc thắng nhìn tôi, ông gật gù:\n- Từ việc này, rút ra kết luận gì, anh nhà báo?"
+  },
+  {
+    "id": 106,
+    "start": "356.239",
+    "end": "357.759",
+    "duration": "1.520",
+    "text": "Đầu óc người ta là vô cùng."
+  },
+  {
+    "id": 107,
+    "start": "358.029",
+    "end": "363.029",
+    "duration": "5.000",
+    "text": "Và quan trọng là ý nghĩ ban đầu:\nCó thể cho vào cái chai một hay nhiều cái gì đó!"
+  },
+  {
+    "id": 108,
+    "start": "363.659",
+    "end": "364.908",
+    "duration": "1.249",
+    "text": "Thôi thế là tôi hiểu."
+  },
+  {
+    "id": 109,
+    "start": "365.278",
+    "end": "367.288",
+    "duration": "2.010",
+    "text": "Con người có triết lý, có chủ nghĩa."
+  },
+  {
+    "id": 110,
+    "start": "367.608",
+    "end": "372.198",
+    "duration": "4.590",
+    "text": "Con người ta luôn mạnh mẽ gấp bội sức mạnh ban đầu, con người có tiềm năng vô tận."
+  },
+  {
+    "id": 111,
+    "start": "372.508",
+    "end": "379.628",
+    "duration": "7.120",
+    "text": "Tuy nhiên biết là ông sẽ định nói gì rồi, tôi liền chặn lại:\n- Anh Chí ạ, bây giờ quan trọng với anh là gì?"
+  },
+  {
+    "id": 112,
+    "start": "379.908",
+    "end": "380.718",
+    "duration": "0.810",
+    "text": "Là sức khỏe!"
+  },
+  {
+    "id": 113,
+    "start": "380.978",
+    "end": "382.818",
+    "duration": "1.840",
+    "text": "Là tuân theo lời dặn của bác sĩ."
+  },
+  {
+    "id": 114,
+    "start": "383.098",
+    "end": "384.798",
+    "duration": "1.700",
+    "text": "Một tháng đi khám lại một lần."
+  },
+  {
+    "id": 115,
+    "start": "385.138",
+    "end": "388.508",
+    "duration": "3.370",
+    "text": "Còn hàng ngày là uống đủ cơ số thuốc, đúng giờ."
+  },
+  {
+    "id": 116,
+    "start": "388.808",
+    "end": "392.188",
+    "duration": "3.380",
+    "text": "Thuốc áp huyết, thuốc chống đông, thuốc giảm mỡ máu..."
+  },
+  {
+    "id": 117,
+    "start": "392.928",
+    "end": "393.758",
+    "duration": "0.830",
+    "text": "- Anh nói tiếp đi!"
+  },
+  {
+    "id": 118,
+    "start": "394.298",
+    "end": "396.368",
+    "duration": "2.070",
+    "text": "- Anh có nghe dân gian người ta thường nói không."
+  },
+  {
+    "id": 119,
+    "start": "398.288",
+    "end": "400.898",
+    "duration": "2.610",
+    "text": "Lúc trẻ thì sống năng nổ như dân Israel."
+  },
+  {
+    "id": 120,
+    "start": "401.178",
+    "end": "403.218",
+    "duration": "2.040",
+    "text": "Về già thì thong dong như Lão Tử."
+  },
+  {
+    "id": 121,
+    "start": "403.718",
+    "end": "404.098",
+    "duration": "0.380",
+    "text": "- Hà!"
+  },
+  {
+    "id": 122,
+    "start": "404.548",
+    "end": "405.148",
+    "duration": "0.600",
+    "text": "- Anh nói gì?"
+  },
+  {
+    "id": 123,
+    "start": "405.538",
+    "end": "406.168",
+    "duration": "0.630",
+    "text": "- Nói gì à?"
+  },
+  {
+    "id": 124,
+    "start": "406.388",
+    "end": "407.998",
+    "duration": "1.610",
+    "text": "Thế còn sứ mệnh của cá nhân tôi?"
+  },
+  {
+    "id": 125,
+    "start": "408.348",
+    "end": "409.838",
+    "duration": "1.490",
+    "text": "- Sứ mệnh của cá nhân anh?"
+  },
+  {
+    "id": 126,
+    "start": "410.358",
+    "end": "411.508",
+    "duration": "1.150",
+    "text": "Tôi hơi bị bất ngờ."
+  },
+  {
+    "id": 127,
+    "start": "411.828",
+    "end": "417.798",
+    "duration": "5.970",
+    "text": "Đút cái chai đựng đầy cát sỏi nước vào túi, ông Chí phẩy tay:\n- Thôi, chuyện ấy nói sau."
+  },
+  {
+    "id": 128,
+    "start": "418.088",
+    "end": "420.037",
+    "duration": "1.949",
+    "text": "Trước hết tôi muốn hỏi anh một việc đã."
+  },
+  {
+    "id": 129,
+    "start": "420.417",
+    "end": "425.697",
+    "duration": "5.280",
+    "text": "Hôm anh vào thăm tôi lúc tôi ở phòng nong tim ra, rồi ngủ, anh có thấy tôi nói mê không?"
+  },
+  {
+    "id": 130,
+    "start": "426.207",
+    "end": "426.547",
+    "duration": "0.340",
+    "text": "- Có!"
+  },
+  {
+    "id": 131,
+    "start": "427.007",
+    "end": "428.187",
+    "duration": "1.180",
+    "text": "- Anh có thấy tôi khóc không?"
+  },
+  {
+    "id": 132,
+    "start": "428.607",
+    "end": "428.937",
+    "duration": "0.330",
+    "text": "- Có!"
+  },
+  {
+    "id": 133,
+    "start": "429.317",
+    "end": "429.917",
+    "duration": "0.600",
+    "text": "- Thật à?"
+  },
+  {
+    "id": 134,
+    "start": "430.267",
+    "end": "430.517",
+    "duration": "0.250",
+    "text": "- Thật!"
+  },
+  {
+    "id": 135,
+    "start": "430.867",
+    "end": "431.737",
+    "duration": "0.870",
+    "text": "Khóc nức lên."
+  },
+  {
+    "id": 136,
+    "start": "431.877",
+    "end": "432.467",
+    "duration": "0.590",
+    "text": "Thành tiếng!"
+  },
+  {
+    "id": 137,
+    "start": "434.717",
+    "end": "437.887",
+    "duration": "3.170",
+    "text": "Ông Chí ngẩn người, rồi ông cúi đầu, gãi gãi gáy."
+  },
+  {
+    "id": 138,
+    "start": "438.247",
+    "end": "439.587",
+    "duration": "1.340",
+    "text": "Tôi nhìn ông, ngơ ngác."
+  },
+  {
+    "id": 139,
+    "start": "439.847",
+    "end": "440.627",
+    "duration": "0.780",
+    "text": "Thế là thế nào?"
+  },
+  {
+    "id": 140,
+    "start": "440.967",
+    "end": "441.497",
+    "duration": "0.530",
+    "text": "Thì ra..."
+  },
+  {
+    "id": 141,
+    "start": "441.767",
+    "end": "445.667",
+    "duration": "3.900",
+    "text": "ông Chí đã khóc trong cơn mê thiếp sau khi trải qua ca nong tim thật!"
+  },
+  {
+    "id": 142,
+    "start": "446.387",
+    "end": "447.797",
+    "duration": "1.410",
+    "text": "Ông Chí đã khóc mà không biết."
+  },
+  {
+    "id": 143,
+    "start": "448.127",
+    "end": "449.237",
+    "duration": "1.110",
+    "text": "Khóc trong cơn mê thiếp."
+  },
+  {
+    "id": 144,
+    "start": "449.607",
+    "end": "458.777",
+    "duration": "9.170",
+    "text": "Khóc vì những mối oan ức bấy lâu vẫn chôn sâu trong lòng và tưởng là đã chôn chặt dưới tầng sâu ba thước đất, đã khuây quên, đã cho nó ra khỏi trí nhớ."
+  },
+  {
+    "id": 145,
+    "start": "459.077",
+    "end": "475.997",
+    "duration": "16.920",
+    "text": "Đã cho nó ra khỏi trí nhớ vì nó chẳng có lý do gì mà không biến vào vô tăm tích trong cuộc sống sôi động, hào hùng tràn đầy hứng khởi, hành động nối tiếp hành động, chiến công nối tiếp chiến công, say mê là môi trường tồn tại như cơm ăn nước uống, như không khí hít thở hàng ngày."
+  },
+  {
+    "id": 146,
+    "start": "476.387",
+    "end": "479.667",
+    "duration": "3.280",
+    "text": "Vì cách mạng, kháng chiến là một ngày hội không có điểm dừng."
+  },
+  {
+    "id": 147,
+    "start": "479.967",
+    "end": "482.706",
+    "duration": "2.739",
+    "text": "Là giai cấp vô sản có thể tấn công lên cả trời."
+  },
+  {
+    "id": 148,
+    "start": "483.016",
+    "end": "488.206",
+    "duration": "5.190",
+    "text": "Là dù thân này có da ngựa bọc thây, thì khải hoàn ca vẫn vang rền trên môi chiến binh."
+  },
+  {
+    "id": 149,
+    "start": "488.636",
+    "end": "494.196",
+    "duration": "5.560",
+    "text": "Là đường trường chinh vẫn không chồn bước dẫu sốt run người và nắng mưa phai bạc áo hào hoa."
+  },
+  {
+    "id": 150,
+    "start": "494.756",
+    "end": "496.566",
+    "duration": "1.810",
+    "text": "Là nghiêng đồng đổ nước ra sông."
+  },
+  {
+    "id": 151,
+    "start": "496.856",
+    "end": "498.156",
+    "duration": "1.300",
+    "text": "Là thay trời làm mưa."
+  },
+  {
+    "id": 152,
+    "start": "498.426",
+    "end": "500.596",
+    "duration": "2.170",
+    "text": "Là tháng không tuần, tuần không chủ nhật."
+  },
+  {
+    "id": 153,
+    "start": "500.916",
+    "end": "502.736",
+    "duration": "1.820",
+    "text": "Là mưa lớn coi như mưa nhỏ."
+  },
+  {
+    "id": 154,
+    "start": "502.986",
+    "end": "504.676",
+    "duration": "1.690",
+    "text": "Là mưa nhỏ coi như không mưa."
+  },
+  {
+    "id": 155,
+    "start": "505.056",
+    "end": "508.836",
+    "duration": "3.780",
+    "text": "Là không chỉ mỗi bên gánh một thùng nước, mà là hai, ba kia."
+  },
+  {
+    "id": 156,
+    "start": "509.226",
+    "end": "518.346",
+    "duration": "9.120",
+    "text": "Thành ra, cái chuyện máy MTZ đổ ở bãi nương Thôn Ngựa Già, rồi bị kỷ luật lưu đảng một năm chỉ là chuyện nhỏ, không đáng nhớ."
+  },
+  {
+    "id": 157,
+    "start": "518.686",
+    "end": "521.976",
+    "duration": "3.290",
+    "text": "Chuyện khác kia, khóc vì chuyện khác cay đắng hơn kia."
+  },
+  {
+    "id": 158,
+    "start": "523.496",
+    "end": "524.446",
+    "duration": "0.950",
+    "text": "- Chuyện gì thế?"
+  },
+  {
+    "id": 159,
+    "start": "524.836",
+    "end": "526.976",
+    "duration": "2.140",
+    "text": "Nếu có thể, anh nói cho tôi nghe được không?"
+  },
+  {
+    "id": 160,
+    "start": "527.516",
+    "end": "528.616",
+    "duration": "1.100",
+    "text": "- Cay đắng thế đấy!"
+  },
+  {
+    "id": 161,
+    "start": "528.986",
+    "end": "536.396",
+    "duration": "7.410",
+    "text": "- Ông Chí nói, giọng đã bình tĩnh trở lại:\nTất nhiên là thế hệ các anh không thể cảm thông hết cái phần sâu xa của câu chuyện đâu."
+  },
+  {
+    "id": 162,
+    "start": "536.826",
+    "end": "544.676",
+    "duration": "7.850",
+    "text": "Ôi, những ngày Cách mạng tháng Tám long trời lở đất, nay nhắc đến vẫn còn rạo rực cả tâm can, làm sao mà các anh có được cảm xúc ấy."
+  },
+  {
+    "id": 163,
+    "start": "545.076",
+    "end": "551.066",
+    "duration": "5.990",
+    "text": "Bọn tôi, mười anh em trai làng Phù Lưu, chia làm ba mũi, tôi và một anh nữa ở bên tả."
+  },
+  {
+    "id": 164,
+    "start": "551.336",
+    "end": "552.626",
+    "duration": "1.290",
+    "text": "Một nhóm khác bên hữu."
+  },
+  {
+    "id": 165,
+    "start": "552.917",
+    "end": "554.587",
+    "duration": "1.670",
+    "text": "Tốp cuối cùng bọc lót phía sau."
+  },
+  {
+    "id": 166,
+    "start": "554.887",
+    "end": "561.257",
+    "duration": "6.370",
+    "text": "Đúng hẹn cầm mã tấu nhất tề xông vào huyện đường bắt trói tên tri huyện, tuyên bố thành lập chính quyền nhân dân."
+  },
+  {
+    "id": 167,
+    "start": "561.687",
+    "end": "571.396",
+    "duration": "9.709",
+    "text": "Thế mà một tháng sau, có một đoàn cán bộ tự xưng Việt Minh huyện trống dong cờ mở về làng, tuyên bố đây mới là Việt Minh chính thống, và bắt trói hết chúng tôi."
+  },
+  {
+    "id": 168,
+    "start": "571.686",
+    "end": "573.396",
+    "duration": "1.710",
+    "text": "Họ xử bắn ngay ba người."
+  },
+  {
+    "id": 169,
+    "start": "573.706",
+    "end": "575.546",
+    "duration": "1.840",
+    "text": "Còn tôi bị giam cùng sáu anh em."
+  },
+  {
+    "id": 170,
+    "start": "575.926",
+    "end": "578.927",
+    "duration": "3.001",
+    "text": "Đêm ấy, tôi liều mình vượt ngục và chạy ra Hà Nội."
+  },
+  {
+    "id": 171,
+    "start": "579.237",
+    "end": "580.987",
+    "duration": "1.750",
+    "text": "Đúng lúc có phong trào Nam tiến."
+  },
+  {
+    "id": 172,
+    "start": "581.337",
+    "end": "583.257",
+    "duration": "1.920",
+    "text": "Tại sao bọn tôi lại bị bắt bị giết?"
+  },
+  {
+    "id": 173,
+    "start": "583.517",
+    "end": "584.317",
+    "duration": "0.800",
+    "text": "Chẳng hiểu nữa."
+  },
+  {
+    "id": 174,
+    "start": "584.647",
+    "end": "590.897",
+    "duration": "6.250",
+    "text": "Nhưng sau này thì tôi đoán ra:\nHọ coi chúng tôi là bọn Việt Minh giả mạo, những kẻ tự phát, thiếu lãnh đạo."
+  },
+  {
+    "id": 175,
+    "start": "591.167",
+    "end": "593.117",
+    "duration": "1.950",
+    "text": "Chuyện thật đấy mà nghe có lạ không?"
+  },
+  {
+    "id": 176,
+    "start": "595.717",
+    "end": "596.687",
+    "duration": "0.970",
+    "text": "- Cách mạng là thế!"
+  },
+  {
+    "id": 177,
+    "start": "596.897",
+    "end": "599.497",
+    "duration": "2.600",
+    "text": "Sai lầm luôn đi đôi với cái gọi là phong trào."
+  },
+  {
+    "id": 178,
+    "start": "599.787",
+    "end": "603.367",
+    "duration": "3.580",
+    "text": "Cách mạng là việc chưa biết, trong đó có những khoảnh khắc điên rồ."
+  },
+  {
+    "id": 179,
+    "start": "603.667",
+    "end": "604.157",
+    "duration": "0.490",
+    "text": "Tôi nói."
+  },
+  {
+    "id": 180,
+    "start": "604.407",
+    "end": "610.337",
+    "duration": "5.930",
+    "text": "Ông Chí không để ý đến lời tôi, gật gù:\n- Nhưng mà có lẽ tôi khóc không phải chỉ vì nỗi oan của tôi."
+  },
+  {
+    "id": 181,
+    "start": "610.607",
+    "end": "611.717",
+    "duration": "1.110",
+    "text": "Mà còn vì người khác."
+  },
+  {
+    "id": 182,
+    "start": "612.017",
+    "end": "615.246",
+    "duration": "3.229",
+    "text": "Chính tôi đã mắc tội, gây oan khuất cho người đồng đội của mình."
+  },
+  {
+    "id": 183,
+    "start": "615.556",
+    "end": "616.216",
+    "duration": "0.660",
+    "text": "Chính tôi!"
+  },
+  {
+    "id": 184,
+    "start": "617.006",
+    "end": "621.866",
+    "duration": "4.860",
+    "text": "Im lặng một lát, ông Chí tiếp, tưởng là rầu rĩ mà không phải, rất nghiêm trang."
+  },
+  {
+    "id": 185,
+    "start": "622.386",
+    "end": "623.416",
+    "duration": "1.030",
+    "text": "- Tôi kể anh nghe."
+  },
+  {
+    "id": 186,
+    "start": "623.726",
+    "end": "631.986",
+    "duration": "8.260",
+    "text": "Đó là năm 1950, tôi là chủ nhiệm chính trị trung đoàn 345, đóng ở vùng Trà Lĩnh giáp ranh với địch, phía nam tỉnh Phú Yên."
+  },
+  {
+    "id": 187,
+    "start": "632.356",
+    "end": "636.266",
+    "duration": "3.910",
+    "text": "Đó là một vùng Công giáo toàn tòng, ở đây có ngôi nhà thờ lớn."
+  },
+  {
+    "id": 188,
+    "start": "636.586",
+    "end": "642.177",
+    "duration": "5.591",
+    "text": "Cha Khê ở đây đội lốt tôn giáo, dụ dỗ, dọa nạt lôi kéo dân toàn vùng chống lại Cách mạng."
+  },
+  {
+    "id": 189,
+    "start": "642.517",
+    "end": "647.797",
+    "duration": "5.280",
+    "text": "Chúng biến gác chuông nhà thờ thành trạm quan sát, đặt ụ súng, khống chế cả một địa bàn rộng."
+  },
+  {
+    "id": 190,
+    "start": "648.187",
+    "end": "655.026",
+    "duration": "6.839",
+    "text": "Chúng phục kích, lùng bắt chém giết cán bộ bộ đội, thủ tiêu quần chúng cách mạng, công khai lập đội dân vệ chống Cộng."
+  },
+  {
+    "id": 191,
+    "start": "655.336",
+    "end": "659.786",
+    "duration": "4.450",
+    "text": "Thuyết phục, cảnh cáo nhiều lần không xong, chúng tôi chủ trương phải thủ tiêu y."
+  },
+  {
+    "id": 192,
+    "start": "660.106",
+    "end": "664.806",
+    "duration": "4.700",
+    "text": "Kế hoạch được giao cho đồng chí Cang, bạn tôi, một trinh sát viên tài ba trung thành."
+  },
+  {
+    "id": 193,
+    "start": "665.226",
+    "end": "665.536",
+    "duration": "0.310",
+    "text": "Khổ!"
+  },
+  {
+    "id": 194,
+    "start": "665.836",
+    "end": "667.776",
+    "duration": "1.940",
+    "text": "Chiến công của đồng chí vừa được công nhận."
+  },
+  {
+    "id": 195,
+    "start": "668.046",
+    "end": "675.596",
+    "duration": "7.550",
+    "text": "Đồng chí vừa nhận huân chương Chiến công hạng Nhất thì bị quy tội là tên Việt gian chui vào hàng ngũ Cách mạng và phải đem ra xử tử hình."
+  },
+  {
+    "id": 196,
+    "start": "677.626",
+    "end": "681.896",
+    "duration": "4.270",
+    "text": "Và chính tôi đã phải ngồi ghế thẩm phán và nghị án trong phiên tòa ấy."
+  },
+  {
+    "id": 197,
+    "start": "682.206",
+    "end": "683.546",
+    "duration": "1.340",
+    "text": "Anh có biết vì sao không?"
+  },
+  {
+    "id": 198,
+    "start": "684.176",
+    "end": "684.936",
+    "duration": "0.760",
+    "text": "Tôi im lặng."
+  },
+  {
+    "id": 199,
+    "start": "685.306",
+    "end": "686.626",
+    "duration": "1.320",
+    "text": "Chuyện này với tỏi không lạ."
+  },
+  {
+    "id": 200,
+    "start": "686.926",
+    "end": "690.576",
+    "duration": "3.650",
+    "text": "Ông Chí không nói gì thêm, chúng tôi cùng chìm vào suy tư."
+  },
+  {
+    "id": 201,
+    "start": "691.006",
+    "end": "702.576",
+    "duration": "11.570",
+    "text": "Riêng tôi, nghĩ đến cái trớ trêu của cuộc sống, tôi nhận ra cuộc sống khắc nghiệt là thế đấy, và chỉ có thể hiểu nổi, không rơi vào cơn hoang mang kinh động khi ta hiểu ra phép biện chứng của lẽ đời."
+  },
+  {
+    "id": 202,
+    "start": "703.046",
+    "end": "711.506",
+    "duration": "8.460",
+    "text": "Thế đấy, ta sẽ khám phá ra chính ta ở một tầng mức tư tưởng thuộc một đẳng cấp cao hơn sau mỗi lần ta gắng gỏi vượt qua một nghịch cảnh."
+  },
+  {
+    "id": 203,
+    "start": "712.106",
+    "end": "716.786",
+    "duration": "4.680",
+    "text": "Ráng trèo lên một ngọn núi cao, ta sẽ có tầm nhìn xa rộng của mắt đại bàng."
+  },
+  {
+    "id": 204,
+    "start": "717.106",
+    "end": "724.586",
+    "duration": "7.480",
+    "text": "Ở đây ta cùng lúc phải biết cảm thụ giá trị ưu trội của đời sống tinh thần dù thường khi nó tỏ ra không có mãnh lực nội tại."
+  },
+  {
+    "id": 205,
+    "start": "724.976",
+    "end": "738.326",
+    "duration": "13.350",
+    "text": "Không có sức mạnh trực tiếp, không chiếm lĩnh con người dễ dàng, không cuốn hút mãnh liệt con người, đụng độ với giá trị vật chất, chúng thường thất bại, nhưng chính giá trị tinh thần, đạo đức mới thể hiện bản chất cao quý của con người."
+  },
+  {
+    "id": 206,
+    "start": "738.666",
+    "end": "754.747",
+    "duration": "16.081",
+    "text": "Do đó con người phải có sự nỗ lực đặc biệt, thậm chí phải sử dụng cả bảo bối là phép ép xác khổ hạnh, tức là con người phải tự tu chỉnh, để làm chủ được cái khó nhất là thông hiểu được cái giá trị và chân lý sâu xa vĩnh cửu tiềm ẩn ở trong nghịch cảnh."
+  },
+  {
+    "id": 207,
+    "start": "755.207",
+    "end": "764.977",
+    "duration": "9.770",
+    "text": "Cụ thể trong trường hợp này là phải vượt lên tầm minh triết đòi hỏi một sự hợp lý cân bằng giữa lợi ích của cá nhân với tập thể, giữa lợi ích trước mắt và lâu dài."
+  },
+  {
+    "id": 208,
+    "start": "765.377",
+    "end": "768.847",
+    "duration": "3.470",
+    "text": "Và đã là nhà cách mạng thì tuyệt đối không được rối trí!"
+  },
+  {
+    "id": 209,
+    "start": "771.317",
+    "end": "774.816",
+    "duration": "3.499",
+    "text": "Nghĩ vậy và tôi không khỏi lo âu khi ngước lên nhìn ông Chí."
+  },
+  {
+    "id": 210,
+    "start": "775.156",
+    "end": "784.696",
+    "duration": "9.540",
+    "text": "Tuy nhiên trái hẳn với ý nghĩ của tôi, ông bạn vong niên của tôi đứng dậy, mặt nhuộm ánh tím sẫm một buổi chiều cuối thu, nhưng không vương một chút u sầu bợn cợn."
+  },
+  {
+    "id": 211,
+    "start": "785.556",
+    "end": "787.566",
+    "duration": "2.010",
+    "text": "- Nhưng thôi, để những chuyện đó lại."
+  },
+  {
+    "id": 212,
+    "start": "787.906",
+    "end": "795.626",
+    "duration": "7.720",
+    "text": "Tôi báo tin vui để anh biết, cái ụ củ mỡ mà tôi trồng thí nghiệm ở góc sân ấy mà, tôi và cái Nga đã đào."
+  },
+  {
+    "id": 213,
+    "start": "795.866",
+    "end": "798.127",
+    "duration": "2.261",
+    "text": "Không ngờ thu được 30 ki lô củ."
+  },
+  {
+    "id": 214,
+    "start": "798.397",
+    "end": "802.237",
+    "duration": "3.840",
+    "text": "Suy ra, một hecta một năm có thể thu được 100 tấn củ."
+  },
+  {
+    "id": 215,
+    "start": "802.617",
+    "end": "802.917",
+    "duration": "0.300",
+    "text": "Trời!"
+  },
+  {
+    "id": 216,
+    "start": "803.187",
+    "end": "809.087",
+    "duration": "5.900",
+    "text": "Nghĩa là thừa sức đạt chuẩn quốc gia 50 triệu đồng một hecta như kế hoạch của các vị Trung ương đề ra."
+  },
+  {
+    "id": 217,
+    "start": "809.417",
+    "end": "812.877",
+    "duration": "3.460",
+    "text": "Mà theo cách làm của tôi thì lại rất đơn giản nhẹ nhàng."
+  },
+  {
+    "id": 218,
+    "start": "814.657",
+    "end": "818.767",
+    "duration": "4.110",
+    "text": "Ngẩng lên, tôi nhìn ông và ông nhận ra ngay trạng thái tinh thần của tôi."
+  },
+  {
+    "id": 219,
+    "start": "819.037",
+    "end": "822.517",
+    "duration": "3.480",
+    "text": "Ông cười xòa:\n- Tôi chưa dứt khỏi câu chuyện tôi khóc đâu."
+  },
+  {
+    "id": 220,
+    "start": "822.837",
+    "end": "827.897",
+    "duration": "5.060",
+    "text": "Vấn đề tóm lại chỉ là, cái nỗi cay đắng ấy khiến tôi càng phải ra sức rửa hận."
+  },
+  {
+    "id": 221,
+    "start": "828.317",
+    "end": "831.967",
+    "duration": "3.650",
+    "text": "Tất nhiên, cay cú không thể là động lực để con người đi xa được."
+  },
+  {
+    "id": 222,
+    "start": "832.277",
+    "end": "833.547",
+    "duration": "1.270",
+    "text": "Anh chưa từng như tôi."
+  },
+  {
+    "id": 223,
+    "start": "833.877",
+    "end": "837.737",
+    "duration": "3.860",
+    "text": "Anh không thể hiểu nổi cái sung sướng của người được dẫn dắt người khác đâu."
+  },
+  {
+    "id": 224,
+    "start": "838.027",
+    "end": "849.677",
+    "duration": "11.650",
+    "text": "Dạy người ta biết đẩy chiếc cày sau con trâu, biết đào mương làm thủy lợi, biết trồng cây cỏ ngọt, cũng như xông vào huyện sở bắt trói tên tri huyện gian ác, treo lá cờ đỏ lên nóc nhà bọn chúng..."
+  },
+  {
+    "id": 225,
+    "start": "850.097",
+    "end": "851.967",
+    "duration": "1.870",
+    "text": "sướng lắm, anh nhà báo ơi!"
+  },
+  {
+    "id": 226,
+    "start": "854.177",
+    "end": "869.867",
+    "duration": "15.690",
+    "text": "Không để tôi nói, ông tiếp tục đà lấn át tôi, bằng việc rút từ trong cái xắc cốt đeo bên sườn ra một xấp giấy, tờ còn mới, tờ đã ố vàng, tờ thuộc loại giấy phô tô trắng tinh, tờ loại giấy rơm, giấy gió, ấn vào tay tôi:\n- Anh xem đi!"
+  },
+  {
+    "id": 227,
+    "start": "870.257",
+    "end": "880.457",
+    "duration": "10.200",
+    "text": "Thư mời, bằng khen, giấy hẹn từ các tỉnh các huyện, các hội cựu chiến binh, các ủy ban mặt trận phường xã huyện tỉnh các nơi trong toàn quốc gửi cho tôi đấy."
+  },
+  {
+    "id": 228,
+    "start": "880.837",
+    "end": "882.527",
+    "duration": "1.690",
+    "text": "Không phải là để lấy lòng tôi đâu."
+  },
+  {
+    "id": 229,
+    "start": "882.887",
+    "end": "886.296",
+    "duration": "3.409",
+    "text": "Mấy tháng nằm chữa bệnh, nói thật với anh là tôi sốt ruột lắm."
+  },
+  {
+    "id": 230,
+    "start": "886.696",
+    "end": "889.807",
+    "duration": "3.111",
+    "text": "Các đồng chí ở cơ sở đang chờ mình, đang hẹn với mình."
+  },
+  {
+    "id": 231,
+    "start": "890.127",
+    "end": "893.547",
+    "duration": "3.420",
+    "text": "Tôi nghe được lời thỉnh cầu âm thầm tha thiết của các đồng chí ấy."
+  },
+  {
+    "id": 232,
+    "start": "894.287",
+    "end": "901.987",
+    "duration": "7.700",
+    "text": "Liếc qua vài tờ thư mời, bằng khen và giấy hẹn, tôi hiểu ngay nội dung của cả xấp giấy tờ rồi."
+  },
+  {
+    "id": 233,
+    "start": "902.267",
+    "end": "904.017",
+    "duration": "1.750",
+    "text": "Hai cô con gái ông Chí nói đúng."
+  },
+  {
+    "id": 234,
+    "start": "904.367",
+    "end": "907.867",
+    "duration": "3.500",
+    "text": "Chúng chỉ là sự lừa dối nấp sau những lời xã giao màu mè."
+  },
+  {
+    "id": 235,
+    "start": "908.247",
+    "end": "919.077",
+    "duration": "10.830",
+    "text": "Chúng chỉ là những chiếc bánh vẽ, những chiếc mặt nạ che đậy tiếng cười giễu nhại tai ác đối với một nhiệt tình không đúng chỗ và tội nghiệp thôi."
+  },
+  {
+    "id": 236,
+    "start": "919.577",
+    "end": "928.477",
+    "duration": "8.900",
+    "text": "Không nhận ra vẻ ái ngại, cảm thương của tôi, ông Chí lôi tiếp một tệp ảnh đã ố mờ của ông cũng từ trong chiếc xắc cốt giả da đỏ quết trầu ra."
+  },
+  {
+    "id": 237,
+    "start": "928.867",
+    "end": "937.447",
+    "duration": "8.580",
+    "text": "Rồi ông vung tay vỗ bồm bộp vào bộ ngực dán đói bệnh tật của mình, cao giọng:\n- Tôi còn nhiều dự định lắm, anh không biết được đâu."
+  },
+  {
+    "id": 238,
+    "start": "937.777",
+    "end": "952.437",
+    "duration": "14.660",
+    "text": "Trước hết, từ cái ụ trồng củ mỡ ở sân nhà tôi, tôi nghĩ ra kế hoạch phát triển tập đoàn cây dây leo, như củ mài, củ từ, củ tím cho các vùng núi như Tây Nguyên, Tây Bắc, Việt Bắc, nơi đồng bào còn nghèo khổ, còn thiếu ăn."
+  },
+  {
+    "id": 239,
+    "start": "952.747",
+    "end": "953.007",
+    "duration": "0.260",
+    "text": "Ha!"
+  },
+  {
+    "id": 240,
+    "start": "953.287",
+    "end": "953.937",
+    "duration": "0.650",
+    "text": "Tôi sẽ đi."
+  },
+  {
+    "id": 241,
+    "start": "955.117",
+    "end": "963.957",
+    "duration": "8.840",
+    "text": "Trước hết là lên Thôn Ngựa Già, Lao Mà Chải nơi tôi mang tiếng oan là đã để đổ máy kéo MTZ trên nương dốc bốn mươi lăm độ."
+  },
+  {
+    "id": 242,
+    "start": "964.367",
+    "end": "965.587",
+    "duration": "1.220",
+    "text": "Tôi còn nhớ tiếng Mông."
+  },
+  {
+    "id": 243,
+    "start": "965.837",
+    "end": "966.897",
+    "duration": "1.060",
+    "text": "Txí là cha."
+  },
+  {
+    "id": 244,
+    "start": "967.127",
+    "end": "968.067",
+    "duration": "0.940",
+    "text": "Nả là mẹ."
+  },
+  {
+    "id": 245,
+    "start": "968.327",
+    "end": "969.177",
+    "duration": "0.850",
+    "text": "Mùa là chị."
+  },
+  {
+    "id": 246,
+    "start": "969.447",
+    "end": "970.377",
+    "duration": "0.930",
+    "text": "Nhúa là con."
+  },
+  {
+    "id": 247,
+    "start": "970.577",
+    "end": "971.457",
+    "duration": "0.880",
+    "text": "Cú là tôi."
+  },
+  {
+    "id": 248,
+    "start": "971.707",
+    "end": "972.567",
+    "duration": "0.860",
+    "text": "Nào là ăn."
+  },
+  {
+    "id": 249,
+    "start": "972.807",
+    "end": "973.707",
+    "duration": "0.900",
+    "text": "Hau là uống."
+  },
+  {
+    "id": 250,
+    "start": "974.177",
+    "end": "975.307",
+    "duration": "1.130",
+    "text": "Tu nênh là con ngựa."
+  },
+  {
+    "id": 251,
+    "start": "975.607",
+    "end": "976.807",
+    "duration": "1.200",
+    "text": "Tu hù là con bò."
+  },
+  {
+    "id": 252,
+    "start": "977.097",
+    "end": "978.347",
+    "duration": "1.250",
+    "text": "Tu mào là con mèo."
+  },
+  {
+    "id": 253,
+    "start": "978.957",
+    "end": "980.717",
+    "duration": "1.760",
+    "text": "Cú bê hu Nguyễn Văn Chí."
+  },
+  {
+    "id": 254,
+    "start": "981.077",
+    "end": "982.417",
+    "duration": "1.340",
+    "text": "Tôi là Nguyễn Văn chí."
+  },
+  {
+    "id": 255,
+    "start": "982.777",
+    "end": "984.517",
+    "duration": "1.740",
+    "text": "Seo Mùa mổng ua tê?"
+  },
+  {
+    "id": 256,
+    "start": "985.007",
+    "end": "986.607",
+    "duration": "1.600",
+    "text": "Seo Mùa đi làm nương à?"
+  },
+  {
+    "id": 257,
+    "start": "986.907",
+    "end": "988.087",
+    "duration": "1.180",
+    "text": "Seo Mùa jông hứng!"
+  },
+  {
+    "id": 258,
+    "start": "988.457",
+    "end": "989.547",
+    "duration": "1.090",
+    "text": "Seo Mùa đẹp lắm!"
+  },
+  {
+    "id": 259,
+    "start": "989.947",
+    "end": "991.177",
+    "duration": "1.230",
+    "text": "Tôi phải trả nợ họ."
+  },
+  {
+    "id": 260,
+    "start": "991.477",
+    "end": "992.487",
+    "duration": "1.010",
+    "text": "Mà anh Khang này..."
+  },
+  {
+    "id": 261,
+    "start": "993.127",
+    "end": "993.837",
+    "duration": "0.710",
+    "text": "- Anh nói gì?"
+  },
+  {
+    "id": 262,
+    "start": "994.687",
+    "end": "998.097",
+    "duration": "3.410",
+    "text": "- Anh đừng tưởng tôi không biết hai đứa con gái của tôi chúng nói gì với anh."
+  },
+  {
+    "id": 263,
+    "start": "998.407",
+    "end": "999.107",
+    "duration": "0.700",
+    "text": "Nhưng không sao."
+  },
+  {
+    "id": 264,
+    "start": "999.317",
+    "end": "1000.047",
+    "duration": "0.730",
+    "text": "Không sao hết!"
+  },
+  {
+    "id": 265,
+    "start": "1000.427",
+    "end": "1005.267",
+    "duration": "4.840",
+    "text": "Là bởi vì chỉ nghĩ đến những cái dự án của tôi là tôi sung sướng đến quên ăn quên ngủ."
+  },
+  {
+    "id": 266,
+    "start": "1005.627",
+    "end": "1011.677",
+    "duration": "6.050",
+    "text": "Là tôi chỉ muốn bay ngay lên Tây Bắc, Tây Nguyên, đến với đồng bào, thét to lên rằng:\nBà con ơi!"
+  },
+  {
+    "id": 267,
+    "start": "1011.957",
+    "end": "1015.697",
+    "duration": "3.740",
+    "text": "Bảo bối thoát đói khổ, tiến lên giàu có là đây rồi."
+  },
+  {
+    "id": 268,
+    "start": "1016.667",
+    "end": "1027.638",
+    "duration": "10.971",
+    "text": "Được rồi, tôi sẽ lên gặp chủ nhiệm Ủy ban Dân tộc Quốc hội, sẽ gặp Bộ trưởng Quốc phòng, nhưng trước hết là lên gặp lãnh đạo tỉnh Lào Cai, nơi tôi đã bị họ kỷ luật lưu đảng đã."
+  },
+  {
+    "id": 269,
+    "start": "1027.968",
+    "end": "1028.308",
+    "duration": "0.340",
+    "text": "Hà!"
+  },
+  {
+    "id": 270,
+    "start": "1028.588",
+    "end": "1049.519",
+    "duration": "20.931",
+    "text": "Nói cho cùng, tôi chẳng nhìn lên trời, chẳng cần biết đến có Chúa trời, có thiên đường, có cõi niết bàn, có thánh thần hay có ma quỷ hay không, tôi không nhờ cậy vào đấng bậc nào hết, tôi cũng chẳng màng bất cứ một danh hiệu mỹ miều, một tí quyền lợi riêng tư về vật chất nào, tôi chỉ muốn thực hiện sứ mệnh của tôi, sứ mệnh một con người, cho ra con người!"
+  },
+  {
+    "id": 271,
+    "start": "1050.019",
+    "end": "1051.229",
+    "duration": "1.210",
+    "text": "Thôi chào anh!"
+  },
+  {
+    "id": 272,
+    "start": "1053.779",
+    "end": "1056.219",
+    "duration": "2.440",
+    "text": "Chẳng có gì có thể can ngăn được ông Chí rồi."
+  },
+  {
+    "id": 273,
+    "start": "1056.429",
+    "end": "1057.549",
+    "duration": "1.120",
+    "text": "Ông Chí đã ra đi."
+  },
+  {
+    "id": 274,
+    "start": "1057.969",
+    "end": "1060.539",
+    "duration": "2.570",
+    "text": "Ông Chí đã ra đi với sứ mệnh cao quý của mình."
+  },
+  {
+    "id": 275,
+    "start": "1060.899",
+    "end": "1093.109",
+    "duration": "32.210",
+    "text": "Thì tất nhiên là trong tâm ức thiên hạ đông tây kim cổ đã từng có bóng hình chàng hiệp sĩ Đôn Kihôtê xứ Mantra, vì mê man sách kiếm hiệp mà mài bộ thương kiếm rỉ, cưỡi con ngựa Rossinante, kéo theo anh chàng nông dân Săngsô Pasa, lên đường dấn thân vào kiếp hiệp sĩ diệt ác trừ tà, phù thiện, trong ký ức có mỹ nhân là nàng Đunxinê quê mùa ở xứ Toboso, gây nên bao nhiêu chuyện động trời, lố lăng, làm trò cười cho thiên hạ mà cảm động lòng người đó sao!"
+  },
+  {
+    "id": 276,
+    "start": "1093.659",
+    "end": "1099.880",
+    "duration": "6.221",
+    "text": "Nhưng, hỡi ôi, thời đại hiệp sĩ đã mãn cùng cái nôi đẻ ra nó là chế độ quân chủ phong kiến từ lâu rồi."
+  },
+  {
+    "id": 277,
+    "start": "1100.370",
+    "end": "1104.690",
+    "duration": "4.320",
+    "text": "Ông Chí không phải là chàng quý tộc xứ Tây Ban Nha sống trong thời trung cổ."
+  },
+  {
+    "id": 278,
+    "start": "1105.020",
+    "end": "1106.720",
+    "duration": "1.700",
+    "text": "Đây là ông già Nguyễn Văn Chí."
+  },
+  {
+    "id": 279,
+    "start": "1107.020",
+    "end": "1108.750",
+    "duration": "1.730",
+    "text": "Một cư dân làng quê nước Việt."
+  },
+  {
+    "id": 280,
+    "start": "1109.020",
+    "end": "1114.520",
+    "duration": "5.500",
+    "text": "Một quân nhân, một con người mà các trang tiểu sử cá nhân đều neo vào mỗi biến động của đất nước."
+  },
+  {
+    "id": 281,
+    "start": "1114.890",
+    "end": "1117.190",
+    "duration": "2.300",
+    "text": "Một hỏa diệm sơn lý tưởng và lãng mạn."
+  },
+  {
+    "id": 282,
+    "start": "1117.600",
+    "end": "1119.570",
+    "duration": "1.970",
+    "text": "Nhưng ông Chí cũng là một cơn mê đắm."
+  },
+  {
+    "id": 283,
+    "start": "1119.860",
+    "end": "1121.690",
+    "duration": "1.830",
+    "text": "Một khát vọng nấu nung chân thành."
+  },
+  {
+    "id": 284,
+    "start": "1121.960",
+    "end": "1124.410",
+    "duration": "2.450",
+    "text": "Một lò lửa tự sinh ra, tự đốt cháy."
+  },
+  {
+    "id": 285,
+    "start": "1124.770",
+    "end": "1126.550",
+    "duration": "1.780",
+    "text": "Và một nỗi đau đời thấp thoáng."
+  },
+  {
+    "id": 286,
+    "start": "1126.980",
+    "end": "1144.111",
+    "duration": "17.131",
+    "text": "Khác với Đôn Kihôtê, ông già quý tộc châu Âu nọ nhiễm thói hoang tưởng từ các trang sách kiếm hiệp, ông Chí của chúng tôi là con đẻ của một công cuộc giải phóng con người vĩ đại, một cuộc cách mạng đầy tính nhân văn: của cả niềm hứng khởi bất tận cùng nỗi đắng đót xót xa của nó!"
+  },
+  {
+    "id": 287,
+    "start": "1144.521",
+    "end": "1147.861",
+    "duration": "3.340",
+    "text": "Ông Chí đã đem cả con người cùng cá tính mình vào cuộc cách mạng."
+  },
+  {
+    "id": 288,
+    "start": "1148.211",
+    "end": "1152.501",
+    "duration": "4.290",
+    "text": "Và từ tác động ngược chiều, ông lại chính là sản phẩm đích thực của cuộc cách mạng nọ."
+  },
+  {
+    "id": 289,
+    "start": "1152.901",
+    "end": "1165.462",
+    "duration": "12.561",
+    "text": "Trong hành động của ông, có cốt cách hào hoa, có âm hưởng hùng tâm tráng khí của lớp người đầu tiên bén duyên cùng cách mạng, có sứ mệnh cao cả vừa giàu tính hiện thực vừa chan chứa chất ảo vọng của cách mạng."
+  },
+  {
+    "id": 290,
+    "start": "1167.552",
+    "end": "1170.102",
+    "duration": "2.550",
+    "text": "Cách mạng nào mà chẳng nhiễm thuộc tính ảo tưởng!"
+  },
+  {
+    "id": 291,
+    "start": "1170.402",
+    "end": "1170.942",
+    "duration": "0.540",
+    "text": "Chao ôi!"
+  },
+  {
+    "id": 292,
+    "start": "1171.182",
+    "end": "1190.531",
+    "duration": "19.349",
+    "text": "Nào có ai dám chắc rằng trong những ngày này, ảo giác về một sức mạnh vạn năng của cách mạng đã nhiễm vào ông không là chất dinh dưỡng chủ yếu nuôi sống ông, giống như nhà quý tộc Đôn Kihôtê hằng sống bằng cái sứ mệnh tự phong, bằng danh dự của kỵ sĩ, bằng tình yêu đơn phương tự mình tưởng tượng ra với cô nàng Đunxinê hàng xóm."
+  },
+  {
+    "id": 293,
+    "start": "1191.291",
+    "end": "1197.022",
+    "duration": "5.731",
+    "text": "Chẳng có gì cản ngăn được ông Chí nữa rồi, kể cả căn bệnh hiểm nghèo đang ẩn náu trong trái tim ốm yếu của ông."
+  },
+  {
+    "id": 294,
+    "start": "1197.462",
+    "end": "1202.923",
+    "duration": "5.461",
+    "text": "Mà hình như chính là căn bệnh lại trở thành một thôi thúc ông hăng hái hơn trong dự định."
+  },
+  {
+    "id": 295,
+    "start": "1203.983",
+    "end": "1206.403",
+    "duration": "2.420",
+    "text": "Tuy vậy ông Chí chưa thể ra đi ngay được."
+  },
+  {
+    "id": 296,
+    "start": "1206.713",
+    "end": "1213.523",
+    "duration": "6.810",
+    "text": "Vì Nga muốn ông ở lại vài ngày để chàng rể tương lai được đến trình diện ông, một cách hoãn binh của cô gái cả."
+  },
+  {
+    "id": 297,
+    "start": "1213.873",
+    "end": "1218.443",
+    "duration": "4.570",
+    "text": "Thêm nữa, và đây là một lý do đặc biệt, ông còn muốn chia tay cô giáo Loan."
+  },
+  {
+    "id": 298,
+    "start": "1218.923",
+    "end": "1219.493",
+    "duration": "0.570",
+    "text": "Phải rồi."
+  },
+  {
+    "id": 299,
+    "start": "1219.813",
+    "end": "1221.853",
+    "duration": "2.040",
+    "text": "Ông rất cần gặp cô giáo Loan để chia tay."
+  },
+  {
+    "id": 300,
+    "start": "1222.223",
+    "end": "1225.013",
+    "duration": "2.790",
+    "text": "Tại sao hôm ấy đang đánh cầu lông bác lại bỏ về?"
+  },
+  {
+    "id": 301,
+    "start": "1225.443",
+    "end": "1226.183",
+    "duration": "0.740",
+    "text": "Tôi không quen."
+  },
+  {
+    "id": 302,
+    "start": "1226.433",
+    "end": "1228.864",
+    "duration": "2.431",
+    "text": "Con người tôi không phải sinh ra để đứng ở chỗ ấy."
+  },
+  {
+    "id": 303,
+    "start": "1229.284",
+    "end": "1231.223",
+    "duration": "1.939",
+    "text": "Bác đã đọc cuốn sách em tặng chưa?"
+  },
+  {
+    "id": 304,
+    "start": "1231.663",
+    "end": "1233.613",
+    "duration": "1.950",
+    "text": "Mới đọc được vở Ôtenlô."
+  },
+  {
+    "id": 305,
+    "start": "1234.333",
+    "end": "1237.474",
+    "duration": "3.141",
+    "text": "Tôi thích ông này, trừ tính ghen đến độ độc ác của ông."
+  },
+  {
+    "id": 306,
+    "start": "1237.794",
+    "end": "1244.454",
+    "duration": "6.660",
+    "text": "Đã dự phòng cả những điều ngóc ngách câu chuyện có thể sẽ nói với nhau như thế rồi, chỉ còn chờ cơ hội thôi."
+  },
+  {
+    "id": 307,
+    "start": "1247.384",
+    "end": "1267.095",
+    "duration": "19.711",
+    "text": "Không có cách nào có thể xoay chuyển tình hình nữa rồi, nhưng sau ngày gặp mặt chàng rể tương lai, với ông việc gặp cô giáo Loan trước khi lên đường tiếp tục cuộc phiêu du thực hiện sứ mệnh vừa cao cả vừa lãng mạn vừa mang tính hoang tưởng của ông, càng lúc càng trở nên vô cùng khẩn thiết còn vì một nguyên do là ông không thể tiết lộ với ai."
+  },
+  {
+    "id": 308,
+    "start": "1267.525",
+    "end": "1270.306",
+    "duration": "2.781",
+    "text": "Thế đấy, cái đời sống tinh thần của con người ta!"
+  },
+  {
+    "id": 309,
+    "start": "1270.596",
+    "end": "1274.956",
+    "duration": "4.360",
+    "text": "Cái cuộc sống ấy âm thầm mà đa tạp và diễn tiến thật lắm bất ngờ!"
+  },
+  {
+    "id": 310,
+    "start": "1275.326",
+    "end": "1280.817",
+    "duration": "5.491",
+    "text": "Bất ngờ vì trong những ngày này ông đã có những giấc mơ, những giấc mơ kì lạ chưa bao giờ có."
+  },
+  {
+    "id": 311,
+    "start": "1281.197",
+    "end": "1283.297",
+    "duration": "2.100",
+    "text": "Ông vốn là loại người nằm ngủ không mơ."
+  },
+  {
+    "id": 312,
+    "start": "1283.627",
+    "end": "1288.937",
+    "duration": "5.310",
+    "text": "Nhưng tình hình đó đã khác lắm rồi từ ngày ông thực hiện cuộc phẫu thuận tim mạch can thiệp qua da."
+  },
+  {
+    "id": 313,
+    "start": "1289.277",
+    "end": "1291.977",
+    "duration": "2.700",
+    "text": "Và đây là một giấc mơ chính ông cũng không thể ngờ."
+  },
+  {
+    "id": 314,
+    "start": "1293.457",
+    "end": "1299.808",
+    "duration": "6.351",
+    "text": "Vì hóa ra giáo sư Trần Quán Anh, tổ sư của môn Nam học đã có những kiến giải vô cùng là chính xác."
+  },
+  {
+    "id": 315,
+    "start": "1300.238",
+    "end": "1306.828",
+    "duration": "6.590",
+    "text": "Tuổi xấp xỉ bảy mươi vẫn còn là một suối nguồn tươi trẻ, nghĩa là cây cổ thụ vẫn còn có năng lực trổ hoa."
+  },
+  {
+    "id": 316,
+    "start": "1307.287",
+    "end": "1312.168",
+    "duration": "4.881",
+    "text": "Dưới cái vẻ khắc khổ khô kháo của ông, vẫn rì rào tuôn chảy mạch sống ái tình."
+  },
+  {
+    "id": 317,
+    "start": "1312.598",
+    "end": "1315.668",
+    "duration": "3.070",
+    "text": "Tựu trung ông vẫn sở hữu một nguồn sinh lực dồi dào."
+  },
+  {
+    "id": 318,
+    "start": "1315.908",
+    "end": "1324.378",
+    "duration": "8.470",
+    "text": "Hay thực sự là ông mới trở lại tuổi thanh xuân từ lúc dọn nhà về đây và trở thành người hàng xóm bên tả của cô giáo tươi đẹp nhân hậu nọ."
+  },
+  {
+    "id": 319,
+    "start": "1324.888",
+    "end": "1327.688",
+    "duration": "2.800",
+    "text": "Cái đẹp bao giờ mà chẳng có sức lan truyền, tái sinh."
+  },
+  {
+    "id": 320,
+    "start": "1328.038",
+    "end": "1332.609",
+    "duration": "4.571",
+    "text": "Như cảm giác ông nhận ra buổi đánh cầu lông với bên kia là cô giáo Loan đó thôi!"
+  },
+  {
+    "id": 321,
+    "start": "1332.979",
+    "end": "1340.139",
+    "duration": "7.160",
+    "text": "Chao ôi, thế thì hoàn toàn có thể giải thích một cách rất hợp lý về những giấc mơ liên tục xảy ra trong mấy đêm gần đây của ông."
+  },
+  {
+    "id": 322,
+    "start": "1340.639",
+    "end": "1348.420",
+    "duration": "7.781",
+    "text": "Phơrớt, ông thầy của môn phân tâm học người Đức, bảo:\nGiấc mơ là sự siêu lệch những dồn nén, những ham muốn thầm kín ban ngày."
+  },
+  {
+    "id": 323,
+    "start": "1348.850",
+    "end": "1357.230",
+    "duration": "8.380",
+    "text": "Vâng, nếu thế thì những giấc mơ của ông chính là sự lắp ghép lộn xộn, rất đầu ngô mình sở nhưng lại dễ hiểu vô cùng."
+  },
+  {
+    "id": 324,
+    "start": "1357.541",
+    "end": "1363.531",
+    "duration": "5.990",
+    "text": "Là bởi vì, rõ ràng đây là cuộc ân ái đã diễn ra giữa ông và người vợ đã khuất hơn chục năm nay."
+  },
+  {
+    "id": 325,
+    "start": "1363.881",
+    "end": "1372.171",
+    "duration": "8.290",
+    "text": "Người ấy, mẹ đẻ của hai đứa con gái của ông, cái Nga và cái Mai, mất vì căn bệnh trọng, nhưng vẫn sống mãi trong tâm khảm ông."
+  },
+  {
+    "id": 326,
+    "start": "1372.571",
+    "end": "1375.481",
+    "duration": "2.910",
+    "text": "Chưa bao giờ ông mơ thấy nàng, ngoại trừ lần này."
+  },
+  {
+    "id": 327,
+    "start": "1375.851",
+    "end": "1377.681",
+    "duration": "1.830",
+    "text": "Ôi người đàn bà yêu dấu của ông!"
+  },
+  {
+    "id": 328,
+    "start": "1377.941",
+    "end": "1393.751",
+    "duration": "15.810",
+    "text": "Ông quen thuộc đến từng miền cơ thể nàng, từ hơi thở nồng nàn tỏa ra từ làn da, nhất là từ hai bầu vú mẩy mang và hai hốc nách của nàng, cùng vẻ cuống quýt mãi mãi không sao khắc phục được của nàng mỗi khi nàng giao hoan cùng chồng."
+  },
+  {
+    "id": 329,
+    "start": "1394.751",
+    "end": "1405.272",
+    "duration": "10.521",
+    "text": "Cứ như đó là đêm tân hôn, nàng luôn cuống quýt và có phần còn sợ hãi trước điểu bí ẩn và thiêng liêng của cuộc chung đụng vợ chổng, dẫu hai người đã hai mặt con với nhau."
+  },
+  {
+    "id": 330,
+    "start": "1406.022",
+    "end": "1408.312",
+    "duration": "2.290",
+    "text": "Chằng bao giờ nàng khỏa thân trọn vẹn trước ông."
+  },
+  {
+    "id": 331,
+    "start": "1408.662",
+    "end": "1414.432",
+    "duration": "5.770",
+    "text": "Nhưng cuộc tính giao nào cũng là sự hòa hợp từ thể xác tới tâm hổn không thể tuyệt diệu hơn."
+  },
+  {
+    "id": 332,
+    "start": "1414.911",
+    "end": "1419.911",
+    "duration": "5.000",
+    "text": "Nhưng lần này thì hình như khác với mọi lần, nàng nói nhiều hơn và dạn dĩ hơn."
+  },
+  {
+    "id": 333,
+    "start": "1421.971",
+    "end": "1424.681",
+    "duration": "2.710",
+    "text": "Có lẽ là vì nàng thấy ông buồn và mệt mỏi."
+  },
+  {
+    "id": 334,
+    "start": "1425.231",
+    "end": "1428.381",
+    "duration": "3.150",
+    "text": "Đó có thể là nàng thương ông, muốn chia sẻ với ông."
+  },
+  {
+    "id": 335,
+    "start": "1428.961",
+    "end": "1430.941",
+    "duration": "1.980",
+    "text": "“Em muốn anh quên mọi rủi ro đi”."
+  },
+  {
+    "id": 336,
+    "start": "1431.421",
+    "end": "1432.421",
+    "duration": "1.000",
+    "text": "Nàng thỏ thẻ."
+  },
+  {
+    "id": 337,
+    "start": "1432.931",
+    "end": "1443.441",
+    "duration": "10.510",
+    "text": "Đấy có thể là lần ông kể cho nàng nghe chuyện ông bị ép điều máy MTZ lên vùng đồi nương trên Thôn Ngựa Già rồi máy bị đổ và ông nhận kỷ luật lưu đảng một năm."
+  },
+  {
+    "id": 338,
+    "start": "1444.361",
+    "end": "1459.161",
+    "duration": "14.800",
+    "text": "Hay đó là lần ông kể cho nàng nghe chuyện ông thoát chết chạy ra Hà Nội nhập vào cuộc Nam tiến vì bị đám cán bộ Việt Minh trên huyện về làng tranh công, vu cho bọn ông là Việt Minh giả, là lũ du thủ du thực, rồi bắt giam để thủ tiêu?"
+  },
+  {
+    "id": 339,
+    "start": "1459.551",
+    "end": "1460.931",
+    "duration": "1.380",
+    "text": "Có thể là cả hai."
+  },
+  {
+    "id": 340,
+    "start": "1462.671",
+    "end": "1465.511",
+    "duration": "2.840",
+    "text": "Và bây giờ nghĩ lại ông lại thấy cũng vui vui."
+  },
+  {
+    "id": 341,
+    "start": "1465.931",
+    "end": "1472.471",
+    "duration": "6.540",
+    "text": "Hóa ra không phải chuyện chăn gối vợ chổng chỉ là phương tiện để hòa giải những eo sèo cụm cọ ngày ngày của người ta."
+  },
+  {
+    "id": 342,
+    "start": "1472.891",
+    "end": "1493.742",
+    "duration": "20.851",
+    "text": "Mà giường chiếu còn là nơi vợ chồng từ hai con người hai nỗi buồn vui được sẻ chia, được hòa nhập trở nên một, nghĩa là tan hòa trọn vẹn vào nhau theo cả nghĩa đen và nghĩa bóng, và hình tượng đẩu gối tay ấp còn là biểu tượng cho sự khăng khít dắt dìu nhau vượt qua mọi lao lung khốn khó trong cuộc sống của mỗi người."
+  },
+  {
+    "id": 343,
+    "start": "1495.142",
+    "end": "1499.532",
+    "duration": "4.390",
+    "text": "Giao ái trong tình yêu là khoảng khác mình thấy mình qua người đàn bà."
+  },
+  {
+    "id": 344,
+    "start": "1499.952",
+    "end": "1508.183",
+    "duration": "8.231",
+    "text": "Mà không có chuyện ân ái này thì cuộc sống làm gì có cái gọi là sung sướng, gọi là đau khổ, và cuộc sống sẽ tẻ nhạt đi bao nhiêu!"
+  },
+  {
+    "id": 345,
+    "start": "1508.833",
+    "end": "1510.653",
+    "duration": "1.820",
+    "text": "Ông đã nhận ra điều lạ lùng đó."
+  },
+  {
+    "id": 346,
+    "start": "1510.973",
+    "end": "1526.653",
+    "duration": "15.680",
+    "text": "Nhất là khi ông nhận ra, lần gần gụi này, khác hẳn những lần trước, nghĩa là nàng chủ động hoàn toàn, từ bữa ăn tối, nấu cho ông một nồi canh cá chép, rồi ghé tai ông, hóm hỉnh:\n“Ngư nhục sinh tinh, anh có biết các cụ nói thế không”."
+  },
+  {
+    "id": 347,
+    "start": "1527.153",
+    "end": "1534.254",
+    "duration": "7.101",
+    "text": "Tiếp đó lúc chập tối với lời giục hai đứa con đi ngủ sớm, còn mình thì vào toilet tắm gội đến cả giờ đồng hổ."
+  },
+  {
+    "id": 348,
+    "start": "1534.744",
+    "end": "1543.684",
+    "duration": "8.940",
+    "text": "Và khi ông bước vào phòng thì đèn ngủ đã tỏa một màn sáng hồng dìu dịu, còn đó đây đã thoang thoảng một mùi thơm như nương hoa phong lan."
+  },
+  {
+    "id": 349,
+    "start": "1544.514",
+    "end": "1553.184",
+    "duration": "8.670",
+    "text": "Trong hơi chăn ấm sực lên, ông ngạc nhiên vô cùng vì nhận ra nàng đã khỏa thân từ lúc nào và giơ hai cánh tay ngọc ngà lên để đón ông."
+  },
+  {
+    "id": 350,
+    "start": "1553.584",
+    "end": "1557.734",
+    "duration": "4.150",
+    "text": "Chao ôi, đây là ảo ảnh thần tiên là cuộc sống ảo hình nơi cõi thực?"
+  },
+  {
+    "id": 351,
+    "start": "1558.164",
+    "end": "1568.004",
+    "duration": "9.840",
+    "text": "Ông run lên từng nhịp khi nhận ra các vùng da thịt của nàng bỗng như phát tỏa một làn sóng điện khiến ông chạm vào lập tức người ông nóng ran lên như lửa chàm."
+  },
+  {
+    "id": 352,
+    "start": "1568.504",
+    "end": "1573.064",
+    "duration": "4.560",
+    "text": "Tuy vậy, ông vẫn ghé tai nàng, thú thật rằng, hôm nay ông không được khỏe."
+  },
+  {
+    "id": 353,
+    "start": "1573.574",
+    "end": "1581.884",
+    "duration": "8.310",
+    "text": "Giá như mọi khi thì thế nào nàng cũng cười nhẹ nhẹ:\n“Thế thì anh ngủ đi một giấc cho lại sức đã, rồi khi anh khỏe lại thì em chiều anh”."
+  },
+  {
+    "id": 354,
+    "start": "1582.414",
+    "end": "1583.394",
+    "duration": "0.980",
+    "text": "Mọi khi là thế."
+  },
+  {
+    "id": 355,
+    "start": "1583.684",
+    "end": "1585.044",
+    "duration": "1.360",
+    "text": "Nhưng hôm nay thì lạ chưa."
+  },
+  {
+    "id": 356,
+    "start": "1585.314",
+    "end": "1600.224",
+    "duration": "14.910",
+    "text": "Nàng cứ sục tay sang ông, lần cởi từng chiếc khuy áo của ông, trụt được cả cái may ô của ông ra, rồi thì đến cái quần, trời ạ, ngủ với em mà còn mặc quần dài thắt lưng da, bộ đang ngủ ở lán trại trong hầm à!"
+  },
+  {
+    "id": 357,
+    "start": "1600.654",
+    "end": "1601.904",
+    "duration": "1.250",
+    "text": "Đúng là nàng nói thế."
+  },
+  {
+    "id": 358,
+    "start": "1602.224",
+    "end": "1615.814",
+    "duration": "13.590",
+    "text": "Rồi, nàng ghé tai ông, và khi ông một lẩn nữa thú thật là hồi này anh già rồi, anh đã đặt 3 cái stent ở động mạch vành rồi, không chắc anh đã vào em được đâu thì nàng quát khe khẽ:\n“Quên bệnh tật đi."
+  },
+  {
+    "id": 359,
+    "start": "1616.064",
+    "end": "1616.955",
+    "duration": "0.891",
+    "text": "Em sẽ giúp anh!"
+  },
+  {
+    "id": 360,
+    "start": "1617.225",
+    "end": "1618.745",
+    "duration": "1.520",
+    "text": "Anh sẽ vào được bên trong em!"
+  },
+  {
+    "id": 361,
+    "start": "1619.055",
+    "end": "1622.755",
+    "duration": "3.700",
+    "text": "Chiều em đi, em đang tuổi hồi xuân mà, nào tự tin lên!”."
+  },
+  {
+    "id": 362,
+    "start": "1623.195",
+    "end": "1631.254",
+    "duration": "8.059",
+    "text": "Rồi khác hẳn mọi lần, lần này, nàng chủ động, xốc lên trên người nàng, ôi tấm thân phụ nữ hồi xuân như một lượm sóng biển."
+  },
+  {
+    "id": 363,
+    "start": "1631.574",
+    "end": "1633.884",
+    "duration": "2.310",
+    "text": "Lượm sóng trùm lấy ông dìm ông xuống."
+  },
+  {
+    "id": 364,
+    "start": "1634.214",
+    "end": "1644.964",
+    "duration": "10.750",
+    "text": "Nhận ra hai bắp chân phốp pháp của nàng vừa duỗi dài đã lại co lên, ông thấy mình như vừa sụt xuống, vừa lọt xuống một khoảng không hẹp khít rịt và ấm ấm là lạ."
+  },
+  {
+    "id": 365,
+    "start": "1645.375",
+    "end": "1647.025",
+    "duration": "1.650",
+    "text": "Ông đã thâm nhập sâu vào nàng."
+  },
+  {
+    "id": 366,
+    "start": "1647.345",
+    "end": "1650.554",
+    "duration": "3.209",
+    "text": "Điều đó, đã được nàng xác nhận bằng nụ cười hài lòng."
+  },
+  {
+    "id": 367,
+    "start": "1650.954",
+    "end": "1657.465",
+    "duration": "6.511",
+    "text": "Và ngay lập tức là câu nói quen thuộc và hóm nghịch của nàng thầm vang ngay bên tai ông:\n“Tốt rồi đấy!"
+  },
+  {
+    "id": 368,
+    "start": "1657.755",
+    "end": "1659.255",
+    "duration": "1.500",
+    "text": "Vào sâu bên trong em rồi đấy."
+  },
+  {
+    "id": 369,
+    "start": "1659.595",
+    "end": "1662.165",
+    "duration": "2.570",
+    "text": "Thế mà kêu yếu, yếu đâu mà yếu."
+  },
+  {
+    "id": 370,
+    "start": "1662.425",
+    "end": "1663.755",
+    "duration": "1.330",
+    "text": "Hay là không yêu em nữa rồi!"
+  },
+  {
+    "id": 371,
+    "start": "1664.115",
+    "end": "1668.215",
+    "duration": "4.100",
+    "text": "Nào bây giờ cho anh cưỡi cái máy kéo này lên Thôn Ngựa Già đi."
+  },
+  {
+    "id": 372,
+    "start": "1668.535",
+    "end": "1671.135",
+    "duration": "2.600",
+    "text": "Cày khỏe vào, không sợ máy này đổ đâu!”."
+  },
+  {
+    "id": 373,
+    "start": "1671.545",
+    "end": "1671.915",
+    "duration": "0.370",
+    "text": "Chà!"
+  },
+  {
+    "id": 374,
+    "start": "1672.515",
+    "end": "1676.155",
+    "duration": "3.640",
+    "text": "Nàng dí dỏm hay hài hước và hiếu dục như bản tính."
+  },
+  {
+    "id": 375,
+    "start": "1676.505",
+    "end": "1681.145",
+    "duration": "4.640",
+    "text": "Và lúc này nghe nàng nói tất cả mọi buỗn phiền của ông đều đã trôi tuột đi đâu hết."
+  },
+  {
+    "id": 376,
+    "start": "1681.545",
+    "end": "1689.975",
+    "duration": "8.430",
+    "text": "Kỳ diệu chưa là cái cảm hứng ái ân, niềm vui sống trần gian lớn lao, thiên cổ sự vĩ đại, một lý do tồn tại của con người."
+  },
+  {
+    "id": 377,
+    "start": "1690.315",
+    "end": "1694.455",
+    "duration": "4.140",
+    "text": "Ông thấy mình bồng bềnh như đang nổi trên một mặt sóng xôm xốp êm ả."
+  },
+  {
+    "id": 378,
+    "start": "1694.855",
+    "end": "1697.925",
+    "duration": "3.070",
+    "text": "Ông nhận ra đó là hai bầu vú trắng nhuễ nhoại."
+  },
+  {
+    "id": 379,
+    "start": "1698.205",
+    "end": "1706.085",
+    "duration": "7.880",
+    "text": "Và từ đó tỏa ra mùi thơm của hơi sữa, nguồn dinh dưỡng thời ấu thơ của cái Nga và cái Mai, hai đứa con ông."
+  },
+  {
+    "id": 380,
+    "start": "1706.635",
+    "end": "1715.726",
+    "duration": "9.091",
+    "text": "Lát sau, điều kỳ lạ và thú vị còn là đang trong nhịp điệu giao tình quen thuộc, ông bỗng thấy hai vòng chân nàng trên lưng ông nới lỏng dần."
+  },
+  {
+    "id": 381,
+    "start": "1716.056",
+    "end": "1718.215",
+    "duration": "2.159",
+    "text": "Và ông chưa kịp hỏi nàng:\nVì sao thế?"
+  },
+  {
+    "id": 382,
+    "start": "1718.495",
+    "end": "1721.135",
+    "duration": "2.640",
+    "text": "Thì nàng đã hơi nghển dậy, ghé tai ông."
+  },
+  {
+    "id": 383,
+    "start": "1721.505",
+    "end": "1721.775",
+    "duration": "0.270",
+    "text": "“Anh!"
+  },
+  {
+    "id": 384,
+    "start": "1722.075",
+    "end": "1723.775",
+    "duration": "1.700",
+    "text": "Sao anh lại quên đi bít tất chân."
+  },
+  {
+    "id": 385,
+    "start": "1724.175",
+    "end": "1725.516",
+    "duration": "1.341",
+    "text": "Em thấy chân anh lạnh quá."
+  },
+  {
+    "id": 386,
+    "start": "1725.846",
+    "end": "1727.396",
+    "duration": "1.550",
+    "text": "Để em đi bít tất cho nhé."
+  },
+  {
+    "id": 387,
+    "start": "1727.786",
+    "end": "1730.846",
+    "duration": "3.060",
+    "text": "Còn nhớ cách lộn ngược bít tất như em bảo hôm nào không?”."
+  },
+  {
+    "id": 388,
+    "start": "1732.416",
+    "end": "1732.796",
+    "duration": "0.380",
+    "text": "Trời!"
+  },
+  {
+    "id": 389,
+    "start": "1733.116",
+    "end": "1742.346",
+    "duration": "9.230",
+    "text": "Giật thót mình, ông nhận ra, lần này thì không còn là giọng nói quen thuộc của người phụ nữ đã cùng ông sinh ra hai đứa con gái là cái Nga và cái Mai nữa."
+  },
+  {
+    "id": 390,
+    "start": "1742.746",
+    "end": "1746.736",
+    "duration": "3.990",
+    "text": "Đây là một giọng nói khác, là lạ, nhưng cũng có thể nhận ra."
+  },
+  {
+    "id": 391,
+    "start": "1747.056",
+    "end": "1750.807",
+    "duration": "3.751",
+    "text": "Thắc thỏm và ngơ ngàng, ông liền chồm lên để nhìn lại mặt nàng."
+  },
+  {
+    "id": 392,
+    "start": "1751.137",
+    "end": "1755.267",
+    "duration": "4.130",
+    "text": "Nhắm ngay mắt lại, ông lắc lắc đầu như để rũ mình ra khỏi ảo ảnh."
+  },
+  {
+    "id": 393,
+    "start": "1755.627",
+    "end": "1758.087",
+    "duration": "2.460",
+    "text": "Không phải là gương mặt người vợ yêu dấu của ông."
+  },
+  {
+    "id": 394,
+    "start": "1758.377",
+    "end": "1765.008",
+    "duration": "6.631",
+    "text": "Đó là gương mặt của một người phụ nữ có cặp mắt phượng và một đôi môi nhỏ, đỏ tươi."
+  },
+  {
+    "id": 395,
+    "start": "1765.288",
+    "end": "1765.738",
+    "duration": "0.450",
+    "text": "Loan!"
+  },
+  {
+    "id": 396,
+    "start": "1766.088",
+    "end": "1766.828",
+    "duration": "0.740",
+    "text": "Cô giáo Loan!"
+  },
+  {
+    "id": 397,
+    "start": "1767.418",
+    "end": "1768.648",
+    "duration": "1.230",
+    "text": "Kau đắc amui xiêm nắc!"
+  },
+  {
+    "id": 398,
+    "start": "1769.058",
+    "end": "1769.908",
+    "duration": "0.850",
+    "text": "Anh yêu em."
+  },
+  {
+    "id": 399,
+    "start": "1770.248",
+    "end": "1771.268",
+    "duration": "1.020",
+    "text": "Lạ lùng chưa!"
+  },
+  {
+    "id": 400,
+    "start": "1771.698",
+    "end": "1776.149",
+    "duration": "4.451",
+    "text": "Như đã sẵn sàng cả chục năm rồi, ông bật lên một câu nói bằng tiếng Ba Na."
+  },
+  {
+    "id": 401,
+    "start": "1776.449",
+    "end": "1777.989",
+    "duration": "1.540",
+    "text": "Và giấc mơ lạ chấm dứt."
+  },
+  {
+    "id": 402,
+    "start": "1778.479",
+    "end": "1785.919",
+    "duration": "7.440",
+    "text": "Những giấc mơ chắp nối những điều đã xảy ra và chưa từng xảy ra, đã trở thành một khắc khoải khiến ông Chí chưa thể ra đi ngay."
+  },
+  {
+    "id": 403,
+    "start": "1786.359",
+    "end": "1800.459",
+    "duration": "14.100",
+    "text": "Bây giờ thì dẫu có ngượng ngùng rằng vào tuổi này rồi mà còn nói chuyện yêu đương thì có phần dơ dáng mà vẫn phải thú nhận rằng toàn bộ hành động, ý nghĩ của tôi từ lâu rồi trong âm thầm vẫn hướng về em đó, Loan à."
+  },
+  {
+    "id": 404,
+    "start": "1801.289",
+    "end": "1813.170",
+    "duration": "11.881",
+    "text": "Và như thế có nghĩa là, mỗi khi tôi dự định làm một việc gì đó, đặc biệt là mỗi khi tôi đi xa, nghĩ đến em tôi lại thấy tràn trề niềm hào hứng và thấy đời đẹp đến tráng lệ huy hoàng."
+  },
+  {
+    "id": 405,
+    "start": "1814.040",
+    "end": "1819.290",
+    "duration": "5.250",
+    "text": "Giờ thì tôi đã hiểu điều hệ trọng này nữa, Loan ơi, đàn ông một mình thì không là gì cả."
+  },
+  {
+    "id": 406,
+    "start": "1819.620",
+    "end": "1823.921",
+    "duration": "4.301",
+    "text": "Đàn ông là đích thực khi được bổ sung bằng người phụ nữ mà anh ta yêu dấu."
+  },
+  {
+    "id": 407,
+    "start": "1826.610",
+    "end": "1836.321",
+    "duration": "9.711",
+    "text": "Nghĩ rằng thế nào thì cũng phải gặp cô giáo Loan rồi thì mới có thể ra đi được, vậy mà đã mấy ngày qua rồi, ông Chí không thực hiện ý định da diết ấy của mình."
+  },
+  {
+    "id": 408,
+    "start": "1836.841",
+    "end": "1841.481",
+    "duration": "4.640",
+    "text": "Đơn giản chỉ là vì lần nào định vào gặp cô cũng thấy cô đang có khách."
+  },
+  {
+    "id": 409,
+    "start": "1842.181",
+    "end": "1849.361",
+    "duration": "7.180",
+    "text": "Cô giáo có cặp mắt xanh phản ánh màu da trời mùa thu đẹp, dịu hiền như thế, lẽ nào vây quanh cô lại ít lời cầu hôn?"
+  },
+  {
+    "id": 410,
+    "start": "1849.861",
+    "end": "1851.221",
+    "duration": "1.360",
+    "text": "Một gã chuyên viên cao cấp."
+  },
+  {
+    "id": 411,
+    "start": "1851.561",
+    "end": "1853.272",
+    "duration": "1.711",
+    "text": "Một vị đại tá ăn lương tướng."
+  },
+  {
+    "id": 412,
+    "start": "1853.572",
+    "end": "1854.602",
+    "duration": "1.030",
+    "text": "Một ngài thứ trưởng."
+  },
+  {
+    "id": 413,
+    "start": "1854.892",
+    "end": "1856.382",
+    "duration": "1.490",
+    "text": "Một nhà đầu tư Việt Kiều."
+  },
+  {
+    "id": 414,
+    "start": "1856.742",
+    "end": "1860.582",
+    "duration": "3.840",
+    "text": "Đông nhất là lớp doanh nhân mới hình thành cậy mình lắm bạc nhiều tiền."
+  },
+  {
+    "id": 415,
+    "start": "1861.202",
+    "end": "1870.293",
+    "duration": "9.091",
+    "text": "Hôm cuối cùng, không thể dừng được nữa, ông định bước vào thì nhận thấy ông Khái, ông bí thư, người thượng đế xếp sắp là láng giếng đang có mặt."
+  },
+  {
+    "id": 416,
+    "start": "1870.863",
+    "end": "1878.943",
+    "duration": "8.080",
+    "text": "Ông bí thư, con người mô phạm đang nói:\n- Tôi thật không hiểu cái nhà ông Chí là con người thế nào."
+  },
+  {
+    "id": 417,
+    "start": "1879.283",
+    "end": "1882.362",
+    "duration": "3.079",
+    "text": "Lông bông cả đời rồi mà có làm được cái việc gì ra hồn."
+  },
+  {
+    "id": 418,
+    "start": "1883.732",
+    "end": "1891.803",
+    "duration": "8.071",
+    "text": "- Sao em nghe nói mỗi lần bác ấy đi đâu đó về đều đem trình chi ủy thư khen và nhận xét rất tốt của các cơ sở."
+  },
+  {
+    "id": 419,
+    "start": "1892.493",
+    "end": "1893.243",
+    "duration": "0.750",
+    "text": "- Ôi giời!"
+  },
+  {
+    "id": 420,
+    "start": "1893.633",
+    "end": "1895.833",
+    "duration": "2.200",
+    "text": "Chẳng qua là mấy lời đãi bôi ấy mà!"
+  },
+  {
+    "id": 421,
+    "start": "1896.513",
+    "end": "1898.623",
+    "duration": "2.110",
+    "text": "- Thực ra cũng hiếm người được như bác ấy!"
+  },
+  {
+    "id": 422,
+    "start": "1899.073",
+    "end": "1900.993",
+    "duration": "1.920",
+    "text": "- Có mà hâm hấp, dở người."
+  },
+  {
+    "id": 423,
+    "start": "1901.253",
+    "end": "1913.953",
+    "duration": "12.700",
+    "text": "Đấy, hôm vừa rồi lại đến trình với chi ủy chúng tôi kế hoạch đi lên cái Thôn Ngựa Già, Ngựa Trẻ gì ở tít tịt cái huyện khỉ ho cò gáy gì đó, dự án trồng cái cây khỉ gió đồng lăn gì đấy."
+  },
+  {
+    "id": 424,
+    "start": "1914.363",
+    "end": "1915.473",
+    "duration": "1.110",
+    "text": "Rõ hão huyền!"
+  },
+  {
+    "id": 425,
+    "start": "1916.733",
+    "end": "1918.794",
+    "duration": "2.061",
+    "text": "- Em nghĩ thiện ý bác ấy là..."
+  },
+  {
+    "id": 426,
+    "start": "1919.294",
+    "end": "1921.554",
+    "duration": "2.260",
+    "text": "- Viển vông, chả bõ làm trò hề."
+  },
+  {
+    "id": 427,
+    "start": "1921.924",
+    "end": "1923.604",
+    "duration": "1.680",
+    "text": "Chuông khánh còn chẳng ăn ai."
+  },
+  {
+    "id": 428,
+    "start": "1923.854",
+    "end": "1926.244",
+    "duration": "2.390",
+    "text": "Huống hồ mảnh chĩnh vứt ngoài bụi tre!"
+  },
+  {
+    "id": 429,
+    "start": "1926.554",
+    "end": "1944.015",
+    "duration": "17.461",
+    "text": "Đấy cô xem, trung ương người ta có bao nhiêu là trường đại học rồi viện nọ viện kia, hàng trăm hàng nghìn tiến sĩ kỹ sư nông nghiệp, trình độ khoa học kỹ thuật đầy mình, có đâu lại còn cần đến cái thứ ông ấy đi dậy bảo làm bếp dầu không bấc với tấm lợp chất lượng cao."
+  },
+  {
+    "id": 430,
+    "start": "1944.334",
+    "end": "1945.974",
+    "duration": "1.640",
+    "text": "Rõ là ngửa váy hứng dừa."
+  },
+  {
+    "id": 431,
+    "start": "1946.304",
+    "end": "1949.384",
+    "duration": "3.080",
+    "text": "Dừa đâu không thấy gió đưa vào l..."
+  },
+  {
+    "id": 432,
+    "start": "1949.384",
+    "end": "1952.224",
+    "duration": "2.840",
+    "text": "May mà ông Khái kịp hãm tiếng nói cuối cùng."
+  },
+  {
+    "id": 433,
+    "start": "1952.554",
+    "end": "1955.444",
+    "duration": "2.890",
+    "text": "Nhưng như thế cũng thừa đủ để cô giáo đỏ bầm mặt."
+  },
+  {
+    "id": 434,
+    "start": "1955.804",
+    "end": "1963.304",
+    "duration": "7.500",
+    "text": "Cô vội quay mặt đi, khe khẽ:\n- Nhưng mà theo em thì bác ấy vẫn là người đáng kính trọng hơn là đáng chê cười."
+  },
+  {
+    "id": 435,
+    "start": "1963.884",
+    "end": "1964.614",
+    "duration": "0.730",
+    "text": "- Kính trọng?"
+  },
+  {
+    "id": 436,
+    "start": "1965.154",
+    "end": "1965.534",
+    "duration": "0.380",
+    "text": "- Vâng!"
+  },
+  {
+    "id": 437,
+    "start": "1965.884",
+    "end": "1973.914",
+    "duration": "8.030",
+    "text": "Có người nói:\nĐừng nên phán xét một ngày xem ta thu hoạch được gì, mà nên phán xét xem ta một ngày bằng những gì ta đã gieo mầm?"
+  },
+  {
+    "id": 438,
+    "start": "1974.714",
+    "end": "1976.574",
+    "duration": "1.860",
+    "text": "- Cô chỉ có thuộc sách vở thôi."
+  },
+  {
+    "id": 439,
+    "start": "1976.864",
+    "end": "1978.884",
+    "duration": "2.020",
+    "text": "Chứ cô đã biết gì về lão này nào !"
+  },
+  {
+    "id": 440,
+    "start": "1979.254",
+    "end": "1982.264",
+    "duration": "3.010",
+    "text": "Cách mạng cái quái gì cái lão dở dở ương ương này!"
+  },
+  {
+    "id": 441,
+    "start": "1983.334",
+    "end": "1988.335",
+    "duration": "5.001",
+    "text": "Dân làng lão toàn loại du thủ du thực đầu trộm đuôi cướp, ngỗ ngược có tiếng."
+  },
+  {
+    "id": 442,
+    "start": "1988.775",
+    "end": "2008.256",
+    "duration": "19.481",
+    "text": "Tháng Tám năm 1945 tự phát như toán cướp nổi lên bắt tri huyện, xưng hùng xưng bá, hóa ra chỉ là một lũ cơ hội, bị Việt Minh trừ khử chạy vào nam xưng là Nam Tiến, rồi lợi dụng lúc tranh tối tranh sáng hỗn quân hỗn quan, chui vào đảng, leo dần lên chức vụ nọ chức vụ kia."
+  },
+  {
+    "id": 443,
+    "start": "2008.656",
+    "end": "2010.677",
+    "duration": "2.021",
+    "text": "Bây giờ có dám ở yên một chỗ đâu."
+  },
+  {
+    "id": 444,
+    "start": "2010.997",
+    "end": "2014.087",
+    "duration": "3.090",
+    "text": "Giả danh cách mạng lên các vùng dân tộc để trốn lẩn đấy."
+  },
+  {
+    "id": 445,
+    "start": "2014.647",
+    "end": "2016.607",
+    "duration": "1.960",
+    "text": "Còn tội giết bậy đồng chí mình kia."
+  },
+  {
+    "id": 446,
+    "start": "2016.977",
+    "end": "2019.187",
+    "duration": "2.210",
+    "text": "Tôi gần đây đi điều tra mới biết về lão."
+  },
+  {
+    "id": 447,
+    "start": "2019.517",
+    "end": "2029.637",
+    "duration": "10.120",
+    "text": "Mới hiểu vì sao về thời gian hoạt động cách mạng theo tự khai thì lão cũng như tôi, cũng là từ lúc tiền khởi nghĩa, nhưng có được công nhận là lão thành cách mạng như tôi đâu."
+  },
+  {
+    "id": 448,
+    "start": "2029.997",
+    "end": "2032.677",
+    "duration": "2.680",
+    "text": "Nằm viện tim mạch vừa rồi có được miễn phí đâu."
+  },
+  {
+    "id": 449,
+    "start": "2033.057",
+    "end": "2033.367",
+    "duration": "0.310",
+    "text": "Khổ!"
+  },
+  {
+    "id": 450,
+    "start": "2033.657",
+    "end": "2039.737",
+    "duration": "6.080",
+    "text": "Hai đứa con gái sấp ngửa vay vỏ mãi mới đủ gần một trăm năm mươi triệu trả viện phí cho bố đấy chứ!"
+  },
+  {
+    "id": 451,
+    "start": "2040.117",
+    "end": "2042.187",
+    "duration": "2.070",
+    "text": "Đúng là cái tội cái vạ cho con cái!"
+  },
+  {
+    "id": 452,
+    "start": "2043.027",
+    "end": "2067.325",
+    "duration": "24.298",
+    "text": "Chẹp miệng, ông Khái ngước lên, cái nhìn vừa sỗ vừa khát muốn bừng dậy trong đôi mắt nhỏ của ông, như hai mũi nhọn lia vào khuôn ngực tròn đầy của cô giáo cùng lúc với cái đầu lưỡi lo le đưa ra đưa vào, giọng ông bỗng rộn rực hẳn lên:\n- Loan này, vừa rồi nhà lão ấy có giỗ, anh rất lạ là tại sao em lại có thể sang, ngồi chung mâm với lão ấy đấy!"
+  },
+  {
+    "id": 453,
+    "start": "2067.805",
+    "end": "2069.445",
+    "duration": "1.640",
+    "text": "Người ba đấng của ba loài."
+  },
+  {
+    "id": 454,
+    "start": "2069.766",
+    "end": "2074.938",
+    "duration": "5.172",
+    "text": "Anh vì là cấp ủy nên phải tạm coi lão như đồng chí, nhưng trong thâm tâm thì..."
+  },
+  {
+    "id": 455,
+    "start": "2075.808",
+    "end": "2087.513",
+    "duration": "11.705",
+    "text": "Đã quá ngưỡng chịu đựng từ lúc nãy, giờ đây, giọt nước đã tràn miệng ly, cô giáo Loan đỏ sẫm mặt liền nói lời xin lỗi và đứng dậy đi vào căn buồng toilet đặt ở phía phòng ngoài."
+  },
+  {
+    "id": 456,
+    "start": "2087.913",
+    "end": "2092.635",
+    "duration": "4.722",
+    "text": "Và thật hết sức vô lý, ông Khái như chớp được thời cơ, liền bật dậy theo."
+  },
+  {
+    "id": 457,
+    "start": "2093.515",
+    "end": "2095.696",
+    "duration": "2.181",
+    "text": "Chuyện gì đã xảy ra trong căn buồng nhỏ vậy?"
+  },
+  {
+    "id": 458,
+    "start": "2096.026",
+    "end": "2097.407",
+    "duration": "1.381",
+    "text": "Ông Chí không thể biết."
+  },
+  {
+    "id": 459,
+    "start": "2097.777",
+    "end": "2110.360",
+    "duration": "12.583",
+    "text": "Lúc ấy, sốt ruột vì chờ đợi đã lâu, ông liền đẩy cửa bước vào với cái xắc cốt giả da đeo bên sườn và cuốn sách Năm vở bi kịch của Shakespeare trên tay."
+  },
+  {
+    "id": 460,
+    "start": "2112.680",
+    "end": "2119.733",
+    "duration": "7.053",
+    "text": "Qua làn kính mờ ở cánh cửa toilet, ông thấy lờ nhờ hình bóng ông Khái vừa choàng hai tay ôm cô giáo."
+  },
+  {
+    "id": 461,
+    "start": "2120.403",
+    "end": "2121.854",
+    "duration": "1.451",
+    "text": "Không được thế, bác Khái!"
+  },
+  {
+    "id": 462,
+    "start": "2122.804",
+    "end": "2124.965",
+    "duration": "2.161",
+    "text": "Ông nghe rõ tiếng cô giáo kêu thất thanh."
+  },
+  {
+    "id": 463,
+    "start": "2125.305",
+    "end": "2127.656",
+    "duration": "2.351",
+    "text": "Tiếp đó là tiếng giãy giụa và giằng co."
+  },
+  {
+    "id": 464,
+    "start": "2128.046",
+    "end": "2136.439",
+    "duration": "8.393",
+    "text": "Rồi cánh cửa bung mở và ông Khái mất đà do bị xô đẩy, ngã giập xuống sàn nhà trán đập vào cái ghế con đặt ở cạnh cửa."
+  },
+  {
+    "id": 465,
+    "start": "2137.409",
+    "end": "2138.050",
+    "duration": "0.641",
+    "text": "- Chào Loan!"
+  },
+  {
+    "id": 466,
+    "start": "2138.660",
+    "end": "2141.821",
+    "duration": "3.161",
+    "text": "Ông Chí lật bật đôi môi khô nẻ, và vội quay đi."
+  },
+  {
+    "id": 467,
+    "start": "2142.271",
+    "end": "2164.222",
+    "duration": "21.951",
+    "text": "Vì không nỡ nhìn thấy cảnh ông Khái lồm cồm bò dậy, một tay ốp lên vùng trán sưng u đỏ bầm, một tay ôm bụng và lùi lũi đi ra cửa; trong khi đó cô giáo, từ trong toilet bước ra, mặt đỏ bừng vì xấu hổ, vừa xốc lại áo quần, sửa lại chiếc khăn voan màu hồng sắp bị tuột ra khỏi cổ và đang vuốt lại mớ tóc rối trên đầu."
+  },
+  {
+    "id": 468,
+    "start": "2165.701",
+    "end": "2166.282",
+    "duration": "0.581",
+    "text": "- Chào Loan!"
+  },
+  {
+    "id": 469,
+    "start": "2166.652",
+    "end": "2170.403",
+    "duration": "3.751",
+    "text": "Tôi sang để chào Loan, chiểu nay tôi đi xa một thời gian."
+  },
+  {
+    "id": 470,
+    "start": "2171.633",
+    "end": "2172.334",
+    "duration": "0.701",
+    "text": "- Anh ngồi đi!"
+  },
+  {
+    "id": 471,
+    "start": "2172.574",
+    "end": "2174.025",
+    "duration": "1.451",
+    "text": "Có gì đâu mà anh vội thế!"
+  },
+  {
+    "id": 472,
+    "start": "2174.715",
+    "end": "2175.575",
+    "duration": "0.860",
+    "text": "- Thôi, Loan à."
+  },
+  {
+    "id": 473,
+    "start": "2176.025",
+    "end": "2178.006",
+    "duration": "1.981",
+    "text": "Tôi chỉ muốn nói với Loan một câu thôi."
+  },
+  {
+    "id": 474,
+    "start": "2178.526",
+    "end": "2182.508",
+    "duration": "3.982",
+    "text": "Đó là cái câu hôm nào tôi nói là bí mật, là còn nợ Loan đấy."
+  },
+  {
+    "id": 475,
+    "start": "2182.948",
+    "end": "2186.169",
+    "duration": "3.221",
+    "text": "Câu đó là tiếng Ba Na:\nKau đắc amai xà nắc."
+  },
+  {
+    "id": 476,
+    "start": "2186.739",
+    "end": "2187.789",
+    "duration": "1.050",
+    "text": "Nghĩa của nó là gì?"
+  },
+  {
+    "id": 477,
+    "start": "2188.169",
+    "end": "2191.950",
+    "duration": "3.781",
+    "text": "Đó là câu tướng quân Ôtenlô thổ lộ với nàng Đetxđêmôna."
+  },
+  {
+    "id": 478,
+    "start": "2192.389",
+    "end": "2197.771",
+    "duration": "5.382",
+    "text": "Loan đọc dòng thứ 21 trang 112 trong vở kịch Ôtenlô thì sẽ hiểu."
+  },
+  {
+    "id": 479,
+    "start": "2198.351",
+    "end": "2199.361",
+    "duration": "1.010",
+    "text": "Thôi, chào em!"
+  },
+  {
+    "id": 480,
+    "start": "2201.082",
+    "end": "2202.152",
+    "duration": "1.070",
+    "text": "Ông Chí đi rồi."
+  },
+  {
+    "id": 481,
+    "start": "2202.482",
+    "end": "2209.275",
+    "duration": "6.793",
+    "text": "Nhưng bóng hình ông còn quanh quất đâu đây, trong ý nghĩ của tôi, trong nỗi niềm lo âu và thương nhớ của hai cô con gái."
+  },
+  {
+    "id": 482,
+    "start": "2209.775",
+    "end": "2211.837",
+    "duration": "2.062",
+    "text": "Cuối cùng thì không ngoài dự đoán của tôi."
+  },
+  {
+    "id": 483,
+    "start": "2212.177",
+    "end": "2220.631",
+    "duration": "8.454",
+    "text": "Tuần lễ thứ hai kể từ ngày ông Chí lên đường với sứ mệnh của một kẻ mang trên vai trách nhiệm với cuộc đời này, cô con gái cả ông Chí sang tôi."
+  },
+  {
+    "id": 484,
+    "start": "2222.151",
+    "end": "2224.543",
+    "duration": "2.392",
+    "text": "- Chú có cách nào giúp chúng cháu không, chú Khang?"
+  },
+  {
+    "id": 485,
+    "start": "2224.543",
+    "end": "2233.657",
+    "duration": "9.114",
+    "text": "Lại vẫn là cái câu nói khẩn thiết và cặp mắt đen láy vời vợi buồn lo, Nga cho biết, ông Chí đã lên tới Thôn Ngựa Già."
+  },
+  {
+    "id": 486,
+    "start": "2234.007",
+    "end": "2243.590",
+    "duration": "9.583",
+    "text": "Không may, đúng lúc thời tiết chuyển mùa, băng giá tràn mọi nẻo, sau khi cuốc bộ hai ngày quá vất vả, nên ông bị sưng phổi, phải vào bệnh viện chữa trị."
+  },
+  {
+    "id": 487,
+    "start": "2245.220",
+    "end": "2254.903",
+    "duration": "9.683",
+    "text": "Đỡ đỡ thì xã đang cùng huyện bận triển khai công việc vụ xuân trồng thí điểm lúa mì, nên người ta chỉ cám ơn rồi hẹn ông đến vụ mùa sẽ tiếp ông."
+  },
+  {
+    "id": 488,
+    "start": "2255.354",
+    "end": "2259.136",
+    "duration": "3.782",
+    "text": "Không nao núng, ông Chí lại dầm mưa lạnh đi đến các thôn bên cạnh."
+  },
+  {
+    "id": 489,
+    "start": "2259.536",
+    "end": "2270.263",
+    "duration": "10.727",
+    "text": "Tiếc thay là ở đâu cũng vậy, người ta đều nói:\nDự án trồng cây củ dây leo của bác rất hay, chúng tôi xin ghi nhận công lao và nhiệt tình của bác, nhưng để chúng tôi nghiên cứu thêm."
+  },
+  {
+    "id": 490,
+    "start": "2271.093",
+    "end": "2276.055",
+    "duration": "4.962",
+    "text": "Chẳng sao hết, cầm mấy tờ giấy khen ngợi lấy lòng, ông Chí lại rong ruổi trên đường."
+  },
+  {
+    "id": 491,
+    "start": "2276.495",
+    "end": "2279.767",
+    "duration": "3.272",
+    "text": "Chẳng sao hết, ông Chí không bao giờ nản lòng thối chí."
+  },
+  {
+    "id": 492,
+    "start": "2280.167",
+    "end": "2289.832",
+    "duration": "9.665",
+    "text": "Cũng có thể là với ông hạnh phúc không phải là đi tới đích, mà là niềm vui trên mỗi chặng đường, là niềm phấn chấn vô biên về vai trò quan trọng do mình tưởng tượng ra."
+  },
+  {
+    "id": 493,
+    "start": "2290.212",
+    "end": "2293.895",
+    "duration": "3.683",
+    "text": "Ông là một nhân vật cần thiết, không thể vắng mặt trong cuộc sống này!"
+  },
+  {
+    "id": 494,
+    "start": "2294.505",
+    "end": "2294.715",
+    "duration": "0.210",
+    "text": "Chà!"
+  },
+  {
+    "id": 495,
+    "start": "2295.065",
+    "end": "2308.504",
+    "duration": "13.439",
+    "text": "Cứ đà này, ông còn có thể đi khắp Tây Bắc, Việt Bắc, rồi trở về Tây Nguyên cũng chưa biết chừng, lạy trời cho ba cái stent đặt trong động mạch vành vẫn liên thông, dẫn chuyển dòng máu nóng vào nuôi dưỡng con tim ốm yếu của ông."
+  },
+  {
+    "id": 496,
+    "start": "2308.934",
+    "end": "2309.444",
+    "duration": "0.510",
+    "text": "Ông đi."
+  },
+  {
+    "id": 497,
+    "start": "2309.724",
+    "end": "2310.534",
+    "duration": "0.810",
+    "text": "Mũ lá cọ."
+  },
+  {
+    "id": 498,
+    "start": "2310.854",
+    "end": "2311.664",
+    "duration": "0.810",
+    "text": "Giày da trâu."
+  },
+  {
+    "id": 499,
+    "start": "2311.914",
+    "end": "2312.824",
+    "duration": "0.910",
+    "text": "Áo đại cán."
+  },
+  {
+    "id": 500,
+    "start": "2313.054",
+    "end": "2315.015",
+    "duration": "1.961",
+    "text": "Xắc cốt da đỏ quạch bên sườn."
+  },
+  {
+    "id": 501,
+    "start": "2315.355",
+    "end": "2317.966",
+    "duration": "2.611",
+    "text": "Một xác thân gầy gò, xương xẩu, tật bệnh."
+  },
+  {
+    "id": 502,
+    "start": "2318.296",
+    "end": "2319.136",
+    "duration": "0.840",
+    "text": "Không ngựa nghẽo."
+  },
+  {
+    "id": 503,
+    "start": "2319.196",
+    "end": "2320.026",
+    "duration": "0.830",
+    "text": "Không phụ tá."
+  },
+  {
+    "id": 504,
+    "start": "2320.396",
+    "end": "2323.098",
+    "duration": "2.702",
+    "text": "Một thân một mình phong trần trên đường đời gió bụi."
+  },
+  {
+    "id": 505,
+    "start": "2323.488",
+    "end": "2329.791",
+    "duration": "6.303",
+    "text": "Ông là thượng khách của bà con, chứ làm gì có ai dám phỉnh phờ, lừa gạt, giễu nhại, bỡn cợt ông."
+  },
+  {
+    "id": 506,
+    "start": "2330.091",
+    "end": "2338.715",
+    "duration": "8.624",
+    "text": "Có chăng là chút cay đắng tàng ẩn mà vì nó trong mê man đã có lúc chảy nước mắt, nhưng chính là vì thế mà lại càng ngạo nghễ đàng hoàng."
+  },
+  {
+    "id": 507,
+    "start": "2339.125",
+    "end": "2339.605",
+    "duration": "0.480",
+    "text": "Ông đi."
+  },
+  {
+    "id": 508,
+    "start": "2339.905",
+    "end": "2343.437",
+    "duration": "3.532",
+    "text": "Bà con ở mọi nơi lúc này đang chờ ông, đang mong ngóng ông."
+  },
+  {
+    "id": 509,
+    "start": "2345.797",
+    "end": "2346.738",
+    "duration": "0.941",
+    "text": "- Khổ lắm chú ơi!"
+  },
+  {
+    "id": 510,
+    "start": "2347.008",
+    "end": "2348.388",
+    "duration": "1.380",
+    "text": "Bố cháu mê lú rồi!"
+  },
+  {
+    "id": 511,
+    "start": "2349.248",
+    "end": "2356.080",
+    "duration": "6.832",
+    "text": "Lần này nữa thì vẫn là cô con gái cả của ông Chí mếu máo, nghẹn lời:\n- Bây giờ có phải như thời xưa nữa đâu."
+  },
+  {
+    "id": 512,
+    "start": "2356.411",
+    "end": "2359.812",
+    "duration": "3.401",
+    "text": "Chỗ nào cũng cày máy cả rồi, có ai cày trâu nữa đâu."
+  },
+  {
+    "id": 513,
+    "start": "2360.172",
+    "end": "2364.965",
+    "duration": "4.793",
+    "text": "Tấm lợp chất lượng cao làm theo lối thủ công như bố cháu làm sao để người ta tin."
+  },
+  {
+    "id": 514,
+    "start": "2365.305",
+    "end": "2372.568",
+    "duration": "7.263",
+    "text": "Chỉ có chút ít kinh nghiệm, kiến thức khoa học chuyên ngành không, bằng cấp không, kinh phí không, làm sao mà bảo người ta theo."
+  },
+  {
+    "id": 515,
+    "start": "2372.958",
+    "end": "2379.820",
+    "duration": "6.862",
+    "text": "Thêm con ngựa Rossinante và anh nông dân Săngsô Pasa nữa là bố cháu thành Đôn Kihôtê xứ Mantra rồi."
+  },
+  {
+    "id": 516,
+    "start": "2380.640",
+    "end": "2389.907",
+    "duration": "9.267",
+    "text": "Nhưng chả lẽ bố cháu xuất thân là cán bộ tham gia cách mạng mấy chục năm mà lại là chàng hiệp sĩ mắc bệnh hoang tưởng còn sót lại từ chế độ quân chủ phong kiến, hả chú?"
+  },
+  {
+    "id": 517,
+    "start": "2391.357",
+    "end": "2394.278",
+    "duration": "2.921",
+    "text": "Ngày đảng nhật mồng ba tháng sau, chi bộ họp."
+  },
+  {
+    "id": 518,
+    "start": "2394.698",
+    "end": "2410.365",
+    "duration": "15.667",
+    "text": "Bí thư chi bộ Khái khối u trên trán phải bằng quả ổi đã xẹp, nhưng còn đỏ bầm, vào cuộc làu bầu:\n“Mẹ sư cái thằng xe ôm phóng ẩu, mà cũng tại con Tép nhà tôi nó nổi cơn nứng, may mà tôi tránh được chứ không thì lại như lần trước”."
+  },
+  {
+    "id": 519,
+    "start": "2410.995",
+    "end": "2414.636",
+    "duration": "3.641",
+    "text": "Rồi ngẩng lên, đĩnh đạc:\n“Các đồng chí cho điểm danh nhé!"
+  },
+  {
+    "id": 520,
+    "start": "2414.946",
+    "end": "2417.757",
+    "duration": "2.811",
+    "text": "Đồng chí nào vắng mặt, các tổ đảng báo cáo xem nào!”."
+  },
+  {
+    "id": 521,
+    "start": "2418.458",
+    "end": "2424.701",
+    "duration": "6.243",
+    "text": "Chẳng cần lâu la gì đã có thể kết luận:\n“Đồng chí Nguyễn Văn Chí vắng mặt không có lý do chính đáng."
+  },
+  {
+    "id": 522,
+    "start": "2425.041",
+    "end": "2426.252",
+    "duration": "1.211",
+    "text": "Đây đã là lần thứ ba."
+  },
+  {
+    "id": 523,
+    "start": "2426.622",
+    "end": "2430.094",
+    "duration": "3.472",
+    "text": "Như vậy theo điều lệ cũng đủ lý do để xóa tên trong danh sách rồi."
+  },
+  {
+    "id": 524,
+    "start": "2430.474",
+    "end": "2437.708",
+    "duration": "7.234",
+    "text": "Tất nhiên việc này cuối buổi họp chi bộ sẽ lấy biểu quyết và sau đó sẽ báo cáo lên đảng ủy cấp trên để có quyết định”."
+  },
+  {
+    "id": 525,
+    "start": "2439.318",
+    "end": "2442.609",
+    "duration": "3.291",
+    "text": "Tôi ngồi họp mà vấn vương trong đầu hình ảnh ông Chí."
+  },
+  {
+    "id": 526,
+    "start": "2442.919",
+    "end": "2446.371",
+    "duration": "3.452",
+    "text": "Càng ám ảnh là mấy câu nói của Nga, cô con gái cả."
+  },
+  {
+    "id": 527,
+    "start": "2446.791",
+    "end": "2452.644",
+    "duration": "5.853",
+    "text": "Chẳng lẽ nhà cách mạng Nguyễn Văn Chí lại cũng là kẻ hoang tưởng như một chàng hiệp sĩ đã lạc thời."
+  },
+  {
+    "id": 528,
+    "start": "2453.064",
+    "end": "2457.846",
+    "duration": "4.782",
+    "text": "Mà hiệp sĩ là giai tầng thế nào nhỉ mà cô con gái gán ông bố mình vào đó?"
+  },
+  {
+    "id": 529,
+    "start": "2459.207",
+    "end": "2474.351",
+    "duration": "15.144",
+    "text": "Thắc mắc, tối ấy, sang nhà cô giáo Loan tôi mượn cuốn Từ điển Biểu tượng Văn hóa thế giới của Jean Chevalier và Alain Gheerbrant do Nhà Xuất bản Đà Nẵng in năm 1997."
+  },
+  {
+    "id": 530,
+    "start": "2474.871",
+    "end": "2488.896",
+    "duration": "14.025",
+    "text": "Giở ra tra cứu thì đọc được những dòng sau đây ở trang 500 và 501:\nNhư một thiết chế xã hội đã biến mất trước khi chế độ quân chủ cáo chung, nhưng nhân vật hiệp sĩ thì vẫn tồn tại trong mọi nền văn hóa."
+  },
+  {
+    "id": 531,
+    "start": "2489.346",
+    "end": "2504.714",
+    "duration": "15.368",
+    "text": "Nhân vật hiệp khách đã vượt ra ngoài lịch sử của nó, đã trở thành một yểu tố của nền văn hóa toàn thế giới và trở thành một kiểu nhân tính thượng đẳng không phù hợp với hiện thực của các thiết chế đương thời, tuy vậy nó vẫn lưu giữ một hằng số giá trị nhất định."
+  },
+  {
+    "id": 532,
+    "start": "2505.154",
+    "end": "2513.588",
+    "duration": "8.434",
+    "text": "Lý tưởng hiệp sĩ có thể được thâu tóm bẵng sự tự nguyện trung thành tuyệt đối với những tín niệm của mình và cam kết phụng sự bằng cả cuộc đời mình."
+  },
+  {
+    "id": 533,
+    "start": "2514.008",
+    "end": "2517.700",
+    "duration": "3.692",
+    "text": "Họ cao thượng tế nhị, tao nhã hơn phong tục thời đại."
+  },
+  {
+    "id": 534,
+    "start": "2518.030",
+    "end": "2522.432",
+    "duration": "4.402",
+    "text": "Thể hiện mình bằng hành động và một sự nghiệp lớn, hiệp sĩ thuộc giai tầng quân nhân."
+  },
+  {
+    "id": 535,
+    "start": "2522.862",
+    "end": "2527.115",
+    "duration": "4.253",
+    "text": "Mơ ước của họ là tham gia một sự nghiệp lớn có tinh thần cao thượng và thiêng liêng."
+  },
+  {
+    "id": 536,
+    "start": "2527.625",
+    "end": "2532.768",
+    "duration": "5.143",
+    "text": "Trên trái tim dịu hiền và dũng cảm của con người hiệp sĩ ấy, người ta ước mơ được yên nghỉ."
+  },
+  {
+    "id": 537,
+    "start": "2533.158",
+    "end": "2535.280",
+    "duration": "2.122",
+    "text": "Ông là bông hoa đức hạnh mang màu lửa."
+  },
+  {
+    "id": 538,
+    "start": "2535.630",
+    "end": "2537.311",
+    "duration": "1.681",
+    "text": "Ông gàn dở mà can đảm."
+  },
+  {
+    "id": 539,
+    "start": "2537.591",
+    "end": "2539.101",
+    "duration": "1.510",
+    "text": "Ông dớ dẩn mà sâu sắc."
+  },
+  {
+    "id": 540,
+    "start": "2539.391",
+    "end": "2541.143",
+    "duration": "1.752",
+    "text": "Ông đáng cười mà đáng phục."
+  },
+  {
+    "id": 541,
+    "start": "2541.533",
+    "end": "2544.664",
+    "duration": "3.131",
+    "text": "Ông nhà kỵ sĩ lỗi thời mà tâm hồn thánh thiện."
+  },
+  {
+    "id": 542,
+    "start": "2545.004",
+    "end": "2552.958",
+    "duration": "7.954",
+    "text": "Chính là con người ông bằng cuộc phiêu lưu dẫn dắt ta vào trung tâm cuộc sống tinh thần của chúng ta, một cuộc sống được nuôi dưỡng bằng hiệp sĩ."
+  },
+  {
+    "id": 543,
+    "start": "2553.309",
+    "end": "2558.090",
+    "duration": "4.781",
+    "text": "Còn ông nhà hiệp sĩ thì được nuôi dưỡng bằng bánh thánh và bánh vẽ."
+  },
+  {
+    "id": 544,
+    "start": "2559.400",
+    "end": "2562.740",
+    "duration": "3.340",
+    "text": "20/4/2012"
+  }
+]

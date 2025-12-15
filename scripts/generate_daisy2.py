@@ -722,11 +722,35 @@ def apply_preset_defaults(args: argparse.Namespace) -> None:
         args.note = "Người đọc: Đức Trọng"
         args.reader = "Đức Trọng"
         args.collector = "Đức Trọng"
+    elif args.preset == "xaxoi":
+        # Xa Xôi Thôn Ngựa Già preset
+        if args.cover_url is None:
+            args.cover_url = None  # No default cover URL for xaxoi
+        
+        # Metadata
+        args.title = "Xa Xôi Thôn Ngựa Già"
+        args.creator = "Ma Văn Kháng"
+        args.date = "2013"
+        args.description = (
+            "Tập truyện vừa Xa xôi thôn Ngựa Già của nhà văn Ma Văn Kháng một lần nữa "
+            "cho người đọc thấy cái nhìn đa chiều về những mặt tích cực cũng như tiêu cực của "
+            "đời sống xã hội. Cuốn sách gồm sáu truyện vừa về đời sống văn hóa tinh thần của "
+            "người dân những bản làng vùng núi phía Bắc."
+        )
+        args.language = "vi"
+        args.subject = "Văn học & Tiểu thuyết"
+        args.publisher = "NXB Phụ Nữ"
+        args.identifier = "9786045617953"
+        args.source_isbn = "9786045617953"
+        args.source_url = "https://thuviensachnoihuongduong.com"
+        args.note = "Tập truyện vừa gồm 6 truyện. Người đọc: Như Minh. Thư viện Sách nói Hướng Dương."
+        args.reader = "Như Minh"
+        args.collector = "Thư viện Sách nói Hướng Dương"
 
 
 def main(argv: Optional[List[str]] = None) -> int:
     parser = argparse.ArgumentParser(description="Generate DAISY 3 package files from audiobook_timestamps.json format.")
-    parser.add_argument("--preset", choices=["thienthan"], default="thienthan", help="Choose book preset for defaults.")
+    parser.add_argument("--preset", choices=["thienthan", "xaxoi"], default="thienthan", help="Choose book preset for defaults.")
     parser.add_argument("--json-dir", default="output_thienthan_new", type=Path, help="Directory containing JSON chapter files (audiobook_timestamps.json or Track*.json, etc.).")
     parser.add_argument("--audio-dir", default=Path("data/Audio-ThienThanNhoCuaToi"), type=Path, help="Directory containing MP3s.")
     parser.add_argument("--sentence-audio-dir", default=Path("output_thienthan_new/audio_segments_method_w"), type=Path, help="Directory containing per-sentence WAV segments (subfolders per chapter).")
