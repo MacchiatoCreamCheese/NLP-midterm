@@ -86,6 +86,17 @@ class Chapter:
     stem: str  # original stem used to locate this chapter
 
 
+# Fixed navigation order for the six stories in Xa Xôi Thôn Ngựa Già.
+XA_XOI_STORY_CONFIG = [
+    {"title": "Seo Ly, Kẻ Khuấy Động Tình Trường", "stems": ["SeoLyKeKhuayDongTinhTruong"]},
+    {"title": "Thắp Một Tuần Hương", "stems": ["ThapMotTuanHuong"]},
+    {"title": "Cố Vinh, Người Xứ Lạ", "stems": ["CoVinhNguoiXuLa", "CoVinhNguoiXuLaP2"]},
+    {"title": "Cánh Bướm Tím", "stems": ["CanhBuomTim"]},
+    {"title": "Người Khổ Nhất Trần Gian", "stems": ["NguoiKhoNhatTranGian"]},
+    {"title": "Xa Xôi Thôn Ngựa Già", "stems": ["XaXoiThonNguaGiaP1", "XaXoiThonNguaGiaP2", "XaXoiThonNguaGiaP3"]},
+]
+
+
 def normalize_name(value: str) -> str:
     """Lowercase string with non-alphanumerics stripped (for loose matching)."""
     return "".join(ch for ch in value.lower() if ch.isalnum())
@@ -627,6 +638,70 @@ def collect_chapters(json_dir: Path, audio_dir: Path) -> List[Chapter]:
     return chapters
 
 
+def build_story_chapters(chapters: List[Chapter], story_config: Optional[List[Dict[str, List[str]]]]) -> List[Chapter]:
+    """
+    Reorder and merge raw chapters into the fixed story order defined in STORY_CONFIG.
+    Multi-part stems are concatenated in config order, and sentences are renumbered per story.
+    """
+    if not story_config:
+        return chapters
+
+    chapter_map = {chapter.stem: chapter for chapter in chapters}
+    expected_stems = [stem for story in story_config for stem in story["stems"]]
+
+    missing = [stem for stem in expected_stems if stem not in chapter_map]
+    if missing:
+        print(f"Warning: Missing expected chapters (will be skipped): {missing}", file=sys.stderr)
+
+    extras = sorted(set(chapter_map.keys()) - set(expected_stems))
+    if extras:
+        print(f"Warning: Unused chapters present (not in navigation config): {extras}", file=sys.stderr)
+
+    story_chapters: List[Chapter] = []
+    for story_idx, story in enumerate(story_config, start=1):
+        merged_sentences: List[Sentence] = []
+        source_json_path: Optional[Path] = None
+
+        for stem in story["stems"]:
+            if stem not in chapter_map:
+                continue  # Skip missing chapters
+            chapter = chapter_map[stem]
+            source_json_path = source_json_path or chapter.json_path
+
+            for sentence in chapter.sentences:
+                # Ensure every sentence carries its audio source explicitly for SMIL/OPF.
+                audio_src = sentence.audio_path or chapter.audio_path
+                merged_sentences.append(replace(sentence, audio_path=audio_src))
+
+        if not merged_sentences or source_json_path is None:
+            print(f"Warning: No sentences collected for story '{story['title']}', skipping", file=sys.stderr)
+            continue
+
+        renumbered: List[Sentence] = []
+        for sent_idx, sentence in enumerate(merged_sentences, start=1):
+            new_sid = f"s{story_idx:02d}_{sent_idx:05d}"
+            renumbered.append(replace(sentence, line_number=sent_idx, sid=new_sid))
+
+        fallback_audio = next((s.audio_path for s in renumbered if s.audio_path is not None), None)
+        if fallback_audio is None:
+            print(f"Warning: Story '{story['title']}' has no audio sources, skipping", file=sys.stderr)
+            continue
+
+        story_chapters.append(
+            Chapter(
+                json_path=source_json_path,
+                audio_path=fallback_audio,
+                title=story["title"],
+                cid=f"c{story_idx:02d}",
+                sentences=renumbered,
+                smil_name=f"story_{story_idx:02d}.smil",
+                stem=story["stems"][0],
+            )
+        )
+
+    return story_chapters
+
+
 def attach_sentence_audio(
     chapters: List[Chapter],
     sentence_audio_dir: Path,
@@ -787,6 +862,9 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = parser.parse_args(argv)
 
     # Apply preset-specific defaults (paths, metadata).
+    story_config = None
+    if args.preset == "xaxoi":
+        story_config = XA_XOI_STORY_CONFIG
     apply_preset_defaults(args)
 
     copy_media = not args.no_copy_media
@@ -846,6 +924,9 @@ def main(argv: Optional[List[str]] = None) -> int:
             print(f"No sentence-level WAVs found under {args.sentence_audio_dir}; using chapter audio timings.")
     else:
         print("Sentence-level audio disabled or unavailable; using chapter audio with clip timings.")
+
+    # Reorder and merge according to story_config (if provided).
+    chapters = build_story_chapters(chapters, story_config)
 
     cover_href = None
     cover_path: Optional[Path] = None
